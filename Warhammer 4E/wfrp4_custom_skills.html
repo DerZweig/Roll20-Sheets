@@ -20,7 +20,7 @@
 <input name="attr_bar3_v" type="hidden"/>
 <input name="attr_bar3_m" type="hidden"/>
 <input name="attr_bar3_l" type="hidden"/>
-<div class="wfrp-wrapper compendium-drop-target monsters">
+<div class="mysheet wfrp-wrapper compendium-drop-target monsters">
   <input accept="Category" name="attr_drop_category" type="hidden"/>
   <input accept="Name" name="attr_drop_name" type="hidden"/>
   <input accept="data" name="attr_drop_data" type="hidden"/>
@@ -39,12 +39,12 @@
         </div>
         <div class="wfrp-header__item-wrapper wfrp-header__item-wrapper--species">
           <div class="wfrp-header__title" data-i18n="Species"></div>
-          <input class="sheet-control__custom" name="attr_species" type="hidden"/>
+          <input class="control__custom" name="attr_species" type="hidden"/>
           <input class="wfrp-header__input" name="attr_species_custom" type="text"/>
         </div>
         <div class="wfrp-header__item-wrapper wfrp-header__item-wrapper--class">
           <div class="wfrp-header__title" data-i18n="Class"></div>
-          <input class="sheet-control__custom" name="attr_class" type="hidden"/>
+          <input class="control__custom" name="attr_class" type="hidden"/>
            <input class="wfrp-header__input" name="attr_class_custom" type="text"/>
         </div>
         <div class="wfrp-header__item-wrapper wfrp-header__item-wrapper--career">
@@ -2594,16 +2594,16 @@
         <div class="wfrp-panel">
           <h1 class="wfrp-panel__header" data-i18n="Wealth"></h1>
           <div class="wfrp-field--grid1-1"><span class="wfrp-field__header--flex"><span data-i18n="GC"></span>
-              <button class="pictos" name="act_gold_to_silver" type="action">}</button></span>
+              <button class="mypictos" name="act_gold_to_silver" type="action">}</button></span>
             <input class="wfrp-field__input" name="attr_gold" type="number" value="0"/>
           </div>
           <div class="wfrp-field--grid1-1"><span class="wfrp-field__header--flex"><span data-i18n="SS"></span>
-              <button class="pictos" name="act_silver_to_brass" type="action">}</button>
-              <button class="pictos" name="act_silver_to_gold" type="action">{</button></span>
+              <button class="mypictos" name="act_silver_to_brass" type="action">}</button>
+              <button class="mypictos" name="act_silver_to_gold" type="action">{</button></span>
             <input class="wfrp-field__input" name="attr_silver" type="number" value="0"/>
           </div>
           <div class="wfrp-field--grid1-1"><span class="wfrp-field__header--flex"><span data-i18n="BP"></span>
-              <button class="pictos" name="act_brass_to_silver" type="action">{</button></span>
+              <button class="mypictos" name="act_brass_to_silver" type="action">{</button></span>
             <input class="wfrp-field__input" name="attr_brass" type="number" value="0"/>
           </div>
         </div>
@@ -2683,10 +2683,10 @@
     <div class="wfrp-advantage wfrp-panel page__combat">
       <h1 class="wfrp-panel__header" data-i18n="Advantage"></h1>
       <div class="wfrp-advantage__wrapper">
-        <button class="wfrp-advantage__reset pictos" name="act_reset_advantage" type="action">1</button>
-        <button class="wfrp-advantage__decrement pictos" name="act_decrement_advantage" type="action">-</button>
+        <button class="wfrp-advantage__reset mypictos" name="act_reset_advantage" type="action">1</button>
+        <button class="wfrp-advantage__decrement mypictos" name="act_decrement_advantage" type="action">-</button>
         <input class="wfrp-advantage__input" name="attr_advantage" type="number" value="0"/>
-        <button class="wfrp-advantage__increment pictos" name="act_increment_advantage" type="action">+</button>
+        <button class="wfrp-advantage__increment mypictos" name="act_increment_advantage" type="action">+</button>
       </div>
     </div>
     <div class="wfrp-wounds wfrp-panel page__combat">
@@ -2782,7 +2782,16 @@
               </div>
               <div class="wfrp-settings__row">
                 <div class="wfrp-settings__label" data-i18n="Locations"> </div>
-                <input class="wfrp-settings__input" name="attr_armour_locations" type="text"/>
+				<select class="wfrp-settings__input"  name="attr_armour_locations">
+					<option data-i18n="Head" value="head">Head</option>
+					<option data-i18n="Left Arm" value="leftarm">Left Arm</option>
+					<option data-i18n="Right Arm" value="rightarm">Right Arm</option>
+					<option data-i18n="Body" value="body">Body</option>
+					<option data-i18n="Left Leg" value="leftleg">Left Leg</option>
+					<option data-i18n="Right Leg" value="rightleg">Right leg</option>
+					<option data-i18n="Shield" value="shield">Shield</option>
+					<option data-i18n="All" value="all">All</option>
+				  </select>
               </div>
               <div class="wfrp-settings__row">
                 <div class="wfrp-settings__label" data-i18n="Enc."> </div>
@@ -3651,8 +3660,8 @@
             <div class="wfrp-settings__row--span">
               <div class="wfrp-settings__label" data-i18n="Name"></div>
               <div class="wfrp-settings__wrapper">
-                <input class="sheet-control__custom" name="attr_species" type="hidden"/>
-                <select class="wfrp-settings__select sheet-control__custom" name="attr_species">
+                <input class="control__custom" name="attr_species" type="hidden"/>
+                <select class="wfrp-settings__select control__custom" name="attr_species">
                   <option data-i18n="" value=""></option>
                   <option data-i18n="Human" value="Human"></option>
                   <option data-i18n="Halfling" value="Halfling"></option>
@@ -3662,7 +3671,7 @@
                   <option data-i18n="Gnome" value="Gnome"></option>
                   <option data-i18n="Custom" value="Custom"></option>
                 </select>
-                <div class="wfrp-header__customwrapper sheet-control__custom">
+                <div class="wfrp-header__customwrapper control__custom">
                   <input class="wfrp-header__input" name="attr_species_custom" type="text"/>
                   <button class="wfrp-header__hidecustom" name="act_remove_custom_species" type="action">╳</button>
                 </div>
@@ -3681,73 +3690,73 @@
                 <input class="wfrp-settings__input" data-i18n-placeholder="Skill 1" name="attr_species_skill_1_name" type="text"/>
                 <input name="attr_species_skill_1_advances" type="radio" value="3"/>
                 <input name="attr_species_skill_1_advances" type="radio" value="5"/>
-                <button class="wfrp-header__hidecustom" name="act_remove_skill_1" type="action">╳</button>
+                <button class="wfrp-header__hidecustom" name="act_species_remove_skill_1" type="action">╳</button>
               </div>
               <div class="wfrp-settings__row--speciesskill">
                 <input class="wfrp-settings__input" data-i18n-placeholder="Skill 2" name="attr_species_skill_2_name" type="text"/>
                 <input name="attr_species_skill_2_advances" type="radio" value="3"/>
                 <input name="attr_species_skill_2_advances" type="radio" value="5"/>
-                <button class="wfrp-header__hidecustom" name="act_remove_skill_2" type="action">╳</button>
+                <button class="wfrp-header__hidecustom" name="act_species_remove_skill_2" type="action">╳</button>
               </div>
               <div class="wfrp-settings__row--speciesskill">
                 <input class="wfrp-settings__input" data-i18n-placeholder="Skill 3" name="attr_species_skill_3_name" type="text"/>
                 <input name="attr_species_skill_3_advances" type="radio" value="3"/>
                 <input name="attr_species_skill_3_advances" type="radio" value="5"/>
-                <button class="wfrp-header__hidecustom" name="act_remove_skill_3" type="action">╳</button>
+                <button class="wfrp-header__hidecustom" name="act_species_remove_skill_3" type="action">╳</button>
               </div>
               <div class="wfrp-settings__row--speciesskill">
                 <input class="wfrp-settings__input" data-i18n-placeholder="Skill 4" name="attr_species_skill_4_name" type="text"/>
                 <input name="attr_species_skill_4_advances" type="radio" value="3"/>
                 <input name="attr_species_skill_4_advances" type="radio" value="5"/>
-                <button class="wfrp-header__hidecustom" name="act_remove_skill_4" type="action">╳</button>
+                <button class="wfrp-header__hidecustom" name="act_species_remove_skill_4" type="action">╳</button>
               </div>
               <div class="wfrp-settings__row--speciesskill">
                 <input class="wfrp-settings__input" data-i18n-placeholder="Skill 5" name="attr_species_skill_5_name" type="text"/>
                 <input name="attr_species_skill_5_advances" type="radio" value="3"/>
                 <input name="attr_species_skill_5_advances" type="radio" value="5"/>
-                <button class="wfrp-header__hidecustom" name="act_remove_skill_5" type="action">╳</button>
+                <button class="wfrp-header__hidecustom" name="act_species_remove_skill_5" type="action">╳</button>
               </div>
               <div class="wfrp-settings__row--speciesskill">
                 <input class="wfrp-settings__input" data-i18n-placeholder="Skill 6" name="attr_species_skill_6_name" type="text"/>
                 <input name="attr_species_skill_6_advances" type="radio" value="3"/>
                 <input name="attr_species_skill_6_advances" type="radio" value="5"/>
-                <button class="wfrp-header__hidecustom" name="act_remove_skill_6" type="action">╳</button>
+                <button class="wfrp-header__hidecustom" name="act_species_remove_skill_6" type="action">╳</button>
               </div>
               <div class="wfrp-settings__row--speciesskill">
                 <input class="wfrp-settings__input" data-i18n-placeholder="Skill 7" name="attr_species_skill_7_name" type="text"/>
                 <input name="attr_species_skill_7_advances" type="radio" value="3"/>
                 <input name="attr_species_skill_7_advances" type="radio" value="5"/>
-                <button class="wfrp-header__hidecustom" name="act_remove_skill_7" type="action">╳</button>
+                <button class="wfrp-header__hidecustom" name="act_species_remove_skill_7" type="action">╳</button>
               </div>
               <div class="wfrp-settings__row--speciesskill">
                 <input class="wfrp-settings__input" data-i18n-placeholder="Skill 8" name="attr_species_skill_8_name" type="text"/>
                 <input name="attr_species_skill_8_advances" type="radio" value="3"/>
                 <input name="attr_species_skill_8_advances" type="radio" value="5"/>
-                <button class="wfrp-header__hidecustom" name="act_remove_skill_8" type="action">╳</button>
+                <button class="wfrp-header__hidecustom" name="act_species_remove_skill_8" type="action">╳</button>
               </div>
               <div class="wfrp-settings__row--speciesskill">
                 <input class="wfrp-settings__input" data-i18n-placeholder="Skill 9" name="attr_species_skill_9_name" type="text"/>
                 <input name="attr_species_skill_9_advances" type="radio" value="3"/>
                 <input name="attr_species_skill_9_advances" type="radio" value="5"/>
-                <button class="wfrp-header__hidecustom" name="act_remove_skill_9" type="action">╳</button>
+                <button class="wfrp-header__hidecustom" name="act_species_remove_skill_9" type="action">╳</button>
               </div>
               <div class="wfrp-settings__row--speciesskill">
                 <input class="wfrp-settings__input" data-i18n-placeholder="Skill 10" name="attr_species_skill_10_name" type="text"/>
                 <input name="attr_species_skill_10_advances" type="radio" value="3"/>
                 <input name="attr_species_skill_10_advances" type="radio" value="5"/>
-                <button class="wfrp-header__hidecustom" name="act_remove_skill_10" type="action">╳</button>
+                <button class="wfrp-header__hidecustom" name="act_species_remove_skill_10" type="action">╳</button>
               </div>
               <div class="wfrp-settings__row--speciesskill">
                 <input class="wfrp-settings__input" data-i18n-placeholder="Skill 11" name="attr_species_skill_11_name" type="text"/>
                 <input name="attr_species_skill_11_advances" type="radio" value="3"/>
                 <input name="attr_species_skill_11_advances" type="radio" value="5"/>
-                <button class="wfrp-header__hidecustom" name="act_remove_skill_11" type="action">╳</button>
+                <button class="wfrp-header__hidecustom" name="act_species_remove_skill_11" type="action">╳</button>
               </div>
               <div class="wfrp-settings__row--speciesskill">
                 <input class="wfrp-settings__input" data-i18n-placeholder="Skill 12" name="attr_species_skill_12_name" type="text"/>
                 <input name="attr_species_skill_12_advances" type="radio" value="3"/>
                 <input name="attr_species_skill_12_advances" type="radio" value="5"/>
-                <button class="wfrp-header__hidecustom" name="act_remove_skill_12" type="action">╳</button>
+                <button class="wfrp-header__hidecustom" name="act_species_remove_skill_12" type="action">╳</button>
               </div>
             </div>
             <div class="wfrp-settings__col">
@@ -4074,7 +4083,7 @@
     <div class="wfrp-npc__wrapper">
       <div class="wfrp-npcsettings">
         <label class="wfrp-npcsettings__toggle"> 
-          <input class="wfrp-npcsettings__hide" name="attr_npc_settings" type="checkbox"/><span class="pictos">y</span>
+          <input class="wfrp-npcsettings__hide" name="attr_npc_settings" type="checkbox"/><span class="mypictos">y</span>
         </label>
         <input name="attr_npc_settings" type="hidden"/>
         <div class="wfrp-npcsettings__wrapper">
@@ -4712,10 +4721,10 @@
             <div class="wfrp-npcadvantage">
               <div class="wfrp-advantage__wrapper">
                 <div class="wfrp-advantage__label" data-i18n="Advantage"> </div>
-                <button class="wfrp-advantage__reset pictos" name="act_reset_advantage" type="action">1</button>
-                <button class="wfrp-advantage__decrement pictos" name="act_decrement_advantage" type="action">-</button>
+                <button class="wfrp-advantage__reset mypictos" name="act_reset_advantage" type="action">1</button>
+                <button class="wfrp-advantage__decrement mypictos" name="act_decrement_advantage" type="action">-</button>
                 <input class="wfrp-advantage__input" name="attr_advantage" type="number" value="0"/>
-                <button class="wfrp-advantage__increment pictos" name="act_increment_advantage" type="action">+</button>
+                <button class="wfrp-advantage__increment mypictos" name="act_increment_advantage" type="action">+</button>
               </div>
             </div>
             <div class="wfrp-npccontrols__wrapper">
@@ -4959,19 +4968,19 @@
     </div>{{/^rollGreater() roll target}}{{/^rollWasFumble() roll}}{{#^rollTotal() roll target}}{{#^rollWasCrit() roll}}{{#^rollLess() roll target}}
     <div class="wfrp-roll__fail">{{#^rollTotal() roll 99}}{{#^rollTotal() roll 88}}{{#^rollTotal() roll 77}}{{#^rollTotal() roll 66}}{{#^rollTotal() roll 55}}{{#^rollTotal() roll 44}}{{#^rollTotal() roll 33}}{{#^rollTotal() roll 22}}{{#^rollTotal() roll 11}}{{#rollBetween() target 0 9}}{{#rollBetween() roll 0 9}}<span>Marginal</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>Marginal</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span></span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span></span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>Impressive</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>Impressive</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>Astounding</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>Astounding</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>Astounding</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>Astounding</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>Astounding</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 0 9}}{{#rollBetween() target 10 19}}{{#rollBetween() roll 0 9}}<span>Marginal</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>Marginal</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>Marginal</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span></span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span></span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>Impressive</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>Impressive</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>Astounding</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>Astounding</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>Astounding</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>Astounding</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 10 19}}{{#rollBetween() target 20 29}}{{#rollBetween() roll 0 9}}<span>Marginal</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>Marginal</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>Marginal</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>Marginal</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span></span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span></span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>Impressive</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>Impressive</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>Astounding</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>Astounding</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>Astounding</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 20 29}}{{#rollBetween() target 30 39}}{{#rollBetween() roll 0 9}}<span>Marginal</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>Marginal</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>Marginal</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>Marginal</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>Marginal</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span></span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span></span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>Impressive</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>Impressive</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>Astounding</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>Astounding</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 30 39}}{{#rollBetween() target 40 49}}{{#rollBetween() roll 0 9}}<span>Marginal</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>Marginal</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>Marginal</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>Marginal</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>Marginal</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>Marginal</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span></span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span></span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>Impressive</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>Impressive</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>Astounding</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 40 49}}{{#rollBetween() target 50 59}}{{#rollBetween() roll 0 9}}<span>Marginal</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>Marginal</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>Marginal</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>Marginal</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>Marginal</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>Marginal</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>Marginal</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span></span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span></span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>Impressive</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>Impressive</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 50 59}}{{#rollBetween() target 60 69}}{{#rollBetween() roll 0 9}}<span>Marginal</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>Marginal</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>Marginal</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>Marginal</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>Marginal</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>Marginal</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>Marginal</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>Marginal</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span></span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span></span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>Impressive</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 60 69}}{{#rollBetween() target 70 79}}{{#rollBetween() roll 0 9}}<span>Marginal</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>Marginal</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>Marginal</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>Marginal</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>Marginal</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>Marginal</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>Marginal</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>Marginal</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>Marginal</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span></span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span></span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 70 79}}{{#rollBetween() target 80 89}}{{#rollBetween() roll 0 9}}<span>Marginal</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>Marginal</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>Marginal</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>Marginal</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>Marginal</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>Marginal</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>Marginal</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>Marginal</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>Marginal</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>Marginal</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span></span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 80 89}}{{#rollBetween() target 90 99}}{{#rollBetween() roll 0 9}}<span>Marginal</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>Marginal</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>Marginal</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>Marginal</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>Marginal</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>Marginal</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>Marginal</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>Marginal</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>Marginal</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>Marginal</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>Marginal</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 90 99}}{{#rollBetween() target 100 109}}{{#rollBetween() roll 0 9}}<span>Marginal</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>Marginal</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>Marginal</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>Marginal</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>Marginal</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>Marginal</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>Marginal</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>Marginal</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>Marginal</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>Marginal</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>Marginal</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 100 109}}{{/^rollTotal() roll 11}}{{/^rollTotal() roll 22}}{{/^rollTotal() roll 33}}{{/^rollTotal() roll 44}}{{/^rollTotal() roll 55}}{{/^rollTotal() roll 66}}{{/^rollTotal() roll 77}}{{/^rollTotal() roll 88}}{{/^rollTotal() roll 99}}{{#rollTotal() roll 11}}<span data-i18n="Critical"></span>{{/rollTotal() roll 11}}{{#rollTotal() roll 22}}<span data-i18n="Critical"></span>{{/rollTotal() roll 22}}{{#rollTotal() roll 33}}<span data-i18n="Critical"></span>{{/rollTotal() roll 33}}{{#rollTotal() roll 44}}<span data-i18n="Critical"></span>{{/rollTotal() roll 44}}{{#rollTotal() roll 55}}<span data-i18n="Critical"></span>{{/rollTotal() roll 55}}{{#rollTotal() roll 66}}<span data-i18n="Critical"></span>{{/rollTotal() roll 66}}{{#rollTotal() roll 77}}<span data-i18n="Critical"></span>{{/rollTotal() roll 77}}{{#rollTotal() roll 88}}<span data-i18n="Critical"></span>{{/rollTotal() roll 88}}{{#rollTotal() roll 99}}<span data-i18n="Critical"></span>{{/rollTotal() roll 99}}<span data-i18n="Failure"></span>{{#rollBetween() target 0 9}}{{#rollBetween() roll 0 9}}<span>(0)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(-1)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(-2)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(-3)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(-4)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(-5)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(-6)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(-7)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(-8)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(-9)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(-10)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 0 9}}{{#rollBetween() target 10 19}}{{#rollBetween() roll 0 9}}<span>(1)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(0)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(-1)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(-2)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(-3)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(-4)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(-5)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(-6)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(-7)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(-8)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(-9)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 10 19}}{{#rollBetween() target 20 29}}{{#rollBetween() roll 0 9}}<span>(2)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(1)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(0)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(-1)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(-2)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(-3)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(-4)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(-5)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(-6)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(-7)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(-8)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 20 29}}{{#rollBetween() target 30 39}}{{#rollBetween() roll 0 9}}<span>(3)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(2)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(1)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(0)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(-1)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(-2)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(-3)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(-4)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(-5)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(-6)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(-7)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 30 39}}{{#rollBetween() target 40 49}}{{#rollBetween() roll 0 9}}<span>(4)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(3)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(2)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(1)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(0)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(-1)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(-2)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(-3)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(-4)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(-5)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(-6)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 40 49}}{{#rollBetween() target 50 59}}{{#rollBetween() roll 0 9}}<span>(5)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(4)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(3)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(2)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(1)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(0)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(-1)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(-2)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(-3)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(-4)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(-5)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 50 59}}{{#rollBetween() target 60 69}}{{#rollBetween() roll 0 9}}<span>(6)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(5)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(4)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(3)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(2)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(1)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(0)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(-1)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(-2)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(-3)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(-4)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 60 69}}{{#rollBetween() target 70 79}}{{#rollBetween() roll 0 9}}<span>(7)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(6)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(5)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(4)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(3)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(2)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(1)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(0)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(-1)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(-2)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(-3)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 70 79}}{{#rollBetween() target 80 89}}{{#rollBetween() roll 0 9}}<span>(8)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(7)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(6)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(5)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(4)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(3)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(2)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(1)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(0)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(-1)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(-2)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 80 89}}{{#rollBetween() target 90 99}}{{#rollBetween() roll 0 9}}<span>(9)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(8)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(7)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(6)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(5)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(4)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(3)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(2)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(1)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(0)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(-1)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 90 99}}{{#rollBetween() target 100 109}}{{#rollBetween() roll 0 9}}<span>(10)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(9)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(8)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(7)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(6)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(5)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(4)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(3)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(2)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(1)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(0)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 100 109}}{{#rollBetween() target 110 119}}{{#rollBetween() roll 0 9}}<span>(11)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(10)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(9)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(8)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(7)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(6)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(5)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(4)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(3)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(2)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(1)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 110 119}}{{#rollBetween() target 120 129}}{{#rollBetween() roll 0 9}}<span>(12)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(11)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(10)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(9)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(8)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(7)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(6)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(5)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(4)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(3)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(2)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 120 129}}{{#rollBetween() target 130 139}}{{#rollBetween() roll 0 9}}<span>(13)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(12)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(11)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(10)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(9)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(8)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(7)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(6)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(5)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(4)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(3)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 130 139}}{{#rollBetween() target 140 149}}{{#rollBetween() roll 0 9}}<span>(14)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(13)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(12)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(11)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(10)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(9)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(8)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(7)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(6)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(5)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(4)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 140 149}}{{#rollBetween() target 150 159}}{{#rollBetween() roll 0 9}}<span>(15)</span>{{/rollBetween() roll 0 9}}{{#rollBetween() roll 10 19}}<span>(14)</span>{{/rollBetween() roll 10 19}}{{#rollBetween() roll 20 29}}<span>(13)</span>{{/rollBetween() roll 20 29}}{{#rollBetween() roll 30 39}}<span>(12)</span>{{/rollBetween() roll 30 39}}{{#rollBetween() roll 40 49}}<span>(11)</span>{{/rollBetween() roll 40 49}}{{#rollBetween() roll 50 59}}<span>(10)</span>{{/rollBetween() roll 50 59}}{{#rollBetween() roll 60 69}}<span>(9)</span>{{/rollBetween() roll 60 69}}{{#rollBetween() roll 70 79}}<span>(8)</span>{{/rollBetween() roll 70 79}}{{#rollBetween() roll 80 89}}<span>(7)</span>{{/rollBetween() roll 80 89}}{{#rollBetween() roll 90 99}}<span>(6)</span>{{/rollBetween() roll 90 99}}{{#rollBetween() roll 100 109}}<span>(5)</span>{{/rollBetween() roll 100 109}}{{/rollBetween() target 150 159}}
     </div>{{/^rollLess() roll target}}{{/^rollWasCrit() roll}}{{/^rollTotal() roll target}}{{#bonus}}
-    <div class="wfrp-roll__row sheet-wfrp-roll__row--number">
+    <div class="wfrp-roll__row mysheet-wfrp-roll__row--number">
       <div class="wfrp-roll__label" data-i18n="Bonus"></div>
       <div class="wfrp-roll__value">{{bonus}}</div>
     </div>{{/bonus}}{{#roll_advantage}}
-    <div class="wfrp-roll__row sheet-wfrp-roll__row--number">
+    <div class="wfrp-roll__row mysheet-wfrp-roll__row--number">
       <div class="wfrp-roll__label" data-i18n="Advantage"></div>
       <div class="wfrp-roll__value">{{roll_advantage}}</div>
     </div>{{/roll_advantage}}{{#sl_bonus}}
-    <div class="wfrp-roll__row sheet-wfrp-roll__row--number">
+    <div class="wfrp-roll__row mysheet-wfrp-roll__row--number">
       <div class="wfrp-roll__label" data-i18n="SL Bonus"></div>
       <div class="wfrp-roll__value">{{sl_bonus}}</div>
     </div>{{/sl_bonus}}{{#roll_cn}}
-    <div class="wfrp-roll__row sheet-wfrp-roll__row--number">
+    <div class="wfrp-roll__row mysheet-wfrp-roll__row--number">
       <div class="wfrp-roll__label" data-i18n="CN"></div>
       <div class="wfrp-roll__value">{{roll_cn}}</div>
     </div>{{/roll_cn}}{{#roll_range}}
@@ -6150,6 +6159,7 @@
         ]
     }
 
+
     // Sheet Functions
 
     const initSheet = () => {
@@ -7197,10 +7207,173 @@
             });
         });   
     }
+	
+	const loadCustomSkills = (callback) => {
+		getSectionIDs("repeating_stealth", stealthids => {
+	    getSectionIDs("repeating_language", langids => {
+		getSectionIDs("repeating_lore", loreids => {
+		getSectionIDs("repeating_trade", tradeids => {
+			const skillids = [];
+			
+			stealthids.forEach((id, index) => {
+				skillids.push(`repeating_stealth_${id}_specialisation_name`);
+			});
+			
+			langids.forEach((id, index) => {
+				skillids.push(`repeating_language_${id}_specialisation_name`);
+			});
+			
+			loreids.forEach((id, index) => {
+				skillids.push(`repeating_lore_${id}_specialisation_name`);
+			});
+			
+			tradeids.forEach((id, index) => {
+				skillids.push(`repeating_trade_${id}_specialisation_name`);
+			});
+			
+			getAttrs(skillids, currentValues => {
+				const dest_skill_list = Object.entries(currentValues);
+				const dest_names = dest_skill_list.filter(([key, value]) => key.match(/name/g) && value !== "");
+				const dest_mapper = new Map();
+				
+				dest_names.forEach(([id, name]) => {
+					dest_mapper.set(name.toLowerCase(), id);
+				});
+				
+				callback(dest_mapper);
+			});
+		});
+		});
+		});
+		});
+	};
+	
+	const loadTranslatedCharacteristics = (callback) => 
+	{
+		const translatables = new Map([
+			["weapon_skill", "Weapon Skill"],
+			["ballistic_skill", "Ballistic Skill"],
+			["strength", "Strength"],
+			["toughness", "Toughness"],
+			["initiative", "Initiative"],
+			["agility", "Agility"],
+			["dexterity", "Dexterity"],
+			["intelligence", "Intelligence"],
+			["willpower", "Willpower"],
+			["fellowship", "Fellowship"]
+		]);
 
-    const calculateSkillAdvances = () => {
+		const translated_chars = new Map();
+		
+		translatables.forEach((value, key) => {
+			let translated = getTranslationByKey(value);
+			if(translated)
+			{
+				translated_chars.set(translated.toLowerCase(), key);
+			}
+			else 
+			{
+				translated_chars.set(value.toLowerCase(), key);
+			}
+		});
+
+		callback(translated_chars);
+	};
+	
+	const loadTranslatedSkillGroups = (callback) => 
+	{
+		const translatables = new Map([
+			["language", "Language"],
+			["lore", "Lore"],
+			["weapon_skill", "Weapon Skill"],
+			["ballistic_skill", "Ballistic Skill"]
+		]);
+
+		const translated_skills = new Map();
+		
+		translatables.forEach((value, key) => {
+			let translated = getTranslationByKey(value);
+			if(translated)
+			{
+				translated_skills.set(translated.toLowerCase(), key);
+			}
+			else 
+			{
+				translated_skills.set(value.toLowerCase(), key);
+			}
+		});
+
+		callback(translated_skills);
+	};
+
+	const loadTranslatedStaticSkills = (callback) => 
+	{
+		const translatables = new Map([
+			["endurance", "Endurance"],
+			["dodge", "Dodge"],
+			["cool", "Cool"],
+			["intuition", "Intuition"],
+			["perception", "Perception"]
+		]);
+
+		const translated_skills = new Map();
+		
+		translatables.forEach((value, key) => {
+			let translated = getTranslationByKey(value);
+			if(translated)
+			{
+				translated_skills.set(translated.toLowerCase(), key);
+			}
+			else 
+			{
+				translated_skills.set(value.toLowerCase(), key);
+			}
+		});
+
+		callback(translated_skills);
+	};
+
+	const loadTranslatedSpecialSkills = (callback) => 
+	{
+		const translatables = new Map([
+			["basic", "Basic"],
+			["cavalry", "Cavalry"],
+			["flail", "Flail"],
+			["polearm", "Polearm"],
+			["brawling", "Brawling"],
+			["fencing", "Fencing"],
+			["parry", "Parry"],
+			["two-handed", "Two-Handed"],
+			["blackpowder", "Blackpowder"],
+			["crossbow", "Crossbow"],
+			["entangling", "Entangling"],
+			["sling", "Sling"],
+			["bow", "Bow"],
+			["engineering", "Engineering"],
+			["explosives", "Explosives"],
+			["throwing", "Throwing"]
+		]);
+
+		const translated_skills = new Map();
+		
+		translatables.forEach((value, key) => {
+			let translated = getTranslationByKey(value);
+			if(translated)
+			{
+				translated_skills.set(translated.toLowerCase(), key);
+			}
+			else 
+			{
+				translated_skills.set(value.toLowerCase(), key);
+			}
+		});
+
+		callback(translated_skills);
+	};
+
+
+    const calculateSkillAdvances = () => {	
         getSectionIDs("careers", id_array => {
-
             getSectionIDs("noncareer-skills", id_array_2 => {
                 const attrs = [];
                 const skills = new Map();
@@ -7225,66 +7398,109 @@
                     attrs.push(`species_skill_${i}_name`); 
                     attrs.push(`species_skill_${i}_advances`);
                 }
-        
-                getAttrs(attrs, values => {
-                    const skill_list = Object.entries(values);
-                    const names = skill_list.filter(([key, value]) => key.match(/name/g) && value !== "");
+				
+				loadCustomSkills(custom_skills => {
+				loadTranslatedCharacteristics(translated_chars => {
+				loadTranslatedStaticSkills(translated_statics => {
+				loadTranslatedSpecialSkills(translated_specials => {
+				loadTranslatedSkillGroups(translated_groups => {
+					
+					
+				
+					getAttrs(attrs, values => {
+						const skill_list = Object.entries(values);
+						const names = skill_list.filter(([key, value]) => key.match(/name/g) && value !== "");
+						const updateAttrs = {};
 
-                    names.forEach(([id, name]) => {
-                        const value_addr = id.substring(0,id.length-4) + "advances";
-                        const init_addr = id.substring(0,id.length-4) + "init";
-                        const value = parseInt(values[value_addr]) || 0;
-                        const init = parseInt(values[init_addr]) || 0;
+						custom_skills.forEach(([value,key]) => {
+							updateAttrs[value.replace("_specialisation_name", "_specialisation_advances")] = 0;
+						});
+						
+						translated_specials.forEach(value => {
+							updateAttrs[`${value}_advances`] = 0;
+						});
+						
+						translated_statics.forEach(value => {
+							updateAttrs[`${value}_advances`] = 0;
+						});
+						
+						translated_chars.forEach(value => {
+							updateAttrs[`${value}_advances`] = 0;
+						});
+						
+						
+						names.forEach(([id, name]) => {
+							const value_addr = id.substring(0,id.length-4) + "advances";
+							const init_addr = id.substring(0,id.length-4) + "init";
+							const value = parseInt(values[value_addr]) || 0;
+							const init = parseInt(values[init_addr]) || 0;
 
-                        const current = skills.get(name) || 0;
+							const current = skills.get(name) || 0;
+							const set = current + value + init;
+							
+							skills.set(name, set);
+						});
+						skills.forEach((value, key) => {
+							let parsed_key = key.trim().replace(/ /g,"-").toLowerCase();
+							let custom_skill = custom_skills.get(parsed_key);
+							let translated_char = translated_chars.get(parsed_key);
+							let translated_static = translated_statics.get(parsed_key);
+							let translated_special = translated_specials.get(parsed_key);
+							
+							if(custom_skill)
+							{
+								let updating_key = custom_skill.replace("_specialisation_name", "_specialisation_advances");
+								updateAttrs[updating_key] = value;
+							} else if (translated_char) {
+								updateAttrs[`${translated_char}_advances`] = value;
+							} else if (translated_static) {
+								updateAttrs[`${translated_static}_advances`] = value;
+							} else if (translated_special) {
+								updateAttrs[`${translated_special}_advances`] = value;
+							} else {
+								let grouped = key.split("-");
+								if(grouped.length === 2)
+								{
+									let group = grouped[0].trim().toLowerCase();
+									let spec  = grouped[1].trim().toLowerCase();
+									
+									let skill_group = translated_groups.get(group);
+									if(skill_group)
+									{
+										custom_skill = custom_skills.get(spec);
+										translated_special = translated_specials.get(spec);
+									
+										if(custom_skill)
+										{
+											let updating_key = custom_skill.replace("_specialisation_name", "_specialisation_advances");
+											updateAttrs[updating_key] = value;
+											return;
+										}
+										else if(translated_special)
+										{
+											updateAttrs[`${translated_special}_advances`] = value;
+											return;
+										}
+										
+									}
+								}
+								
+								console.log("key not found " + parsed_key);
+							}
+						});
 
-                        const set = current + value + init;
+						setAttrs(updateAttrs);
 
-                        skills.set(name, set);
-                    });
-
-                    const updateAttrs = {};
-
-                    skills.forEach((value, key) => {
-                        let parsed_key = key.replace(/ /g,"-").toLowerCase();
-
-                        if (wfrp.skills.includes(parsed_key)) {
-
-                            updateAttrs[`${parsed_key}_advances`] = value;
-                            
-                        } else if (key.match(/\(/g)) {
-                            const group = key.split("(")[0]
-                                            .trim()
-                                            .replace(/ /g,"-")
-                                            .toLowerCase();
-                                            
-                            const specialisation = key.split("(")[1]
-                                                      .trim()
-                                                      .replace(/\)/g,"");
-                                            
-                            const specialisation_test = specialisation.toLowerCase();
-
-                            if (wfrp.specialisations.includes(specialisation_test)) {
-
-                                updateAttrs[`${specialisation}_advances`] = value;
-
-                                if (value > 0) updateAttrs[`${specialisation}_control`] = "on";
-
-                            } else if (wfrp.repeating_skills.includes(group)) {
-
-                                modifyRepeatingSkill(group, specialisation, value);
-
-                            }
-                        }
-                    });
-
-                    setAttrs(updateAttrs);
-
+					});
+				});
                 });
+                });
+                });
+				});
 
             });   
 
-        });   
+        }); 
     }
 
     const modifyRepeatingSkill = (group, specialisation, value) => {
@@ -8045,6 +8261,19 @@ for (let index = 1; index <= 12; index++) {
     on(`change:species_skill_${index}_advances`, eventInfo => wfrpModule.checkSpeciesAdvances());
 } 
 
+on("clicked:species_remove_skill_1", eventInfo => setAttrs({"species_skill_1_advances":0}));
+on("clicked:species_remove_skill_2", eventInfo => setAttrs({"species_skill_2_advances":0}));
+on("clicked:species_remove_skill_3", eventInfo => setAttrs({"species_skill_3_advances":0}));
+on("clicked:species_remove_skill_4", eventInfo => setAttrs({"species_skill_4_advances":0}));
+on("clicked:species_remove_skill_5", eventInfo => setAttrs({"species_skill_5_advances":0}));
+on("clicked:species_remove_skill_6", eventInfo => setAttrs({"species_skill_6_advances":0}));
+on("clicked:species_remove_skill_7", eventInfo => setAttrs({"species_skill_7_advances":0}));
+on("clicked:species_remove_skill_8", eventInfo => setAttrs({"species_skill_8_advances":0}));
+on("clicked:species_remove_skill_9", eventInfo => setAttrs({"species_skill_9_advances":0}));
+on("clicked:species_remove_skill_10", eventInfo => setAttrs({"species_skill_10_advances":0}));
+on("clicked:species_remove_skill_11", eventInfo => setAttrs({"species_skill_11_advances":0}));
+on("clicked:species_remove_skill_12", eventInfo => setAttrs({"species_skill_12_advances":0}));
+
 // CHARACTERISTIC CALCULATIONS
 
 wfrpModule.wfrp.characteristics.forEach(characteristic => {
@@ -8197,560 +8426,6 @@ on(`change:weapon_skill change:ballistic_skill`, eventInfo => wfrpModule.cascade
 });
 
 on(`change:npc sheet:opened`, eventInfo => wfrpModule.updateNPCButtons());
-
-  
-const wfrpDragAndDrop = ( () => {
-
-    const handleDrop = (values, name) => {
-
-        const {drop_name, drop_content, drop_data} = values;
-
-        const page_name = (name) ? name : drop_name;
-
-        if (drop_name === ""|| typeof drop_data === "") return;
-    
-        let parsed_data = helperFunctions.parseJSON(drop_data);
-
-        if (parsed_data.Category === "Careers") handleCareer(page_name, parsed_data);
-        else if (parsed_data.Category === "Blessings" || parsed_data.Category === "Spells" || parsed_data.Category === "Miracles" ) handleSpell(page_name, parsed_data, drop_content);
-        else if (parsed_data.Category === "Items") handleItem(page_name, parsed_data);
-        else if (parsed_data.Category === "Monsters") handleMonster(page_name, parsed_data, drop_content);
-        else if (parsed_data.Category === "Talents") handleTalent(page_name, parsed_data);
-        else if (parsed_data.Category === "Conditions") handleCondition(page_name, parsed_data);
-        else if (parsed_data.Category === "Creature Traits") handleCreatureTrait(page_name, parsed_data);
-        else console.warn(`${parsed_data.Category} drop is not supported by the sheet`);
-
-        setAttrs({drop_name: "", drop_content: "", drop_data: ""});
-    
-    }
-
-    const handleCareer = (name, data) => {
-        const updateAttrs = {};
-        const repeating_id = generateRowID();
-        const row = `repeating_careers_${repeating_id}`;
-
-        updateAttrs[`class`] = data.Class;
-        updateAttrs[`${row}_career_name`] = name;
-
-        Object.entries(data.blobs).forEach(([key, values], index) => {
-
-            const level = values.Level
-
-            updateAttrs[`${row}_career_level${level}_name`] = key;
-            updateAttrs[`${row}_career_level${level}_status`] = `${values.Tier} ${values.Standing}`;
-            updateAttrs[`${row}_career_${level}_trappings`] = values.Trappings;
-
-            const talents = values.Talents.split(",").map(item => item.trim());
-
-            talents.forEach((talent, index) => {
-
-                updateAttrs[`${row}_career_talent_${level}_${index+1}_name`] = talent;
-
-            });
-
-            const skills = values.Skills.split(",").map(item => item.trim());
-
-            skills.forEach((skill, index) => {
-
-                updateAttrs[`${row}_career_skill_${level}_${index+1}_name`] = skill;
-
-            });
-
-            const characteristics = helperFunctions.parseJSON(values["Characteristic Advances"]);
-
-            Object.entries(characteristics).forEach(([key,value]) => {
-
-                if (value.toLowerCase() === "true") {
-                    const characteristic = key.toLowerCase().replace(/ /g,"_");
-
-                    updateAttrs[`${row}_career_${characteristic}`] = level;
-                }
-
-            });
-
-            setAttrs(updateAttrs);
-        });
-
-    }
-
-    const handleSpell = (name, data) => {
-
-        const updateAttrs = {};
-        const repeating_id = generateRowID();
-        const row = `repeating_spells_${repeating_id}`;
-        
-        updateAttrs[`${row}_spell_name`] = name;
-        updateAttrs[`${row}_spell_type`] = (data.Category.toLowerCase() === "spells") ? "Spell" : "Prayer";
-        updateAttrs[`${row}_spell_cn`] = data["Casting Number"] || 0;
-        updateAttrs[`${row}_spell_range`] = data.Range || 0;
-        updateAttrs[`${row}_spell_target`] = data.Target || 0;
-        updateAttrs[`${row}_spell_duration`] = data.Duration || 0;
-        updateAttrs[`${row}_spell_description`] = data.Description || 0;
-        updateAttrs[`${row}_spell_lore`] = data.Lore || "";
-        updateAttrs[`${row}_spell_diety`] = data.Deity || "";
-
-        setAttrs(updateAttrs);
-
-    }
-
-    const handleItem = (name, data) => {
-        const updateAttrs = {};
-
-        if (data.Subcategory === "Armour") {
-            const repeating_id = generateRowID();
-            const row = `repeating_armour_${repeating_id}`;
-
-            const armour = helperFunctions.parseJSON(data.Armor);
-            const points = armour.Points || 0;
-            const locations = [];
-
-            Object.entries(armour).forEach(([key, value]) => {
-                if (value === "Yes") locations.push(key);
-            });
-
-            updateAttrs[`${row}_armour_name`] = name;
-            updateAttrs[`${row}_armour_points`] = points;
-            updateAttrs[`${row}_armour_qualities`] = data.Traits || "";
-            updateAttrs[`${row}_armour_locations`] = locations.join(", ").replace(/Torso/g,"Body");
-            updateAttrs[`${row}_armour_enc`] = data.Encumbrance;
-            updateAttrs[`${row}_armour_mods`] = data.Modifiers || "";
-            updateAttrs[`${row}_armour_desc`] = data.Notes || "";
-
-        } else if (data.Subcategory === "Weapons") {
-
-            const repeating_id = generateRowID();
-            const row = `repeating_weapons_${repeating_id}`;
-
-            updateAttrs[`${row}_weapon_name`] = name;
-            updateAttrs[`${row}_weapon_group`] = data.Group;
-            updateAttrs[`${row}_weapon_range`] = (data.Range) ? data.Range : data.Reach || "";
-            updateAttrs[`${row}_weapon_damage_flat`] = data.Damage.replace(/[^0-9]/g,"");
-            updateAttrs[`${row}_weapon_damage_bonus`] = (data.Damage.match(/SB/)) ? "on" : "0";
-            updateAttrs[`${row}_weapon_qualities`] = data.Traits || "";
-            updateAttrs[`${row}_weapon_enc`] = data.Encumbrance || "0";
-            updateAttrs[`${row}_weapon_notes`] = data.Notes || "";   
-            updateAttrs[`${row}_weapon_mods`] = data.Modifiers || "";
-
-        } else {
-            const repeating_id = generateRowID();
-            const row = `repeating_trappings_${repeating_id}`;
-
-            const modifiers = [];
-
-            if (data.Modifiers) modifiers.push(data.Modifiers);
-            if (data.Carries) modifiers.push(`Encumbrance +${data.Carries}`);
-
-            updateAttrs[`${row}_trappings_name`] = name;
-            updateAttrs[`${row}_trappings_amount`] = data["Number"] || 1;
-            updateAttrs[`${row}_trappings_enc`] = data.Encumbrance || 1;
-            updateAttrs[`${row}_trappings_inenc`] = "on";
-            updateAttrs[`${row}_trappings_mods`] = modifiers.join(", ") || "";
-            updateAttrs[`${row}_trappings_traits`] = data.Traits || "";
-            updateAttrs[`${row}_trappings_description`] = data.Notes || "";
-            updateAttrs[`${row}_trappings_type`] = (data.Subcategory === "Ammunition") ? 1 : 
-                                                   (data.Subcategory === "Packs and Containers") ? 2 : 
-                                                   (data.Subcategory === "Clothing and Accessories") ? 3 : 
-                                                   (data.Subcategory === "Tools and Kits") ? 4 : 
-                                                   (data.Subcategory === "Books and Documents") ? 5 : 
-                                                   (data.Subcategory === "Trade Tools and Workshops") ? 6 : 
-                                                   (data.Subcategory === "Animals and Vehicles") ? 7 : 
-                                                   (data.Subcategory === "Drugs and Poisons") ? 8 : 
-                                                   (data.Subcategory === "Herbs and Draughts") ? 9 : 
-                                                   (data.Subcategory === "Prosthetics") ? 10 : 
-                                                   11;
-        } 
-
-        setAttrs(updateAttrs);
-
-    }
-
-    const handleMonster = (name, data, content) => {
-        let updateAttrs = {};
-        const characteristics = helperFunctions.parseJSON(data.Characteristics);
-        const traits = data["Traits"].split(/, (?![^\(]*\))/).map(item => item.trim());
-        const optional = (data["Optional Traits"]) ? data["Optional Traits"].split(/, (?![^\(]*\))/).map(item => item.trim()) : [];
-
-        updateAttrs[`character_name`] = name;
-        updateAttrs[`npc_description`] = data.Description || "";
-        updateAttrs[`npc`] = "on";
-
-        if (!data.Trappings) updateAttrs[`npc_trappings_flag`] = 0;
-        if (!data.Skills) updateAttrs[`npc_skills_flag`] = 0;
-
-        for (const characteristic in characteristics) {
-            updateAttrs[characteristic.replace(/ /g,"_")] = characteristics[characteristic];
-            updateAttrs[`${characteristic.replace(/ /g,"_")}_bonus`] = Math.floor(characteristics[characteristic]/10);
-        } 
-
-        const trait_map = new Map();
-
-        for (const trait of traits) {
-            trait_map.set(
-                parseTrait(trait.trim()),
-                trait.trim()
-            );
-        }
-
-        const trait_map_opt = new Map();
-
-        for (const trait of optional) {
-            trait_map_opt.set(
-                parseTrait(trait.trim()),
-                trait.trim()
-            );
-        }
-
-        const request = [...trait_map.keys(), ...trait_map_opt.keys()].map(item => `Creature Traits:${item}`);
-
-        getCompendiumPage(request, compendium_pages => {
-            
-            for (const page in compendium_pages) {
-                const repeating_id = generateRowID();
-
-                const trait = compendium_pages[page];
-
-                if (trait_map.get(trait.name)) {
-                    const trait_name = trait_map.get(trait.name);
-
-                    if (trait_name.match(/(weapon|ranged|tentacle|bite|horn|tail|tongue)/gi)) {
-
-                        const attack = parseAttack(trait_map.get(trait.name), trait.data.Description);
-    
-                        updateAttrs = {...updateAttrs, ...attack};
-
-                    } else {
-
-                        const row = `repeating_traits_${repeating_id}`;
-    
-                        updateAttrs[`${row}_trait_name`] = trait_map.get(trait.name);
-                        updateAttrs[`${row}_trait_enabled`] = "on";
-                        updateAttrs[`${row}_trait_settings`] = 0;
-                        updateAttrs[`${row}_trait_description`] = trait.data.Description;
-
-                    }
-
-                } else if (trait_map_opt.get(trait.name)) {
-                    const trait_name = trait_map_opt.get(trait.name);
-
-                    if (trait_name.match(/(weapon|ranged|tentacle|bite|horn|tail|tongue)/gi)) {
-                        const attack = parseAttack(trait_map_opt.get(trait.name), trait.data.Description, "(Optional)");
-    
-
-                        updateAttrs = {...updateAttrs, ...attack};
-
-                    } else {
-                        const row = `repeating_optional-traits_${repeating_id}`;
-    
-                        updateAttrs[`${row}_trait_name`] = trait_map_opt.get(trait.name);
-                        updateAttrs[`${row}_trait_settings`] = 0;
-                        updateAttrs[`${row}_trait_description`] = trait.data.Description;
-                    }
-
-                }
-            }
-
-            getSectionIDs("repeating_traits", idarray => {
-
-                for (const id of idarray) removeRepeatingRow(`repeating_traits_${id}`);
-
-                getSectionIDs("repeating_optional-traits", idarray => {
-    
-                    for (const id of idarray)  removeRepeatingRow(`repeating_optional-traits_${id}`); 
-
-                    getSectionIDs("repeating_attacks", idarray => {
-    
-                        for (const id of idarray)  removeRepeatingRow(`repeating_attacks_${id}`);
-                        
-                        for (const key in updateAttrs) { 
-                            if (updateAttrs[key] === null || updateAttrs[key] === undefined) delete updateAttrs[key];
-                        }
-                        
-                        setAttrs(updateAttrs, callback => setTokenValues())
-                        
-                    });
-                    
-                });
-
-            });
-
-        });
-    }
-
-    const parseTrait = (trait) => {
-        trait = (trait.match(/Tentacles/gi)) ? "# Tentacles (Rating)" :
-                (trait.match(/Afraid/gi)) ? "Afraid (Target)" :
-                (trait.match(/Animosity/gi)) ? "Animosity (Target)" :
-                (trait.match(/Armour/gi)) ? "Armour (Rating)" :
-                (trait.match(/Bite/gi)) ? "Bite (Rating)" :
-                (trait.match(/Blessed/gi)) ? "Blessed (Various)" :
-                (trait.match(/Breath (.*?) (Cold)/gi)) ? "Breath Rating (Cold)" :
-                (trait.match(/Breath (.*?) (Corrosion)/gi)) ? "Breath Rating (Corrosion)" :
-                (trait.match(/Breath (.*?) (Fire)/gi)) ? "Breath Rating (Fire)" :
-                (trait.match(/Breath (.*?) (Electricity)/gi)) ? "Breath Rating (Electricity)" :
-                (trait.match(/Breath (.*?) (Poison)/gi)) ? "Breath Rating (Poison)" :
-                (trait.match(/Breath (.*?) (Smoke)/gi)) ? "Breath Rating (Smoke)" :
-                (trait.match(/Breath/gi)) ? "Breath Rating (Type)" :
-                (trait.match(/Corruption/gi)) ? "Corruption (Strength)" :
-                (trait.match(/Daemonic/gi)) ? "Daemonic (Target)" :
-                (trait.match(/Disease/gi)) ? "Disease (Type)" :
-                (trait.match(/Fear/gi)) ? "Fear (Rating)" :
-                (trait.match(/Flight/gi)) ? "Flight (Rating)" :
-                (trait.match(/Hatred/gi)) ? "Hatred (Target)" :
-                (trait.match(/Horns/gi)) ? "Horns Rating (Feature)" :
-                (trait.match(/Immunity/gi)) ? "Immunity (Type)" :
-                (trait.match(/Magic Resistance/gi)) ? "Magic Resistance (Rating)" :
-                (trait.match(/Miracles/gi)) ? "Miracles (Various)" :
-                (trait.match(/Night Vision/gi)) ? "Night Vision" :
-                (trait.match(/Prejudice/gi)) ? "Prejudice (Target)" :
-                (trait.match(/Ranged/gi)) ? "Ranged Rating (Range)" :
-                (trait.match(/Spellcaster/gi)) ? "Spellcaster (Various)" :
-                (trait.match(/Tail/gi)) ? "Tail Attack (Rating)" :
-                (trait.match(/Terror/gi)) ? "Terror (Rating)" :
-                (trait.match(/Tongue Attack/gi)) ? "Tongue Attack (Rating) (Range)" :
-                (trait.match(/Trained/gi)) ? "Trained (Trained Skills)" :
-                (trait.match(/Venom/gi)) ? "Venom (Rating)" :
-                (trait.match(/Terror/gi)) ? "Terror (Rating)" :
-                (trait.match(/Ward/gi)) ? "Ward (Rating)" :
-                (trait.match(/Weapon/gi)) ? "Weapon (Rating)" :
-                (trait.match(/Web/gi)) ? "Web (Rating)" :
-                (trait.match(/Tiny/gi)) ? "Tiny" :
-                (trait.match(/Little/gi)) ? "Little" :
-                (trait.match(/Small/gi)) ? "Small" :
-                (trait.match(/Average/gi)) ? "Average" :
-                (trait.match(/Large/gi)) ? "Large" :
-                (trait.match(/Enormous/gi)) ? "Enormous" :
-                (trait.match(/Monstrous/gi)) ? "Monstrous" :
-                `${trait}`;
-
-        return trait;
-    }
-
-    const parseAttack = (trait, description, append = "") => {
-        const attacks = ["weapon","ranged","tentacle","bite","horn","tail","tongue"];
-        const updateAttrs = {};
-
-        const repeating_id = generateRowID();
-        const row = `repeating_attacks_${repeating_id}`;
-
-        for (const attack of attacks) {
-            const expression = new RegExp(attack,"gi");
-
-            let name = trait;
-            let damage = "";
-            let type = "Weapon Skill";
-            let range = "Touch";
-            let attacks = "1";
-
-            if (trait.match(expression)) {
-                
-                if (trait.match(/range/gi) && trait.match(/\(/)) {
-                    [trait, range] = trait.split("(");
-                    range = range.substr(0,range.length-1);
-                    type = "Ballistic Skill";
-                }
-                
-                if (trait.match(/[0-9]+X/)) {
-                    attacks = trait.match(/([0-9]+)X/)[1];
-                }
-                
-                if (trait.match(/\+/)) {
-                    [name, damage] = trait.split("+");
-                }     
-
-                updateAttrs[`${row}_attack_settings`] = "0";          
-                updateAttrs[`${row}_attack_name`] = `${name} ${append}`;          
-                updateAttrs[`${row}_attack_damage`] = damage;
-                updateAttrs[`${row}_attack_type`] = type;
-                updateAttrs[`${row}_attack_range`] = range; 
-                updateAttrs[`${row}_attack_attacks`] = attacks; 
-                updateAttrs[`${row}_attack_description`] = description; 
-            } 
-        }
-
-        return updateAttrs;
-    }
-
-    const handleTalent = (name, data) => {
-        const updateAttrs = {};
-        const repeating_id = generateRowID();
-        const row = `repeating_talent_${repeating_id}`;
-
-        updateAttrs[`${row}_talent_name`] = name;
-        updateAttrs[`${row}_talent_ranks`] = 1;
-        updateAttrs[`${row}_talent_description`] = data.Description || "";
-        updateAttrs[`${row}_talent_modifiers`] = data.Modifiers || "";
-        
-        const attrs = [];
-
-        wfrpModule.wfrp.characteristics.forEach(characteristic => {
-            attrs.push(characteristic);
-            attrs.push(`${characteristic}_bonus`);
-        });
-
-        getAttrs(attrs, values => {
-            const key_array = Object.keys(values);
-            let total = 0;
-
-            key_array.forEach(key => {
-                const parsed = helperFunctions.capitalizeString(key.replace(/_/g, " "));
-                if (data.Max.trim() === parsed) total += parseInt(values[key]);
-
-            });
-
-            const max = (!isNaN(parseInt(data.Max))) ? data.Max :
-                        (data.Max === "None") ? "-" :
-                        total;
-            
-            updateAttrs[`${row}_talent_ranks_max`] = max;
-
-            setAttrs(updateAttrs);
-        });
-
-    }
-
-    const handleCondition = (name, data) => {
-        const updateAttrs = {};
-        const attrs = [];
-
-        getSectionIDs("conditions", id_array => {
-            id_array.forEach(id => {
-                attrs.push(`repeating_conditions_${id}_condition_name`);                
-            });
-
-            getAttrs(attrs, values => {
-                const values_array = Object.entries(values);
-                const values_test = Object.values(values);
-                
-                if (values_test.indexOf(name) > -1) {
-
-                    if (data.Stackable === "TRUE") {
-
-                        const key = values_array[values_test.indexOf(name)][0];
-                        const rank_attr = key.substring(0, key.length-4) + "ranks";
-    
-                        getAttrs([rank_attr], values => {
-                            const rank = parseInt(values[rank_attr]) + 1 || 1;
-    
-                            setAttrs({[rank_attr]:rank});
-                        });
-                    }
-
-                } else {
-                    
-                    const repeating_id = generateRowID();
-                    const row = `repeating_conditions_${repeating_id}`;
-                    updateAttrs[`${row}_condition_name`] = name;
-                    updateAttrs[`${row}_condition_ranks`] = 1;
-                    updateAttrs[`${row}_condition_gpenalty`] = data["Global Test Modifier"] || "";
-                    updateAttrs[`${row}_condition_description`] = data.Description || "";
-
-                    setAttrs(updateAttrs);
-                }
-            });
-        });
-
-    }
-
-    const handleCreatureTrait = (name, data) => {
-        let updateAttrs = {};
-        const attrs = [];
-
-        const request = `Creature Traits:${parseTrait(name)}`;
-
-        getCompendiumPage(request, compendium_pages => {
-
-            const trait = compendium_pages;
-    
-            if (trait.name.match(/(weapon|ranged|tentacle|bite|horn|tail|tongue|claw)/gi)) {
-    
-                const attack = parseAttack(name, trait.data.Description);
-    
-                updateAttrs = {...updateAttrs, ...attack};
-    
-            } else if (trait) {
-                const repeating_id = generateRowID();    
-                const row = `repeating_traits_${repeating_id}`;
-    
-                updateAttrs[`${row}_trait_name`] = name;
-                updateAttrs[`${row}_trait_enabled`] = "on";
-                updateAttrs[`${row}_trait_settings`] = 0;
-                updateAttrs[`${row}_trait_description`] = trait.data.Description;    
-            }
-            
-            setAttrs(updateAttrs);
-
-        });
-    }
-
-    const setTokenValues = () => {
-        
-        const token_values = [];
-
-        for (const index of [1,2,3]) {
-            token_values.push(`bar${index}_v`);
-            token_values.push(`bar${index}_m`);
-            token_values.push(`bar${index}_l`);
-        }
-
-        getAttrs(token_values, settings => {
-            
-            const default_attr = {
-                width: 70,
-                height: 70
-            };
-
-            const attrs = [];
-
-            for (const item in settings) {
-                attrs.push(settings[item]);
-            }
-
-            getAttrs(attrs, values => {
-
-                for (const item in settings) {    
-                    if (settings[item] !== "") {
-                        default_attr[item] = settings[item];
-                    }
-    
-                    if (values[settings[item]]) {
-                        default_attr[item] = values[settings[item]];
-                    }
-                }
-
-                for (const item in default_attr) {
-                    if (item.match("_v")) {
-                        default_attr[`${item}alue`] = default_attr[item];
-                        delete default_attr[item]
-                    }
-                    if (item.match("_m")) {
-                        default_attr[`${item}ax`] = default_attr[item];
-                        delete default_attr[item]
-                    }
-                    if (item.match("_l")) {
-                        default_attr[`${item}ink`] = default_attr[item];
-                        delete default_attr[item]
-                    }
-                }
-    
-                setDefaultToken(default_attr);
-
-            });
-
-        });
-
-    }
-
-    return {
-        handleDrop:handleDrop
-    }
-
-})();
-
-on("change:drop_name", (eventInfo) => {
-    getAttrs(["drop_name", "drop_content", "drop_data"], (values) => {
-        wfrpDragAndDrop.handleDrop(values);        
-    });
-});
 
 const helperFunctions = (() => {
 
