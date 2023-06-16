@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica:400|Lusitana:400:700&display=swap");
-.ui-dialog .charsheet * {
+.charsheet .wfrp-wrapper {
   display: unset;
   width: unset;
   height: unset;
@@ -16,26 +16,26 @@
   background-color: unset;
 }
 
-.charsheet .sheet-wfrp-wrapper {
+.charsheet .wfrp-wrapper {
   position: relative;
 }
-.charsheet .sheet-wfrp-wrapper h1,
-.charsheet .sheet-wfrp-wrapper h2,
-.charsheet .sheet-wfrp-wrapper h3,
-.charsheet .sheet-wfrp-wrapper h4,
-.charsheet .sheet-wfrp-wrapper h5 {
+.charsheet .wfrp-wrapper h1,
+.charsheet .wfrp-wrapper h2,
+.charsheet .wfrp-wrapper h3,
+.charsheet .wfrp-wrapper h4,
+.charsheet .wfrp-wrapper h5 {
   font-size: unset;
   line-height: unset;
   color: unset;
 }
-.charsheet .sheet-wfrp-wrapper p,
-.charsheet .sheet-wfrp-wrapper input,
-.charsheet .sheet-wfrp-wrapper input[type=number],
-.charsheet .sheet-wfrp-wrapper textarea,
-.charsheet .sheet-wfrp-wrapper select,
-.charsheet .sheet-wfrp-wrapper button,
-.charsheet .sheet-wfrp-wrapper button[type=roll],
-.charsheet .sheet-wfrp-wrapper label {
+.charsheet .wfrp-wrapper p,
+.charsheet .wfrp-wrapper input[type=text],
+.charsheet .wfrp-wrapper input[type=number],
+.charsheet .wfrp-wrapper textarea,
+.charsheet .wfrp-wrapper select,
+.charsheet .wfrp-wrapper button,
+.charsheet .wfrp-wrapper button[type=roll],
+.charsheet .wfrp-wrapper label {
   display: unset;
   width: 100%;
   min-width: 0;
@@ -54,15 +54,15 @@
   text-align: unset;
   line-height: unset;
 }
-.charsheet .sheet-wfrp-wrapper button[type=roll]:before {
+.charsheet .wfrp-wrapper button[type=roll]:before {
   display: none;
 }
-.charsheet .sheet-wfrp-wrapper input[disabled],
-.charsheet .sheet-wfrp-wrapper select[disabled],
-.charsheet .sheet-wfrp-wrapper textarea[disabled],
-.charsheet .sheet-wfrp-wrapper input[readonly],
-.charsheet .sheet-wfrp-wrapper select[readonly],
-.charsheet .sheet-wfrp-wrapper textarea[readonly] {
+.charsheet .wfrp-wrapper input[disabled],
+.charsheet .wfrp-wrapper select[disabled],
+.charsheet .wfrp-wrapper textarea[disabled],
+.charsheet .wfrp-wrapper input[readonly],
+.charsheet .wfrp-wrapper select[readonly],
+.charsheet .wfrp-wrapper textarea[readonly] {
   background-color: unset;
   border-color: unset;
 }
@@ -88,695 +88,696 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   margin: 0;
 }
 
-.sheet-wfrp-wrapper .sheet-wfrp-pc,
-.sheet-wfrp-wrapper .sheet-wfrp-npc {
+.charsheet .wfrp-wrapper .wfrp-pc,
+.charsheet .wfrp-wrapper .wfrp-npc {
   font-family: "IM Fell DW Pica", serif;
   font-size: 1.4rem;
 }
 
-.sheet-wfrp-wrapper input[type=text],
-.sheet-wfrp-wrapper input[type=number],
-.sheet-wfrp-wrapper select,
-.sheet-wfrp-wrapper option,
-.sheet-wfrp-wrapper textarea,
-.sheet-wfrp-wrapper span.sheet-display {
+.charsheet .wfrp-wrapper input[type=text],
+.charsheet .wfrp-wrapper input[type=number],
+.charsheet .wfrp-wrapper select,
+.charsheet .wfrp-wrapper option,
+.charsheet .wfrp-wrapper textarea,
+.charsheet .wfrp-wrapper span.display {
   font-family: "Lusitana", serif;
   font-size: 10pt;
 }
-.sheet-wfrp-wrapper h1, .sheet-wfrp-wrapper h2, .sheet-wfrp-wrapper h3 {
+.charsheet .wfrp-wrapper h1, .charsheet .wfrp-wrapper h2, .charsheet .wfrp-wrapper h3 {
   margin: 0;
   padding: 0;
   font-family: "IM Fell DW Pica", serif;
 }
-.sheet-wfrp-wrapper h1 {
+.charsheet .wfrp-wrapper h1 {
   font-size: 1.65rem;
 }
-.sheet-wfrp-wrapper h2 {
+.charsheet .wfrp-wrapper h2 {
   font-size: 1.5rem;
 }
-.sheet-wfrp-wrapper h3 {
+.charsheet .wfrp-wrapper h3 {
   font-size: 1.4rem;
 }
-.sheet-wfrp-wrapper .sheet-pictos {
+
+.charsheet .wfrp-wrapper .mypictos {
   font-family: Pictos;
 }
 
-.sheet-wfrp-pc {
+.wfrp-pc {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   border: 2px solid black;
   grid-gap: 0px;
 }
-.sheet-wfrp-pc > * {
+.wfrp-pc > * {
   min-width: 100px;
 }
-.sheet-wfrp-pc .sheet-wfrp-header {
+.wfrp-pc .wfrp-header {
   grid-column: 1/-1;
 }
-.sheet-wfrp-pc .sheet-wfrp-navigation {
+.wfrp-pc .wfrp-navigation {
   grid-column: 1/-1;
 }
-.sheet-wfrp-pc .sheet-wfrp-characteristics {
+.wfrp-pc .wfrp-characteristics {
   grid-column: span 3;
   grid-row: span 2;
 }
-.sheet-wfrp-pc .sheet-wfrp-resilience, .sheet-wfrp-pc .sheet-wfrp-movement {
+.wfrp-pc .wfrp-resilience, .wfrp-pc .wfrp-movement {
   grid-column: span 2;
 }
-.sheet-wfrp-pc .sheet-wfrp-skills {
+.wfrp-pc .wfrp-skills {
   grid-column: span 2;
   grid-row: span 4;
 }
-.sheet-wfrp-pc .sheet-wfrp-talents, .sheet-wfrp-pc .sheet-wfrp-conditions, .sheet-wfrp-pc .sheet-wfrp-psychology, .sheet-wfrp-pc .sheet-wfrp-corruption {
+.wfrp-pc .wfrp-talents, .wfrp-pc .wfrp-conditions, .wfrp-pc .wfrp-psychology, .wfrp-pc .wfrp-corruption {
   grid-column: span 2;
 }
-.sheet-wfrp-pc .sheet-wfrp-ambitions {
+.wfrp-pc .wfrp-ambitions {
   grid-column: span 3;
   display: grid;
   grid-template-rows: 2.5rem auto;
 }
-.sheet-wfrp-pc .sheet-wfrp-party {
+.wfrp-pc .wfrp-party {
   grid-column: span 3;
   display: grid;
   grid-template-rows: 2.5rem auto;
 }
-.sheet-wfrp-pc .sheet-wfrp-armour {
+.wfrp-pc .wfrp-armour {
   grid-column: 3/span 4;
 }
-.sheet-wfrp-pc .sheet-wfrp-armour__wrapper {
+.wfrp-pc .wfrp-armour__wrapper {
   grid-column: 3/span 2;
   grid-row: span 4;
 }
-.sheet-wfrp-pc .sheet-wfrp-trappings {
+.wfrp-pc .wfrp-trappings {
   grid-column: 1/span 2;
   grid-row: span 5;
   display: flex;
   flex-direction: column;
 }
-.sheet-wfrp-pc .sheet-wfrp-trappings .sheet-wfrp-panel {
+.wfrp-pc .wfrp-trappings .wfrp-panel {
   flex-grow: 0;
 }
-.sheet-wfrp-pc .sheet-wfrp-trappings .sheet-wfrp-panel--trappings {
+.wfrp-pc .wfrp-trappings .wfrp-panel--trappings {
   flex-grow: 1;
 }
-.sheet-wfrp-pc .sheet-wfrp-experience--alt {
+.wfrp-pc .wfrp-experience--alt {
   grid-column: span 2;
   display: flex;
   flex-direction: column;
 }
-.sheet-wfrp-pc .sheet-wfrp-experience--alt .sheet-wfrp-panel {
+.wfrp-pc .wfrp-experience--alt .wfrp-panel {
   flex-grow: 0;
 }
-.sheet-wfrp-pc .sheet-wfrp-experience--alt .sheet-wfrp-panel--awards {
+.wfrp-pc .wfrp-experience--alt .wfrp-panel--awards {
   flex-grow: 1;
 }
-.sheet-wfrp-pc .sheet-wfrp-career__characteristic--first {
+.wfrp-pc .wfrp-career__characteristic--first {
   display: none;
 }
-.sheet-wfrp-pc .sheet-wfrp-career__row, .sheet-wfrp-pc .sheet-wfrp-career__row--first, .sheet-wfrp-pc .sheet-wfrp-career__row--1, .sheet-wfrp-pc .sheet-wfrp-career__row--2, .sheet-wfrp-pc .sheet-wfrp-career__row--3, .sheet-wfrp-pc .sheet-wfrp-career__row--4 {
+.wfrp-pc .wfrp-career__row, .wfrp-pc .wfrp-career__row--first, .wfrp-pc .wfrp-career__row--1, .wfrp-pc .wfrp-career__row--2, .wfrp-pc .wfrp-career__row--3, .wfrp-pc .wfrp-career__row--4 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.25rem;
   border-top: 1px solid #000;
 }
-.sheet-wfrp-pc .sheet-wfrp-career__row--first {
+.wfrp-pc .wfrp-career__row--first {
   display: none;
 }
-.sheet-wfrp-pc .sheet-wfrp-career__row h2, .sheet-wfrp-pc .sheet-wfrp-career__row--first h2, .sheet-wfrp-pc .sheet-wfrp-career__row--1 h2, .sheet-wfrp-pc .sheet-wfrp-career__row--2 h2, .sheet-wfrp-pc .sheet-wfrp-career__row--3 h2, .sheet-wfrp-pc .sheet-wfrp-career__row--4 h2 {
+.wfrp-pc .wfrp-career__row h2, .wfrp-pc .wfrp-career__row--first h2, .wfrp-pc .wfrp-career__row--1 h2, .wfrp-pc .wfrp-career__row--2 h2, .wfrp-pc .wfrp-career__row--3 h2, .wfrp-pc .wfrp-career__row--4 h2 {
   font-size: 16pt;
   letter-spacing: 1px;
 }
-.sheet-wfrp-pc .sheet-wfrp-careers {
+.wfrp-pc .wfrp-careers {
   grid-column: 1/span 4;
   display: grid;
   grid-template-rows: 1fr minmax(5rem, auto);
 }
-.sheet-wfrp-pc .sheet-wfrp-careers + .sheet-wfrp-experience {
+.wfrp-pc .wfrp-careers + .wfrp-experience {
   grid-column: span 2;
 }
-.sheet-wfrp-pc .sheet-wfrp-careers input[name*=first][value=on] + * .sheet-wfrp-career__row--first {
+.wfrp-pc .wfrp-careers input[name*=first][value=on] + * .wfrp-career__row--first {
   display: grid;
 }
-.sheet-wfrp-pc .sheet-wfrp-careers input[name*=first][value=on] + * .sheet-wfrp-career__characteristic--first {
+.wfrp-pc .wfrp-careers input[name*=first][value=on] + * .wfrp-career__characteristic--first {
   display: grid;
 }
-.sheet-wfrp-pc .sheet-wfrp-careers input[name*=first][value=on] + * .sheet-wfrp-career__row--1 {
+.wfrp-pc .wfrp-careers input[name*=first][value=on] + * .wfrp-career__row--1 {
   display: none;
 }
-.sheet-wfrp-pc .sheet-wfrp-careers input[name*=first][value=on] + * .sheet-wfrp-career__row--1 {
+.wfrp-pc .wfrp-careers input[name*=first][value=on] + * .wfrp-career__row--1 {
   display: none;
 }
-.sheet-wfrp-pc .sheet-wfrp-encwealth {
+.wfrp-pc .wfrp-encwealth {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.sheet-wfrp-pc .sheet-wfrp-wounds {
+.wfrp-pc .wfrp-wounds {
   grid-column: span 2;
 }
-.sheet-wfrp-pc .sheet-wfrp-controls {
+.wfrp-pc .wfrp-controls {
   grid-column: span 2;
 }
-.sheet-wfrp-pc .sheet-wfrp-controls__wrapper {
+.wfrp-pc .wfrp-controls__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.25rem;
   margin: 0.25rem;
 }
-.sheet-wfrp-pc .sheet-wfrp-advantage {
+.wfrp-pc .wfrp-advantage {
   grid-column: span 2;
 }
-.sheet-wfrp-pc .sheet-wfrp-advantage__wrapper {
+.wfrp-pc .wfrp-advantage__wrapper {
   display: grid;
   grid-template-columns: 3rem 3rem 1fr 3rem;
   align-items: center;
   width: 75%;
   margin: 0.5rem auto;
 }
-.sheet-wfrp-pc .sheet-wfrp-weapons {
+.wfrp-pc .wfrp-weapons {
   grid-column: 1/span 6;
 }
-.sheet-wfrp-pc .sheet-wfrp-spells {
+.wfrp-pc .wfrp-spells {
   grid-column: 1/-1;
 }
-.sheet-wfrp-pc .sheet-wfrp-settingswrapper {
+.wfrp-pc .wfrp-settingswrapper {
   grid-column: span 2;
   display: flex;
   flex-direction: column;
 }
-.sheet-wfrp-pc .sheet-wfrp-settingswrapper > * {
+.wfrp-pc .wfrp-settingswrapper > * {
   flex-grow: 1;
 }
 
-.sheet-wfrp-header__logo {
+.wfrp-header__logo {
   height: 20px;
 }
-.sheet-wfrp-header__info {
+.wfrp-header__info {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   width: auto;
   padding: 0 1.5em 0.5em;
 }
-.sheet-wfrp-header__item-wrapper, .sheet-wfrp-header__item-wrapper--character_name, .sheet-wfrp-header__item-wrapper--species, .sheet-wfrp-header__item-wrapper--class, .sheet-wfrp-header__item-wrapper--career, .sheet-wfrp-header__item-wrapper--career_level, .sheet-wfrp-header__item-wrapper--career_path, .sheet-wfrp-header__item-wrapper--age, .sheet-wfrp-header__item-wrapper--height, .sheet-wfrp-header__item-wrapper--hair, .sheet-wfrp-header__item-wrapper--eyes {
+.wfrp-header__item-wrapper, .wfrp-header__item-wrapper--character_name, .wfrp-header__item-wrapper--species, .wfrp-header__item-wrapper--class, .wfrp-header__item-wrapper--career, .wfrp-header__item-wrapper--career_level, .wfrp-header__item-wrapper--career_path, .wfrp-header__item-wrapper--age, .wfrp-header__item-wrapper--height, .wfrp-header__item-wrapper--hair, .wfrp-header__item-wrapper--eyes {
   display: flex;
   flex-flow: row nowrap;
   align-items: baseline;
   min-width: 0;
 }
-.sheet-wfrp-header__item-wrapper--character_name, .sheet-wfrp-header__item-wrapper--career, .sheet-wfrp-header__item-wrapper--career_level {
+.wfrp-header__item-wrapper--character_name, .wfrp-header__item-wrapper--career, .wfrp-header__item-wrapper--career_level {
   grid-column: span 2;
 }
-.sheet-wfrp-header__item-wrapper--career_path {
+.wfrp-header__item-wrapper--career_path {
   grid-column: span 3;
 }
-.sheet-wfrp-header__title {
+.wfrp-header__title {
   flex-shrink: 0;
   margin-right: 1rem;
   font-weight: bold;
 }
-.sheet-wfrp-header__select, .sheet-wfrp-header__input, .sheet-wfrp-header__display {
+.wfrp-header__select, .wfrp-header__input, .wfrp-header__display {
   flex-grow: 1;
   flex-shrink: 1;
   min-width: 0;
   max-width: 100%;
   padding: 0.25rem;
 }
-.sheet-wfrp-header__select, .sheet-wfrp-header__input {
+.wfrp-header__select, .wfrp-header__input {
   height: 100% !important;
 }
 
-.sheet-wfrp-navigation {
+.wfrp-navigation {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.sheet-wfrp-navigation__roll {
+.wfrp-navigation__roll {
   display: flex;
   align-items: center;
   justify-content: start;
 }
-.sheet-wfrp-navigation__roll label {
+.wfrp-navigation__roll label {
   width: auto;
   margin: 0.5rem;
   cursor: pointer;
 }
-.sheet-wfrp-navigation__roll label input[type=checkbox] {
+.wfrp-navigation__roll label input[type=checkbox] {
   display: none;
 }
-.sheet-wfrp-navigation__items {
-  display: flex;
+.wfrp-navigation__items {
+  display: block;
   align-items: center;
   justify-content: end;
 }
-.sheet-wfrp-navigation__items label {
+.wfrp-navigation__items label {
   width: auto;
   margin: 0.5rem;
   cursor: pointer;
 }
-.sheet-wfrp-navigation__items label input {
+.wfrp-navigation__items label input {
   display: none;
 }
 
-.sheet-wfrp-advancetable__row--head, .sheet-wfrp-advancetable__row, .sheet-wfrp-spelltable__row--head, .sheet-wfrp-trappingtable__row--head, .sheet-wfrp-armourtable__row--head, .sheet-wfrp-criticaltable__row--head, .sheet-wfrp-weapontable__row--head, .sheet-wfrp-spelltable__row, .sheet-wfrp-trappingtable__row, .sheet-wfrp-armourtable__row, .sheet-wfrp-criticaltable__row, .sheet-wfrp-weapontable__row, .sheet-wfrp-experiencetable__row--head, .sheet-wfrp-careertable__row--head, .sheet-wfrp-speciestable__row--head, .sheet-wfrp-experiencetable__row, .sheet-wfrp-careertable__row, .sheet-wfrp-speciestable__row, .sheet-wfrp-talenttable__row--head, .sheet-wfrp-conditiontable__row--head, .sheet-wfrp-psychologytable__row--head, .sheet-wfrp-corruptiontable__row--head, .sheet-wfrp-talenttable__row, .sheet-wfrp-conditiontable__row, .sheet-wfrp-psychologytable__row, .sheet-wfrp-corruptiontable__row {
+.wfrp-advancetable__row--head, .wfrp-advancetable__row, .wfrp-spelltable__row--head, .wfrp-trappingtable__row--head, .wfrp-armourtable__row--head, .wfrp-criticaltable__row--head, .wfrp-weapontable__row--head, .wfrp-spelltable__row, .wfrp-trappingtable__row, .wfrp-armourtable__row, .wfrp-criticaltable__row, .wfrp-weapontable__row, .wfrp-experiencetable__row--head, .wfrp-careertable__row--head, .wfrp-speciestable__row--head, .wfrp-experiencetable__row, .wfrp-careertable__row, .wfrp-speciestable__row, .wfrp-talenttable__row--head, .wfrp-conditiontable__row--head, .wfrp-psychologytable__row--head, .wfrp-corruptiontable__row--head, .wfrp-talenttable__row, .wfrp-conditiontable__row, .wfrp-psychologytable__row, .wfrp-corruptiontable__row {
   display: grid;
   grid-template-columns: 1.5rem 1fr 5rem 3rem;
   grid-column: 1/-1;
 }
 
-.sheet-wfrp-spelltable__cell--last, .sheet-wfrp-trappingtable__cell--last, .sheet-wfrp-armourtable__cell--last, .sheet-wfrp-criticaltable__cell--last, .sheet-wfrp-weapontable__cell--last, .sheet-wfrp-spelltable__cell--settingstoggle, .sheet-wfrp-trappingtable__cell--settingstoggle, .sheet-wfrp-armourtable__cell--settingstoggle, .sheet-wfrp-criticaltable__cell--settingstoggle, .sheet-wfrp-weapontable__cell--settingstoggle, .sheet-wfrp-spelltable__cell, .sheet-wfrp-trappingtable__cell, .sheet-wfrp-armourtable__cell, .sheet-wfrp-criticaltable__cell, .sheet-wfrp-weapontable__cell, .sheet-wfrp-experiencetable__cell--ltitle, .sheet-wfrp-careertable__cell--ltitle, .sheet-wfrp-speciestable__cell--ltitle, .sheet-wfrp-experiencetable__cell--last, .sheet-wfrp-careertable__cell--last, .sheet-wfrp-speciestable__cell--last, .sheet-wfrp-experiencetable__cell, .sheet-wfrp-careertable__cell, .sheet-wfrp-speciestable__cell, .sheet-wfrp-talenttable__cell--last, .sheet-wfrp-conditiontable__cell--last, .sheet-wfrp-psychologytable__cell--last, .sheet-wfrp-corruptiontable__cell--last, .sheet-wfrp-talenttable__cell, .sheet-wfrp-conditiontable__cell, .sheet-wfrp-psychologytable__cell, .sheet-wfrp-corruptiontable__cell, .sheet-wfrp-spelltable__cell--description, .sheet-wfrp-trappingtable__cell--description, .sheet-wfrp-armourtable__cell--description, .sheet-wfrp-criticaltable__cell--description, .sheet-wfrp-weapontable__cell--description, .sheet-wfrp-experiencetable__cell--description, .sheet-wfrp-careertable__cell--description, .sheet-wfrp-speciestable__cell--description, .sheet-wfrp-talenttable__cell--description, .sheet-wfrp-conditiontable__cell--description, .sheet-wfrp-psychologytable__cell--description, .sheet-wfrp-corruptiontable__cell--description {
+.wfrp-spelltable__cell--last, .wfrp-trappingtable__cell--last, .wfrp-armourtable__cell--last, .wfrp-criticaltable__cell--last, .wfrp-weapontable__cell--last, .wfrp-spelltable__cell--settingstoggle, .wfrp-trappingtable__cell--settingstoggle, .wfrp-armourtable__cell--settingstoggle, .wfrp-criticaltable__cell--settingstoggle, .wfrp-weapontable__cell--settingstoggle, .wfrp-spelltable__cell, .wfrp-trappingtable__cell, .wfrp-armourtable__cell, .wfrp-criticaltable__cell, .wfrp-weapontable__cell, .wfrp-experiencetable__cell--ltitle, .wfrp-careertable__cell--ltitle, .wfrp-speciestable__cell--ltitle, .wfrp-experiencetable__cell--last, .wfrp-careertable__cell--last, .wfrp-speciestable__cell--last, .wfrp-experiencetable__cell, .wfrp-careertable__cell, .wfrp-speciestable__cell, .wfrp-talenttable__cell--last, .wfrp-conditiontable__cell--last, .wfrp-psychologytable__cell--last, .wfrp-corruptiontable__cell--last, .wfrp-talenttable__cell, .wfrp-conditiontable__cell, .wfrp-psychologytable__cell, .wfrp-corruptiontable__cell, .wfrp-spelltable__cell--description, .wfrp-trappingtable__cell--description, .wfrp-armourtable__cell--description, .wfrp-criticaltable__cell--description, .wfrp-weapontable__cell--description, .wfrp-experiencetable__cell--description, .wfrp-careertable__cell--description, .wfrp-speciestable__cell--description, .wfrp-talenttable__cell--description, .wfrp-conditiontable__cell--description, .wfrp-psychologytable__cell--description, .wfrp-corruptiontable__cell--description {
   display: flex;
   justify-content: space-around;
   align-items: center;
   text-align: center;
 }
-.sheet-wfrp-spelltable__cell--last:nth-child(2), .sheet-wfrp-trappingtable__cell--last:nth-child(2), .sheet-wfrp-armourtable__cell--last:nth-child(2), .sheet-wfrp-criticaltable__cell--last:nth-child(2), .sheet-wfrp-weapontable__cell--last:nth-child(2), .sheet-wfrp-spelltable__cell--settingstoggle:nth-child(2), .sheet-wfrp-trappingtable__cell--settingstoggle:nth-child(2), .sheet-wfrp-armourtable__cell--settingstoggle:nth-child(2), .sheet-wfrp-criticaltable__cell--settingstoggle:nth-child(2), .sheet-wfrp-weapontable__cell--settingstoggle:nth-child(2), .sheet-wfrp-spelltable__cell:nth-child(2), .sheet-wfrp-trappingtable__cell:nth-child(2), .sheet-wfrp-armourtable__cell:nth-child(2), .sheet-wfrp-criticaltable__cell:nth-child(2), .sheet-wfrp-weapontable__cell:nth-child(2), .sheet-wfrp-experiencetable__cell--ltitle:nth-child(2), .sheet-wfrp-careertable__cell--ltitle:nth-child(2), .sheet-wfrp-speciestable__cell--ltitle:nth-child(2), .sheet-wfrp-experiencetable__cell--last:nth-child(2), .sheet-wfrp-careertable__cell--last:nth-child(2), .sheet-wfrp-speciestable__cell--last:nth-child(2), .sheet-wfrp-experiencetable__cell:nth-child(2), .sheet-wfrp-careertable__cell:nth-child(2), .sheet-wfrp-speciestable__cell:nth-child(2), .sheet-wfrp-talenttable__cell--last:nth-child(2), .sheet-wfrp-conditiontable__cell--last:nth-child(2), .sheet-wfrp-psychologytable__cell--last:nth-child(2), .sheet-wfrp-corruptiontable__cell--last:nth-child(2), .sheet-wfrp-talenttable__cell:nth-child(2), .sheet-wfrp-conditiontable__cell:nth-child(2), .sheet-wfrp-psychologytable__cell:nth-child(2), .sheet-wfrp-corruptiontable__cell:nth-child(2), .sheet-wfrp-spelltable__cell--description:nth-child(2), .sheet-wfrp-trappingtable__cell--description:nth-child(2), .sheet-wfrp-armourtable__cell--description:nth-child(2), .sheet-wfrp-criticaltable__cell--description:nth-child(2), .sheet-wfrp-weapontable__cell--description:nth-child(2), .sheet-wfrp-experiencetable__cell--description:nth-child(2), .sheet-wfrp-careertable__cell--description:nth-child(2), .sheet-wfrp-speciestable__cell--description:nth-child(2), .sheet-wfrp-talenttable__cell--description:nth-child(2), .sheet-wfrp-conditiontable__cell--description:nth-child(2), .sheet-wfrp-psychologytable__cell--description:nth-child(2), .sheet-wfrp-corruptiontable__cell--description:nth-child(2) {
+.wfrp-spelltable__cell--last:nth-child(2), .wfrp-trappingtable__cell--last:nth-child(2), .wfrp-armourtable__cell--last:nth-child(2), .wfrp-criticaltable__cell--last:nth-child(2), .wfrp-weapontable__cell--last:nth-child(2), .wfrp-spelltable__cell--settingstoggle:nth-child(2), .wfrp-trappingtable__cell--settingstoggle:nth-child(2), .wfrp-armourtable__cell--settingstoggle:nth-child(2), .wfrp-criticaltable__cell--settingstoggle:nth-child(2), .wfrp-weapontable__cell--settingstoggle:nth-child(2), .wfrp-spelltable__cell:nth-child(2), .wfrp-trappingtable__cell:nth-child(2), .wfrp-armourtable__cell:nth-child(2), .wfrp-criticaltable__cell:nth-child(2), .wfrp-weapontable__cell:nth-child(2), .wfrp-experiencetable__cell--ltitle:nth-child(2), .wfrp-careertable__cell--ltitle:nth-child(2), .wfrp-speciestable__cell--ltitle:nth-child(2), .wfrp-experiencetable__cell--last:nth-child(2), .wfrp-careertable__cell--last:nth-child(2), .wfrp-speciestable__cell--last:nth-child(2), .wfrp-experiencetable__cell:nth-child(2), .wfrp-careertable__cell:nth-child(2), .wfrp-speciestable__cell:nth-child(2), .wfrp-talenttable__cell--last:nth-child(2), .wfrp-conditiontable__cell--last:nth-child(2), .wfrp-psychologytable__cell--last:nth-child(2), .wfrp-corruptiontable__cell--last:nth-child(2), .wfrp-talenttable__cell:nth-child(2), .wfrp-conditiontable__cell:nth-child(2), .wfrp-psychologytable__cell:nth-child(2), .wfrp-corruptiontable__cell:nth-child(2), .wfrp-spelltable__cell--description:nth-child(2), .wfrp-trappingtable__cell--description:nth-child(2), .wfrp-armourtable__cell--description:nth-child(2), .wfrp-criticaltable__cell--description:nth-child(2), .wfrp-weapontable__cell--description:nth-child(2), .wfrp-experiencetable__cell--description:nth-child(2), .wfrp-careertable__cell--description:nth-child(2), .wfrp-speciestable__cell--description:nth-child(2), .wfrp-talenttable__cell--description:nth-child(2), .wfrp-conditiontable__cell--description:nth-child(2), .wfrp-psychologytable__cell--description:nth-child(2), .wfrp-corruptiontable__cell--description:nth-child(2) {
   text-align: left;
 }
-.sheet-wfrp-spelltable__cell--last span, .sheet-wfrp-trappingtable__cell--last span, .sheet-wfrp-armourtable__cell--last span, .sheet-wfrp-criticaltable__cell--last span, .sheet-wfrp-weapontable__cell--last span, .sheet-wfrp-spelltable__cell--settingstoggle span, .sheet-wfrp-trappingtable__cell--settingstoggle span, .sheet-wfrp-armourtable__cell--settingstoggle span, .sheet-wfrp-criticaltable__cell--settingstoggle span, .sheet-wfrp-weapontable__cell--settingstoggle span, .sheet-wfrp-spelltable__cell span, .sheet-wfrp-trappingtable__cell span, .sheet-wfrp-armourtable__cell span, .sheet-wfrp-criticaltable__cell span, .sheet-wfrp-weapontable__cell span, .sheet-wfrp-experiencetable__cell--ltitle span, .sheet-wfrp-careertable__cell--ltitle span, .sheet-wfrp-speciestable__cell--ltitle span, .sheet-wfrp-experiencetable__cell--last span, .sheet-wfrp-careertable__cell--last span, .sheet-wfrp-speciestable__cell--last span, .sheet-wfrp-experiencetable__cell span, .sheet-wfrp-careertable__cell span, .sheet-wfrp-speciestable__cell span, .sheet-wfrp-talenttable__cell--last span, .sheet-wfrp-conditiontable__cell--last span, .sheet-wfrp-psychologytable__cell--last span, .sheet-wfrp-corruptiontable__cell--last span, .sheet-wfrp-talenttable__cell span, .sheet-wfrp-conditiontable__cell span, .sheet-wfrp-psychologytable__cell span, .sheet-wfrp-corruptiontable__cell span, .sheet-wfrp-spelltable__cell--description span, .sheet-wfrp-trappingtable__cell--description span, .sheet-wfrp-armourtable__cell--description span, .sheet-wfrp-criticaltable__cell--description span, .sheet-wfrp-weapontable__cell--description span, .sheet-wfrp-experiencetable__cell--description span, .sheet-wfrp-careertable__cell--description span, .sheet-wfrp-speciestable__cell--description span, .sheet-wfrp-talenttable__cell--description span, .sheet-wfrp-conditiontable__cell--description span, .sheet-wfrp-psychologytable__cell--description span, .sheet-wfrp-corruptiontable__cell--description span {
+.wfrp-spelltable__cell--last span, .wfrp-trappingtable__cell--last span, .wfrp-armourtable__cell--last span, .wfrp-criticaltable__cell--last span, .wfrp-weapontable__cell--last span, .wfrp-spelltable__cell--settingstoggle span, .wfrp-trappingtable__cell--settingstoggle span, .wfrp-armourtable__cell--settingstoggle span, .wfrp-criticaltable__cell--settingstoggle span, .wfrp-weapontable__cell--settingstoggle span, .wfrp-spelltable__cell span, .wfrp-trappingtable__cell span, .wfrp-armourtable__cell span, .wfrp-criticaltable__cell span, .wfrp-weapontable__cell span, .wfrp-experiencetable__cell--ltitle span, .wfrp-careertable__cell--ltitle span, .wfrp-speciestable__cell--ltitle span, .wfrp-experiencetable__cell--last span, .wfrp-careertable__cell--last span, .wfrp-speciestable__cell--last span, .wfrp-experiencetable__cell span, .wfrp-careertable__cell span, .wfrp-speciestable__cell span, .wfrp-talenttable__cell--last span, .wfrp-conditiontable__cell--last span, .wfrp-psychologytable__cell--last span, .wfrp-corruptiontable__cell--last span, .wfrp-talenttable__cell span, .wfrp-conditiontable__cell span, .wfrp-psychologytable__cell span, .wfrp-corruptiontable__cell span, .wfrp-spelltable__cell--description span, .wfrp-trappingtable__cell--description span, .wfrp-armourtable__cell--description span, .wfrp-criticaltable__cell--description span, .wfrp-weapontable__cell--description span, .wfrp-experiencetable__cell--description span, .wfrp-careertable__cell--description span, .wfrp-speciestable__cell--description span, .wfrp-talenttable__cell--description span, .wfrp-conditiontable__cell--description span, .wfrp-psychologytable__cell--description span, .wfrp-corruptiontable__cell--description span {
   padding: 1px;
 }
-.sheet-wfrp-spelltable__cell--last span:empty, .sheet-wfrp-trappingtable__cell--last span:empty, .sheet-wfrp-armourtable__cell--last span:empty, .sheet-wfrp-criticaltable__cell--last span:empty, .sheet-wfrp-weapontable__cell--last span:empty, .sheet-wfrp-spelltable__cell--settingstoggle span:empty, .sheet-wfrp-trappingtable__cell--settingstoggle span:empty, .sheet-wfrp-armourtable__cell--settingstoggle span:empty, .sheet-wfrp-criticaltable__cell--settingstoggle span:empty, .sheet-wfrp-weapontable__cell--settingstoggle span:empty, .sheet-wfrp-spelltable__cell span:empty, .sheet-wfrp-trappingtable__cell span:empty, .sheet-wfrp-armourtable__cell span:empty, .sheet-wfrp-criticaltable__cell span:empty, .sheet-wfrp-weapontable__cell span:empty, .sheet-wfrp-experiencetable__cell--ltitle span:empty, .sheet-wfrp-careertable__cell--ltitle span:empty, .sheet-wfrp-speciestable__cell--ltitle span:empty, .sheet-wfrp-experiencetable__cell--last span:empty, .sheet-wfrp-careertable__cell--last span:empty, .sheet-wfrp-speciestable__cell--last span:empty, .sheet-wfrp-experiencetable__cell span:empty, .sheet-wfrp-careertable__cell span:empty, .sheet-wfrp-speciestable__cell span:empty, .sheet-wfrp-talenttable__cell--last span:empty, .sheet-wfrp-conditiontable__cell--last span:empty, .sheet-wfrp-psychologytable__cell--last span:empty, .sheet-wfrp-corruptiontable__cell--last span:empty, .sheet-wfrp-talenttable__cell span:empty, .sheet-wfrp-conditiontable__cell span:empty, .sheet-wfrp-psychologytable__cell span:empty, .sheet-wfrp-corruptiontable__cell span:empty, .sheet-wfrp-spelltable__cell--description span:empty, .sheet-wfrp-trappingtable__cell--description span:empty, .sheet-wfrp-armourtable__cell--description span:empty, .sheet-wfrp-criticaltable__cell--description span:empty, .sheet-wfrp-weapontable__cell--description span:empty, .sheet-wfrp-experiencetable__cell--description span:empty, .sheet-wfrp-careertable__cell--description span:empty, .sheet-wfrp-speciestable__cell--description span:empty, .sheet-wfrp-talenttable__cell--description span:empty, .sheet-wfrp-conditiontable__cell--description span:empty, .sheet-wfrp-psychologytable__cell--description span:empty, .sheet-wfrp-corruptiontable__cell--description span:empty {
+.wfrp-spelltable__cell--last span:empty, .wfrp-trappingtable__cell--last span:empty, .wfrp-armourtable__cell--last span:empty, .wfrp-criticaltable__cell--last span:empty, .wfrp-weapontable__cell--last span:empty, .wfrp-spelltable__cell--settingstoggle span:empty, .wfrp-trappingtable__cell--settingstoggle span:empty, .wfrp-armourtable__cell--settingstoggle span:empty, .wfrp-criticaltable__cell--settingstoggle span:empty, .wfrp-weapontable__cell--settingstoggle span:empty, .wfrp-spelltable__cell span:empty, .wfrp-trappingtable__cell span:empty, .wfrp-armourtable__cell span:empty, .wfrp-criticaltable__cell span:empty, .wfrp-weapontable__cell span:empty, .wfrp-experiencetable__cell--ltitle span:empty, .wfrp-careertable__cell--ltitle span:empty, .wfrp-speciestable__cell--ltitle span:empty, .wfrp-experiencetable__cell--last span:empty, .wfrp-careertable__cell--last span:empty, .wfrp-speciestable__cell--last span:empty, .wfrp-experiencetable__cell span:empty, .wfrp-careertable__cell span:empty, .wfrp-speciestable__cell span:empty, .wfrp-talenttable__cell--last span:empty, .wfrp-conditiontable__cell--last span:empty, .wfrp-psychologytable__cell--last span:empty, .wfrp-corruptiontable__cell--last span:empty, .wfrp-talenttable__cell span:empty, .wfrp-conditiontable__cell span:empty, .wfrp-psychologytable__cell span:empty, .wfrp-corruptiontable__cell span:empty, .wfrp-spelltable__cell--description span:empty, .wfrp-trappingtable__cell--description span:empty, .wfrp-armourtable__cell--description span:empty, .wfrp-criticaltable__cell--description span:empty, .wfrp-weapontable__cell--description span:empty, .wfrp-experiencetable__cell--description span:empty, .wfrp-careertable__cell--description span:empty, .wfrp-speciestable__cell--description span:empty, .wfrp-talenttable__cell--description span:empty, .wfrp-conditiontable__cell--description span:empty, .wfrp-psychologytable__cell--description span:empty, .wfrp-corruptiontable__cell--description span:empty {
   display: none;
 }
-.sheet-wfrp-spelltable__cell--last select, .sheet-wfrp-trappingtable__cell--last select, .sheet-wfrp-armourtable__cell--last select, .sheet-wfrp-criticaltable__cell--last select, .sheet-wfrp-weapontable__cell--last select, .sheet-wfrp-spelltable__cell--settingstoggle select, .sheet-wfrp-trappingtable__cell--settingstoggle select, .sheet-wfrp-armourtable__cell--settingstoggle select, .sheet-wfrp-criticaltable__cell--settingstoggle select, .sheet-wfrp-weapontable__cell--settingstoggle select, .sheet-wfrp-spelltable__cell select, .sheet-wfrp-trappingtable__cell select, .sheet-wfrp-armourtable__cell select, .sheet-wfrp-criticaltable__cell select, .sheet-wfrp-weapontable__cell select, .sheet-wfrp-experiencetable__cell--ltitle select, .sheet-wfrp-careertable__cell--ltitle select, .sheet-wfrp-speciestable__cell--ltitle select, .sheet-wfrp-experiencetable__cell--last select, .sheet-wfrp-careertable__cell--last select, .sheet-wfrp-speciestable__cell--last select, .sheet-wfrp-experiencetable__cell select, .sheet-wfrp-careertable__cell select, .sheet-wfrp-speciestable__cell select, .sheet-wfrp-talenttable__cell--last select, .sheet-wfrp-conditiontable__cell--last select, .sheet-wfrp-psychologytable__cell--last select, .sheet-wfrp-corruptiontable__cell--last select, .sheet-wfrp-talenttable__cell select, .sheet-wfrp-conditiontable__cell select, .sheet-wfrp-psychologytable__cell select, .sheet-wfrp-corruptiontable__cell select, .sheet-wfrp-spelltable__cell--description select, .sheet-wfrp-trappingtable__cell--description select, .sheet-wfrp-armourtable__cell--description select, .sheet-wfrp-criticaltable__cell--description select, .sheet-wfrp-weapontable__cell--description select, .sheet-wfrp-experiencetable__cell--description select, .sheet-wfrp-careertable__cell--description select, .sheet-wfrp-speciestable__cell--description select, .sheet-wfrp-talenttable__cell--description select, .sheet-wfrp-conditiontable__cell--description select, .sheet-wfrp-psychologytable__cell--description select, .sheet-wfrp-corruptiontable__cell--description select,
-.sheet-wfrp-spelltable__cell--last input[type=text],
-.sheet-wfrp-trappingtable__cell--last input[type=text],
-.sheet-wfrp-armourtable__cell--last input[type=text],
-.sheet-wfrp-criticaltable__cell--last input[type=text],
-.sheet-wfrp-weapontable__cell--last input[type=text],
-.sheet-wfrp-spelltable__cell--settingstoggle input[type=text],
-.sheet-wfrp-trappingtable__cell--settingstoggle input[type=text],
-.sheet-wfrp-armourtable__cell--settingstoggle input[type=text],
-.sheet-wfrp-criticaltable__cell--settingstoggle input[type=text],
-.sheet-wfrp-weapontable__cell--settingstoggle input[type=text],
-.sheet-wfrp-spelltable__cell input[type=text],
-.sheet-wfrp-trappingtable__cell input[type=text],
-.sheet-wfrp-armourtable__cell input[type=text],
-.sheet-wfrp-criticaltable__cell input[type=text],
-.sheet-wfrp-weapontable__cell input[type=text],
-.sheet-wfrp-experiencetable__cell--ltitle input[type=text],
-.sheet-wfrp-careertable__cell--ltitle input[type=text],
-.sheet-wfrp-speciestable__cell--ltitle input[type=text],
-.sheet-wfrp-experiencetable__cell--last input[type=text],
-.sheet-wfrp-careertable__cell--last input[type=text],
-.sheet-wfrp-speciestable__cell--last input[type=text],
-.sheet-wfrp-experiencetable__cell input[type=text],
-.sheet-wfrp-careertable__cell input[type=text],
-.sheet-wfrp-speciestable__cell input[type=text],
-.sheet-wfrp-talenttable__cell--last input[type=text],
-.sheet-wfrp-conditiontable__cell--last input[type=text],
-.sheet-wfrp-psychologytable__cell--last input[type=text],
-.sheet-wfrp-corruptiontable__cell--last input[type=text],
-.sheet-wfrp-talenttable__cell input[type=text],
-.sheet-wfrp-conditiontable__cell input[type=text],
-.sheet-wfrp-psychologytable__cell input[type=text],
-.sheet-wfrp-corruptiontable__cell input[type=text],
-.sheet-wfrp-spelltable__cell--description input[type=text],
-.sheet-wfrp-trappingtable__cell--description input[type=text],
-.sheet-wfrp-armourtable__cell--description input[type=text],
-.sheet-wfrp-criticaltable__cell--description input[type=text],
-.sheet-wfrp-weapontable__cell--description input[type=text],
-.sheet-wfrp-experiencetable__cell--description input[type=text],
-.sheet-wfrp-careertable__cell--description input[type=text],
-.sheet-wfrp-speciestable__cell--description input[type=text],
-.sheet-wfrp-talenttable__cell--description input[type=text],
-.sheet-wfrp-conditiontable__cell--description input[type=text],
-.sheet-wfrp-psychologytable__cell--description input[type=text],
-.sheet-wfrp-corruptiontable__cell--description input[type=text],
-.sheet-wfrp-spelltable__cell--last input[type=number],
-.sheet-wfrp-trappingtable__cell--last input[type=number],
-.sheet-wfrp-armourtable__cell--last input[type=number],
-.sheet-wfrp-criticaltable__cell--last input[type=number],
-.sheet-wfrp-weapontable__cell--last input[type=number],
-.sheet-wfrp-spelltable__cell--settingstoggle input[type=number],
-.sheet-wfrp-trappingtable__cell--settingstoggle input[type=number],
-.sheet-wfrp-armourtable__cell--settingstoggle input[type=number],
-.sheet-wfrp-criticaltable__cell--settingstoggle input[type=number],
-.sheet-wfrp-weapontable__cell--settingstoggle input[type=number],
-.sheet-wfrp-spelltable__cell input[type=number],
-.sheet-wfrp-trappingtable__cell input[type=number],
-.sheet-wfrp-armourtable__cell input[type=number],
-.sheet-wfrp-criticaltable__cell input[type=number],
-.sheet-wfrp-weapontable__cell input[type=number],
-.sheet-wfrp-experiencetable__cell--ltitle input[type=number],
-.sheet-wfrp-careertable__cell--ltitle input[type=number],
-.sheet-wfrp-speciestable__cell--ltitle input[type=number],
-.sheet-wfrp-experiencetable__cell--last input[type=number],
-.sheet-wfrp-careertable__cell--last input[type=number],
-.sheet-wfrp-speciestable__cell--last input[type=number],
-.sheet-wfrp-experiencetable__cell input[type=number],
-.sheet-wfrp-careertable__cell input[type=number],
-.sheet-wfrp-speciestable__cell input[type=number],
-.sheet-wfrp-talenttable__cell--last input[type=number],
-.sheet-wfrp-conditiontable__cell--last input[type=number],
-.sheet-wfrp-psychologytable__cell--last input[type=number],
-.sheet-wfrp-corruptiontable__cell--last input[type=number],
-.sheet-wfrp-talenttable__cell input[type=number],
-.sheet-wfrp-conditiontable__cell input[type=number],
-.sheet-wfrp-psychologytable__cell input[type=number],
-.sheet-wfrp-corruptiontable__cell input[type=number],
-.sheet-wfrp-spelltable__cell--description input[type=number],
-.sheet-wfrp-trappingtable__cell--description input[type=number],
-.sheet-wfrp-armourtable__cell--description input[type=number],
-.sheet-wfrp-criticaltable__cell--description input[type=number],
-.sheet-wfrp-weapontable__cell--description input[type=number],
-.sheet-wfrp-experiencetable__cell--description input[type=number],
-.sheet-wfrp-careertable__cell--description input[type=number],
-.sheet-wfrp-speciestable__cell--description input[type=number],
-.sheet-wfrp-talenttable__cell--description input[type=number],
-.sheet-wfrp-conditiontable__cell--description input[type=number],
-.sheet-wfrp-psychologytable__cell--description input[type=number],
-.sheet-wfrp-corruptiontable__cell--description input[type=number] {
+.wfrp-spelltable__cell--last select, .wfrp-trappingtable__cell--last select, .wfrp-armourtable__cell--last select, .wfrp-criticaltable__cell--last select, .wfrp-weapontable__cell--last select, .wfrp-spelltable__cell--settingstoggle select, .wfrp-trappingtable__cell--settingstoggle select, .wfrp-armourtable__cell--settingstoggle select, .wfrp-criticaltable__cell--settingstoggle select, .wfrp-weapontable__cell--settingstoggle select, .wfrp-spelltable__cell select, .wfrp-trappingtable__cell select, .wfrp-armourtable__cell select, .wfrp-criticaltable__cell select, .wfrp-weapontable__cell select, .wfrp-experiencetable__cell--ltitle select, .wfrp-careertable__cell--ltitle select, .wfrp-speciestable__cell--ltitle select, .wfrp-experiencetable__cell--last select, .wfrp-careertable__cell--last select, .wfrp-speciestable__cell--last select, .wfrp-experiencetable__cell select, .wfrp-careertable__cell select, .wfrp-speciestable__cell select, .wfrp-talenttable__cell--last select, .wfrp-conditiontable__cell--last select, .wfrp-psychologytable__cell--last select, .wfrp-corruptiontable__cell--last select, .wfrp-talenttable__cell select, .wfrp-conditiontable__cell select, .wfrp-psychologytable__cell select, .wfrp-corruptiontable__cell select, .wfrp-spelltable__cell--description select, .wfrp-trappingtable__cell--description select, .wfrp-armourtable__cell--description select, .wfrp-criticaltable__cell--description select, .wfrp-weapontable__cell--description select, .wfrp-experiencetable__cell--description select, .wfrp-careertable__cell--description select, .wfrp-speciestable__cell--description select, .wfrp-talenttable__cell--description select, .wfrp-conditiontable__cell--description select, .wfrp-psychologytable__cell--description select, .wfrp-corruptiontable__cell--description select,
+.wfrp-spelltable__cell--last input[type=text],
+.wfrp-trappingtable__cell--last input[type=text],
+.wfrp-armourtable__cell--last input[type=text],
+.wfrp-criticaltable__cell--last input[type=text],
+.wfrp-weapontable__cell--last input[type=text],
+.wfrp-spelltable__cell--settingstoggle input[type=text],
+.wfrp-trappingtable__cell--settingstoggle input[type=text],
+.wfrp-armourtable__cell--settingstoggle input[type=text],
+.wfrp-criticaltable__cell--settingstoggle input[type=text],
+.wfrp-weapontable__cell--settingstoggle input[type=text],
+.wfrp-spelltable__cell input[type=text],
+.wfrp-trappingtable__cell input[type=text],
+.wfrp-armourtable__cell input[type=text],
+.wfrp-criticaltable__cell input[type=text],
+.wfrp-weapontable__cell input[type=text],
+.wfrp-experiencetable__cell--ltitle input[type=text],
+.wfrp-careertable__cell--ltitle input[type=text],
+.wfrp-speciestable__cell--ltitle input[type=text],
+.wfrp-experiencetable__cell--last input[type=text],
+.wfrp-careertable__cell--last input[type=text],
+.wfrp-speciestable__cell--last input[type=text],
+.wfrp-experiencetable__cell input[type=text],
+.wfrp-careertable__cell input[type=text],
+.wfrp-speciestable__cell input[type=text],
+.wfrp-talenttable__cell--last input[type=text],
+.wfrp-conditiontable__cell--last input[type=text],
+.wfrp-psychologytable__cell--last input[type=text],
+.wfrp-corruptiontable__cell--last input[type=text],
+.wfrp-talenttable__cell input[type=text],
+.wfrp-conditiontable__cell input[type=text],
+.wfrp-psychologytable__cell input[type=text],
+.wfrp-corruptiontable__cell input[type=text],
+.wfrp-spelltable__cell--description input[type=text],
+.wfrp-trappingtable__cell--description input[type=text],
+.wfrp-armourtable__cell--description input[type=text],
+.wfrp-criticaltable__cell--description input[type=text],
+.wfrp-weapontable__cell--description input[type=text],
+.wfrp-experiencetable__cell--description input[type=text],
+.wfrp-careertable__cell--description input[type=text],
+.wfrp-speciestable__cell--description input[type=text],
+.wfrp-talenttable__cell--description input[type=text],
+.wfrp-conditiontable__cell--description input[type=text],
+.wfrp-psychologytable__cell--description input[type=text],
+.wfrp-corruptiontable__cell--description input[type=text],
+.wfrp-spelltable__cell--last input[type=number],
+.wfrp-trappingtable__cell--last input[type=number],
+.wfrp-armourtable__cell--last input[type=number],
+.wfrp-criticaltable__cell--last input[type=number],
+.wfrp-weapontable__cell--last input[type=number],
+.wfrp-spelltable__cell--settingstoggle input[type=number],
+.wfrp-trappingtable__cell--settingstoggle input[type=number],
+.wfrp-armourtable__cell--settingstoggle input[type=number],
+.wfrp-criticaltable__cell--settingstoggle input[type=number],
+.wfrp-weapontable__cell--settingstoggle input[type=number],
+.wfrp-spelltable__cell input[type=number],
+.wfrp-trappingtable__cell input[type=number],
+.wfrp-armourtable__cell input[type=number],
+.wfrp-criticaltable__cell input[type=number],
+.wfrp-weapontable__cell input[type=number],
+.wfrp-experiencetable__cell--ltitle input[type=number],
+.wfrp-careertable__cell--ltitle input[type=number],
+.wfrp-speciestable__cell--ltitle input[type=number],
+.wfrp-experiencetable__cell--last input[type=number],
+.wfrp-careertable__cell--last input[type=number],
+.wfrp-speciestable__cell--last input[type=number],
+.wfrp-experiencetable__cell input[type=number],
+.wfrp-careertable__cell input[type=number],
+.wfrp-speciestable__cell input[type=number],
+.wfrp-talenttable__cell--last input[type=number],
+.wfrp-conditiontable__cell--last input[type=number],
+.wfrp-psychologytable__cell--last input[type=number],
+.wfrp-corruptiontable__cell--last input[type=number],
+.wfrp-talenttable__cell input[type=number],
+.wfrp-conditiontable__cell input[type=number],
+.wfrp-psychologytable__cell input[type=number],
+.wfrp-corruptiontable__cell input[type=number],
+.wfrp-spelltable__cell--description input[type=number],
+.wfrp-trappingtable__cell--description input[type=number],
+.wfrp-armourtable__cell--description input[type=number],
+.wfrp-criticaltable__cell--description input[type=number],
+.wfrp-weapontable__cell--description input[type=number],
+.wfrp-experiencetable__cell--description input[type=number],
+.wfrp-careertable__cell--description input[type=number],
+.wfrp-speciestable__cell--description input[type=number],
+.wfrp-talenttable__cell--description input[type=number],
+.wfrp-conditiontable__cell--description input[type=number],
+.wfrp-psychologytable__cell--description input[type=number],
+.wfrp-corruptiontable__cell--description input[type=number] {
   height: 100%;
 }
 
-.sheet-wfrp-spelltable__row--head div[class*=cell]:first-child, .sheet-wfrp-trappingtable__row--head div[class*=cell]:first-child, .sheet-wfrp-armourtable__row--head div[class*=cell]:first-child, .sheet-wfrp-criticaltable__row--head div[class*=cell]:first-child, .sheet-wfrp-weapontable__row--head div[class*=cell]:first-child, .sheet-wfrp-experiencetable__row--head div[class*=cell]:first-child, .sheet-wfrp-careertable__row--head div[class*=cell]:first-child, .sheet-wfrp-speciestable__row--head div[class*=cell]:first-child, .sheet-wfrp-talenttable__row--head div[class*=cell]:first-child, .sheet-wfrp-conditiontable__row--head div[class*=cell]:first-child, .sheet-wfrp-psychologytable__row--head div[class*=cell]:first-child, .sheet-wfrp-corruptiontable__row--head div[class*=cell]:first-child {
+.wfrp-spelltable__row--head div[class*=cell]:first-child, .wfrp-trappingtable__row--head div[class*=cell]:first-child, .wfrp-armourtable__row--head div[class*=cell]:first-child, .wfrp-criticaltable__row--head div[class*=cell]:first-child, .wfrp-weapontable__row--head div[class*=cell]:first-child, .wfrp-experiencetable__row--head div[class*=cell]:first-child, .wfrp-careertable__row--head div[class*=cell]:first-child, .wfrp-speciestable__row--head div[class*=cell]:first-child, .wfrp-talenttable__row--head div[class*=cell]:first-child, .wfrp-conditiontable__row--head div[class*=cell]:first-child, .wfrp-psychologytable__row--head div[class*=cell]:first-child, .wfrp-corruptiontable__row--head div[class*=cell]:first-child {
   grid-column: span 2;
   text-align: left;
 }
-.sheet-wfrp-spelltable__row--head div[class*=cell]:not(:first-child), .sheet-wfrp-trappingtable__row--head div[class*=cell]:not(:first-child), .sheet-wfrp-armourtable__row--head div[class*=cell]:not(:first-child), .sheet-wfrp-criticaltable__row--head div[class*=cell]:not(:first-child), .sheet-wfrp-weapontable__row--head div[class*=cell]:not(:first-child), .sheet-wfrp-experiencetable__row--head div[class*=cell]:not(:first-child), .sheet-wfrp-careertable__row--head div[class*=cell]:not(:first-child), .sheet-wfrp-speciestable__row--head div[class*=cell]:not(:first-child), .sheet-wfrp-talenttable__row--head div[class*=cell]:not(:first-child), .sheet-wfrp-conditiontable__row--head div[class*=cell]:not(:first-child), .sheet-wfrp-psychologytable__row--head div[class*=cell]:not(:first-child), .sheet-wfrp-corruptiontable__row--head div[class*=cell]:not(:first-child) {
+.wfrp-spelltable__row--head div[class*=cell]:not(:first-child), .wfrp-trappingtable__row--head div[class*=cell]:not(:first-child), .wfrp-armourtable__row--head div[class*=cell]:not(:first-child), .wfrp-criticaltable__row--head div[class*=cell]:not(:first-child), .wfrp-weapontable__row--head div[class*=cell]:not(:first-child), .wfrp-experiencetable__row--head div[class*=cell]:not(:first-child), .wfrp-careertable__row--head div[class*=cell]:not(:first-child), .wfrp-speciestable__row--head div[class*=cell]:not(:first-child), .wfrp-talenttable__row--head div[class*=cell]:not(:first-child), .wfrp-conditiontable__row--head div[class*=cell]:not(:first-child), .wfrp-psychologytable__row--head div[class*=cell]:not(:first-child), .wfrp-corruptiontable__row--head div[class*=cell]:not(:first-child) {
   text-align: center;
 }
 
-.sheet-wfrp-spelltable__cell--description, .sheet-wfrp-trappingtable__cell--description, .sheet-wfrp-armourtable__cell--description, .sheet-wfrp-criticaltable__cell--description, .sheet-wfrp-weapontable__cell--description, .sheet-wfrp-experiencetable__cell--description, .sheet-wfrp-careertable__cell--description, .sheet-wfrp-speciestable__cell--description, .sheet-wfrp-talenttable__cell--description, .sheet-wfrp-conditiontable__cell--description, .sheet-wfrp-psychologytable__cell--description, .sheet-wfrp-corruptiontable__cell--description {
+.wfrp-spelltable__cell--description, .wfrp-trappingtable__cell--description, .wfrp-armourtable__cell--description, .wfrp-criticaltable__cell--description, .wfrp-weapontable__cell--description, .wfrp-experiencetable__cell--description, .wfrp-careertable__cell--description, .wfrp-speciestable__cell--description, .wfrp-talenttable__cell--description, .wfrp-conditiontable__cell--description, .wfrp-psychologytable__cell--description, .wfrp-corruptiontable__cell--description {
   grid-column: 1/-1;
 }
 
-.sheet-wfrp-chartable {
+.wfrp-chartable {
   display: grid;
   grid-template-columns: 2fr repeat(10, 1fr);
   grid-template-rows: repeat(6, 1fr);
   grid-auto-flow: column;
 }
-.sheet-wfrp-chartable input[type=number],
-.sheet-wfrp-chartable .sheet-wfrp-chartable__cell,
-.sheet-wfrp-chartable .sheet-wfrp-chartable__cell--head {
+.wfrp-chartable input[type=number],
+.wfrp-chartable .wfrp-chartable__cell,
+.wfrp-chartable .wfrp-chartable__cell--head {
   text-align: center;
 }
-.sheet-wfrp-skills h1 {
+.wfrp-skills h1 {
   grid-column: 1/-1;
 }
-.sheet-wfrp-skilltable__row, .sheet-wfrp-skilltable__row--grouped, .sheet-wfrp-skilltable__row--specialisation, .sheet-wfrp-skilltable__row--head {
+.wfrp-skilltable__row, .wfrp-skilltable__row--grouped, .wfrp-skilltable__row--specialisation, .wfrp-skilltable__row--head {
   display: grid;
   grid-template-columns: 1.5rem 1fr 4rem 2.75rem 2.75rem 2.75rem;
   grid-column: 1/-1;
 }
-.sheet-wfrp-skilltable__row--head .sheet-wfrp-skilltable__cell, .sheet-wfrp-skilltable__row--head .sheet-wfrp-skilltable__cell--grouped, .sheet-wfrp-skilltable__row--head .sheet-wfrp-skilltable__cell--span2, .sheet-wfrp-skilltable__row--head .sheet-wfrp-skilltable__cell--nosettings, .sheet-wfrp-skilltable__row--head .sheet-wfrp-skilltable__cell--last {
+.wfrp-skilltable__row--head .wfrp-skilltable__cell, .wfrp-skilltable__row--head .wfrp-skilltable__cell--grouped, .wfrp-skilltable__row--head .wfrp-skilltable__cell--span2, .wfrp-skilltable__row--head .wfrp-skilltable__cell--nosettings, .wfrp-skilltable__row--head .wfrp-skilltable__cell--last {
   text-align: center;
 }
-.sheet-wfrp-skilltable__row--head .sheet-wfrp-skilltable__cell:first-child, .sheet-wfrp-skilltable__row--head .sheet-wfrp-skilltable__cell--grouped:first-child, .sheet-wfrp-skilltable__row--head .sheet-wfrp-skilltable__cell--span2:first-child, .sheet-wfrp-skilltable__row--head .sheet-wfrp-skilltable__cell--nosettings:first-child, .sheet-wfrp-skilltable__row--head .sheet-wfrp-skilltable__cell--last:first-child {
+.wfrp-skilltable__row--head .wfrp-skilltable__cell:first-child, .wfrp-skilltable__row--head .wfrp-skilltable__cell--grouped:first-child, .wfrp-skilltable__row--head .wfrp-skilltable__cell--span2:first-child, .wfrp-skilltable__row--head .wfrp-skilltable__cell--nosettings:first-child, .wfrp-skilltable__row--head .wfrp-skilltable__cell--last:first-child {
   grid-column: span 2;
   text-align: left;
 }
-.sheet-wfrp-skilltable__row--specialisation {
+.wfrp-skilltable__row--specialisation {
   grid-column: 1/-1;
   padding: 0;
 }
-.sheet-wfrp-skilltable__row--grouped {
+.wfrp-skilltable__row--grouped {
   grid-column: 1/-1;
   padding: 0;
 }
-.sheet-wfrp-skilltable__cell, .sheet-wfrp-skilltable__cell--grouped, .sheet-wfrp-skilltable__cell--span2, .sheet-wfrp-skilltable__cell--nosettings, .sheet-wfrp-skilltable__cell--last {
+.wfrp-skilltable__cell, .wfrp-skilltable__cell--grouped, .wfrp-skilltable__cell--span2, .wfrp-skilltable__cell--nosettings, .wfrp-skilltable__cell--last {
   height: 100%;
   text-align: center;
 }
-.sheet-wfrp-skilltable__cell label, .sheet-wfrp-skilltable__cell--grouped label, .sheet-wfrp-skilltable__cell--span2 label, .sheet-wfrp-skilltable__cell--nosettings label, .sheet-wfrp-skilltable__cell--last label,
-.sheet-wfrp-skilltable__cell span[name*=attr],
-.sheet-wfrp-skilltable__cell--grouped span[name*=attr],
-.sheet-wfrp-skilltable__cell--span2 span[name*=attr],
-.sheet-wfrp-skilltable__cell--nosettings span[name*=attr],
-.sheet-wfrp-skilltable__cell--last span[name*=attr] {
+.wfrp-skilltable__cell label, .wfrp-skilltable__cell--grouped label, .wfrp-skilltable__cell--span2 label, .wfrp-skilltable__cell--nosettings label, .wfrp-skilltable__cell--last label,
+.wfrp-skilltable__cell span[name*=attr],
+.wfrp-skilltable__cell--grouped span[name*=attr],
+.wfrp-skilltable__cell--span2 span[name*=attr],
+.wfrp-skilltable__cell--nosettings span[name*=attr],
+.wfrp-skilltable__cell--last span[name*=attr] {
   padding: 1px;
 }
-.sheet-wfrp-skilltable__cell select, .sheet-wfrp-skilltable__cell--grouped select, .sheet-wfrp-skilltable__cell--span2 select, .sheet-wfrp-skilltable__cell--nosettings select, .sheet-wfrp-skilltable__cell--last select,
-.sheet-wfrp-skilltable__cell input[type=number],
-.sheet-wfrp-skilltable__cell--grouped input[type=number],
-.sheet-wfrp-skilltable__cell--span2 input[type=number],
-.sheet-wfrp-skilltable__cell--nosettings input[type=number],
-.sheet-wfrp-skilltable__cell--last input[type=number],
-.sheet-wfrp-skilltable__cell input[type=text],
-.sheet-wfrp-skilltable__cell--grouped input[type=text],
-.sheet-wfrp-skilltable__cell--span2 input[type=text],
-.sheet-wfrp-skilltable__cell--nosettings input[type=text],
-.sheet-wfrp-skilltable__cell--last input[type=text] {
+.wfrp-skilltable__cell select, .wfrp-skilltable__cell--grouped select, .wfrp-skilltable__cell--span2 select, .wfrp-skilltable__cell--nosettings select, .wfrp-skilltable__cell--last select,
+.wfrp-skilltable__cell input[type=number],
+.wfrp-skilltable__cell--grouped input[type=number],
+.wfrp-skilltable__cell--span2 input[type=number],
+.wfrp-skilltable__cell--nosettings input[type=number],
+.wfrp-skilltable__cell--last input[type=number],
+.wfrp-skilltable__cell input[type=text],
+.wfrp-skilltable__cell--grouped input[type=text],
+.wfrp-skilltable__cell--span2 input[type=text],
+.wfrp-skilltable__cell--nosettings input[type=text],
+.wfrp-skilltable__cell--last input[type=text] {
   height: 100%;
   text-align: center !important;
 }
-.sheet-wfrp-skilltable__cell:nth-child(3), .sheet-wfrp-skilltable__cell--grouped:nth-child(3), .sheet-wfrp-skilltable__cell--span2:nth-child(3), .sheet-wfrp-skilltable__cell--nosettings:nth-child(3), .sheet-wfrp-skilltable__cell--last:nth-child(3) {
+.wfrp-skilltable__cell:nth-child(3), .wfrp-skilltable__cell--grouped:nth-child(3), .wfrp-skilltable__cell--span2:nth-child(3), .wfrp-skilltable__cell--nosettings:nth-child(3), .wfrp-skilltable__cell--last:nth-child(3) {
   text-align: left;
 }
-.sheet-wfrp-skilltable__cell--nosettings {
+.wfrp-skilltable__cell--nosettings {
   grid-column: 2;
   text-align: left;
 }
-.sheet-wfrp-skilltable__cell--span2 {
+.wfrp-skilltable__cell--span2 {
   grid-column: span 2;
 }
-.sheet-wfrp-skilltable__cell--grouped {
+.wfrp-skilltable__cell--grouped {
   grid-column-start: 1;
   grid-column-end: -1;
   padding-left: 1.5rem;
 }
-.sheet-wfrp-skilltable__cell--settingstoggle + .sheet-wfrp-skilltable__cell--grouped {
+.wfrp-skilltable__cell--settingstoggle + .wfrp-skilltable__cell--grouped {
   grid-column-start: 2;
 }
-.sheet-wfrp-skilltable__roll {
+.wfrp-skilltable__roll {
   text-align: left !important;
 }
-.sheet-wfrp-skilltable__roll span {
+.wfrp-skilltable__roll span {
   text-align: left;
 }
-.sheet-wfrp-talenttable__cell--description span, .sheet-wfrp-conditiontable__cell--description span, .sheet-wfrp-psychologytable__cell--description span, .sheet-wfrp-corruptiontable__cell--description span {
+.wfrp-talenttable__cell--description span, .wfrp-conditiontable__cell--description span, .wfrp-psychologytable__cell--description span, .wfrp-corruptiontable__cell--description span {
   text-align: left;
 }
-.sheet-wfrp-talenttable__cell--span2, .sheet-wfrp-conditiontable__cell--span2, .sheet-wfrp-psychologytable__cell--span2, .sheet-wfrp-corruptiontable__cell--span2 {
+.wfrp-talenttable__cell--span2, .wfrp-conditiontable__cell--span2, .wfrp-psychologytable__cell--span2, .wfrp-corruptiontable__cell--span2 {
   grid-column: span 2;
 }
-.sheet-wfrp-talenttable__cell--span3, .sheet-wfrp-conditiontable__cell--span3, .sheet-wfrp-psychologytable__cell--span3, .sheet-wfrp-corruptiontable__cell--span3 {
+.wfrp-talenttable__cell--span3, .wfrp-conditiontable__cell--span3, .wfrp-psychologytable__cell--span3, .wfrp-corruptiontable__cell--span3 {
   grid-column: span 3;
 }
-.sheet-wfrp-psychologytable__row--head, .sheet-wfrp-psychologytable__row {
+.wfrp-psychologytable__row--head, .wfrp-psychologytable__row {
   grid-template-columns: 1.5rem 1fr 3rem;
 }
-.sheet-wfrp-corruptiontable__row--head, .sheet-wfrp-corruptiontable__row {
+.wfrp-corruptiontable__row--head, .wfrp-corruptiontable__row {
   grid-template-columns: 1.5rem 1fr 3rem;
 }
-.sheet-wfrp-experiencetable__cell--description span, .sheet-wfrp-careertable__cell--description span, .sheet-wfrp-speciestable__cell--description span {
+.wfrp-experiencetable__cell--description span, .wfrp-careertable__cell--description span, .wfrp-speciestable__cell--description span {
   text-align: left;
 }
-.sheet-wfrp-experiencetable__cell--ltitle, .sheet-wfrp-careertable__cell--ltitle, .sheet-wfrp-speciestable__cell--ltitle {
+.wfrp-experiencetable__cell--ltitle, .wfrp-careertable__cell--ltitle, .wfrp-speciestable__cell--ltitle {
   text-align: left;
 }
-.sheet-wfrp-experiencetable__cell--span2, .sheet-wfrp-careertable__cell--span2, .sheet-wfrp-speciestable__cell--span2 {
+.wfrp-experiencetable__cell--span2, .wfrp-careertable__cell--span2, .wfrp-speciestable__cell--span2 {
   grid-column: span 2;
 }
-.sheet-wfrp-experiencetable__cell--span3, .sheet-wfrp-careertable__cell--span3, .sheet-wfrp-speciestable__cell--span3 {
+.wfrp-experiencetable__cell--span3, .wfrp-careertable__cell--span3, .wfrp-speciestable__cell--span3 {
   grid-column: span 3;
 }
-.sheet-wfrp-experiencetable__row--head div[class*=cell]:first-child {
+.wfrp-experiencetable__row--head div[class*=cell]:first-child {
   grid-column: span 1;
 }
-.sheet-wfrp-careertable__row--head, .sheet-wfrp-careertable__row {
+.wfrp-careertable__row--head, .wfrp-careertable__row {
   grid-template-columns: 1.5rem 0.75fr 0.75fr 0.5fr 0.5fr;
 }
-.sheet-wfrp-experiencetable__row--head, .sheet-wfrp-experiencetable__row {
+.wfrp-experiencetable__row--head, .wfrp-experiencetable__row {
   grid-template-columns: 1fr 0.25fr;
 }
-.sheet-wfrp-spelltable__cell--description span, .sheet-wfrp-trappingtable__cell--description span, .sheet-wfrp-armourtable__cell--description span, .sheet-wfrp-criticaltable__cell--description span, .sheet-wfrp-weapontable__cell--description span {
+.wfrp-spelltable__cell--description span, .wfrp-trappingtable__cell--description span, .wfrp-armourtable__cell--description span, .wfrp-criticaltable__cell--description span, .wfrp-weapontable__cell--description span {
   text-align: left;
 }
-.sheet-wfrp-spelltable__cell--span2, .sheet-wfrp-trappingtable__cell--span2, .sheet-wfrp-armourtable__cell--span2, .sheet-wfrp-criticaltable__cell--span2, .sheet-wfrp-weapontable__cell--span2 {
+.wfrp-spelltable__cell--span2, .wfrp-trappingtable__cell--span2, .wfrp-armourtable__cell--span2, .wfrp-criticaltable__cell--span2, .wfrp-weapontable__cell--span2 {
   grid-column: span 2;
 }
-.sheet-wfrp-spelltable__cell--span3, .sheet-wfrp-trappingtable__cell--span3, .sheet-wfrp-armourtable__cell--span3, .sheet-wfrp-criticaltable__cell--span3, .sheet-wfrp-weapontable__cell--span3 {
+.wfrp-spelltable__cell--span3, .wfrp-trappingtable__cell--span3, .wfrp-armourtable__cell--span3, .wfrp-criticaltable__cell--span3, .wfrp-weapontable__cell--span3 {
   grid-column: span 3;
 }
-.sheet-wfrp-trappingtable__row--head, .sheet-wfrp-trappingtable__row {
+.wfrp-trappingtable__row--head, .wfrp-trappingtable__row {
   grid-template-columns: 1.5rem 1fr 3rem 3rem;
 }
-.sheet-wfrp-trappingtable input[type=number] {
+.wfrp-trappingtable input[type=number] {
   text-align: center !important;
 }
-.sheet-wfrp-armourtable__row--head, .sheet-wfrp-armourtable__row {
+.wfrp-armourtable__row--head, .wfrp-armourtable__row {
   grid-template-columns: 1.5rem 1fr 0.75fr 3rem 1.25fr;
 }
-.sheet-wfrp-criticaltable__row--head, .sheet-wfrp-criticaltable__row {
+.wfrp-criticaltable__row--head, .wfrp-criticaltable__row {
   grid-template-columns: 1.5rem 1fr 1fr 4rem;
 }
-.sheet-wfrp-weapontable__row--head, .sheet-wfrp-weapontable__row {
+.wfrp-weapontable__row--head, .wfrp-weapontable__row {
   grid-template-columns: 1.5rem 1fr 0.75fr 0.33fr 0.5fr 0.5fr 1.25fr;
 }
-.sheet-wfrp-spelltable__row--head, .sheet-wfrp-spelltable__row {
+.wfrp-spelltable__row--head, .wfrp-spelltable__row {
   grid-template-columns: 1.5rem 0.5fr 0.75fr 0.3fr 0.3fr 0.5fr 0.5fr 0.75fr;
 }
-.sheet-wfrp-spell__sin {
+.wfrp-spell__sin {
   margin-left: 85%;
 }
-.sheet-wfrp-advancetable__row--head, .sheet-wfrp-advancetable__row {
+.wfrp-advancetable__row--head, .wfrp-advancetable__row {
   grid-template-columns: 2fr 1fr;
   gap: 0.25rem;
 }
-.sheet-wfrp-armour__row {
+.wfrp-armour__row {
   display: flex;
   justify-content: space-between;
   max-height: 8rem;
 }
-.sheet-wfrp-armour__block, .sheet-wfrp-armour__block--head, .sheet-wfrp-armour__block--leftarm, .sheet-wfrp-armour__block--rightarm, .sheet-wfrp-armour__block--body, .sheet-wfrp-armour__block--rightleg, .sheet-wfrp-armour__block--leftleg, .sheet-wfrp-armour__block--shield, .sheet-wfrp-armour__block--toughness {
+.wfrp-armour__block, .wfrp-armour__block--head, .wfrp-armour__block--leftarm, .wfrp-armour__block--rightarm, .wfrp-armour__block--body, .wfrp-armour__block--rightleg, .wfrp-armour__block--leftleg, .wfrp-armour__block--shield, .wfrp-armour__block--toughness {
   flex-grow: 0;
   flex-basis: 30%;
   text-align: center;
 }
-.sheet-wfrp-armour__block--shield, .sheet-wfrp-armour__block--toughness {
+.wfrp-armour__block--shield, .wfrp-armour__block--toughness {
   margin-top: 1em;
 }
-.sheet-wfrp-armour__display {
+.wfrp-armour__display {
   display: inline-block;
   width: 3.5rem;
   height: 3.5rem;
 }
 
-.sheet-wfrp-field {
+.wfrp-field {
   display: flex;
   flex-flow: row nowrap;
 }
-.sheet-wfrp-field__header {
+.wfrp-field__header {
   flex-shrink: 0;
 }
-.sheet-wfrp-field__header--flex {
+.wfrp-field__header--flex {
   display: flex;
   align-items: center;
 }
-.sheet-wfrp-field__header--flex > span {
+.wfrp-field__header--flex > span {
   flex-basis: 50%;
 }
-.sheet-wfrp-field__header--flex > button {
+.wfrp-field__header--flex > button {
   flex-basis: 25%;
 }
-.sheet-wfrp-field__header--flex > button[name*=brass_to_silver] {
+.wfrp-field__header--flex > button[name*=brass_to_silver] {
   margin-left: 25%;
 }
-.sheet-wfrp-field__input {
+.wfrp-field__input {
   flex-grow: 1;
   padding-right: 0.5em;
   text-align: right;
 }
-.sheet-wfrp-field__span {
+.wfrp-field__span {
   text-align: center;
 }
-.sheet-wfrp-field--grid1-2 {
+.wfrp-field--grid1-2 {
   display: grid;
   grid-template-columns: minmax(33%, auto) 2fr;
 }
-.sheet-wfrp-field--grid1-25 {
+.wfrp-field--grid1-25 {
   display: grid;
   grid-template-columns: 1fr 2.5fr;
 }
-.sheet-wfrp-field--grid1-3 {
+.wfrp-field--grid1-3 {
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
-.sheet-wfrp-field--grid1-1 {
+.wfrp-field--grid1-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.sheet-wfrp-field--grid2-1 {
+.wfrp-field--grid2-1 {
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
 
-.sheet-wfrp-textarea {
+.wfrp-textarea {
   display: flex;
   flex-flow: row nowrap;
 }
-.sheet-wfrp-textarea__header {
+.wfrp-textarea__header {
   flex-shrink: 0;
 }
-.sheet-wfrp-textarea__textarea {
+.wfrp-textarea__textarea {
   flex-grow: 1;
 }
-.sheet-wfrp-textarea--grid1-2 {
+.wfrp-textarea--grid1-2 {
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
-.sheet-wfrp-textarea--grid1-25 {
+.wfrp-textarea--grid1-25 {
   display: grid;
   grid-template-columns: 1fr 2.5fr;
 }
-.sheet-wfrp-textarea--grid1-1 {
+.wfrp-textarea--grid1-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.sheet-wfrp-textarea--grid2-1 {
+.wfrp-textarea--grid2-1 {
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
 
-.sheet-wfrp-displaytoggle {
+.wfrp-displaytoggle {
   cursor: pointer;
 }
-.sheet-wfrp-displaytoggle__span {
+.wfrp-displaytoggle__span {
   opacity: 0.5;
   font-family: pictos;
 }
-.sheet-wfrp-displaytoggle__span:hover {
+.wfrp-displaytoggle__span:hover {
   opacity: 1;
 }
-.sheet-wfrp-displaytoggle input.sheet-wfrp-displaytoggle__hide[type=checkbox] {
+.wfrp-displaytoggle input.wfrp-displaytoggle__hide[type=checkbox] {
   display: none;
 }
-.sheet-wfrp-displaytoggle input.sheet-wfrp-displaytoggle__hide[type=checkbox]:checked ~ span {
+.wfrp-displaytoggle input.wfrp-displaytoggle__hide[type=checkbox]:checked ~ span {
   opacity: 1;
 }
 
-button.sheet-wfrp-vocalise[type=roll] {
+.charsheet .wfrp-wrapper button.wfrp-vocalise[type=roll] {
   opacity: 0.5;
   font-family: pictos;
   text-align: center;
 }
-button.sheet-wfrp-vocalise[type=roll]:hover {
+.charsheet .wfrp-wrapper button.wfrp-vocalise[type=roll]:hover {
   opacity: 1;
 }
 
-button.sheet-pictos[type=action]:hover {
+.charsheet .wfrp-wrapper button.mypictos[type=action]:hover {
   color: red;
 }
 
-.sheet-wfrp-panel {
+.wfrp-panel {
   position: relative;
   padding: 2px;
 }
-.sheet-wfrp-panel h1.sheet-wfrp-panel__header {
+.wfrp-panel h1.wfrp-panel__header {
   font-size: 1.65rem;
   font-weight: normal;
   text-align: center;
   text-transform: uppercase;
 }
 
-.sheet-wfrp-wrapper .repcontainer {
+.charsheet .wfrp-wrapper .repcontainer {
   grid-column: 1/-1;
   margin: 0;
   padding: 0;
 }
-.sheet-wfrp-wrapper .repcontainer.editmode .itemcontrol {
+.charsheet .wfrp-wrapper .repcontainer.editmode .itemcontrol {
   display: flex !important;
   justify-content: space-between;
   align-items: center;
   height: 100%;
 }
-.sheet-wfrp-wrapper .repcontrol {
+.charsheet .wfrp-wrapper .repcontrol {
   grid-column: 1/-1;
   display: flex;
   flex-flow: row-reverse;
   justify-content: space-between;
   padding: 0.25rem;
 }
-.sheet-wfrp-wrapper .repcontrol button {
+.charsheet .wfrp-wrapper .repcontrol button {
   width: auto;
 }
-.sheet-wfrp-wrapper .itemcontrol {
+.charsheet .wfrp-wrapper .itemcontrol {
   position: relative;
   z-index: 1000;
 }
-.sheet-wfrp-wrapper .itemcontrol button.repcontrol_del,
-.sheet-wfrp-wrapper .itemcontrol a.repcontrol_move {
+.charsheet .wfrp-wrapper .itemcontrol button.repcontrol_del,
+.charsheet .wfrp-wrapper .itemcontrol a.repcontrol_move {
   z-index: 1000;
   margin: 0;
   padding: 0.15em;
@@ -784,27 +785,27 @@ button.sheet-pictos[type=action]:hover {
   width: 2rem;
   line-height: 1;
 }
-.sheet-wfrp-wrapper .itemcontrol button.repcontrol_del {
+.charsheet .wfrp-wrapper .itemcontrol button.repcontrol_del {
   margin-right: 0.25rem;
   float: right;
 }
-.sheet-wfrp-wrapper .itemcontrol a.repcontrol_move {
+.charsheet .wfrp-wrapper .itemcontrol a.repcontrol_move {
   margin-left: 0.25rem;
   float: left;
 }
-.sheet-wfrp-wrapper .repcontrol {
+.charsheet .wfrp-wrapper .repcontrol {
   background-color: transparent;
   min-height: 1.5em;
 }
-.sheet-wfrp-wrapper .repcontrol button.repcontrol_add,
-.sheet-wfrp-wrapper .repcontrol button.repcontrol_edit {
+.charsheet .wfrp-wrapper .repcontrol button.repcontrol_add,
+.charsheet .wfrp-wrapper .repcontrol button.repcontrol_edit {
   z-index: 1000;
   padding: 0;
   margin: 0;
   text-align: center;
 }
-.sheet-wfrp-wrapper .repcontrol button.repcontrol_add:before,
-.sheet-wfrp-wrapper .repcontrol button.repcontrol_edit:before {
+.charsheet .wfrp-wrapper .repcontrol button.repcontrol_add:before,
+.charsheet .wfrp-wrapper .repcontrol button.repcontrol_edit:before {
   display: block;
   margin: 0;
   padding: 0.35em;
@@ -812,156 +813,156 @@ button.sheet-pictos[type=action]:hover {
   width: 1.5rem;
 }
 
-.sheet-wfrp-settings, .sheet-wfrp-settings--noborder, .sheet-wfrp-settings--large {
+.wfrp-settings, .wfrp-settings--noborder, .wfrp-settings--large {
   grid-column: 1/-1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3px;
 }
-.sheet-wfrp-settings h2, .sheet-wfrp-settings--noborder h2, .sheet-wfrp-settings--large h2 {
+.wfrp-settings h2, .wfrp-settings--noborder h2, .wfrp-settings--large h2 {
   grid-column: 1/-1;
   text-align: center;
   text-transform: uppercase;
   font-family: "Lusitana", serif;
 }
-.sheet-wfrp-settings--large {
+.wfrp-settings--large {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
-.sheet-wfrp-settings__row, .sheet-wfrp-settings__row--career_name, .sheet-wfrp-settings__row--talent, .sheet-wfrp-settings__row--skillinit, .sheet-wfrp-settings__row--talentinit, .sheet-wfrp-settings__row--speciesskill, .sheet-wfrp-settings__row--skill, .sheet-wfrp-settings__row--invert, .sheet-wfrp-settings__row--characteristics, .sheet-wfrp-settings__row--span {
+.wfrp-settings__row, .wfrp-settings__row--career_name, .wfrp-settings__row--talent, .wfrp-settings__row--skillinit, .wfrp-settings__row--talentinit, .wfrp-settings__row--speciesskill, .wfrp-settings__row--skill, .wfrp-settings__row--invert, .wfrp-settings__row--characteristics, .wfrp-settings__row--span {
   display: grid;
   grid-template-columns: 9rem 1fr;
   text-align: left;
 }
-.sheet-wfrp-settings__row--span {
+.wfrp-settings__row--span {
   grid-column: 1/-1;
   grid-template-columns: 9rem 1fr;
 }
-.sheet-wfrp-settings__row--characteristics {
+.wfrp-settings__row--characteristics {
   grid-column: 1/-1;
   grid-template-columns: 1.5fr repeat(10, 1fr);
 }
-.sheet-wfrp-settings__row--characteristics > * {
+.wfrp-settings__row--characteristics > * {
   display: grid;
   grid-auto-rows: 2rem;
   border-right: 1px solid #000;
 }
-.sheet-wfrp-settings__row--characteristics > *:last-child {
+.wfrp-settings__row--characteristics > *:last-child {
   border: none;
 }
-.sheet-wfrp-settings__row--characteristics > * > div {
+.wfrp-settings__row--characteristics > * > div {
   border-bottom: 1px solid #000;
 }
-.sheet-wfrp-settings__row--characteristics > * > div:last-child {
+.wfrp-settings__row--characteristics > * > div:last-child {
   border: none;
 }
-.sheet-wfrp-settings__row--characteristics input[type=number],
-.sheet-wfrp-settings__row--characteristics input[type=text] {
+.wfrp-settings__row--characteristics input[type=number],
+.wfrp-settings__row--characteristics input[type=text] {
   border-radius: 0 !important;
 }
-.sheet-wfrp-settings__row--characteristics input[type=number]:last-child,
-.sheet-wfrp-settings__row--characteristics input[type=text]:last-child {
+.wfrp-settings__row--characteristics input[type=number]:last-child,
+.wfrp-settings__row--characteristics input[type=text]:last-child {
   border: none;
 }
-.sheet-wfrp-settings__row--characteristics label {
+.wfrp-settings__row--characteristics label {
   border-bottom: 1px solid #000;
 }
-.sheet-wfrp-settings__row--invert {
+.wfrp-settings__row--invert {
   grid-template-columns: 0.5fr 2fr;
 }
-.sheet-wfrp-settings__row--skill {
+.wfrp-settings__row--skill {
   grid-template-columns: 1fr 0.35fr;
   gap: 3px;
   margin-bottom: 3px;
 }
-.sheet-wfrp-settings__row--speciesskill {
+.wfrp-settings__row--speciesskill {
   grid-template-columns: 1fr 0.15fr 0.15fr 0.15fr;
   gap: 3px;
   margin-bottom: 3px;
 }
-.sheet-wfrp-settings__row--speciesskill > button {
+.wfrp-settings__row--speciesskill > button {
   justify-self: center;
   text-align: center;
 }
-.sheet-wfrp-settings__row--skillinit, .sheet-wfrp-settings__row--talentinit {
+.wfrp-settings__row--skillinit, .wfrp-settings__row--talentinit {
   grid-template-columns: 1fr 0.45fr 0.45fr;
   gap: 3px;
   margin-bottom: 3px;
 }
-.sheet-wfrp-settings__row--talent {
+.wfrp-settings__row--talent {
   grid-template-columns: 1fr 0.35fr;
   gap: 3px;
   margin-bottom: 3px;
 }
-.sheet-wfrp-settings__row--career_name {
+.wfrp-settings__row--career_name {
   grid-column: 1/-1;
   grid-template-columns: 0.5fr 2fr;
 }
-.sheet-wfrp-settings__label--full {
+.wfrp-settings__label--full {
   grid-column: 1/-1;
   text-align: left;
 }
-.sheet-wfrp-settings__item {
+.wfrp-settings__item {
   text-align: center;
 }
-.sheet-wfrp-settings__item input[type=checkbox] {
+.wfrp-settings__item input[type=checkbox] {
   display: none;
 }
-.sheet-wfrp-settings__item input.sheet-wfrp-settings__input.sheet-wfrp-settings__input[type=number] {
+.wfrp-settings__item input.wfrp-settings__input.wfrp-settings__input[type=number] {
   pointer-events: none;
   background: transparent;
   color: #000;
 }
-.sheet-wfrp-settings__item input[type=hidden][value=on] ~ * input.sheet-wfrp-settings__input.sheet-wfrp-settings__input[type=number] {
+.wfrp-settings__item input[type=hidden][value=on] ~ * input.wfrp-settings__input.wfrp-settings__input[type=number] {
   pointer-events: auto;
   background: rgba(36, 107, 131, 0.125);
   color: #000;
 }
-.sheet-wfrp-settings__item input[type=hidden][value="1"] ~ * input.sheet-wfrp-settings__input.sheet-wfrp-settings__input[type=number] {
+.wfrp-settings__item input[type=hidden][value="1"] ~ * input.wfrp-settings__input.wfrp-settings__input[type=number] {
   pointer-events: auto;
   background: rgba(36, 107, 131, 0.125);
   color: #000;
 }
-.sheet-wfrp-settings__item input[type=hidden][value="2"] ~ * input.sheet-wfrp-settings__input.sheet-wfrp-settings__input[type=number] {
+.wfrp-settings__item input[type=hidden][value="2"] ~ * input.wfrp-settings__input.wfrp-settings__input[type=number] {
   pointer-events: auto;
   background: rgba(184, 134, 11, 0.25);
   color: #000;
 }
-.sheet-wfrp-settings__item input[type=hidden][value="3"] ~ * input.sheet-wfrp-settings__input.sheet-wfrp-settings__input[type=number] {
+.wfrp-settings__item input[type=hidden][value="3"] ~ * input.wfrp-settings__input.wfrp-settings__input[type=number] {
   pointer-events: auto;
   background: rgba(192, 192, 192, 0.25);
   color: #000;
 }
-.sheet-wfrp-settings__item input[type=hidden][value="4"] ~ * input.sheet-wfrp-settings__input.sheet-wfrp-settings__input[type=number] {
+.wfrp-settings__item input[type=hidden][value="4"] ~ * input.wfrp-settings__input.wfrp-settings__input[type=number] {
   pointer-events: auto;
   background: rgba(255, 215, 0, 0.25);
   color: #000;
 }
-.sheet-wfrp-settings__item label {
+.wfrp-settings__item label {
   display: block;
   cursor: pointer;
   text-align: center;
 }
-.sheet-wfrp-settings__item label:hover {
+.wfrp-settings__item label:hover {
   color: red;
 }
-.sheet-wfrp-settings__split--2 {
+.wfrp-settings__split--2 {
   display: grid;
   grid-template-columns: 1fr 3em;
 }
-.sheet-wfrp-settings__textarea {
+.wfrp-settings__textarea {
   grid-column: 1/-1;
 }
-.sheet-wfrp-settings__titlewrap {
+.wfrp-settings__titlewrap {
   grid-column: 1/-1;
   display: grid;
   grid-template-columns: 10rem 1fr;
   align-items: center;
 }
-.sheet-wfrp-settings__titlewrap h2 {
+.wfrp-settings__titlewrap h2 {
   grid-column: auto;
   text-indent: -10rem;
 }
-.sheet-wfrp-settings__controlwrap span.sheet-wfrp-current_level--1, .sheet-wfrp-settings__controlwrap span.sheet-wfrp-current_level--2, .sheet-wfrp-settings__controlwrap span.sheet-wfrp-current_level--3, .sheet-wfrp-settings__controlwrap span.sheet-wfrp-current_level--4 {
+.wfrp-settings__controlwrap span.wfrp-current_level--1, .wfrp-settings__controlwrap span.wfrp-current_level--2, .wfrp-settings__controlwrap span.wfrp-current_level--3, .wfrp-settings__controlwrap span.wfrp-current_level--4 {
   display: none;
   background: #007300 no-repeat center/100% 100%;
   color: #fff;
@@ -971,7 +972,7 @@ button.sheet-pictos[type=action]:hover {
   text-align: center;
   text-transform: uppercase;
 }
-.sheet-wfrp-settings__controlwrap button[type=action] {
+.wfrp-settings__controlwrap button[type=action] {
   background: #900000 no-repeat center/100% 100%;
   color: #fff;
   font-size: 9pt;
@@ -980,81 +981,81 @@ button.sheet-pictos[type=action]:hover {
   text-align: center;
   text-transform: uppercase;
 }
-.sheet-wfrp-settings__controlwrap input[name*=career_level_current][value="1"] + button[name*="1"] {
+.wfrp-settings__controlwrap input[name*=career_level_current][value="1"] + button[name*="1"] {
   display: none;
 }
-.sheet-wfrp-settings__controlwrap input[name*=career_level_current][value="1"] ~ span.sheet-wfrp-current_level--1 {
+.wfrp-settings__controlwrap input[name*=career_level_current][value="1"] ~ span.wfrp-current_level--1 {
   display: block;
 }
-.sheet-wfrp-settings__controlwrap input[name*=career_level_current][value="2"] + button[name*="2"] {
+.wfrp-settings__controlwrap input[name*=career_level_current][value="2"] + button[name*="2"] {
   display: none;
 }
-.sheet-wfrp-settings__controlwrap input[name*=career_level_current][value="2"] ~ span.sheet-wfrp-current_level--2 {
+.wfrp-settings__controlwrap input[name*=career_level_current][value="2"] ~ span.wfrp-current_level--2 {
   display: block;
 }
-.sheet-wfrp-settings__controlwrap input[name*=career_level_current][value="3"] + button[name*="3"] {
+.wfrp-settings__controlwrap input[name*=career_level_current][value="3"] + button[name*="3"] {
   display: none;
 }
-.sheet-wfrp-settings__controlwrap input[name*=career_level_current][value="3"] ~ span.sheet-wfrp-current_level--3 {
+.wfrp-settings__controlwrap input[name*=career_level_current][value="3"] ~ span.wfrp-current_level--3 {
   display: block;
 }
-.sheet-wfrp-settings__controlwrap input[name*=career_level_current][value="4"] + button[name*="4"] {
+.wfrp-settings__controlwrap input[name*=career_level_current][value="4"] + button[name*="4"] {
   display: none;
 }
-.sheet-wfrp-settings__controlwrap input[name*=career_level_current][value="4"] ~ span.sheet-wfrp-current_level--4 {
+.wfrp-settings__controlwrap input[name*=career_level_current][value="4"] ~ span.wfrp-current_level--4 {
   display: block;
 }
-.sheet-wfrp-settingstable__row {
+.wfrp-settingstable__row {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 0.25rem;
   margin: 0.25rem;
 }
 
-.sheet-wfrp-wrapper input[type=text],
-.sheet-wfrp-wrapper input[type=number],
-.sheet-wfrp-wrapper textarea,
-.sheet-wfrp-wrapper select {
+.charsheet .wfrp-wrapper input[type=text],
+.charsheet .wfrp-wrapper input[type=number],
+.charsheet .wfrp-wrapper textarea,
+.charsheet .wfrp-wrapper select {
   padding: 0 3px;
   background: rgba(36, 107, 131, 0.125);
   color: #000;
   vertical-align: baseline;
 }
-.sheet-wfrp-wrapper input[type=text]:focus, .sheet-wfrp-wrapper input[type=text]:active, .sheet-wfrp-wrapper input[type=text]:hover,
-.sheet-wfrp-wrapper input[type=number]:focus,
-.sheet-wfrp-wrapper input[type=number]:active,
-.sheet-wfrp-wrapper input[type=number]:hover,
-.sheet-wfrp-wrapper textarea:focus,
-.sheet-wfrp-wrapper textarea:active,
-.sheet-wfrp-wrapper textarea:hover,
-.sheet-wfrp-wrapper select:focus,
-.sheet-wfrp-wrapper select:active,
-.sheet-wfrp-wrapper select:hover {
+.charsheet .wfrp-wrapper input[type=text]:focus, .charsheet .wfrp-wrapper input[type=text]:active, .charsheet .wfrp-wrapper input[type=text]:hover,
+.charsheet .wfrp-wrapper input[type=number]:focus,
+.charsheet .wfrp-wrapper input[type=number]:active,
+.charsheet .wfrp-wrapper input[type=number]:hover,
+.charsheet .wfrp-wrapper textarea:focus,
+.charsheet .wfrp-wrapper textarea:active,
+.charsheet .wfrp-wrapper textarea:hover,
+.charsheet .wfrp-wrapper select:focus,
+.charsheet .wfrp-wrapper select:active,
+.charsheet .wfrp-wrapper select:hover {
   background: rgba(51, 129, 155, 0.125);
   outline: 0;
 }
-.sheet-wfrp-wrapper input[type=text],
-.sheet-wfrp-wrapper textarea,
-.sheet-wfrp-wrapper select {
+.charsheet .wfrp-wrapper input[type=text],
+.charsheet .wfrp-wrapper textarea,
+.charsheet .wfrp-wrapper select {
   text-align: left;
 }
-.sheet-wfrp-wrapper input[type=number] {
+.charsheet .wfrp-wrapper input[type=number] {
   text-align: center;
 }
-.sheet-wfrp-wrapper input[type=checkbox] {
+.charsheet .wfrp-wrapper input[type=checkbox] {
   margin: auto;
   width: 1em;
 }
-.sheet-wfrp-wrapper select {
+.charsheet .wfrp-wrapper select {
   -webkit-appearance: none;
   -moz-appearance: none;
   text-overflow: "";
   cursor: pointer;
 }
-.sheet-wfrp-wrapper button {
+.charsheet .wfrp-wrapper button {
   text-shadow: none;
 }
-.sheet-wfrp-wrapper button.sheet-wfrp-advancenotify__button {
+.charsheet .wfrp-wrapper button.wfrp-advancenotify__button {
   display: block;
   margin: 2px;
   padding: 0.5rem;
@@ -1067,118 +1068,118 @@ button.sheet-pictos[type=action]:hover {
   text-align: center;
 }
 
-.charsheet .sheet-wfrp-wrapper button[type=roll] {
+.charsheet .wfrp-wrapper button[type=roll] {
   margin: 0;
 }
-.charsheet .sheet-wfrp-wrapper button[type=roll]:hover {
+.charsheet .wfrp-wrapper button[type=roll]:hover {
   color: red;
 }
 
-.sheet-wfrp-field,
-.sheet-wfrp-textarea {
+.wfrp-field,
+.wfrp-textarea {
   border-bottom: 1px solid black;
 }
-.sheet-wfrp-field:last-child,
-.sheet-wfrp-textarea:last-child {
+.wfrp-field:last-child,
+.wfrp-textarea:last-child {
   border-bottom: 0;
 }
-.sheet-wfrp-field--grid2-1, .sheet-wfrp-field--grid1-1, .sheet-wfrp-field--grid1-25, .sheet-wfrp-field--grid1-2,
-.sheet-wfrp-textarea--grid2-1,
-.sheet-wfrp-textarea--grid1-1,
-.sheet-wfrp-textarea--grid1-25,
-.sheet-wfrp-textarea--grid1-2 {
+.wfrp-field--grid2-1, .wfrp-field--grid1-1, .wfrp-field--grid1-25, .wfrp-field--grid1-2,
+.wfrp-textarea--grid2-1,
+.wfrp-textarea--grid1-1,
+.wfrp-textarea--grid1-25,
+.wfrp-textarea--grid1-2 {
   border-bottom: 1px solid black;
 }
-.sheet-wfrp-field--grid2-1:last-child, .sheet-wfrp-field--grid1-1:last-child, .sheet-wfrp-field--grid1-25:last-child, .sheet-wfrp-field--grid1-2:last-child,
-.sheet-wfrp-textarea--grid2-1:last-child,
-.sheet-wfrp-textarea--grid1-1:last-child,
-.sheet-wfrp-textarea--grid1-25:last-child,
-.sheet-wfrp-textarea--grid1-2:last-child {
+.wfrp-field--grid2-1:last-child, .wfrp-field--grid1-1:last-child, .wfrp-field--grid1-25:last-child, .wfrp-field--grid1-2:last-child,
+.wfrp-textarea--grid2-1:last-child,
+.wfrp-textarea--grid1-1:last-child,
+.wfrp-textarea--grid1-25:last-child,
+.wfrp-textarea--grid1-2:last-child {
   border-bottom: 0;
 }
-.sheet-wfrp-field__span,
-.sheet-wfrp-textarea__span {
+.wfrp-field__span,
+.wfrp-textarea__span {
   font-family: "Lusitana", serif;
 }
-.sheet-wfrp-field__wrapper,
-.sheet-wfrp-textarea__wrapper {
+.wfrp-field__wrapper,
+.wfrp-textarea__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.sheet-wfrp-field__wrapper > *,
-.sheet-wfrp-textarea__wrapper > * {
+.wfrp-field__wrapper > *,
+.wfrp-textarea__wrapper > * {
   border-bottom: 1px solid #000 !important;
 }
-.sheet-wfrp-field__wrapper > *:first-child,
-.sheet-wfrp-textarea__wrapper > *:first-child {
+.wfrp-field__wrapper > *:first-child,
+.wfrp-textarea__wrapper > *:first-child {
   border-right: 1px solid #000;
 }
 
-.sheet-wfrp-woundstable__row, .sheet-wfrp-experiencetable__row, .sheet-wfrp-careertable__row, .sheet-wfrp-spelltable__row, .sheet-wfrp-weapontable__row, .sheet-wfrp-criticaltable__row, .sheet-wfrp-armourtable__row, .sheet-wfrp-trappingtable__row, .sheet-wfrp-corruptiontable__row, .sheet-wfrp-psychologytable__row, .sheet-wfrp-conditiontable__row, .sheet-wfrp-talenttable__row, .sheet-wfrp-skilltable__row, .sheet-wfrp-skilltable__row--specialisation, .sheet-wfrp-skilltable__row--grouped, .sheet-wfrp-field,
-.sheet-wfrp-textarea, .sheet-wfrp-npccharacteristic__cell--head, .sheet-wfrp-woundstable__row--head, .sheet-wfrp-experiencetable__row--head, .sheet-wfrp-careertable__row--head, .sheet-wfrp-spelltable__row--head, .sheet-wfrp-weapontable__row--head, .sheet-wfrp-criticaltable__row--head, .sheet-wfrp-armourtable__row--head, .sheet-wfrp-trappingtable__row--head, .sheet-wfrp-corruptiontable__row--head, .sheet-wfrp-psychologytable__row--head, .sheet-wfrp-conditiontable__row--head, .sheet-wfrp-talenttable__row--head, .sheet-wfrp-skilltable__row--head {
+.wfrp-woundstable__row, .wfrp-experiencetable__row, .wfrp-careertable__row, .wfrp-spelltable__row, .wfrp-weapontable__row, .wfrp-criticaltable__row, .wfrp-armourtable__row, .wfrp-trappingtable__row, .wfrp-corruptiontable__row, .wfrp-psychologytable__row, .wfrp-conditiontable__row, .wfrp-talenttable__row, .wfrp-skilltable__row, .wfrp-skilltable__row--specialisation, .wfrp-skilltable__row--grouped, .wfrp-field,
+.wfrp-textarea, .wfrp-npccharacteristic__cell--head, .wfrp-woundstable__row--head, .wfrp-experiencetable__row--head, .wfrp-careertable__row--head, .wfrp-spelltable__row--head, .wfrp-weapontable__row--head, .wfrp-criticaltable__row--head, .wfrp-armourtable__row--head, .wfrp-trappingtable__row--head, .wfrp-corruptiontable__row--head, .wfrp-psychologytable__row--head, .wfrp-conditiontable__row--head, .wfrp-talenttable__row--head, .wfrp-skilltable__row--head {
   border-bottom: 1px solid black;
 }
 
-.sheet-wfrp-npccharacteristic__cell--head, .sheet-wfrp-woundstable__row--head, .sheet-wfrp-experiencetable__row--head, .sheet-wfrp-careertable__row--head, .sheet-wfrp-spelltable__row--head, .sheet-wfrp-weapontable__row--head, .sheet-wfrp-criticaltable__row--head, .sheet-wfrp-armourtable__row--head, .sheet-wfrp-trappingtable__row--head, .sheet-wfrp-corruptiontable__row--head, .sheet-wfrp-psychologytable__row--head, .sheet-wfrp-conditiontable__row--head, .sheet-wfrp-talenttable__row--head, .sheet-wfrp-skilltable__row--head {
+.wfrp-npccharacteristic__cell--head, .wfrp-woundstable__row--head, .wfrp-experiencetable__row--head, .wfrp-careertable__row--head, .wfrp-spelltable__row--head, .wfrp-weapontable__row--head, .wfrp-criticaltable__row--head, .wfrp-armourtable__row--head, .wfrp-trappingtable__row--head, .wfrp-corruptiontable__row--head, .wfrp-psychologytable__row--head, .wfrp-conditiontable__row--head, .wfrp-talenttable__row--head, .wfrp-skilltable__row--head {
   font-weight: bold;
 }
 
-.sheet-wfrp-npccharacteristic__cell, .sheet-wfrp-npccharacteristic__cell--head, .sheet-wfrp-woundstable__cell, .sheet-wfrp-experiencetable__cell, .sheet-wfrp-careertable__cell, .sheet-wfrp-spelltable__cell, .sheet-wfrp-weapontable__cell, .sheet-wfrp-criticaltable__cell, .sheet-wfrp-armourtable__cell, .sheet-wfrp-trappingtable__cell, .sheet-wfrp-corruptiontable__cell, .sheet-wfrp-psychologytable__cell, .sheet-wfrp-conditiontable__cell, .sheet-wfrp-talenttable__cell, .sheet-wfrp-skilltable__cell, .sheet-wfrp-skilltable__cell--last, .sheet-wfrp-skilltable__cell--nosettings, .sheet-wfrp-skilltable__cell--span2, .sheet-wfrp-skilltable__cell--grouped, .sheet-wfrp-field__header,
-.sheet-wfrp-field__input,
-.sheet-wfrp-textarea__header,
-.sheet-wfrp-textarea__input, .sheet-wfrp-npccharacteristic__col:last-child .sheet-wfrp-npccharacteristic__cell, .sheet-wfrp-npccharacteristic__col:last-child .sheet-wfrp-npccharacteristic__cell--head, .sheet-wfrp-woundstable__cell--last, .sheet-wfrp-experiencetable__cell--last, .sheet-wfrp-careertable__cell--last, .sheet-wfrp-spelltable__cell--last, .sheet-wfrp-weapontable__cell--last, .sheet-wfrp-criticaltable__cell--last, .sheet-wfrp-armourtable__cell--last, .sheet-wfrp-trappingtable__cell--last, .sheet-wfrp-corruptiontable__cell--last, .sheet-wfrp-psychologytable__cell--last, .sheet-wfrp-conditiontable__cell--last, .sheet-wfrp-talenttable__cell--last {
+.wfrp-npccharacteristic__cell, .wfrp-npccharacteristic__cell--head, .wfrp-woundstable__cell, .wfrp-experiencetable__cell, .wfrp-careertable__cell, .wfrp-spelltable__cell, .wfrp-weapontable__cell, .wfrp-criticaltable__cell, .wfrp-armourtable__cell, .wfrp-trappingtable__cell, .wfrp-corruptiontable__cell, .wfrp-psychologytable__cell, .wfrp-conditiontable__cell, .wfrp-talenttable__cell, .wfrp-skilltable__cell, .wfrp-skilltable__cell--last, .wfrp-skilltable__cell--nosettings, .wfrp-skilltable__cell--span2, .wfrp-skilltable__cell--grouped, .wfrp-field__header,
+.wfrp-field__input,
+.wfrp-textarea__header,
+.wfrp-textarea__input, .wfrp-npccharacteristic__col:last-child .wfrp-npccharacteristic__cell, .wfrp-npccharacteristic__col:last-child .wfrp-npccharacteristic__cell--head, .wfrp-woundstable__cell--last, .wfrp-experiencetable__cell--last, .wfrp-careertable__cell--last, .wfrp-spelltable__cell--last, .wfrp-weapontable__cell--last, .wfrp-criticaltable__cell--last, .wfrp-armourtable__cell--last, .wfrp-trappingtable__cell--last, .wfrp-corruptiontable__cell--last, .wfrp-psychologytable__cell--last, .wfrp-conditiontable__cell--last, .wfrp-talenttable__cell--last {
   border-right: 1px solid black;
 }
-.sheet-wfrp-npccharacteristic__cell input[type=number], .sheet-wfrp-npccharacteristic__cell--head input[type=number], .sheet-wfrp-woundstable__cell input[type=number], .sheet-wfrp-experiencetable__cell input[type=number], .sheet-wfrp-careertable__cell input[type=number], .sheet-wfrp-spelltable__cell input[type=number], .sheet-wfrp-weapontable__cell input[type=number], .sheet-wfrp-criticaltable__cell input[type=number], .sheet-wfrp-armourtable__cell input[type=number], .sheet-wfrp-trappingtable__cell input[type=number], .sheet-wfrp-corruptiontable__cell input[type=number], .sheet-wfrp-psychologytable__cell input[type=number], .sheet-wfrp-conditiontable__cell input[type=number], .sheet-wfrp-talenttable__cell input[type=number], .sheet-wfrp-skilltable__cell input[type=number], .sheet-wfrp-skilltable__cell--last input[type=number], .sheet-wfrp-skilltable__cell--nosettings input[type=number], .sheet-wfrp-skilltable__cell--span2 input[type=number], .sheet-wfrp-skilltable__cell--grouped input[type=number], .sheet-wfrp-field__header input[type=number],
-.sheet-wfrp-field__input input[type=number],
-.sheet-wfrp-textarea__header input[type=number],
-.sheet-wfrp-textarea__input input[type=number], .sheet-wfrp-npccharacteristic__col:last-child .sheet-wfrp-npccharacteristic__cell input[type=number], .sheet-wfrp-npccharacteristic__col:last-child .sheet-wfrp-npccharacteristic__cell--head input[type=number], .sheet-wfrp-woundstable__cell--last input[type=number], .sheet-wfrp-experiencetable__cell--last input[type=number], .sheet-wfrp-careertable__cell--last input[type=number], .sheet-wfrp-spelltable__cell--last input[type=number], .sheet-wfrp-weapontable__cell--last input[type=number], .sheet-wfrp-criticaltable__cell--last input[type=number], .sheet-wfrp-armourtable__cell--last input[type=number], .sheet-wfrp-trappingtable__cell--last input[type=number], .sheet-wfrp-corruptiontable__cell--last input[type=number], .sheet-wfrp-psychologytable__cell--last input[type=number], .sheet-wfrp-conditiontable__cell--last input[type=number], .sheet-wfrp-talenttable__cell--last input[type=number] {
+.wfrp-npccharacteristic__cell input[type=number], .wfrp-npccharacteristic__cell--head input[type=number], .wfrp-woundstable__cell input[type=number], .wfrp-experiencetable__cell input[type=number], .wfrp-careertable__cell input[type=number], .wfrp-spelltable__cell input[type=number], .wfrp-weapontable__cell input[type=number], .wfrp-criticaltable__cell input[type=number], .wfrp-armourtable__cell input[type=number], .wfrp-trappingtable__cell input[type=number], .wfrp-corruptiontable__cell input[type=number], .wfrp-psychologytable__cell input[type=number], .wfrp-conditiontable__cell input[type=number], .wfrp-talenttable__cell input[type=number], .wfrp-skilltable__cell input[type=number], .wfrp-skilltable__cell--last input[type=number], .wfrp-skilltable__cell--nosettings input[type=number], .wfrp-skilltable__cell--span2 input[type=number], .wfrp-skilltable__cell--grouped input[type=number], .wfrp-field__header input[type=number],
+.wfrp-field__input input[type=number],
+.wfrp-textarea__header input[type=number],
+.wfrp-textarea__input input[type=number], .wfrp-npccharacteristic__col:last-child .wfrp-npccharacteristic__cell input[type=number], .wfrp-npccharacteristic__col:last-child .wfrp-npccharacteristic__cell--head input[type=number], .wfrp-woundstable__cell--last input[type=number], .wfrp-experiencetable__cell--last input[type=number], .wfrp-careertable__cell--last input[type=number], .wfrp-spelltable__cell--last input[type=number], .wfrp-weapontable__cell--last input[type=number], .wfrp-criticaltable__cell--last input[type=number], .wfrp-armourtable__cell--last input[type=number], .wfrp-trappingtable__cell--last input[type=number], .wfrp-corruptiontable__cell--last input[type=number], .wfrp-psychologytable__cell--last input[type=number], .wfrp-conditiontable__cell--last input[type=number], .wfrp-talenttable__cell--last input[type=number] {
   height: 100%;
 }
-.sheet-wfrp-npccharacteristic__cell > span[name*=attr], .sheet-wfrp-npccharacteristic__cell--head > span[name*=attr], .sheet-wfrp-woundstable__cell > span[name*=attr], .sheet-wfrp-experiencetable__cell > span[name*=attr], .sheet-wfrp-careertable__cell > span[name*=attr], .sheet-wfrp-spelltable__cell > span[name*=attr], .sheet-wfrp-weapontable__cell > span[name*=attr], .sheet-wfrp-criticaltable__cell > span[name*=attr], .sheet-wfrp-armourtable__cell > span[name*=attr], .sheet-wfrp-trappingtable__cell > span[name*=attr], .sheet-wfrp-corruptiontable__cell > span[name*=attr], .sheet-wfrp-psychologytable__cell > span[name*=attr], .sheet-wfrp-conditiontable__cell > span[name*=attr], .sheet-wfrp-talenttable__cell > span[name*=attr], .sheet-wfrp-skilltable__cell > span[name*=attr], .sheet-wfrp-skilltable__cell--last > span[name*=attr], .sheet-wfrp-skilltable__cell--nosettings > span[name*=attr], .sheet-wfrp-skilltable__cell--span2 > span[name*=attr], .sheet-wfrp-skilltable__cell--grouped > span[name*=attr], .sheet-wfrp-field__header > span[name*=attr],
-.sheet-wfrp-field__input > span[name*=attr],
-.sheet-wfrp-textarea__header > span[name*=attr],
-.sheet-wfrp-textarea__input > span[name*=attr], .sheet-wfrp-npccharacteristic__col:last-child .sheet-wfrp-npccharacteristic__cell > span[name*=attr], .sheet-wfrp-npccharacteristic__col:last-child .sheet-wfrp-npccharacteristic__cell--head > span[name*=attr], .sheet-wfrp-woundstable__cell--last > span[name*=attr], .sheet-wfrp-experiencetable__cell--last > span[name*=attr], .sheet-wfrp-careertable__cell--last > span[name*=attr], .sheet-wfrp-spelltable__cell--last > span[name*=attr], .sheet-wfrp-weapontable__cell--last > span[name*=attr], .sheet-wfrp-criticaltable__cell--last > span[name*=attr], .sheet-wfrp-armourtable__cell--last > span[name*=attr], .sheet-wfrp-trappingtable__cell--last > span[name*=attr], .sheet-wfrp-corruptiontable__cell--last > span[name*=attr], .sheet-wfrp-psychologytable__cell--last > span[name*=attr], .sheet-wfrp-conditiontable__cell--last > span[name*=attr], .sheet-wfrp-talenttable__cell--last > span[name*=attr] {
+.wfrp-npccharacteristic__cell > span[name*=attr], .wfrp-npccharacteristic__cell--head > span[name*=attr], .wfrp-woundstable__cell > span[name*=attr], .wfrp-experiencetable__cell > span[name*=attr], .wfrp-careertable__cell > span[name*=attr], .wfrp-spelltable__cell > span[name*=attr], .wfrp-weapontable__cell > span[name*=attr], .wfrp-criticaltable__cell > span[name*=attr], .wfrp-armourtable__cell > span[name*=attr], .wfrp-trappingtable__cell > span[name*=attr], .wfrp-corruptiontable__cell > span[name*=attr], .wfrp-psychologytable__cell > span[name*=attr], .wfrp-conditiontable__cell > span[name*=attr], .wfrp-talenttable__cell > span[name*=attr], .wfrp-skilltable__cell > span[name*=attr], .wfrp-skilltable__cell--last > span[name*=attr], .wfrp-skilltable__cell--nosettings > span[name*=attr], .wfrp-skilltable__cell--span2 > span[name*=attr], .wfrp-skilltable__cell--grouped > span[name*=attr], .wfrp-field__header > span[name*=attr],
+.wfrp-field__input > span[name*=attr],
+.wfrp-textarea__header > span[name*=attr],
+.wfrp-textarea__input > span[name*=attr], .wfrp-npccharacteristic__col:last-child .wfrp-npccharacteristic__cell > span[name*=attr], .wfrp-npccharacteristic__col:last-child .wfrp-npccharacteristic__cell--head > span[name*=attr], .wfrp-woundstable__cell--last > span[name*=attr], .wfrp-experiencetable__cell--last > span[name*=attr], .wfrp-careertable__cell--last > span[name*=attr], .wfrp-spelltable__cell--last > span[name*=attr], .wfrp-weapontable__cell--last > span[name*=attr], .wfrp-criticaltable__cell--last > span[name*=attr], .wfrp-armourtable__cell--last > span[name*=attr], .wfrp-trappingtable__cell--last > span[name*=attr], .wfrp-corruptiontable__cell--last > span[name*=attr], .wfrp-psychologytable__cell--last > span[name*=attr], .wfrp-conditiontable__cell--last > span[name*=attr], .wfrp-talenttable__cell--last > span[name*=attr] {
   font-family: "Lusitana", serif;
   font-size: 1.25rem;
 }
 
-.sheet-wfrp-skilltable__cell--grouped, .sheet-wfrp-npccharacteristic__col:last-child .sheet-wfrp-npccharacteristic__cell, .sheet-wfrp-npccharacteristic__col:last-child .sheet-wfrp-npccharacteristic__cell--head, .sheet-wfrp-woundstable__cell--last, .sheet-wfrp-experiencetable__cell--last, .sheet-wfrp-careertable__cell--last, .sheet-wfrp-spelltable__cell--last, .sheet-wfrp-weapontable__cell--last, .sheet-wfrp-criticaltable__cell--last, .sheet-wfrp-armourtable__cell--last, .sheet-wfrp-trappingtable__cell--last, .sheet-wfrp-corruptiontable__cell--last, .sheet-wfrp-psychologytable__cell--last, .sheet-wfrp-conditiontable__cell--last, .sheet-wfrp-talenttable__cell--last, .sheet-wfrp-skilltable__cell--last {
+.wfrp-skilltable__cell--grouped, .wfrp-npccharacteristic__col:last-child .wfrp-npccharacteristic__cell, .wfrp-npccharacteristic__col:last-child .wfrp-npccharacteristic__cell--head, .wfrp-woundstable__cell--last, .wfrp-experiencetable__cell--last, .wfrp-careertable__cell--last, .wfrp-spelltable__cell--last, .wfrp-weapontable__cell--last, .wfrp-criticaltable__cell--last, .wfrp-armourtable__cell--last, .wfrp-trappingtable__cell--last, .wfrp-corruptiontable__cell--last, .wfrp-psychologytable__cell--last, .wfrp-conditiontable__cell--last, .wfrp-talenttable__cell--last, .wfrp-skilltable__cell--last {
   border-right: 0;
 }
 
-.sheet-wfrp-npccharacteristic__cell--highlight, .sheet-wfrp-woundstable__cell--highlight, .sheet-wfrp-experiencetable__cell--highlight, .sheet-wfrp-careertable__cell--highlight, .sheet-wfrp-spelltable__cell--highlight, .sheet-wfrp-weapontable__cell--highlight, .sheet-wfrp-criticaltable__cell--highlight, .sheet-wfrp-armourtable__cell--highlight, .sheet-wfrp-trappingtable__cell--highlight, .sheet-wfrp-corruptiontable__cell--highlight, .sheet-wfrp-psychologytable__cell--highlight, .sheet-wfrp-conditiontable__cell--highlight, .sheet-wfrp-talenttable__cell--highlight, .sheet-wfrp-skilltable__cell--highlight {
+.wfrp-npccharacteristic__cell--highlight, .wfrp-woundstable__cell--highlight, .wfrp-experiencetable__cell--highlight, .wfrp-careertable__cell--highlight, .wfrp-spelltable__cell--highlight, .wfrp-weapontable__cell--highlight, .wfrp-criticaltable__cell--highlight, .wfrp-armourtable__cell--highlight, .wfrp-trappingtable__cell--highlight, .wfrp-corruptiontable__cell--highlight, .wfrp-psychologytable__cell--highlight, .wfrp-conditiontable__cell--highlight, .wfrp-talenttable__cell--highlight, .wfrp-skilltable__cell--highlight {
   font-weight: bold;
 }
 
-.sheet-wfrp-npccharacteristic__cell--description, .sheet-wfrp-woundstable__cell--description, .sheet-wfrp-experiencetable__cell--description, .sheet-wfrp-careertable__cell--description, .sheet-wfrp-spelltable__cell--description, .sheet-wfrp-weapontable__cell--description, .sheet-wfrp-criticaltable__cell--description, .sheet-wfrp-armourtable__cell--description, .sheet-wfrp-trappingtable__cell--description, .sheet-wfrp-corruptiontable__cell--description, .sheet-wfrp-psychologytable__cell--description, .sheet-wfrp-conditiontable__cell--description, .sheet-wfrp-talenttable__cell--description, .sheet-wfrp-skilltable__cell--description {
+.wfrp-npccharacteristic__cell--description, .wfrp-woundstable__cell--description, .wfrp-experiencetable__cell--description, .wfrp-careertable__cell--description, .wfrp-spelltable__cell--description, .wfrp-weapontable__cell--description, .wfrp-criticaltable__cell--description, .wfrp-armourtable__cell--description, .wfrp-trappingtable__cell--description, .wfrp-corruptiontable__cell--description, .wfrp-psychologytable__cell--description, .wfrp-conditiontable__cell--description, .wfrp-talenttable__cell--description, .wfrp-skilltable__cell--description {
   border-top: 1px dotted dimgrey;
   font-size: 0.95em;
   font-style: italic;
 }
 
-.sheet-wfrp-chartable__cell {
+.wfrp-chartable__cell {
   border-left: 1px solid black;
   border-top: 1px solid black;
   font-family: "Lusitana", serif;
 }
-.sheet-wfrp-chartable__cell--left {
+.wfrp-chartable__cell--left {
   font-weight: bold;
   border-top: 1px solid black;
 }
-.sheet-wfrp-chartable__cell--head {
+.wfrp-chartable__cell--head {
   font-weight: bold;
   border-left: 1px solid black;
 }
-.sheet-wfrp-chartable__cell--highlight {
+.wfrp-chartable__cell--highlight {
   font-weight: bold;
 }
 
-.sheet-wfrp-skilltable__row--grouped {
+.wfrp-skilltable__row--grouped {
   background: rgba(36, 107, 131, 0.1);
 }
 
-.sheet-wfrp-skilltable__cell--grouped {
+.wfrp-skilltable__cell--grouped {
   padding-top: 1px;
   font-weight: bold;
   text-align: center !important;
@@ -1186,93 +1187,94 @@ button.sheet-pictos[type=action]:hover {
   text-transform: uppercase;
 }
 
-.sheet-wfrp-armour__display {
+.wfrp-armour__display {
   font-family: "Lusitana", serif;
   font-size: 14pt;
   font-weight: bold;
   line-height: 3.5rem;
 }
 
-.sheet-wfrp-header {
+.wfrp-header {
   padding: 0;
 }
-.sheet-wfrp-header__logo {
+.wfrp-header__logo {
   background: transparent;
 }
-.sheet-wfrp-header__item-wrapper--character_name, .sheet-wfrp-header__item-wrapper--species, .sheet-wfrp-header__item-wrapper--career, .sheet-wfrp-header__item-wrapper--career_path {
+.wfrp-header__item-wrapper--character_name, .wfrp-header__item-wrapper--species, .wfrp-header__item-wrapper--career, .wfrp-header__item-wrapper--career_path {
   border: 0;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
 }
-.sheet-wfrp-header__item-wrapper--class, .sheet-wfrp-header__item-wrapper--career_level, .sheet-wfrp-header__item-wrapper--status {
+.wfrp-header__item-wrapper--class, .wfrp-header__item-wrapper--career_level, .wfrp-header__item-wrapper--status {
   border: 0;
   border-bottom: 1px solid black;
 }
-.sheet-wfrp-header__item-wrapper--age, .sheet-wfrp-header__item-wrapper--height, .sheet-wfrp-header__item-wrapper--hair {
+.wfrp-header__item-wrapper--age, .wfrp-header__item-wrapper--height, .wfrp-header__item-wrapper--hair {
   border: 0;
   border-right: 1px solid black;
 }
-.sheet-wfrp-header__title {
+.wfrp-header__title {
   padding: 0.25rem;
 }
-.sheet-wfrp-header button[type=action].sheet-wfrp-header__hidecustom {
+.wfrp-header button[type=action].wfrp-header__hidecustom {
   text-align: center;
 }
 
-.sheet-wfrp-panel {
+.wfrp-panel {
   background: #eff2f1 center/cover;
   border: 2px solid black;
 }
-.sheet-wfrp-panel h1 {
+.wfrp-panel h1 {
   border-bottom: 1px solid black;
 }
 
-.sheet-wfrp-armour__wrapper {
+.wfrp-armour__wrapper {
   background: transparent;
 }
-.sheet-wfrp-armour__display {
+.wfrp-armour__display {
   border: 1px solid black;
 }
 
-.sheet-wfrp-wrapper .sheet-wfrp-controls button {
+.charsheet .wfrp-wrapper .wfrp-controls button {
   background: rgba(44, 76, 87, 0.125);
   text-align: center;
 }
-.sheet-wfrp-wrapper .sheet-wfrp-advantage {
+.charsheet .wfrp-wrapper .wfrp-advantage {
   font-size: 16pt;
 }
-.sheet-wfrp-wrapper .sheet-wfrp-advantage__wrapper {
+.charsheet .wfrp-wrapper .wfrp-advantage__wrapper {
   font-size: 16pt;
   text-align: center;
 }
-.sheet-wfrp-wrapper .sheet-wfrp-advantage__wrapper input[type=number].sheet-wfrp-advantage__input {
+.charsheet .wfrp-wrapper .wfrp-advantage__wrapper input[type=number].wfrp-advantage__input {
   border: 1px solid black;
   font-size: 16pt;
 }
 
-.sheet-wfrp-navigation__item input[type=checkbox]:checked + span, .sheet-wfrp-navigation__item--settings input[type=checkbox]:checked + span,
-.sheet-wfrp-navigation__item input[type=radio]:checked + span,
-.sheet-wfrp-navigation__item--settings input[type=radio]:checked + span {
+.wfrp-navigation__item input[type=checkbox]:checked + span, .wfrp-navigation__item--settings input[type=checkbox]:checked + span,
+.wfrp-navigation__item input[type=radio]:checked + span,
+.wfrp-navigation__item--settings input[type=radio]:checked + span {
   background: rgba(36, 107, 131, 0.125);
   border: 1px solid rgba(20, 58, 71, 0.125);
 }
-.sheet-wfrp-navigation__item span, .sheet-wfrp-navigation__item--settings span {
+.wfrp-navigation__item span, .wfrp-navigation__item--settings span {
   padding: 0.25rem 0.5rem;
   border: 1px solid rgba(36, 107, 131, 0.125);
   border-radius: 5px;
   line-height: 1.5;
   text-transform: uppercase;
+  width: auto;
 }
-.sheet-wfrp-navigation__item--settings span {
+.wfrp-navigation__item--settings span {
   font-family: "Pictos";
   text-transform: lowercase;
 }
 
-.sheet-wfrp-wrapper .repcontainer.editmode + .repcontrol .repcontrol_edit {
+.charsheet .wfrp-wrapper .repcontainer.editmode + .repcontrol .repcontrol_edit {
   background: rgba(255, 255, 0, 0.5);
 }
-.sheet-wfrp-wrapper .itemcontrol button.repcontrol_del,
-.sheet-wfrp-wrapper .itemcontrol a.repcontrol_move {
+.charsheet .wfrp-wrapper .itemcontrol button.repcontrol_del,
+.charsheet .wfrp-wrapper .itemcontrol a.repcontrol_move {
   border: 1px solid black;
   border-radius: 2px;
   box-shadow: none;
@@ -1282,27 +1284,27 @@ button.sheet-pictos[type=action]:hover {
   text-align: center;
   text-shadow: none;
 }
-.sheet-wfrp-wrapper .itemcontrol button.repcontrol_del {
+.charsheet .wfrp-wrapper .itemcontrol button.repcontrol_del {
   background: #900;
   color: white;
 }
-.sheet-wfrp-wrapper .itemcontrol a.repcontrol_move {
+.charsheet .wfrp-wrapper .itemcontrol a.repcontrol_move {
   background: azure;
 }
-.sheet-wfrp-wrapper .repcontrol {
+.charsheet .wfrp-wrapper .repcontrol {
   border-bottom: 1px solid black;
   background-color: transparent;
 }
-.sheet-wfrp-wrapper .repcontrol button.repcontrol_add,
-.sheet-wfrp-wrapper .repcontrol button.repcontrol_edit {
+.charsheet .wfrp-wrapper .repcontrol button.repcontrol_add,
+.charsheet .wfrp-wrapper .repcontrol button.repcontrol_edit {
   border: 0;
   background: none;
   box-shadow: none;
   font-size: 0;
   line-height: 1;
 }
-.sheet-wfrp-wrapper .repcontrol button.repcontrol_add:before,
-.sheet-wfrp-wrapper .repcontrol button.repcontrol_edit:before {
+.charsheet .wfrp-wrapper .repcontrol button.repcontrol_add:before,
+.charsheet .wfrp-wrapper .repcontrol button.repcontrol_edit:before {
   border: 1px solid black;
   background: none;
   box-shadow: none;
@@ -1310,123 +1312,123 @@ button.sheet-pictos[type=action]:hover {
   font-size: 10pt;
   font-weight: bold;
 }
-.sheet-wfrp-wrapper .repcontrol button.repcontrol_add:before {
+.charsheet .wfrp-wrapper .repcontrol button.repcontrol_add:before {
   content: "&";
 }
-.sheet-wfrp-wrapper .repcontrol button.repcontrol_edit:before {
+.charsheet .wfrp-wrapper .repcontrol button.repcontrol_edit:before {
   content: "p";
   right: 5px;
 }
 
-.sheet-wfrp-settings, .sheet-wfrp-settings--noborder, .sheet-wfrp-settings--large {
+.wfrp-settings, .wfrp-settings--noborder, .wfrp-settings--large {
   padding-top: 0.5rem;
   border-top: 2px dashed #404040;
   background: rgba(195, 223, 241, 0.125);
 }
-.sheet-wfrp-settings input.sheet-wfrp-settings__input[type=text], .sheet-wfrp-settings--noborder input.sheet-wfrp-settings__input[type=text], .sheet-wfrp-settings--large input.sheet-wfrp-settings__input[type=text],
-.sheet-wfrp-settings input.sheet-wfrp-settings__input[type=number],
-.sheet-wfrp-settings--noborder input.sheet-wfrp-settings__input[type=number],
-.sheet-wfrp-settings--large input.sheet-wfrp-settings__input[type=number],
-.sheet-wfrp-settings textarea.sheet-wfrp-settings__textarea,
-.sheet-wfrp-settings--noborder textarea.sheet-wfrp-settings__textarea,
-.sheet-wfrp-settings--large textarea.sheet-wfrp-settings__textarea,
-.sheet-wfrp-settings select.sheet-wfrp-settings__select,
-.sheet-wfrp-settings--noborder select.sheet-wfrp-settings__select,
-.sheet-wfrp-settings--large select.sheet-wfrp-settings__select {
+.wfrp-settings input.wfrp-settings__input[type=text], .wfrp-settings--noborder input.wfrp-settings__input[type=text], .wfrp-settings--large input.wfrp-settings__input[type=text],
+.wfrp-settings input.wfrp-settings__input[type=number],
+.wfrp-settings--noborder input.wfrp-settings__input[type=number],
+.wfrp-settings--large input.wfrp-settings__input[type=number],
+.wfrp-settings textarea.wfrp-settings__textarea,
+.wfrp-settings--noborder textarea.wfrp-settings__textarea,
+.wfrp-settings--large textarea.wfrp-settings__textarea,
+.wfrp-settings select.wfrp-settings__select,
+.wfrp-settings--noborder select.wfrp-settings__select,
+.wfrp-settings--large select.wfrp-settings__select {
   background-color: rgba(36, 107, 131, 0.125);
   color: #000;
   border-radius: 3px;
 }
-.sheet-wfrp-settings--noborder {
+.wfrp-settings--noborder {
   border: 0;
 }
-.sheet-wfrp-settings__header {
+.wfrp-settings__header {
   margin-top: 0.5rem;
   border-bottom: 1px solid black;
   font-weight: bold;
 }
-.sheet-wfrp-settings__header:not(:first-child) {
+.wfrp-settings__header:not(:first-child) {
   text-align: center;
 }
-.sheet-wfrp-settings__label span {
+.wfrp-settings__label span {
   display: block;
 }
 
-.sheet-wfrp-npcsettings__wrapper, .sheet-control__hide--npctalent_settings, .sheet-control__hide--npctrait_settings, .sheet-control__hide--npcattack_settings, .sheet-control__hide--Custom, .sheet-control__hide--Prayer, .sheet-control__hide--Spell, .sheet-control__hide--skill, .sheet-control__hide--characteristic, .sheet-wfrp-criticaltable__row .sheet-wfrp-criticaltable__cell--description, .sheet-wfrp-corruptiontable__row .sheet-wfrp-corruptiontable__cell--description, .sheet-wfrp-psychologytable__row .sheet-wfrp-psychologytable__cell--description, .sheet-wfrp-conditiontable__row .sheet-wfrp-conditiontable__cell--description, .sheet-wfrp-talenttable__row .sheet-wfrp-talenttable__cell--description, .sheet-control__hide--spell_settings, .sheet-control__hide--weapon_settings, .sheet-control__hide--armour_settings, .sheet-control__hide--trappings_settings, .sheet-control__hide--species_settings, .sheet-control__hide--career_settings, .sheet-control__hide--critical_settings, .sheet-control__hide--corruption_settings, .sheet-control__hide--psychology_settings, .sheet-control__hide--condition_settings, .sheet-control__hide--talent_settings, .sheet-control__hide--custom, .sheet-control__hide--magick, .sheet-control__hide--ulgu, .sheet-control__hide--shyish, .sheet-control__hide--hysh, .sheet-control__hide--ghyran, .sheet-control__hide--ghur, .sheet-control__hide--dhar, .sheet-control__hide--chamon, .sheet-control__hide--aqshy, .sheet-control__hide--azyr, .sheet-control__hide--throwing, .sheet-control__hide--sling, .sheet-control__hide--explosives, .sheet-control__hide--entangling, .sheet-control__hide--engineering, .sheet-control__hide--crossbow, .sheet-control__hide--bow, .sheet-control__hide--blackpowder, .sheet-control__hide--two-handed, .sheet-control__hide--polearm, .sheet-control__hide--parry, .sheet-control__hide--flail, .sheet-control__hide--fencing, .sheet-control__hide--cavalry, .sheet-control__hide--brawling, .sheet-control__hide--basic, .sheet-control__hide--custom_settings, .sheet-control__hide--magick_settings, .sheet-control__hide--ulgu_settings, .sheet-control__hide--shyish_settings, .sheet-control__hide--hysh_settings, .sheet-control__hide--ghyran_settings, .sheet-control__hide--ghur_settings, .sheet-control__hide--dhar_settings, .sheet-control__hide--chamon_settings, .sheet-control__hide--aqshy_settings, .sheet-control__hide--azyr_settings, .sheet-control__hide--throwing_settings, .sheet-control__hide--sling_settings, .sheet-control__hide--explosives_settings, .sheet-control__hide--entangling_settings, .sheet-control__hide--engineering_settings, .sheet-control__hide--crossbow_settings, .sheet-control__hide--bow_settings, .sheet-control__hide--blackpowder_settings, .sheet-control__hide--two-handed_settings, .sheet-control__hide--polearm_settings, .sheet-control__hide--parry_settings, .sheet-control__hide--flail_settings, .sheet-control__hide--fencing_settings, .sheet-control__hide--cavalry_settings, .sheet-control__hide--brawling_settings, .sheet-control__hide--basic_settings, .sheet-control__hide--stealth_settings, .sheet-control__hide--row_settings, .sheet-control__hide--ride_settings, .sheet-control__hide--perception_settings, .sheet-control__hide--outdoor-survival_settings, .sheet-control__hide--navigation_settings, .sheet-control__hide--melee_settings, .sheet-control__hide--leadership_settings, .sheet-control__hide--intuition_settings, .sheet-control__hide--intimidate_settings, .sheet-control__hide--haggle_settings, .sheet-control__hide--gossip_settings, .sheet-control__hide--gamble_settings, .sheet-control__hide--entertain_settings, .sheet-control__hide--endurance_settings, .sheet-control__hide--drive_settings, .sheet-control__hide--dodge_settings, .sheet-control__hide--cool_settings, .sheet-control__hide--consume-alcohol_settings, .sheet-control__hide--climb_settings, .sheet-control__hide--charm-animal_settings, .sheet-control__hide--charm_settings, .sheet-control__hide--bribery_settings, .sheet-control__hide--athletics_settings, .sheet-control__hide--art_settings, .sheet-control__hide--trade_settings, .sheet-control__hide--track_settings, .sheet-control__hide--swim_settings, .sheet-control__hide--sleight-of-hand_settings, .sheet-control__hide--set-trap_settings, .sheet-control__hide--secret-signs_settings, .sheet-control__hide--sail_settings, .sheet-control__hide--research_settings, .sheet-control__hide--ranged_settings, .sheet-control__hide--pray_settings, .sheet-control__hide--play_settings, .sheet-control__hide--pick-lock_settings, .sheet-control__hide--perform_settings, .sheet-control__hide--lore_settings, .sheet-control__hide--language_settings, .sheet-control__hide--heal_settings, .sheet-control__hide--eva1uate_settings, .sheet-control__hide--channelling_settings, .sheet-control__hide--animal-training_settings, .sheet-control__hide--settings, .sheet-control__hide--animal-care_settings, .sheet-control__hide--fellowship, .sheet-control__hide--willpower, .sheet-control__hide--intelligence, .sheet-control__hide--dexterity, .sheet-control__hide--agility, .sheet-control__hide--initiative, .sheet-control__hide--toughness, .sheet-control__hide--strength, .sheet-control__hide--ballistic_skill, .sheet-control__hide--weapon_skill {
+.wfrp-npcsettings__wrapper, .control__hide--npctalent_settings, .control__hide--npctrait_settings, .control__hide--npcattack_settings, .control__hide--Custom, .control__hide--Prayer, .control__hide--Spell, .control__hide--skill, .control__hide--characteristic, .wfrp-criticaltable__row .wfrp-criticaltable__cell--description, .wfrp-corruptiontable__row .wfrp-corruptiontable__cell--description, .wfrp-psychologytable__row .wfrp-psychologytable__cell--description, .wfrp-conditiontable__row .wfrp-conditiontable__cell--description, .wfrp-talenttable__row .wfrp-talenttable__cell--description, .control__hide--spell_settings, .control__hide--weapon_settings, .control__hide--armour_settings, .control__hide--trappings_settings, .control__hide--species_settings, .control__hide--career_settings, .control__hide--critical_settings, .control__hide--corruption_settings, .control__hide--psychology_settings, .control__hide--condition_settings, .control__hide--talent_settings, .control__hide--custom, .control__hide--magick, .control__hide--ulgu, .control__hide--shyish, .control__hide--hysh, .control__hide--ghyran, .control__hide--ghur, .control__hide--dhar, .control__hide--chamon, .control__hide--aqshy, .control__hide--azyr, .control__hide--throwing, .control__hide--sling, .control__hide--explosives, .control__hide--entangling, .control__hide--engineering, .control__hide--crossbow, .control__hide--bow, .control__hide--blackpowder, .control__hide--two-handed, .control__hide--polearm, .control__hide--parry, .control__hide--flail, .control__hide--fencing, .control__hide--cavalry, .control__hide--brawling, .control__hide--basic, .control__hide--custom_settings, .control__hide--magick_settings, .control__hide--ulgu_settings, .control__hide--shyish_settings, .control__hide--hysh_settings, .control__hide--ghyran_settings, .control__hide--ghur_settings, .control__hide--dhar_settings, .control__hide--chamon_settings, .control__hide--aqshy_settings, .control__hide--azyr_settings, .control__hide--throwing_settings, .control__hide--sling_settings, .control__hide--explosives_settings, .control__hide--entangling_settings, .control__hide--engineering_settings, .control__hide--crossbow_settings, .control__hide--bow_settings, .control__hide--blackpowder_settings, .control__hide--two-handed_settings, .control__hide--polearm_settings, .control__hide--parry_settings, .control__hide--flail_settings, .control__hide--fencing_settings, .control__hide--cavalry_settings, .control__hide--brawling_settings, .control__hide--basic_settings, .control__hide--stealth_settings, .control__hide--row_settings, .control__hide--ride_settings, .control__hide--perception_settings, .control__hide--outdoor-survival_settings, .control__hide--navigation_settings, .control__hide--melee_settings, .control__hide--leadership_settings, .control__hide--intuition_settings, .control__hide--intimidate_settings, .control__hide--haggle_settings, .control__hide--gossip_settings, .control__hide--gamble_settings, .control__hide--entertain_settings, .control__hide--endurance_settings, .control__hide--drive_settings, .control__hide--dodge_settings, .control__hide--cool_settings, .control__hide--consume-alcohol_settings, .control__hide--climb_settings, .control__hide--charm-animal_settings, .control__hide--charm_settings, .control__hide--bribery_settings, .control__hide--athletics_settings, .control__hide--art_settings, .control__hide--trade_settings, .control__hide--track_settings, .control__hide--swim_settings, .control__hide--sleight-of-hand_settings, .control__hide--set-trap_settings, .control__hide--secret-signs_settings, .control__hide--sail_settings, .control__hide--research_settings, .control__hide--ranged_settings, .control__hide--pray_settings, .control__hide--play_settings, .control__hide--pick-lock_settings, .control__hide--perform_settings, .control__hide--lore_settings, .control__hide--language_settings, .control__hide--heal_settings, .control__hide--eva1uate_settings, .control__hide--channelling_settings, .control__hide--animal-training_settings, .control__hide--settings, .control__hide--animal-care_settings, .control__hide--fellowship, .control__hide--willpower, .control__hide--intelligence, .control__hide--dexterity, .control__hide--agility, .control__hide--initiative, .control__hide--toughness, .control__hide--strength, .control__hide--ballistic_skill, .control__hide--weapon_skill {
   display: none;
 }
 
-input[name*=characteristic][value=fellowship] ~ .sheet-control__hide--fellowship, input[name*=characteristic][value=willpower] ~ .sheet-control__hide--willpower, input[name*=characteristic][value=intelligence] ~ .sheet-control__hide--intelligence, input[name*=characteristic][value=dexterity] ~ .sheet-control__hide--dexterity, input[name*=characteristic][value=agility] ~ .sheet-control__hide--agility, input[name*=characteristic][value=initiative] ~ .sheet-control__hide--initiative, input[name*=characteristic][value=toughness] ~ .sheet-control__hide--toughness, input[name*=characteristic][value=strength] ~ .sheet-control__hide--strength, input[name*=characteristic][value=ballistic_skill] ~ .sheet-control__hide--ballistic_skill, input[name*=characteristic][value=weapon_skill] ~ .sheet-control__hide--weapon_skill {
+input[name*=characteristic][value=fellowship] ~ .control__hide--fellowship, input[name*=characteristic][value=willpower] ~ .control__hide--willpower, input[name*=characteristic][value=intelligence] ~ .control__hide--intelligence, input[name*=characteristic][value=dexterity] ~ .control__hide--dexterity, input[name*=characteristic][value=agility] ~ .control__hide--agility, input[name*=characteristic][value=initiative] ~ .control__hide--initiative, input[name*=characteristic][value=toughness] ~ .control__hide--toughness, input[name*=characteristic][value=strength] ~ .control__hide--strength, input[name*=characteristic][value=ballistic_skill] ~ .control__hide--ballistic_skill, input[name*=characteristic][value=weapon_skill] ~ .control__hide--weapon_skill {
   display: block;
 }
 
-input[name*=npc_settings][value=on] + .sheet-wfrp-npcsettings__wrapper, input[name*=settings][value="1"] + div > .sheet-control__hide--npctalent_settings, input[name*=settings][value="1"] + div > .sheet-control__hide--npctrait_settings, input[name*=settings][value="1"] + div > .sheet-control__hide--npcattack_settings, input[name*=type][value=Custom] ~ .sheet-control__hide--Custom, input[name*=type][value=Prayer] ~ .sheet-control__hide--Prayer, input[name*=type][value=Spell] ~ .sheet-control__hide--Spell, input[name=attr_talent_test_type][value=skill] ~ .sheet-control__hide--skill, input[name=attr_talent_test_type][value=characteristic] ~ .sheet-control__hide--characteristic, .sheet-wfrp-criticaltable__row input[name=attr_critical_toggle][value="1"] + .sheet-wfrp-criticaltable__cell--description, .sheet-wfrp-corruptiontable__row input[name=attr_corruption_toggle][value="1"] + .sheet-wfrp-corruptiontable__cell--description, .sheet-wfrp-psychologytable__row input[name=attr_psychology_toggle][value="1"] + .sheet-wfrp-psychologytable__cell--description, .sheet-wfrp-conditiontable__row input[name=attr_condition_toggle][value="1"] + .sheet-wfrp-conditiontable__cell--description, .sheet-wfrp-talenttable__row input[name=attr_talent_toggle][value="1"] + .sheet-wfrp-talenttable__cell--description, input[name*=settings][value="1"] + div > .sheet-control__hide--spell_settings, input[name*=settings][value="1"] + div > .sheet-control__hide--weapon_settings, input[name*=settings][value="1"] + div > .sheet-control__hide--armour_settings, input[name*=settings][value="1"] + div > .sheet-control__hide--trappings_settings, input[name*=settings][value="1"] + div > .sheet-control__hide--species_settings, input[name*=settings][value="1"] + div > .sheet-control__hide--career_settings, input[name*=settings][value="1"] + div > .sheet-control__hide--critical_settings, input[name*=settings][value="1"] + div > .sheet-control__hide--corruption_settings, input[name*=settings][value="1"] + div > .sheet-control__hide--psychology_settings, input[name*=settings][value="1"] + div > .sheet-control__hide--condition_settings, input[name*=settings][value="1"] + div > div[class*=settings], input[name*=settings][value="1"] + div > .sheet-control__hide--talent_settings, input[name*=control][value=on] + .sheet-control__hide--custom, input[name*=control][value=on] + .sheet-control__hide--magick, input[name*=control][value=on] + .sheet-control__hide--ulgu, input[name*=control][value=on] + .sheet-control__hide--shyish, input[name*=control][value=on] + .sheet-control__hide--hysh, input[name*=control][value=on] + .sheet-control__hide--ghyran, input[name*=control][value=on] + .sheet-control__hide--ghur, input[name*=control][value=on] + .sheet-control__hide--dhar, input[name*=control][value=on] + .sheet-control__hide--chamon, input[name*=control][value=on] + .sheet-control__hide--aqshy, input[name*=control][value=on] + .sheet-control__hide--azyr, input[name*=control][value=on] + .sheet-control__hide--throwing, input[name*=control][value=on] + .sheet-control__hide--sling, input[name*=control][value=on] + .sheet-control__hide--explosives, input[name*=control][value=on] + .sheet-control__hide--entangling, input[name*=control][value=on] + .sheet-control__hide--engineering, input[name*=control][value=on] + .sheet-control__hide--crossbow, input[name*=control][value=on] + .sheet-control__hide--bow, input[name*=control][value=on] + .sheet-control__hide--blackpowder, input[name*=control][value=on] + .sheet-control__hide--two-handed, input[name*=control][value=on] + .sheet-control__hide--polearm, input[name*=control][value=on] + .sheet-control__hide--parry, input[name*=control][value=on] + .sheet-control__hide--flail, input[name*=control][value=on] + .sheet-control__hide--fencing, input[name*=control][value=on] + .sheet-control__hide--cavalry, input[name*=control][value=on] + .sheet-control__hide--brawling, input[name*=control][value=on] + .sheet-control__hide--basic, input[name*=settings][value="1"] ~ div > .sheet-control__hide--custom_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--magick_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--ulgu_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--shyish_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--hysh_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--ghyran_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--ghur_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--dhar_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--chamon_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--aqshy_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--azyr_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--throwing_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--sling_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--explosives_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--entangling_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--engineering_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--crossbow_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--bow_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--blackpowder_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--two-handed_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--polearm_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--parry_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--flail_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--fencing_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--cavalry_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--brawling_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--basic_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--stealth_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--row_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--ride_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--perception_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--outdoor-survival_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--navigation_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--melee_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--leadership_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--intuition_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--intimidate_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--haggle_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--gossip_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--gamble_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--entertain_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--endurance_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--drive_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--dodge_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--cool_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--consume-alcohol_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--climb_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--charm-animal_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--charm_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--bribery_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--athletics_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--art_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--trade_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--track_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--swim_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--sleight-of-hand_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--set-trap_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--secret-signs_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--sail_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--research_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--ranged_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--pray_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--play_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--pick-lock_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--perform_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--lore_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--language_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--heal_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--eva1uate_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--channelling_settings, input[name*=settings][value="1"] ~ div > .sheet-control__hide--animal-training_settings, input[name*=settings][value="1"] ~ div > div[class*=settings], input[name*=settings][value="1"] ~ div > .sheet-control__hide--animal-care_settings {
+input[name*=npc_settings][value=on] + .wfrp-npcsettings__wrapper, input[name*=settings][value="1"] + div > .control__hide--npctalent_settings, input[name*=settings][value="1"] + div > .control__hide--npctrait_settings, input[name*=settings][value="1"] + div > .control__hide--npcattack_settings, input[name*=type][value=Custom] ~ .control__hide--Custom, input[name*=type][value=Prayer] ~ .control__hide--Prayer, input[name*=type][value=Spell] ~ .control__hide--Spell, input[name=attr_talent_test_type][value=skill] ~ .control__hide--skill, input[name=attr_talent_test_type][value=characteristic] ~ .control__hide--characteristic, .wfrp-criticaltable__row input[name=attr_critical_toggle][value="1"] + .wfrp-criticaltable__cell--description, .wfrp-corruptiontable__row input[name=attr_corruption_toggle][value="1"] + .wfrp-corruptiontable__cell--description, .wfrp-psychologytable__row input[name=attr_psychology_toggle][value="1"] + .wfrp-psychologytable__cell--description, .wfrp-conditiontable__row input[name=attr_condition_toggle][value="1"] + .wfrp-conditiontable__cell--description, .wfrp-talenttable__row input[name=attr_talent_toggle][value="1"] + .wfrp-talenttable__cell--description, input[name*=settings][value="1"] + div > .control__hide--spell_settings, input[name*=settings][value="1"] + div > .control__hide--weapon_settings, input[name*=settings][value="1"] + div > .control__hide--armour_settings, input[name*=settings][value="1"] + div > .control__hide--trappings_settings, input[name*=settings][value="1"] + div > .control__hide--species_settings, input[name*=settings][value="1"] + div > .control__hide--career_settings, input[name*=settings][value="1"] + div > .control__hide--critical_settings, input[name*=settings][value="1"] + div > .control__hide--corruption_settings, input[name*=settings][value="1"] + div > .control__hide--psychology_settings, input[name*=settings][value="1"] + div > .control__hide--condition_settings, input[name*=settings][value="1"] + div > div[class*=settings], input[name*=settings][value="1"] + div > .control__hide--talent_settings, input[name*=control][value=on] + .control__hide--custom, input[name*=control][value=on] + .control__hide--magick, input[name*=control][value=on] + .control__hide--ulgu, input[name*=control][value=on] + .control__hide--shyish, input[name*=control][value=on] + .control__hide--hysh, input[name*=control][value=on] + .control__hide--ghyran, input[name*=control][value=on] + .control__hide--ghur, input[name*=control][value=on] + .control__hide--dhar, input[name*=control][value=on] + .control__hide--chamon, input[name*=control][value=on] + .control__hide--aqshy, input[name*=control][value=on] + .control__hide--azyr, input[name*=control][value=on] + .control__hide--throwing, input[name*=control][value=on] + .control__hide--sling, input[name*=control][value=on] + .control__hide--explosives, input[name*=control][value=on] + .control__hide--entangling, input[name*=control][value=on] + .control__hide--engineering, input[name*=control][value=on] + .control__hide--crossbow, input[name*=control][value=on] + .control__hide--bow, input[name*=control][value=on] + .control__hide--blackpowder, input[name*=control][value=on] + .control__hide--two-handed, input[name*=control][value=on] + .control__hide--polearm, input[name*=control][value=on] + .control__hide--parry, input[name*=control][value=on] + .control__hide--flail, input[name*=control][value=on] + .control__hide--fencing, input[name*=control][value=on] + .control__hide--cavalry, input[name*=control][value=on] + .control__hide--brawling, input[name*=control][value=on] + .control__hide--basic, input[name*=settings][value="1"] ~ div > .control__hide--custom_settings, input[name*=settings][value="1"] ~ div > .control__hide--magick_settings, input[name*=settings][value="1"] ~ div > .control__hide--ulgu_settings, input[name*=settings][value="1"] ~ div > .control__hide--shyish_settings, input[name*=settings][value="1"] ~ div > .control__hide--hysh_settings, input[name*=settings][value="1"] ~ div > .control__hide--ghyran_settings, input[name*=settings][value="1"] ~ div > .control__hide--ghur_settings, input[name*=settings][value="1"] ~ div > .control__hide--dhar_settings, input[name*=settings][value="1"] ~ div > .control__hide--chamon_settings, input[name*=settings][value="1"] ~ div > .control__hide--aqshy_settings, input[name*=settings][value="1"] ~ div > .control__hide--azyr_settings, input[name*=settings][value="1"] ~ div > .control__hide--throwing_settings, input[name*=settings][value="1"] ~ div > .control__hide--sling_settings, input[name*=settings][value="1"] ~ div > .control__hide--explosives_settings, input[name*=settings][value="1"] ~ div > .control__hide--entangling_settings, input[name*=settings][value="1"] ~ div > .control__hide--engineering_settings, input[name*=settings][value="1"] ~ div > .control__hide--crossbow_settings, input[name*=settings][value="1"] ~ div > .control__hide--bow_settings, input[name*=settings][value="1"] ~ div > .control__hide--blackpowder_settings, input[name*=settings][value="1"] ~ div > .control__hide--two-handed_settings, input[name*=settings][value="1"] ~ div > .control__hide--polearm_settings, input[name*=settings][value="1"] ~ div > .control__hide--parry_settings, input[name*=settings][value="1"] ~ div > .control__hide--flail_settings, input[name*=settings][value="1"] ~ div > .control__hide--fencing_settings, input[name*=settings][value="1"] ~ div > .control__hide--cavalry_settings, input[name*=settings][value="1"] ~ div > .control__hide--brawling_settings, input[name*=settings][value="1"] ~ div > .control__hide--basic_settings, input[name*=settings][value="1"] ~ div > .control__hide--stealth_settings, input[name*=settings][value="1"] ~ div > .control__hide--row_settings, input[name*=settings][value="1"] ~ div > .control__hide--ride_settings, input[name*=settings][value="1"] ~ div > .control__hide--perception_settings, input[name*=settings][value="1"] ~ div > .control__hide--outdoor-survival_settings, input[name*=settings][value="1"] ~ div > .control__hide--navigation_settings, input[name*=settings][value="1"] ~ div > .control__hide--melee_settings, input[name*=settings][value="1"] ~ div > .control__hide--leadership_settings, input[name*=settings][value="1"] ~ div > .control__hide--intuition_settings, input[name*=settings][value="1"] ~ div > .control__hide--intimidate_settings, input[name*=settings][value="1"] ~ div > .control__hide--haggle_settings, input[name*=settings][value="1"] ~ div > .control__hide--gossip_settings, input[name*=settings][value="1"] ~ div > .control__hide--gamble_settings, input[name*=settings][value="1"] ~ div > .control__hide--entertain_settings, input[name*=settings][value="1"] ~ div > .control__hide--endurance_settings, input[name*=settings][value="1"] ~ div > .control__hide--drive_settings, input[name*=settings][value="1"] ~ div > .control__hide--dodge_settings, input[name*=settings][value="1"] ~ div > .control__hide--cool_settings, input[name*=settings][value="1"] ~ div > .control__hide--consume-alcohol_settings, input[name*=settings][value="1"] ~ div > .control__hide--climb_settings, input[name*=settings][value="1"] ~ div > .control__hide--charm-animal_settings, input[name*=settings][value="1"] ~ div > .control__hide--charm_settings, input[name*=settings][value="1"] ~ div > .control__hide--bribery_settings, input[name*=settings][value="1"] ~ div > .control__hide--athletics_settings, input[name*=settings][value="1"] ~ div > .control__hide--art_settings, input[name*=settings][value="1"] ~ div > .control__hide--trade_settings, input[name*=settings][value="1"] ~ div > .control__hide--track_settings, input[name*=settings][value="1"] ~ div > .control__hide--swim_settings, input[name*=settings][value="1"] ~ div > .control__hide--sleight-of-hand_settings, input[name*=settings][value="1"] ~ div > .control__hide--set-trap_settings, input[name*=settings][value="1"] ~ div > .control__hide--secret-signs_settings, input[name*=settings][value="1"] ~ div > .control__hide--sail_settings, input[name*=settings][value="1"] ~ div > .control__hide--research_settings, input[name*=settings][value="1"] ~ div > .control__hide--ranged_settings, input[name*=settings][value="1"] ~ div > .control__hide--pray_settings, input[name*=settings][value="1"] ~ div > .control__hide--play_settings, input[name*=settings][value="1"] ~ div > .control__hide--pick-lock_settings, input[name*=settings][value="1"] ~ div > .control__hide--perform_settings, input[name*=settings][value="1"] ~ div > .control__hide--lore_settings, input[name*=settings][value="1"] ~ div > .control__hide--language_settings, input[name*=settings][value="1"] ~ div > .control__hide--heal_settings, input[name*=settings][value="1"] ~ div > .control__hide--eva1uate_settings, input[name*=settings][value="1"] ~ div > .control__hide--channelling_settings, input[name*=settings][value="1"] ~ div > .control__hide--animal-training_settings, input[name*=settings][value="1"] ~ div > div[class*=settings], input[name*=settings][value="1"] ~ div > .control__hide--animal-care_settings {
   display: grid;
 }
 
-.sheet-control__custom {
+.control__custom {
   display: none;
 }
 
-input.sheet-control__custom[value*=Custom] {
+input.control__custom[value*=Custom] {
   display: none;
 }
-input.sheet-control__custom[value*=Custom] + select.sheet-control__custom {
+input.control__custom[value*=Custom] + select.control__custom {
   display: none;
 }
-input.sheet-control__custom[value*=Custom] ~ .sheet-control__custom {
+input.control__custom[value*=Custom] ~ .control__custom {
   display: grid;
   grid-template-columns: 1fr 2em;
 }
 
-input[name*=settings][value="1"] + div > .sheet-wfrp-talenttable__cell--description {
+input[name*=settings][value="1"] + div > .wfrp-talenttable__cell--description {
   display: none !important;
 }
-input[name*=settings][value="1"] + div > .sheet-wfrp-conditiontable__cell--description {
+input[name*=settings][value="1"] + div > .wfrp-conditiontable__cell--description {
   display: none !important;
 }
-input[name*=settings][value="1"] + div > .sheet-wfrp-psychologytable__cell--description {
+input[name*=settings][value="1"] + div > .wfrp-psychologytable__cell--description {
   display: none !important;
 }
-input[name*=settings][value="1"] + div > .sheet-wfrp-corruptiontable__cell--description {
+input[name*=settings][value="1"] + div > .wfrp-corruptiontable__cell--description {
   display: none !important;
 }
-input[name*=settings][value="1"] + div > .sheet-wfrp-criticaltable__cell--description {
+input[name*=settings][value="1"] + div > .wfrp-criticaltable__cell--description {
   display: none !important;
 }
-input[name*=settings][value="1"] + div > .sheet-wfrp-careertable__cell--description {
+input[name*=settings][value="1"] + div > .wfrp-careertable__cell--description {
   display: none !important;
 }
-input[name*=settings][value="1"] + div > .sheet-wfrp-speciestable__cell--description {
-  display: none !important;
-}
-
-input[name*=settings][value="1"] + div > .sheet-wfrp-trappingstable__cell--description {
-  display: none !important;
-}
-input[name*=settings][value="1"] + div > .sheet-wfrp-armourtable__cell--description {
-  display: none !important;
-}
-input[name*=settings][value="1"] + div > .sheet-wfrp-criticaltable__cell--description {
-  display: none !important;
-}
-input[name*=settings][value="1"] + div > .sheet-wfrp-weapontable__cell--description {
-  display: none !important;
-}
-input[name*=settings][value="1"] + div > .sheet-wfrp-spelltable__cell--description {
+input[name*=settings][value="1"] + div > .wfrp-speciestable__cell--description {
   display: none !important;
 }
 
-label.sheet-wfrp-traittoggle {
+input[name*=settings][value="1"] + div > .wfrp-trappingstable__cell--description {
+  display: none !important;
+}
+input[name*=settings][value="1"] + div > .wfrp-armourtable__cell--description {
+  display: none !important;
+}
+input[name*=settings][value="1"] + div > .wfrp-criticaltable__cell--description {
+  display: none !important;
+}
+input[name*=settings][value="1"] + div > .wfrp-weapontable__cell--description {
+  display: none !important;
+}
+input[name*=settings][value="1"] + div > .wfrp-spelltable__cell--description {
+  display: none !important;
+}
+
+label.wfrp-traittoggle {
   text-align: left;
   cursor: pointer;
 }
 
-input.sheet-wfrp-traittoggle__hide {
+input.wfrp-traittoggle__hide {
   display: none;
 }
 
-.sheet-wfrp-traittoggle__span {
+.wfrp-traittoggle__span {
   text-align: left;
 }
 
@@ -1443,38 +1445,38 @@ input[name*=setting_button_hide][value="2"] ~ * .repcontrol {
   display: none;
 }
 
-input[name*=settings][value="1"] + div > .sheet-wfrp-npcattacktable__cell--description {
+input[name*=settings][value="1"] + div > .wfrp-npcattacktable__cell--description {
   display: none !important;
 }
-input[name*=settings][value="1"] + div > .sheet-wfrp-npctraittable__cell--description {
+input[name*=settings][value="1"] + div > .wfrp-npctraittable__cell--description {
   display: none !important;
 }
-input[name*=settings][value="1"] + div > .sheet-wfrp-npctalenttable__cell--description {
+input[name*=settings][value="1"] + div > .wfrp-npctalenttable__cell--description {
   display: none !important;
 }
 
-.sheet-wfrp-advancenotify {
+.wfrp-advancenotify {
   display: none;
 }
 
-input[name*=advances_changed][value="1"] + .sheet-wfrp-advancenotify {
+input[name*=advances_changed][value="1"] + .wfrp-advancenotify {
   display: block;
 }
 
-.sheet-wfrp-npc__skills,
-.sheet-wfrp-npctrappings {
+.wfrp-npc__skills,
+.wfrp-npctrappings {
   display: none;
 }
 
-input[name*=skill_flag][value=on] + .sheet-wfrp-npc__skills {
+input[name*=skill_flag][value=on] + .wfrp-npc__skills {
   display: block;
 }
 
-input[name*=trapping_flag][value=on] + .sheet-wfrp-npctrappings {
+input[name*=trapping_flag][value=on] + .wfrp-npctrappings {
   display: block;
 }
 
-.sheet-wfrp-compendium_warning {
+.wfrp-compendium_warning {
   display: none;
   position: absolute;
   left: 0;
@@ -1486,7 +1488,7 @@ input[name*=trapping_flag][value=on] + .sheet-wfrp-npctrappings {
   z-index: 10000;
   background-color: rgba(0, 0, 0, 0.6);
 }
-.sheet-wfrp-compendium_warning_inside {
+.wfrp-compendium_warning_inside {
   display: block;
   position: sticky;
   top: 50%;
@@ -1501,7 +1503,7 @@ input[name*=trapping_flag][value=on] + .sheet-wfrp-npctrappings {
   text-transform: uppercase;
 }
 
-.sheet-wfrp-wrapper.active-drop-target.dropping .sheet-wfrp-compendium_warning {
+.charsheet .wfrp-wrapper.active-drop-target.dropping .wfrp-compendium_warning {
   display: block;
 }
 
@@ -1515,83 +1517,83 @@ input[type=hidden][name*=species_disable5][value="1"] ~ * input[type=radio][valu
   opacity: 0.5;
 }
 
-.sheet-wfrp-wrapper .sheet-page__main,
-.sheet-wfrp-wrapper .sheet-page__advances,
-.sheet-wfrp-wrapper .sheet-page__combat,
-.sheet-wfrp-wrapper .sheet-page__magic,
-.sheet-wfrp-wrapper .sheet-page__settings {
+.charsheet .wfrp-wrapper .page__main,
+.charsheet .wfrp-wrapper .page__advances,
+.charsheet .wfrp-wrapper .page__combat,
+.charsheet .wfrp-wrapper .page__magic,
+.charsheet .wfrp-wrapper .page__settings {
   display: none;
 }
-.sheet-wfrp-wrapper .sheet-page__main--flex, .sheet-wfrp-wrapper .sheet-page__main--grid,
-.sheet-wfrp-wrapper .sheet-page__advances--flex,
-.sheet-wfrp-wrapper .sheet-page__advances--grid,
-.sheet-wfrp-wrapper .sheet-page__combat--flex,
-.sheet-wfrp-wrapper .sheet-page__combat--grid,
-.sheet-wfrp-wrapper .sheet-page__magic--flex,
-.sheet-wfrp-wrapper .sheet-page__magic--grid,
-.sheet-wfrp-wrapper .sheet-page__settings--flex,
-.sheet-wfrp-wrapper .sheet-page__settings--grid {
+.charsheet .wfrp-wrapper .page__main--flex, .charsheet .wfrp-wrapper .page__main--grid,
+.charsheet .wfrp-wrapper .page__advances--flex,
+.charsheet .wfrp-wrapper .page__advances--grid,
+.charsheet .wfrp-wrapper .page__combat--flex,
+.charsheet .wfrp-wrapper .page__combat--grid,
+.charsheet .wfrp-wrapper .page__magic--flex,
+.charsheet .wfrp-wrapper .page__magic--grid,
+.charsheet .wfrp-wrapper .page__settings--flex,
+.charsheet .wfrp-wrapper .page__settings--grid {
   display: none;
 }
 
-input[type=hidden][name=attr_nav][value=main] ~ * .sheet-page__main, input[type=hidden][name=attr_nav][value=advances] ~ * .sheet-page__advances, input[type=hidden][name=attr_nav][value=combat] ~ * .sheet-page__combat, input[type=hidden][name=attr_nav][value=magic] ~ * .sheet-page__magic, input[type=hidden][name=attr_nav][value=settings] ~ * .sheet-page__settings {
+input[type=hidden][name=attr_nav][value=main] ~ * .page__main, input[type=hidden][name=attr_nav][value=advances] ~ * .page__advances, input[type=hidden][name=attr_nav][value=combat] ~ * .page__combat, input[type=hidden][name=attr_nav][value=magic] ~ * .page__magic, input[type=hidden][name=attr_nav][value=settings] ~ * .page__settings {
   display: block;
 }
-input[type=hidden][name=attr_nav][value=main] ~ * .sheet-page__main--flex, input[type=hidden][name=attr_nav][value=advances] ~ * .sheet-page__advances--flex, input[type=hidden][name=attr_nav][value=combat] ~ * .sheet-page__combat--flex, input[type=hidden][name=attr_nav][value=magic] ~ * .sheet-page__magic--flex, input[type=hidden][name=attr_nav][value=settings] ~ * .sheet-page__settings--flex {
+input[type=hidden][name=attr_nav][value=main] ~ * .page__main--flex, input[type=hidden][name=attr_nav][value=advances] ~ * .page__advances--flex, input[type=hidden][name=attr_nav][value=combat] ~ * .page__combat--flex, input[type=hidden][name=attr_nav][value=magic] ~ * .page__magic--flex, input[type=hidden][name=attr_nav][value=settings] ~ * .page__settings--flex {
   display: flex;
 }
-input[type=hidden][name=attr_nav][value=main] ~ * .sheet-page__main--grid, input[type=hidden][name=attr_nav][value=advances] ~ * .sheet-page__advances--grid, input[type=hidden][name=attr_nav][value=combat] ~ * .sheet-page__combat--grid, input[type=hidden][name=attr_nav][value=magic] ~ * .sheet-page__magic--grid, input[type=hidden][name=attr_nav][value=settings] ~ * .sheet-page__settings--grid {
+input[type=hidden][name=attr_nav][value=main] ~ * .page__main--grid, input[type=hidden][name=attr_nav][value=advances] ~ * .page__advances--grid, input[type=hidden][name=attr_nav][value=combat] ~ * .page__combat--grid, input[type=hidden][name=attr_nav][value=magic] ~ * .page__magic--grid, input[type=hidden][name=attr_nav][value=settings] ~ * .page__settings--grid {
   display: grid;
 }
 
-.sheet-wfrp-wrapper .sheet-wfrp-pc,
-.sheet-wfrp-wrapper .sheet-wfrp-npc {
+.charsheet .wfrp-wrapper .wfrp-pc,
+.charsheet .wfrp-wrapper .wfrp-npc {
   display: none;
 }
-.sheet-wfrp-wrapper .sheet-wfrp-pc--flex, .sheet-wfrp-wrapper .sheet-wfrp-pc--grid,
-.sheet-wfrp-wrapper .sheet-wfrp-npc--flex,
-.sheet-wfrp-wrapper .sheet-wfrp-npc--grid {
+.charsheet .wfrp-wrapper .wfrp-pc--flex, .charsheet .wfrp-wrapper .wfrp-pc--grid,
+.charsheet .wfrp-wrapper .wfrp-npc--flex,
+.charsheet .wfrp-wrapper .wfrp-npc--grid {
   display: none;
 }
 
-input[type=hidden][name=attr_npc][value=on] ~ * .sheet-wfrp-npc, input[type=hidden][name=attr_npc][value="0"] ~ * .sheet-wfrp-pc {
+input[type=hidden][name=attr_npc][value=on] ~ * .wfrp-npc, input[type=hidden][name=attr_npc][value="0"] ~ * .wfrp-pc {
   display: grid;
 }
 
-.sheet-wfrp-npc {
+.wfrp-npc {
   background: #ccc repeat;
 }
-.sheet-wfrp-npc__wrapper h1 {
+.wfrp-npc__wrapper h1 {
   font-size: 4.125rem;
   font-variant: small-caps;
 }
-.sheet-wfrp-npcsettings__toggle {
+.wfrp-npcsettings__toggle {
   margin: 1rem;
 }
-.sheet-wfrp-npcsettings__toggle input.sheet-wfrp-npcsettings__hide[type=checkbox] {
+.wfrp-npcsettings__toggle input.wfrp-npcsettings__hide[type=checkbox] {
   display: none;
 }
-.sheet-wfrp-npcsettings__toggle input.sheet-wfrp-npcsettings__hide[type=checkbox]:checked ~ span {
+.wfrp-npcsettings__toggle input.wfrp-npcsettings__hide[type=checkbox]:checked ~ span {
   opacity: 1;
 }
-.sheet-wfrp-npcsettings__toggle span {
+.wfrp-npcsettings__toggle span {
   font-size: 1.65rem;
   opacity: 0.5;
 }
-.sheet-wfrp-npcsettings__toggle:hover {
+.wfrp-npcsettings__toggle:hover {
   cursor: pointer;
 }
-.sheet-wfrp-npcsettings__toggle:hover span {
+.wfrp-npcsettings__toggle:hover span {
   font-size: 1.65rem;
   opacity: 1;
 }
-.sheet-wfrp-npcsettings__wrapper {
+.wfrp-npcsettings__wrapper {
   margin: auto;
   padding: 0.5rem 10%;
   border-bottom: 2px dashed #404040;
   background: rgba(195, 223, 241, 0.125);
 }
-.sheet-wfrp-npcsettings__wrapper h2 {
+.wfrp-npcsettings__wrapper h2 {
   margin-top: 3rem;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -1600,19 +1602,19 @@ input[type=hidden][name=attr_npc][value=on] ~ * .sheet-wfrp-npc, input[type=hidd
   text-transform: uppercase;
   text-align: center;
 }
-.sheet-wfrp-npcsettings__wrapper select.sheet-wfrp-npcsettings__select,
-.sheet-wfrp-npcsettings__wrapper input[type=number].sheet-wfrp-npcsettings__input,
-.sheet-wfrp-npcsettings__wrapper input[type=text].sheet-wfrp-npcsettings__input {
+.wfrp-npcsettings__wrapper select.wfrp-npcsettings__select,
+.wfrp-npcsettings__wrapper input[type=number].wfrp-npcsettings__input,
+.wfrp-npcsettings__wrapper input[type=text].wfrp-npcsettings__input {
   background: none;
   border-bottom: 1px solid black;
 }
-.sheet-wfrp-npcsettings__wrapper textarea.sheet-wfrp-npcsettings__textarea {
+.wfrp-npcsettings__wrapper textarea.wfrp-npcsettings__textarea {
   height: 7em;
   resize: vertical;
   border-top: 1px solid rgba(36, 107, 131, 0.33);
   border-bottom: 1px solid rgba(36, 107, 131, 0.33);
 }
-.sheet-wfrp-npcsettings__characteristics {
+.wfrp-npcsettings__characteristics {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 1rem;
@@ -1620,134 +1622,134 @@ input[type=hidden][name=attr_npc][value=on] ~ * .sheet-wfrp-npc, input[type=hidd
   margin: 0 auto;
   max-width: 600px;
 }
-.sheet-wfrp-npcsettings__characteristic {
+.wfrp-npcsettings__characteristic {
   text-align: center;
 }
-.sheet-wfrp-npcsettings__characteristic:empty {
+.wfrp-npcsettings__characteristic:empty {
   display: block;
 }
-.sheet-wfrp-npcsettings__label {
+.wfrp-npcsettings__label {
   font-weight: bold;
 }
-.sheet-wfrp-npcsettings__skills {
+.wfrp-npcsettings__skills {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem 2rem;
   margin: 0 3rem;
 }
-.sheet-wfrp-npcsettings__skills--additional .repcontainer {
+.wfrp-npcsettings__skills--additional .repcontainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem 2rem;
   margin: 0 3rem;
 }
-.sheet-wfrp-npcsettings__skills--additional .repcontrol {
+.wfrp-npcsettings__skills--additional .repcontrol {
   margin-top: 0.5rem;
 }
-.sheet-wfrp-npcsettings__skill {
+.wfrp-npcsettings__skill {
   display: grid;
   grid-template-columns: 1fr 3rem;
   grid-gap: 0.25rem;
 }
-.sheet-wfrp-npcsettings__settings {
+.wfrp-npcsettings__settings {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem 2rem;
   margin: 0 3rem;
 }
-.sheet-wfrp-npcsettings__row {
+.wfrp-npcsettings__row {
   display: grid;
   grid-template-columns: 1fr 0.5fr;
 }
-.sheet-wfrp-npc__slash {
+.wfrp-npc__slash {
   margin: 2rem 0;
   padding: 1rem 2.5%;
   background: #dddddd no-repeat 50% 50%/100% 100%;
 }
-.sheet-wfrp-npcskill {
+.wfrp-npcskill {
   display: grid;
   grid-template-columns: 1fr 0.25fr;
 }
-.sheet-wfrp-npc__description {
+.wfrp-npc__description {
   font-family: "Lusitana", serif;
   font-size: 1.5rem;
 }
-.sheet-wfrp-npc__stats {
+.wfrp-npc__stats {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   margin: 2rem auto;
   max-width: 600px;
   font-size: 1.65rem;
 }
-.sheet-wfrp-npccharacteristic__col {
+.wfrp-npccharacteristic__col {
   text-align: center;
 }
-.sheet-wfrp-npccharacteristic__cell, .sheet-wfrp-npccharacteristic__cell--head {
+.wfrp-npccharacteristic__cell, .wfrp-npccharacteristic__cell--head {
   min-height: 49%;
 }
-.sheet-wfrp-npccharacteristic__cell > span, .sheet-wfrp-npccharacteristic__cell--head > span {
+.wfrp-npccharacteristic__cell > span, .wfrp-npccharacteristic__cell--head > span {
   font-size: 1.65rem !important;
 }
-.sheet-wfrp-npccharacteristic__cell:empty, .sheet-wfrp-npccharacteristic__cell--head:empty {
+.wfrp-npccharacteristic__cell:empty, .wfrp-npccharacteristic__cell--head:empty {
   content: "";
   height: 100%;
 }
-.sheet-wfrp-npc__skills input[type=hidden][value="0"] + button.sheet-wfrp-npcskill, .sheet-wfrp-npc__skills input[type=hidden][value=""] + button.sheet-wfrp-npcskill, .sheet-wfrp-npc__skills input[type=hidden]:not([value]) + button.sheet-wfrp-npcskill {
+.wfrp-npc__skills input[type=hidden][value="0"] + button.wfrp-npcskill, .wfrp-npc__skills input[type=hidden][value=""] + button.wfrp-npcskill, .wfrp-npc__skills input[type=hidden]:not([value]) + button.wfrp-npcskill {
   display: none;
 }
-.sheet-wfrp-npc button[type=roll].sheet-wfrp-npcskill {
+.wfrp-npc button[type=roll].wfrp-npcskill {
   display: flex;
   align-items: center;
   margin-right: 1rem;
   width: auto;
   font-size: 1.61rem;
 }
-.sheet-wfrp-npcskill__wrapper {
+.wfrp-npcskill__wrapper {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
 }
-.sheet-wfrp-npcskill__wrapper .repcontrol {
+.wfrp-npcskill__wrapper .repcontrol {
   display: none;
 }
-.sheet-wfrp-npcskill__title {
+.wfrp-npcskill__title {
   display: inline;
   margin-right: 0.5rem;
   font-weight: bold;
 }
-.sheet-wfrp-npcskill__title:after {
+.wfrp-npcskill__title:after {
   display: inline;
   content: ":";
 }
-.sheet-wfrp-npcskill__value {
+.wfrp-npcskill__value {
   display: inline;
   font-family: "Lusitana", serif;
 }
-.sheet-wfrp-npcskill__value:after {
+.wfrp-npcskill__value:after {
   display: inline;
   content: ",";
 }
-.sheet-wfrp-npc__grid {
+.wfrp-npc__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: start;
   margin: 2rem;
 }
-.sheet-wfrp-npc__grid > div {
+.wfrp-npc__grid > div {
   padding: 0 0.5rem;
 }
-.sheet-wfrp-npc__grid > div > div {
+.wfrp-npc__grid > div > div {
   margin-bottom: 2rem;
 }
-.sheet-wfrp-npcadvantage {
+.wfrp-npcadvantage {
   padding: 1rem 0.5rem;
   margin-bottom: 1rem;
   background: rgba(36, 107, 131, 0.075);
   border-bottom: 1px solid rgba(36, 107, 131, 0.33);
   border-top: 1px solid rgba(36, 107, 131, 0.33);
 }
-.sheet-wfrp-npcadvantage .sheet-wfrp-advantage__wrapper {
+.wfrp-npcadvantage .wfrp-advantage__wrapper {
   display: grid;
   grid-template-columns: 1.5fr 3rem 3rem 1fr 3rem;
   justify-items: center;
@@ -1757,10 +1759,10 @@ input[type=hidden][name=attr_npc][value=on] ~ * .sheet-wfrp-npc, input[type=hidd
   font-size: 1.61rem;
   text-align: center;
 }
-.sheet-wfrp-npcadvantage .sheet-wfrp-advantage__label {
+.wfrp-npcadvantage .wfrp-advantage__label {
   font-weight: bold;
 }
-.sheet-wfrp-npc h2.sheet-wfrp-npc__subtitle {
+.wfrp-npc h2.wfrp-npc__subtitle {
   margin: auto;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
@@ -1769,36 +1771,36 @@ input[type=hidden][name=attr_npc][value=on] ~ * .sheet-wfrp-npc, input[type=hidd
   text-transform: uppercase;
   text-align: center;
 }
-.sheet-wfrp-npccontrols__wrapper {
+.wfrp-npccontrols__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 0.25rem;
   margin: 0.25rem;
 }
-.sheet-wfrp-npccontrols__button button[type=roll] {
+.wfrp-npccontrols__button button[type=roll] {
   background: rgba(44, 76, 87, 0.125);
   text-align: center;
 }
-.sheet-wfrp-npctalent, .sheet-wfrp-npctrait, .sheet-wfrp-npcattack {
+.wfrp-npctalent, .wfrp-npctrait, .wfrp-npcattack {
   font-family: "Lusitana", serif;
 }
-.sheet-wfrp-npctalent .repitem:first-child .sheet-wfrp-npctalent__row,
-.sheet-wfrp-npctalent .repitem:first-child .sheet-wfrp-npctrait__row,
-.sheet-wfrp-npctalent .repitem:first-child .sheet-wfrp-npcattack__row, .sheet-wfrp-npctrait .repitem:first-child .sheet-wfrp-npctalent__row,
-.sheet-wfrp-npctrait .repitem:first-child .sheet-wfrp-npctrait__row,
-.sheet-wfrp-npctrait .repitem:first-child .sheet-wfrp-npcattack__row, .sheet-wfrp-npcattack .repitem:first-child .sheet-wfrp-npctalent__row,
-.sheet-wfrp-npcattack .repitem:first-child .sheet-wfrp-npctrait__row,
-.sheet-wfrp-npcattack .repitem:first-child .sheet-wfrp-npcattack__row {
+.wfrp-npctalent .repitem:first-child .wfrp-npctalent__row,
+.wfrp-npctalent .repitem:first-child .wfrp-npctrait__row,
+.wfrp-npctalent .repitem:first-child .wfrp-npcattack__row, .wfrp-npctrait .repitem:first-child .wfrp-npctalent__row,
+.wfrp-npctrait .repitem:first-child .wfrp-npctrait__row,
+.wfrp-npctrait .repitem:first-child .wfrp-npcattack__row, .wfrp-npcattack .repitem:first-child .wfrp-npctalent__row,
+.wfrp-npcattack .repitem:first-child .wfrp-npctrait__row,
+.wfrp-npcattack .repitem:first-child .wfrp-npcattack__row {
   padding-top: 0;
 }
-.sheet-wfrp-npctalent .repitem:nth-child(even), .sheet-wfrp-npctrait .repitem:nth-child(even), .sheet-wfrp-npcattack .repitem:nth-child(even) {
+.wfrp-npctalent .repitem:nth-child(even), .wfrp-npctrait .repitem:nth-child(even), .wfrp-npcattack .repitem:nth-child(even) {
   background: rgba(36, 107, 131, 0.075);
 }
-.sheet-wfrp-npctalent .repcontrol, .sheet-wfrp-npctrait .repcontrol, .sheet-wfrp-npcattack .repcontrol {
+.wfrp-npctalent .repcontrol, .wfrp-npctrait .repcontrol, .wfrp-npcattack .repcontrol {
   margin-top: 1rem;
   border: 0;
 }
-.sheet-wfrp-npctalent__row, .sheet-wfrp-npctrait__row, .sheet-wfrp-npcattack__row {
+.wfrp-npctalent__row, .wfrp-npctrait__row, .wfrp-npcattack__row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1806,44 +1808,44 @@ input[type=hidden][name=attr_npc][value=on] ~ * .sheet-wfrp-npc, input[type=hidd
   padding-bottom: 1rem;
   border-bottom: 1px dashed black;
 }
-.sheet-wfrp-npctalent__row .sheet-wfrp-settings, .sheet-wfrp-npctalent__row .sheet-wfrp-settings--large, .sheet-wfrp-npctalent__row .sheet-wfrp-settings--noborder, .sheet-wfrp-npctrait__row .sheet-wfrp-settings, .sheet-wfrp-npctrait__row .sheet-wfrp-settings--large, .sheet-wfrp-npctrait__row .sheet-wfrp-settings--noborder, .sheet-wfrp-npcattack__row .sheet-wfrp-settings, .sheet-wfrp-npcattack__row .sheet-wfrp-settings--large, .sheet-wfrp-npcattack__row .sheet-wfrp-settings--noborder {
+.wfrp-npctalent__row .wfrp-settings, .wfrp-npctalent__row .wfrp-settings--large, .wfrp-npctalent__row .wfrp-settings--noborder, .wfrp-npctrait__row .wfrp-settings, .wfrp-npctrait__row .wfrp-settings--large, .wfrp-npctrait__row .wfrp-settings--noborder, .wfrp-npcattack__row .wfrp-settings, .wfrp-npcattack__row .wfrp-settings--large, .wfrp-npcattack__row .wfrp-settings--noborder {
   width: 100%;
 }
-.sheet-wfrp-npctalent__cell, .sheet-wfrp-npctrait__cell, .sheet-wfrp-npcattack__cell {
+.wfrp-npctalent__cell, .wfrp-npctrait__cell, .wfrp-npcattack__cell {
   margin-right: 0.5rem;
 }
-.sheet-wfrp-npctalent__cell--settingstoggle, .sheet-wfrp-npctrait__cell--settingstoggle, .sheet-wfrp-npcattack__cell--settingstoggle {
+.wfrp-npctalent__cell--settingstoggle, .wfrp-npctrait__cell--settingstoggle, .wfrp-npcattack__cell--settingstoggle {
   margin-right: 0.25rem;
 }
-.sheet-wfrp-npctalent__cell--title, .sheet-wfrp-npctrait__cell--title, .sheet-wfrp-npcattack__cell--title {
+.wfrp-npctalent__cell--title, .wfrp-npctrait__cell--title, .wfrp-npcattack__cell--title {
   width: 85%;
   font-family: "IM Fell DW Pica", serif;
   font-size: 1.65rem;
   font-weight: bold;
 }
-.sheet-wfrp-npctalent__cell--description, .sheet-wfrp-npctrait__cell--description, .sheet-wfrp-npcattack__cell--description {
+.wfrp-npctalent__cell--description, .wfrp-npctrait__cell--description, .wfrp-npcattack__cell--description {
   width: 100%;
 }
-.sheet-wfrp-npctalent__ranks, .sheet-wfrp-npctrait__ranks, .sheet-wfrp-npcattack__ranks {
+.wfrp-npctalent__ranks, .wfrp-npctrait__ranks, .wfrp-npcattack__ranks {
   display: inline-flex;
   flex-direction: row;
   margin-left: 0.35em;
 }
-.sheet-wfrp-npctalent__ranks:not(:empty):before, .sheet-wfrp-npctalent__ranks:not(:empty):after, .sheet-wfrp-npctrait__ranks:not(:empty):before, .sheet-wfrp-npctrait__ranks:not(:empty):after, .sheet-wfrp-npcattack__ranks:not(:empty):before, .sheet-wfrp-npcattack__ranks:not(:empty):after {
+.wfrp-npctalent__ranks:not(:empty):before, .wfrp-npctalent__ranks:not(:empty):after, .wfrp-npctrait__ranks:not(:empty):before, .wfrp-npctrait__ranks:not(:empty):after, .wfrp-npcattack__ranks:not(:empty):before, .wfrp-npcattack__ranks:not(:empty):after {
   display: block;
 }
-.sheet-wfrp-npctalent__ranks:not(:empty):before, .sheet-wfrp-npctrait__ranks:not(:empty):before, .sheet-wfrp-npcattack__ranks:not(:empty):before {
+.wfrp-npctalent__ranks:not(:empty):before, .wfrp-npctrait__ranks:not(:empty):before, .wfrp-npcattack__ranks:not(:empty):before {
   content: "(";
 }
-.sheet-wfrp-npctalent__ranks:not(:empty):after, .sheet-wfrp-npctrait__ranks:not(:empty):after, .sheet-wfrp-npcattack__ranks:not(:empty):after {
+.wfrp-npctalent__ranks:not(:empty):after, .wfrp-npctrait__ranks:not(:empty):after, .wfrp-npcattack__ranks:not(:empty):after {
   content: ")";
 }
-.sheet-wfrp-npctalent__label, .sheet-wfrp-npctrait__label, .sheet-wfrp-npcattack__label {
+.wfrp-npctalent__label, .wfrp-npctrait__label, .wfrp-npcattack__label {
   margin-right: 0.33rem;
   font-family: "IM Fell DW Pica", serif;
   font-weight: bold;
 }
-.sheet-wfrp-npctrappings textarea.sheet-wfrp-npctrappings__textarea {
+.wfrp-npctrappings textarea.wfrp-npctrappings__textarea {
   height: 10em;
   resize: vertical;
   border-top: 1px solid rgba(36, 107, 131, 0.33);
