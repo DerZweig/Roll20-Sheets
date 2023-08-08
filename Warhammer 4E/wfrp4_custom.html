@@ -7217,6 +7217,7 @@
 		getSectionIDs("repeating_lore", loreids => {
 		getSectionIDs("repeating_trade", tradeids => {
 			const skillids = [];
+			const skillgrps = [];
 			
 			stealthids.forEach((id, index) => {
 				skillids.push(`repeating_stealth_${id}_specialisation_name`);
@@ -7443,8 +7444,6 @@
 							let translated_static = translated_statics.get(parsed_key);
 							let translated_special = translated_specials.get(parsed_key);
 							
-							
-							console.log(key);
 					
 							if(custom_skill)
 							{
@@ -7466,7 +7465,6 @@
 									{
 										custom_skill = custom_skills.get(spec);
 										translated_special = translated_specials.get(spec);
-									
 										if(custom_skill)
 										{
 											let updating_key = custom_skill.replace("_specialisation_name", "_specialisation_advances");
