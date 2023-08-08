@@ -7191,6 +7191,7 @@
     const calculateCharacteristicAdvances = (characteristic) => {
         getSectionIDs("careers", id_array => {
             const attrs = [];
+			const updateAttrs = {};
 
             id_array.forEach(id => {
                 attrs.push(`repeating_careers_${id}_career_${characteristic}_advances`); 
@@ -7198,12 +7199,14 @@
             });
 
             attrs.push(`${characteristic}_noncareer`);
-
+			
             getAttrs(attrs, values => {
                 const int_values = Object.values(values).map(item => parseInt(item) || 0);
                 const total_advances = int_values.reduce((a,b) => a+b);
-
-                setAttrs({[`${characteristic}_advances`]:total_advances});
+				const name = characteristic + '_advances';
+			    setAttrs({
+					[characteristic + '_advances']: total_advances + 0.0
+				});
             });
         });   
     }
@@ -7400,7 +7403,6 @@
                 }
 				
 				loadCustomSkills(custom_skills => {
-				loadTranslatedCharacteristics(translated_chars => {
 				loadTranslatedStaticSkills(translated_statics => {
 				loadTranslatedSpecialSkills(translated_specials => {
 				loadTranslatedSkillGroups(translated_groups => {
@@ -7424,10 +7426,6 @@
 							updateAttrs[`${value}_advances`] = 0;
 						});
 						
-						translated_chars.forEach(value => {
-							updateAttrs[`${value}_advances`] = 0;
-						});
-						
 						
 						names.forEach(([id, name]) => {
 							const value_addr = id.substring(0,id.length-4) + "advances";
@@ -7443,7 +7441,6 @@
 						skills.forEach((value, key) => {
 							let parsed_key = key.trim().replace(/ /g,"-").toLowerCase();
 							let custom_skill = custom_skills.get(parsed_key);
-							let translated_char = translated_chars.get(parsed_key);
 							let translated_static = translated_statics.get(parsed_key);
 							let translated_special = translated_specials.get(parsed_key);
 							
@@ -7451,8 +7448,6 @@
 							{
 								let updating_key = custom_skill.replace("_specialisation_name", "_specialisation_advances");
 								updateAttrs[updating_key] = value;
-							} else if (translated_char) {
-								updateAttrs[`${translated_char}_advances`] = value;
 							} else if (translated_static) {
 								updateAttrs[`${translated_static}_advances`] = value;
 							} else if (translated_special) {
@@ -7485,14 +7480,12 @@
 									}
 								}
 								
-								console.log("key not found " + parsed_key);
 							}
 						});
 
 						setAttrs(updateAttrs);
 
 					});
-				});
                 });
                 });
                 });
@@ -7603,22 +7596,12 @@
                                     updateAttrs[new_key] = value;
                                 } else if (value > 0) {
 
-                                    getCompendiumPage(`Talents:${page_name}`, page => {
-                                        
-                                        if (page.expansion !== 0 && page.expansion) {
+                                    const new_id = generateRowID();
 
-                                            wfrpDragAndDrop.handleDrop({drop_name:page.name, drop_content:page.content, drop_data:page.data}, key);
-                                        
-                                        } else {
-                                            const new_id = generateRowID();
+									updateAttrs[`repeating_talent_${new_id}_talent_name`] = key;
+									updateAttrs[`repeating_talent_${new_id}_talent_ranks`] = value;
 
-                                            updateAttrs[`repeating_talent_${new_id}_talent_name`] = key;
-                                            updateAttrs[`repeating_talent_${new_id}_talent_ranks`] = value;
-
-                                            setAttrs(updateAttrs);
-                                        }
-
-                                    });
+									setAttrs(updateAttrs);
                                 }
                                 
                             });
