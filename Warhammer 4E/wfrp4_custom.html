@@ -7240,7 +7240,7 @@
 				const dest_mapper = new Map();
 				
 				dest_names.forEach(([id, name]) => {
-					dest_mapper.set(name.toLowerCase(), id);
+					dest_mapper.set(name.trim().replace(/ /g,"-").toLowerCase(), id);
 				});
 				
 				callback(dest_mapper);
@@ -7272,7 +7272,7 @@
 			let translated = getTranslationByKey(value);
 			if(translated)
 			{
-				translated_chars.set(translated.toLowerCase(), key);
+				translated_chars.set(translated.trim().replace(/ /g,"-").toLowerCase(), key);
 			}
 			else 
 			{
@@ -7298,7 +7298,7 @@
 			let translated = getTranslationByKey(value);
 			if(translated)
 			{
-				translated_skills.set(translated.toLowerCase(), key);
+				translated_skills.set(translated.trim().replace(/ /g,"-").toLowerCase(), key);
 			}
 			else 
 			{
@@ -7325,7 +7325,7 @@
 			let translated = getTranslationByKey(value);
 			if(translated)
 			{
-				translated_skills.set(translated.toLowerCase(), key);
+				translated_skills.set(translated.trim().replace(/ /g,"-").toLowerCase(), key);
 			}
 			else 
 			{
@@ -7363,7 +7363,7 @@
 			let translated = getTranslationByKey(value);
 			if(translated)
 			{
-				translated_skills.set(translated.toLowerCase(), key);
+				translated_skills.set(translated.trim().replace(/ /g,"-").toLowerCase(), key);
 			}
 			else 
 			{
@@ -7407,7 +7407,6 @@
 				loadTranslatedSpecialSkills(translated_specials => {
 				loadTranslatedSkillGroups(translated_groups => {
 					
-					
 				
 					getAttrs(attrs, values => {
 						const skill_list = Object.entries(values);
@@ -7444,6 +7443,9 @@
 							let translated_static = translated_statics.get(parsed_key);
 							let translated_special = translated_specials.get(parsed_key);
 							
+							
+							console.log(key);
+					
 							if(custom_skill)
 							{
 								let updating_key = custom_skill.replace("_specialisation_name", "_specialisation_advances");
