@@ -7458,8 +7458,8 @@
 								let grouped = key.split("-");
 								if(grouped.length === 2)
 								{
-									let group = grouped[0].trim().toLowerCase();
-									let spec  = grouped[1].trim().toLowerCase();
+									let group = grouped[0].trim().replace(/ /g,"-").toLowerCase();
+									let spec  = grouped[1].trim().replace(/ /g,"-").toLowerCase();
 									
 									let skill_group = translated_groups.get(group);
 									if(skill_group)
