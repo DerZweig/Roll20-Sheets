@@ -100,6 +100,9 @@
         <label class="wfrp-navigation__item">
           <input name="attr_nav" type="radio" value="advances"/><span data-i18n="advances"></span>
         </label>
+        <label class="wfrp-navigation__item">
+          <input name="attr_nav" type="radio" value="notes"/><span data-i18n="notes"></span>
+        </label>
         <label class="wfrp-navigation__item--settings">
           <input name="attr_nav" type="radio" value="settings"/><span>y</span>
         </label>
@@ -2485,7 +2488,15 @@
         </fieldset>
       </div>
     </div>
-    <div class="wfrp-ambitions wfrp-panel page__main--grid">
+    
+	<div class="wfrp-history wfrp-panel page__notes--grid">
+      <h1 class="wfrp-panel__header" data-i18n="NNotes"></h1>
+      <div class="wfrp-textarea--grid1-larger">
+        <textarea class="wfrp-textarea__textarea_larger" name="attr_notes-personal"></textarea>
+      </div>
+	</div>
+	
+	<div class="wfrp-ambitions wfrp-panel page__notes--grid">
       <h1 class="wfrp-panel__header" data-i18n="Ambitions"></h1>
       <div class="wfrp-textarea--grid1-25"><span class="wfrp-textarea__header" data-i18n="Short-term"></span>
         <textarea class="wfrp-textarea__textarea" name="attr_short-personal"></textarea>
@@ -2494,7 +2505,7 @@
         <textarea class="wfrp-textarea__textarea" name="attr_long-personal"></textarea>
       </div>
     </div>
-    <div class="wfrp-party wfrp-panel page__main--grid">
+    <div class="wfrp-party wfrp-panel page__notes--grid">
       <h1 class="wfrp-panel__header" data-i18n="Party"></h1>
       <div class="wfrp-field--grid1-25"><span class="wfrp-field__header" data-i18n="Party Name"></span>
         <input class="wfrp-field__input" name="attr_party_name" type="text"/>
@@ -2502,13 +2513,14 @@
       <div class="wfrp-textarea--grid1-25"><span class="wfrp-textarea__header" data-i18n="Short-term"></span>
         <textarea class="wfrp-textarea__textarea" name="attr_short-party"></textarea>
       </div>
-      <div class="wfrp-textarea--grid1-25"><span class="wfrp-textarea__header" data-i18n="Long-term"></span>
+	  <div class="wfrp-textarea--grid1-25"><span class="wfrp-textarea__header" data-i18n="Long-term"></span>
         <textarea class="wfrp-textarea__textarea" name="attr_long-party"></textarea>
       </div>
       <div class="wfrp-textarea--grid1-25"><span class="wfrp-textarea__header" data-i18n="Members"></span>
         <textarea class="wfrp-textarea__textarea" name="attr_members"></textarea>
       </div>
-    </div>
+	</div>
+
     <div class="wfrp-trappings page__combat--flex">
       <div class="wfrp-panel wfrp-panel--trappings">
         <h1 class="wfrp-panel__header" data-i18n="Trappings"></h1>

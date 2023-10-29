@@ -127,6 +127,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   grid-template-columns: repeat(6, 1fr);
   border: 2px solid black;
   grid-gap: 0px;
+  min-width: 800px;
 }
 .wfrp-pc > * {
   min-width: 100px;
@@ -150,6 +151,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .wfrp-pc .wfrp-talents, .wfrp-pc .wfrp-conditions, .wfrp-pc .wfrp-psychology, .wfrp-pc .wfrp-corruption {
   grid-column: span 2;
+}
+.wfrp-pc .wfrp-history {
+  grid-column: span 6;
+  display: grid;
+  grid-template-rows: 2.5rem auto;
 }
 .wfrp-pc .wfrp-ambitions {
   grid-column: span 3;
@@ -307,7 +313,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 
 .wfrp-navigation {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 3fr;
 }
 .wfrp-navigation__roll {
   display: flex;
@@ -322,10 +328,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .wfrp-navigation__roll label input[type=checkbox] {
   display: none;
 }
+
 .wfrp-navigation__items {
   display: block;
-  align-items: center;
-  justify-content: end;
+	margin-left: auto;
+  margin-right: 20px;
 }
 .wfrp-navigation__items label {
   width: auto;
@@ -689,6 +696,14 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 }
 .wfrp-textarea__header {
   flex-shrink: 0;
+}
+.wfrp-textarea__textarea_larger {
+  flex-grow: 1;
+}
+.wfrp-textarea--grid1-larger {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 350px;
 }
 .wfrp-textarea__textarea {
   flex-grow: 1;
@@ -1521,10 +1536,14 @@ input[type=hidden][name*=species_disable5][value="1"] ~ * input[type=radio][valu
 .charsheet .wfrp-wrapper .page__advances,
 .charsheet .wfrp-wrapper .page__combat,
 .charsheet .wfrp-wrapper .page__magic,
+.charsheet .wfrp-wrapper .page__notes,
 .charsheet .wfrp-wrapper .page__settings {
   display: none;
 }
-.charsheet .wfrp-wrapper .page__main--flex, .charsheet .wfrp-wrapper .page__main--grid,
+.charsheet .wfrp-wrapper .page__main--flex, 
+.charsheet .wfrp-wrapper .page__main--grid,
+.charsheet .wfrp-wrapper .page__notes--flex, 
+.charsheet .wfrp-wrapper .page__notes--grid,
 .charsheet .wfrp-wrapper .page__advances--flex,
 .charsheet .wfrp-wrapper .page__advances--grid,
 .charsheet .wfrp-wrapper .page__combat--flex,
@@ -1536,13 +1555,28 @@ input[type=hidden][name*=species_disable5][value="1"] ~ * input[type=radio][valu
   display: none;
 }
 
-input[type=hidden][name=attr_nav][value=main] ~ * .page__main, input[type=hidden][name=attr_nav][value=advances] ~ * .page__advances, input[type=hidden][name=attr_nav][value=combat] ~ * .page__combat, input[type=hidden][name=attr_nav][value=magic] ~ * .page__magic, input[type=hidden][name=attr_nav][value=settings] ~ * .page__settings {
+input[type=hidden][name=attr_nav][value=main] ~ * .page__main,
+input[type=hidden][name=attr_nav][value=notes] ~ * .page__notes,
+input[type=hidden][name=attr_nav][value=advances] ~ * .page__advances, 
+input[type=hidden][name=attr_nav][value=combat] ~ * .page__combat, 
+input[type=hidden][name=attr_nav][value=magic] ~ * .page__magic, 
+input[type=hidden][name=attr_nav][value=settings] ~ * .page__settings {
   display: block;
 }
-input[type=hidden][name=attr_nav][value=main] ~ * .page__main--flex, input[type=hidden][name=attr_nav][value=advances] ~ * .page__advances--flex, input[type=hidden][name=attr_nav][value=combat] ~ * .page__combat--flex, input[type=hidden][name=attr_nav][value=magic] ~ * .page__magic--flex, input[type=hidden][name=attr_nav][value=settings] ~ * .page__settings--flex {
+input[type=hidden][name=attr_nav][value=main] ~ * .page__main--flex, 
+input[type=hidden][name=attr_nav][value=notes] ~ * .page__notes--flex, 
+input[type=hidden][name=attr_nav][value=advances] ~ * .page__advances--flex, 
+input[type=hidden][name=attr_nav][value=combat] ~ * .page__combat--flex, 
+input[type=hidden][name=attr_nav][value=magic] ~ * .page__magic--flex, 
+input[type=hidden][name=attr_nav][value=settings] ~ * .page__settings--flex {
   display: flex;
 }
-input[type=hidden][name=attr_nav][value=main] ~ * .page__main--grid, input[type=hidden][name=attr_nav][value=advances] ~ * .page__advances--grid, input[type=hidden][name=attr_nav][value=combat] ~ * .page__combat--grid, input[type=hidden][name=attr_nav][value=magic] ~ * .page__magic--grid, input[type=hidden][name=attr_nav][value=settings] ~ * .page__settings--grid {
+input[type=hidden][name=attr_nav][value=main] ~ * .page__main--grid, 
+input[type=hidden][name=attr_nav][value=notes] ~ * .page__notes--grid, 
+input[type=hidden][name=attr_nav][value=advances] ~ * .page__advances--grid, 
+input[type=hidden][name=attr_nav][value=combat] ~ * .page__combat--grid, 
+input[type=hidden][name=attr_nav][value=magic] ~ * .page__magic--grid, 
+input[type=hidden][name=attr_nav][value=settings] ~ * .page__settings--grid {
   display: grid;
 }
 
