@@ -2867,24 +2867,30 @@
               </div>
               <div class="wfrp-settings__row">
                 <div class="wfrp-settings__label" data-i18n="Group"> </div>
-                <select class="wfrp-settings__input" name="attr_weapon_group">
-                  <option value="Basic" data-i18n="Basic"></option>
-                  <option value="Brawling" data-i18n="Brawling"></option>
-                  <option value="Cavalry" data-i18n="Cavalry"></option>
-                  <option value="Fencing" data-i18n="Fencing"></option>
-                  <option value="Flail" data-i18n="Flail"></option>
-                  <option value="Parry" data-i18n="Parry"></option>
-                  <option value="Polearm" data-i18n="Polearm"></option>
-                  <option value="Two-Handed" data-i18n="Two-Handed"></option>
-                  <option value="Blackpowder" data-i18n="Blackpowder"></option>
-                  <option value="Bow" data-i18n="Bow"></option>
-                  <option value="Crossbow" data-i18n="Crossbow"></option>
-                  <option value="Engineering" data-i18n="Engineering"></option>
-                  <option value="Entangling" data-i18n="Entangling"></option>
-                  <option value="Explosives" data-i18n="Explosives"></option>
-                  <option value="Sling" data-i18n="Sling"></option>
-                  <option value="Throwing" data-i18n="Throwing"></option>
-                </select>
+				
+				<div class="wfrp-settings__split--3">
+					<select class="wfrp-settings__input" name="attr_weapon_group">
+					  <option value="Basic" data-i18n="Basic"></option>
+					  <option value="Brawling" data-i18n="Brawling"></option>
+					  <option value="Cavalry" data-i18n="Cavalry"></option>
+					  <option value="Fencing" data-i18n="Fencing"></option>
+					  <option value="Flail" data-i18n="Flail"></option>
+					  <option value="Parry" data-i18n="Parry"></option>
+					  <option value="Polearm" data-i18n="Polearm"></option>
+					  <option value="Two-Handed" data-i18n="Two-Handed"></option>
+					  <option value="Blackpowder" data-i18n="Blackpowder"></option>
+					  <option value="Bow" data-i18n="Bow"></option>
+					  <option value="Crossbow" data-i18n="Crossbow"></option>
+					  <option value="Engineering" data-i18n="Engineering"></option>
+					  <option value="Entangling" data-i18n="Entangling"></option>
+					  <option value="Explosives" data-i18n="Explosives"></option>
+					  <option value="Sling" data-i18n="Sling"></option>
+					  <option value="Throwing" data-i18n="Throwing"></option>
+					</select>
+					<span class="wfrp-settings__label">+</span>
+					<input class="wfrp-settings__input" name="attr_weapon_group_bonus" type="number"/>
+					
+				</div>
               </div>
               <div class="wfrp-settings__row">
                 <div class="wfrp-settings__label" data-i18n="Range"> </div>
@@ -2892,11 +2898,12 @@
               </div>
               <div class="wfrp-settings__row">
                 <div class="wfrp-settings__label" data-i18n="Damage"> </div>
-                <div class="wfrp-settings__split--2">
+                <div class="wfrp-settings__split--3">
                   <input class="wfrp-settings__input" name="attr_weapon_damage_flat" type="text"/>
+				  <span class="wfrp-settings__label">+ SB?</span>
                   <input class="wfrp-settings__input" name="attr_weapon_damage_bonus" type="checkbox"/>
-                  <input class="wfrp-settings__input" name="attr_weapon_damage" type="hidden"/>
                 </div>
+				<input class="wfrp-settings__input" name="attr_weapon_damage" type="hidden"/>
               </div>
               <div class="wfrp-settings__row">
                 <div class="wfrp-settings__label" data-i18n="Modifiers"> </div>
@@ -7901,14 +7908,15 @@
         const section = "weapons";   
         const repeating_id = helperFunctions.extractRepeatingId(attribute, section);
 
-        getAttrs([`${repeating_id}_weapon_group`], values => {
+        getAttrs([`${repeating_id}_weapon_group`, `${repeating_id}_weapon_group_bonus`], values => {
 
             const name = values[`${repeating_id}_weapon_group`].toLowerCase();
-    
+			const bonus = values[`${repeating_id}_weapon_group_bonus`].toLowerCase();
+
             getAttrs([name], values => {
-                const display = values[name];
-                const target = `@{${name}}`;
-                
+                const display = parseInt(values[name]) + parseInt(bonus);
+                const target = `@{${name}} + ${bonus}`;
+
                 setAttrs({
                     [`${repeating_id}_weapon_target`]:target,
                     [`${repeating_id}_weapon_target_display`]:display,
@@ -8388,7 +8396,7 @@ on(`change:repeating_trappings change:repeating_armour:armour_enc change:repeati
 
 on(`change:repeating_weapons:weapon_damage_flat change:repeating_weapons:weapon_damage_bonus`, eventInfo => wfrpModule.updateWeaponDamage(eventInfo.sourceAttribute));
 
-on(`change:repeating_weapons:weapon_group`, eventInfo => wfrpModule.updateWeaponTarget(eventInfo.sourceAttribute, eventInfo.newValue));
+on(`change:repeating_weapons:weapon_group change:repeating_weapons:weapon_group_bonus`, eventInfo => wfrpModule.updateWeaponTarget(eventInfo.sourceAttribute, eventInfo.newValue));
 
 on(`change:strength_bonus change:toughness_bonus change:encumbrance_bonus change:encumbrance_mod`, eventInfo => wfrpModule.calculateMaxEncumbrance());
 

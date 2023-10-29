@@ -960,6 +960,10 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .wfrp-settings__item label:hover {
   color: red;
 }
+.wfrp-settings__split--3 {
+  display: grid;
+  grid-template-columns: 1fr 5em 1fr;
+}
 .wfrp-settings__split--2 {
   display: grid;
   grid-template-columns: 1fr 3em;
