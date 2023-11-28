@@ -1747,9 +1747,11 @@ input[type=hidden][name=attr_npc][value=on] ~ * .wfrp-npc, input[type=hidden][na
   flex-wrap: wrap;
   margin: auto;
 }
-.wfrp-npcskill__wrapper .repcontrol {
+
+.charsheet .wfrp-npcskill__wrapper .repcontrol {
   display: none;
 }
+
 .wfrp-npcskill__title {
   display: inline;
   margin-right: 0.5rem;
