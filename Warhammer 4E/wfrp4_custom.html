@@ -4569,6 +4569,117 @@
       </div>
       <div class="wfrp-npc__grid">
         <div class="wfrp-npc__leftcol">
+		 <div class="wfrp-npccombat">
+            <h2 class="wfrp-npc__subtitle" data-i18n="Combat"></h2>
+            <div class="wfrp-npcadvantage">
+              <div class="wfrp-advantage__wrapper">
+                <div class="wfrp-advantage__label" data-i18n="Advantage"> </div>
+                <button class="wfrp-advantage__reset mypictos" name="act_reset_advantage" type="action">1</button>
+                <button class="wfrp-advantage__decrement mypictos" name="act_decrement_advantage" type="action">-</button>
+                <input class="wfrp-advantage__input" name="attr_advantage" type="number" value="0"/>
+                <button class="wfrp-advantage__increment mypictos" name="act_increment_advantage" type="action">+</button>
+              </div>
+            </div>
+            <div class="wfrp-npccontrols__wrapper">
+              <div class="wfrp-npccontrols__button">
+                <button data-i18n="Initiative" type="roll" value="&amp;{template:wfrp} {{name=@{character_name}}} {{roll_name=Initiative}} @{roll_init}"></button>
+              </div>
+              <div class="wfrp-npccontrols__button">
+                <button data-i18n="Dodge" type="roll" value="@{roll_whisper} &amp;{template:wfrp} {{name=@{character_name}}} {{roll=[[1d100cs&lt;@{roll_cs}cf&gt;@{roll_cf}]]}} {{difficulty=[[@{difficulty_query_combat}]]}} {{bonus=[[@{roll_query}]]}} @{roll_slbonus} {{target=[[@{npc_dodge}+@{difficulty_query}+@{roll_query}+(@{advantage}*10)]]}} {{roll_advantage=[[(@{advantage}*10)]]}} {{roll_name=Dodge}} {{roll_type=Skill}} {{roll_notes=@{dodge_notes}}}"></button>
+              </div>
+              <div class="wfrp-npccontrols__button">
+                <button data-i18n="Endurance" type="roll" value="@{roll_whisper} &amp;{template:wfrp} {{name=@{character_name}}} {{roll=[[1d100cs&lt;@{roll_cs}cf&gt;@{roll_cf}]]}} {{difficulty=[[@{difficulty_query_combat}]]}} {{bonus=[[@{roll_query}]]}} @{roll_slbonus} {{target=[[@{npc_endurance}+@{difficulty_query}+@{roll_query}+(@{advantage}*10)]]}} {{roll_advantage=[[(@{advantage}*10)]]}} {{roll_name=Endurance}} {{roll_type=Skill}} {{roll_notes=@{endurance_notes}}}"></button>
+              </div>
+              <div class="wfrp-npccontrols__button">
+                <button data-i18n="Intuition" type="roll" value="@{roll_whisper} &amp;{template:wfrp} {{name=@{character_name}}} {{roll=[[1d100cs&lt;@{roll_cs}cf&gt;@{roll_cf}]]}} {{difficulty=[[@{difficulty_query_combat}]]}} {{bonus=[[@{roll_query}]]}} @{roll_slbonus} {{target=[[@{npc_intuition}+@{difficulty_query}+@{roll_query}+(@{advantage}*10)]]}} {{roll_advantage=[[(@{advantage}*10)]]}} {{roll_name=Intuition}} {{roll_type=Skill}} {{roll_notes=@{intuition_notes}}}"></button>
+              </div>
+              <div class="wfrp-npccontrols__button">
+                <button data-i18n="Perception" type="roll" value="@{roll_whisper} &amp;{template:wfrp} {{name=@{character_name}}} {{roll=[[1d100cs&lt;@{roll_cs}cf&gt;@{roll_cf}]]}} {{difficulty=[[@{difficulty_query_combat}]]}} {{bonus=[[@{roll_query}]]}} @{roll_slbonus} {{target=[[@{npc_perception}+@{difficulty_query}+@{roll_query}+(@{advantage}*10)]]}} {{roll_advantage=[[(@{advantage}*10)]]}} {{roll_name=Perception}} {{roll_type=Skill}} {{roll_notes=@{perception_notes}}}"></button>
+              </div>
+              <div class="wfrp-npccontrols__button">
+                <button data-i18n="Cool" type="roll" value="@{roll_whisper} &amp;{template:wfrp} {{name=@{character_name}}} {{roll=[[1d100cs&lt;@{roll_cs}cf&gt;@{roll_cf}]]}} {{difficulty=[[@{difficulty_query_combat}]]}} {{bonus=[[@{roll_query}]]}} @{roll_slbonus} {{target=[[@{npc_cool}+@{difficulty_query}+@{roll_query}+(@{advantage}*10)]]}} {{roll_advantage=[[(@{advantage}*10)]]}} {{roll_name=Cool}} {{roll_type=Skill}} {{roll_notes=@{cool_notes}}}"></button>
+              </div>
+            </div>
+          </div>
+          <div class="wfrp-npcattack">
+            <h2 class="wfrp-npc__subtitle" data-i18n="Attacks"></h2>
+            <fieldset class="repeating_attacks">
+              <input name="attr_attack_settings" type="hidden" value="1"/>
+              <div class="wfrp-npcattack__row">
+                <div class="wfrp-npcattack__cell--settingstoggle">
+                  <label class="wfrp-displaytoggle">
+                    <input class="wfrp-displaytoggle__hide" checked="checked" name="attr_attack_settings" type="checkbox" value="1"/><span class="wfrp-displaytoggle__span">y</span>
+                  </label>
+                </div>
+                <div class="wfrp-npcattack__cell--title">
+                  <button name="roll_undefined" type="roll" value="@{roll_whisper} &amp;{template:wfrp} {{name=@{character_name}}} {{roll=[[1d100cs&lt;@{roll_cs}cf&gt;@{roll_cf}]]}} {{difficulty=[[@{difficulty_query_combat}]]}} {{bonus=[[@{roll_query}]]}} @{roll_slbonus} {{target=[[@{attack_target}+@{difficulty_query}+@{roll_query}+(@{advantage}*10)]]}} {{roll_advantage=[[(@{advantage}*10)]]}} {{roll_name=@{attack_name}}} {{roll_type=@{attack_type}}} {{roll_target=@{attack_target}}} {{roll_range=@{attack_range}}} {{roll_text=@{attack_description}}} {{roll_damage=[[@{attack_damage}]] + Opposed SL}} {{roll_hit_location=1}} {{roll_crit_location=[[1d100]]}}"><span name="attr_attack_name"></span></button>
+                </div>
+                <div class="wfrp-npcattack__cell"><span class="wfrp-npcattack__label" data-i18n="Attacks"></span><span name="attr_attack_attacks"></span></div>
+                <div class="wfrp-npcattack__cell"><span class="wfrp-npcattack__label" data-i18n="Target"></span><span name="attr_attack_target"></span>
+                  <input class="wfrp-settings__input" name="attr_attack_target" type="hidden" value="0"/>
+                </div>
+                <div class="wfrp-npcattack__cell"><span class="wfrp-npcattack__label" data-i18n="Range"></span><span name="attr_attack_range"></span></div>
+                <div class="wfrp-npcattack__cell"><span class="wfrp-npcattack__label" data-i18n="Damage"></span><span name="attr_attack_damage"></span></div>
+                <div class="wfrp-npcattack__cell--description"><span name="attr_attack_description"></span></div>
+                <div class="wfrp-settings control__hide--npcattack_settings">
+                  <div class="wfrp-settings__row--span">
+                    <div class="wfrp-settings__label" data-i18n="Name"> </div>
+                    <input class="wfrp-settings__input" name="attr_attack_name" type="text"/>
+                  </div>
+                  <div class="wfrp-settings__row">
+                    <div class="wfrp-settings__label" data-i18n="Target"> </div>
+                    <select class="wfrp-settings__input" name="attr_attack_type">
+                      <option value="Weapon Skill" data-i18n="Weapon Skill"></option>
+                      <option value="Ballistic Skill" data-i18n="Ballistic Skill"></option>
+                      <option value="Melee (Basic)" data-i18n="Melee (Basic)"></option>
+                      <option value="Melee (Brawling)" data-i18n="Melee (Brawling)"></option>
+                      <option value="Melee (Cavalry)" data-i18n="Melee (Cavalry)"></option>
+                      <option value="Melee (Fencing)" data-i18n="Melee (Fencing)"></option>
+                      <option value="Melee (Flail)" data-i18n="Melee (Flail)"></option>
+                      <option value="Melee (Parry)" data-i18n="Melee (Parry)"></option>
+                      <option value="Melee (Polearm)" data-i18n="Melee (Polearm)"></option>
+                      <option value="Melee (Two-Handed)" data-i18n="Melee (Two-Handed)"></option>
+                      <option value="Ranged (Blackpowder)" data-i18n="Ranged (Blackpowder)"></option>
+                      <option value="Ranged (Bow)" data-i18n="Ranged (Bow)"></option>
+                      <option value="Ranged (Crossbow)" data-i18n="Ranged (Crossbow)"></option>
+                      <option value="Ranged (Engineering)" data-i18n="Ranged (Engineering)"></option>
+                      <option value="Ranged (Entangling)" data-i18n="Ranged (Entangling)"></option>
+                      <option value="Ranged (Explosives)" data-i18n="Ranged (Explosives)"></option>
+                      <option value="Ranged (Sling)" data-i18n="Ranged (Sling)"></option>
+                      <option value="Ranged (Throwing)" data-i18n="Ranged (Throwing)"></option>
+                      <option value="Custom" data-i18n="Custom"></option>
+                    </select>
+                  </div>
+                  <div class="wfrp-settings__row">
+                    <div class="wfrp-settings__label" data-i18n="Range"> </div>
+                    <input class="wfrp-settings__input" name="attr_attack_range" type="text" value="0"/>
+                  </div>
+                  <div class="wfrp-settings__row">
+                    <div class="wfrp-settings__label" data-i18n="Attacks"> </div>
+                    <input class="wfrp-settings__input" name="attr_attack_attacks" type="number" value="0"/>
+                  </div>
+                  <div class="wfrp-settings__row">
+                    <div class="wfrp-settings__label" data-i18n="Damage"> </div>
+                    <input class="wfrp-settings__input" name="attr_attack_damage" type="text" value="0"/>
+                  </div>
+                  <input name="attr_attack_type" type="hidden"/>
+                  <div class="wfrp-settings__row control__hide--Custom">
+                    <div class="wfrp-settings__label" data-i18n="Custom"> </div>
+                    <input class="wfrp-settings__input" name="attr_attack_target" type="number"/>
+                  </div>
+                  <div class="wfrp-settings__row--span">
+                    <div class="wfrp-settings__label--full" data-i18n="Description"> </div>
+                    <textarea class="wfrp-settings__textarea" name="attr_attack_description"></textarea>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <input name="attr_npc_trapping_flag" type="hidden"/>
+          <div class="wfrp-npctrappings">
+            <h2 class="wfrp-npc__subtitle" data-i18n="Trappings"></h2>
+            <textarea class="wfrp-npctrappings__textarea" name="attr_npc_trappings"></textarea>
+          </div>
           <input name="attr_npc_skill_flag" type="hidden"/>
           <div class="wfrp-npc__skills">   
             <h2 class="wfrp-npc__subtitle" data-i18n="Skills"></h2>
@@ -4735,117 +4846,7 @@
               </fieldset>
             </div>
           </div>
-          <div class="wfrp-npccombat">
-            <h2 class="wfrp-npc__subtitle" data-i18n="Combat"></h2>
-            <div class="wfrp-npcadvantage">
-              <div class="wfrp-advantage__wrapper">
-                <div class="wfrp-advantage__label" data-i18n="Advantage"> </div>
-                <button class="wfrp-advantage__reset mypictos" name="act_reset_advantage" type="action">1</button>
-                <button class="wfrp-advantage__decrement mypictos" name="act_decrement_advantage" type="action">-</button>
-                <input class="wfrp-advantage__input" name="attr_advantage" type="number" value="0"/>
-                <button class="wfrp-advantage__increment mypictos" name="act_increment_advantage" type="action">+</button>
-              </div>
-            </div>
-            <div class="wfrp-npccontrols__wrapper">
-              <div class="wfrp-npccontrols__button">
-                <button data-i18n="Initiative" type="roll" value="&amp;{template:wfrp} {{name=@{character_name}}} {{roll_name=Initiative}} @{roll_init}"></button>
-              </div>
-              <div class="wfrp-npccontrols__button">
-                <button data-i18n="Dodge" type="roll" value="@{roll_whisper} &amp;{template:wfrp} {{name=@{character_name}}} {{roll=[[1d100cs&lt;@{roll_cs}cf&gt;@{roll_cf}]]}} {{difficulty=[[@{difficulty_query_combat}]]}} {{bonus=[[@{roll_query}]]}} @{roll_slbonus} {{target=[[@{npc_dodge}+@{difficulty_query}+@{roll_query}+(@{advantage}*10)]]}} {{roll_advantage=[[(@{advantage}*10)]]}} {{roll_name=Dodge}} {{roll_type=Skill}} {{roll_notes=@{dodge_notes}}}"></button>
-              </div>
-              <div class="wfrp-npccontrols__button">
-                <button data-i18n="Endurance" type="roll" value="@{roll_whisper} &amp;{template:wfrp} {{name=@{character_name}}} {{roll=[[1d100cs&lt;@{roll_cs}cf&gt;@{roll_cf}]]}} {{difficulty=[[@{difficulty_query_combat}]]}} {{bonus=[[@{roll_query}]]}} @{roll_slbonus} {{target=[[@{npc_endurance}+@{difficulty_query}+@{roll_query}+(@{advantage}*10)]]}} {{roll_advantage=[[(@{advantage}*10)]]}} {{roll_name=Endurance}} {{roll_type=Skill}} {{roll_notes=@{endurance_notes}}}"></button>
-              </div>
-              <div class="wfrp-npccontrols__button">
-                <button data-i18n="Intuition" type="roll" value="@{roll_whisper} &amp;{template:wfrp} {{name=@{character_name}}} {{roll=[[1d100cs&lt;@{roll_cs}cf&gt;@{roll_cf}]]}} {{difficulty=[[@{difficulty_query_combat}]]}} {{bonus=[[@{roll_query}]]}} @{roll_slbonus} {{target=[[@{npc_intuition}+@{difficulty_query}+@{roll_query}+(@{advantage}*10)]]}} {{roll_advantage=[[(@{advantage}*10)]]}} {{roll_name=Intuition}} {{roll_type=Skill}} {{roll_notes=@{intuition_notes}}}"></button>
-              </div>
-              <div class="wfrp-npccontrols__button">
-                <button data-i18n="Perception" type="roll" value="@{roll_whisper} &amp;{template:wfrp} {{name=@{character_name}}} {{roll=[[1d100cs&lt;@{roll_cs}cf&gt;@{roll_cf}]]}} {{difficulty=[[@{difficulty_query_combat}]]}} {{bonus=[[@{roll_query}]]}} @{roll_slbonus} {{target=[[@{npc_perception}+@{difficulty_query}+@{roll_query}+(@{advantage}*10)]]}} {{roll_advantage=[[(@{advantage}*10)]]}} {{roll_name=Perception}} {{roll_type=Skill}} {{roll_notes=@{perception_notes}}}"></button>
-              </div>
-              <div class="wfrp-npccontrols__button">
-                <button data-i18n="Cool" type="roll" value="@{roll_whisper} &amp;{template:wfrp} {{name=@{character_name}}} {{roll=[[1d100cs&lt;@{roll_cs}cf&gt;@{roll_cf}]]}} {{difficulty=[[@{difficulty_query_combat}]]}} {{bonus=[[@{roll_query}]]}} @{roll_slbonus} {{target=[[@{npc_cool}+@{difficulty_query}+@{roll_query}+(@{advantage}*10)]]}} {{roll_advantage=[[(@{advantage}*10)]]}} {{roll_name=Cool}} {{roll_type=Skill}} {{roll_notes=@{cool_notes}}}"></button>
-              </div>
-            </div>
-          </div>
-          <div class="wfrp-npcattack">
-            <h2 class="wfrp-npc__subtitle" data-i18n="Attacks"></h2>
-            <fieldset class="repeating_attacks">
-              <input name="attr_attack_settings" type="hidden" value="1"/>
-              <div class="wfrp-npcattack__row">
-                <div class="wfrp-npcattack__cell--settingstoggle">
-                  <label class="wfrp-displaytoggle">
-                    <input class="wfrp-displaytoggle__hide" checked="checked" name="attr_attack_settings" type="checkbox" value="1"/><span class="wfrp-displaytoggle__span">y</span>
-                  </label>
-                </div>
-                <div class="wfrp-npcattack__cell--title">
-                  <button name="roll_undefined" type="roll" value="@{roll_whisper} &amp;{template:wfrp} {{name=@{character_name}}} {{roll=[[1d100cs&lt;@{roll_cs}cf&gt;@{roll_cf}]]}} {{difficulty=[[@{difficulty_query_combat}]]}} {{bonus=[[@{roll_query}]]}} @{roll_slbonus} {{target=[[@{attack_target}+@{difficulty_query}+@{roll_query}+(@{advantage}*10)]]}} {{roll_advantage=[[(@{advantage}*10)]]}} {{roll_name=@{attack_name}}} {{roll_type=@{attack_type}}} {{roll_target=@{attack_target}}} {{roll_range=@{attack_range}}} {{roll_text=@{attack_description}}} {{roll_damage=[[@{attack_damage}]] + Opposed SL}} {{roll_hit_location=1}} {{roll_crit_location=[[1d100]]}}"><span name="attr_attack_name"></span></button>
-                </div>
-                <div class="wfrp-npcattack__cell"><span class="wfrp-npcattack__label" data-i18n="Attacks"></span><span name="attr_attack_attacks"></span></div>
-                <div class="wfrp-npcattack__cell"><span class="wfrp-npcattack__label" data-i18n="Target"></span><span name="attr_attack_target"></span>
-                  <input class="wfrp-settings__input" name="attr_attack_target" type="hidden" value="0"/>
-                </div>
-                <div class="wfrp-npcattack__cell"><span class="wfrp-npcattack__label" data-i18n="Range"></span><span name="attr_attack_range"></span></div>
-                <div class="wfrp-npcattack__cell"><span class="wfrp-npcattack__label" data-i18n="Damage"></span><span name="attr_attack_damage"></span></div>
-                <div class="wfrp-npcattack__cell--description"><span name="attr_attack_description"></span></div>
-                <div class="wfrp-settings control__hide--npcattack_settings">
-                  <div class="wfrp-settings__row--span">
-                    <div class="wfrp-settings__label" data-i18n="Name"> </div>
-                    <input class="wfrp-settings__input" name="attr_attack_name" type="text"/>
-                  </div>
-                  <div class="wfrp-settings__row">
-                    <div class="wfrp-settings__label" data-i18n="Target"> </div>
-                    <select class="wfrp-settings__input" name="attr_attack_type">
-                      <option value="Weapon Skill" data-i18n="Weapon Skill"></option>
-                      <option value="Ballistic Skill" data-i18n="Ballistic Skill"></option>
-                      <option value="Melee (Basic)" data-i18n="Melee (Basic)"></option>
-                      <option value="Melee (Brawling)" data-i18n="Melee (Brawling)"></option>
-                      <option value="Melee (Cavalry)" data-i18n="Melee (Cavalry)"></option>
-                      <option value="Melee (Fencing)" data-i18n="Melee (Fencing)"></option>
-                      <option value="Melee (Flail)" data-i18n="Melee (Flail)"></option>
-                      <option value="Melee (Parry)" data-i18n="Melee (Parry)"></option>
-                      <option value="Melee (Polearm)" data-i18n="Melee (Polearm)"></option>
-                      <option value="Melee (Two-Handed)" data-i18n="Melee (Two-Handed)"></option>
-                      <option value="Ranged (Blackpowder)" data-i18n="Ranged (Blackpowder)"></option>
-                      <option value="Ranged (Bow)" data-i18n="Ranged (Bow)"></option>
-                      <option value="Ranged (Crossbow)" data-i18n="Ranged (Crossbow)"></option>
-                      <option value="Ranged (Engineering)" data-i18n="Ranged (Engineering)"></option>
-                      <option value="Ranged (Entangling)" data-i18n="Ranged (Entangling)"></option>
-                      <option value="Ranged (Explosives)" data-i18n="Ranged (Explosives)"></option>
-                      <option value="Ranged (Sling)" data-i18n="Ranged (Sling)"></option>
-                      <option value="Ranged (Throwing)" data-i18n="Ranged (Throwing)"></option>
-                      <option value="Custom" data-i18n="Custom"></option>
-                    </select>
-                  </div>
-                  <div class="wfrp-settings__row">
-                    <div class="wfrp-settings__label" data-i18n="Range"> </div>
-                    <input class="wfrp-settings__input" name="attr_attack_range" type="text" value="0"/>
-                  </div>
-                  <div class="wfrp-settings__row">
-                    <div class="wfrp-settings__label" data-i18n="Attacks"> </div>
-                    <input class="wfrp-settings__input" name="attr_attack_attacks" type="number" value="0"/>
-                  </div>
-                  <div class="wfrp-settings__row">
-                    <div class="wfrp-settings__label" data-i18n="Damage"> </div>
-                    <input class="wfrp-settings__input" name="attr_attack_damage" type="text" value="0"/>
-                  </div>
-                  <input name="attr_attack_type" type="hidden"/>
-                  <div class="wfrp-settings__row control__hide--Custom">
-                    <div class="wfrp-settings__label" data-i18n="Custom"> </div>
-                    <input class="wfrp-settings__input" name="attr_attack_target" type="number"/>
-                  </div>
-                  <div class="wfrp-settings__row--span">
-                    <div class="wfrp-settings__label--full" data-i18n="Description"> </div>
-                    <textarea class="wfrp-settings__textarea" name="attr_attack_description"></textarea>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-          <input name="attr_npc_trapping_flag" type="hidden"/>
-          <div class="wfrp-npctrappings">
-            <h2 class="wfrp-npc__subtitle" data-i18n="Trappings"></h2>
-            <textarea class="wfrp-npctrappings__textarea" name="attr_npc_trappings"></textarea>
-          </div>
+         
         </div>
         <div class="wfrp-npc__rightcol">
           <div class="wfrp-npctrait">
