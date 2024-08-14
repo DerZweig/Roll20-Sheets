@@ -1,0 +1,1295 @@
+<div>
+
+	<input name="attr_difficulty_query" type="hidden" value="?{Difficulty|Effortless (+40), 40|Simple (+30), 30|Easy (+20), 20|Ordinary (+10), 10|Average (+0), 0|Challenging (-10), -10|Difficult (-20), -20|Hard (-30), -30|Very Hard (-40), -40}"/>
+	<input name="attr_characteristics_query" type="hidden" value="?{Characteristic|Strength,[[@{STR} + @{STR_temp}]]|Endurance,[[@{END} + @{END_temp}]]|Agility,[[@{AGI} + @{AGI_temp}]]|Intelligence,[[@{INT} + @{INT_temp}]]|Willpower,[[@{POW} + @{POW_temp}]]|Perception,[[@{PRC} + @{PRC_temp}]]|Personality,[[@{PRS} + @{PRS_temp}]]|None, 0}"/>
+	<input name="attr_conditions_query" type="hidden" value="?{Conditional Modifiers|0}"/>
+	<input type="hidden" name="attr_STR_mod" value="0" />
+	<input type="hidden" name="attr_END_mod" value="0" />
+	<input type="hidden" name="attr_AGI_mod" value="0" />
+	<input type="hidden" name="attr_INT_mod" value="0" />
+	<input type="hidden" name="attr_POW_mod" value="0" />
+	<input type="hidden" name="attr_PRC_mod" value="0" />
+	<input type="hidden" name="attr_PRS_mod" value="0" />
+	<input type="hidden" name="attr_LCK_mod" value="0" />
+	
+	<input type="hidden" name="attr_carry_total" value="0" />
+	<input type="hidden" name="attr_encumbrance_weapon_total" value="0" />
+	<input type="hidden" name="attr_encumbrance_equipment_total" value="0" />
+	<input type="hidden" name="attr_encumbrance_armor_total" value="0" />
+	<input type="hidden" name="attr_encumbrance_rating" value="0"/>
+	<input type="hidden" name="attr_physical_penalty" value="0"/>
+	<input type="hidden" name="attr_speed_penalty" value="0"/>
+	<input type="hidden" name="attr_stamina_penalty" value="0"/>
+	
+	<div class="mysheet">
+		<input type="hidden" class="tabstoggle" name="attr_sheetTab"  value="0"  />
+		
+		<div class="common">
+		<div class="grid-16">
+				<div class="grid-span-16 grid-15 hide-btn-ui">
+					<div class="grid-span-8 grid-7">
+						<span class="grid-span-3 mar-bot"><label class="font-size-sm line-height-10" >&nbsp;</label></span>
+						<span class="grid-span-1 pl-10"><label class="font-size-sm line-height-10" >Score</label></span>   
+						<span class="grid-span-1 pl-10"><label class="font-size-sm line-height-10" >Effect</label></span>   
+						<span class="grid-span-1 pl-10"><label class="font-size-sm line-height-10" >Bonus</label></span>    
+						<span class="grid-span-1 pl-10"><label class="font-size-sm line-height-10" >Favoured</label></span>    
+
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Strength}} {{tn=[[ [[@{STR} + @{STR_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Strength</button></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_STR" type="number" value="0" min="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_STR_temp" type="number" value="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_STR_disp" value="@{STR_mod}" type="number" disabled /></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_STRfav" type="checkbox" /></span>
+
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Endurance}} {{tn=[[ [[@{END} + @{END_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Endurance</button></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_END" type="number" value="0" min="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_END_temp" type="number" value="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_END_disp" value="@{END_mod}" type="number" disabled /></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_ENDfav" type="checkbox" /></span>
+
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{AGI} + @{AGI_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Agility</button></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_AGI" type="number" value="0" min="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_AGI_temp" type="number" value="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_AGI_disp" value="@{AGI_mod}" type="number" disabled /></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_AGIfav" type="checkbox" /></span>
+
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Intelligence}} {{tn=[[ [[@{INT} + @{INT_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Intelligence</button></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_INT" type="number" value="0" min="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_INT_temp" type="number" value="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_INT_disp" value="@{INT_mod}" type="number" disabled /></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_INTfav" type="checkbox" /></span>
+
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Willpower}} {{tn=[[ [[@{POW} + @{POW_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Willpower</button></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_POW" type="number" value="0" min="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_POW_temp" type="number" value="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_POW_disp" value="@{POW_mod}" type="number" disabled /></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_POWfav" type="checkbox" /></span>
+
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Perception}} {{tn=[[ [[@{PRC} + @{PRC_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Perception</button></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_PRC" type="number" value="0" min="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_PRC_temp" type="number" value="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_PRC_disp" value="@{PRC_mod}" type="number" disabled /></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_PRCfav" type="checkbox" /></span>
+
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Personality}} {{tn=[[ [[@{PRS} + @{PRS_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Personality</button></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_PRS" type="number" value="0" min="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_PRS_temp" type="number" value="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_PRS_disp" value="@{PRS_mod}" type="number" disabled /></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_PRSfav" type="checkbox" /></span>
+
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Luck}} {{tn=[[ [[@{LCK} + @{LCK_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Luck</button></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_LCK" type="number" value="0" min="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_LCK_temp" type="number" value="0" step="1"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_LCK_disp" value="@{LCK_mod}" type="number" disabled /></span>
+						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_LCKfav" type="checkbox" /></span>
+
+					</div>
+					<span class="grid-span-1 mar-bot">&nbsp;</span>
+					<div class="grid-span-6 grid-6">
+						<span class="grid-span-6"><label class="font-size-sm line-height-10" >Name</label></span>   
+						<span class="grid-span-6 mar-bot"><input class="fill line-height-20" name="attr_character_name" type="text" /></span>
+						
+						<span class="grid-span-3"><label class="font-size-sm line-height-10" >Race</label></span>   
+						<span class="grid-span-3 "><label class="font-size-sm line-height-10" >Birth Sign</label></span>   
+						
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_race" type="text" /></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_birthsign" type="text" /></span>
+						
+						<span class="grid-span-3"><label class="font-size-sm line-height-10" >Current XP</label></span>   
+						<span class="grid-span-3"><label class="font-size-sm line-height-10" >Total XP</label></span>   
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_xp" type="text" /></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_xptotal" type="text" /></span>
+						
+						<span class="grid-span-6">&nbsp;</span>   
+						<span class="grid-span-2"><label class="font-size-sm line-height-10" >&nbsp;</label></span>   
+						<span class="grid-span-2"><label class="font-size-sm line-height-10" >Current</label></span>  
+						<span class="grid-span-2"><label class="font-size-sm line-height-10" >Maximum</label></span>   
+						
+						<span class="grid-span-2"><label class="line-height-20" >Health</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_health_cur" type="number" value="0" step="1"/></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_health_disp" type="number" value="[[ @{health_max} ]]" step="1" min="0" max="100" disabled /></span>
+													
+													
+						<span class="grid-span-2"><label class="line-height-20" >Stamina</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_stamina_cur" type="number" value="0" step="1"/></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_stamina_disp" type="number" value="[[@{stamina_max} ]]" step="1" min="0" max="100" disabled /></span>
+													
+						<span class="grid-span-2 mar-bot"><label class="line-height-20" >Magicka</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_magicka_cur" type="number" value="0" step="1"/></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_magicka_disp" type="number" value="[[@{magicka_max} ]]" step="1" min="0" max="100" disabled /></span>
+													
+						<span class="grid-span-2"><label class="line-height-20" >Speed</label></span>
+						<span class="grid-span-2">&nbsp;</span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_speed_disp" type="number" value="[[@{speed_max} ]]" step="1" min="0" max="100" disabled /></span>
+													
+						<span class="grid-span-2"><label class="line-height-20" >Initative</label></span>
+						<span class="grid-span-2">&nbsp;</span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_initiative_disp" type="number" value="[[@{initiative_max} ]]" step="1" min="0" max="100" disabled /></span>
+							
+						<span class="grid-span-2 mar-bot"><label class="line-height-20" >Actions</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_action_cur" type="number" value="0" step="1"/></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_action_disp" type="number" value="[[@{action_max} ]]" step="1" min="0" max="100" disabled /></span>
+														
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	
+		<div class="buttons">
+			<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab0" value="0" checked="checked" />
+			<span class="mysheet-sheetpagetab mysheet-sheettab0">Skills</span>
+			<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab3" value="3" />
+			<span class="mysheet-sheetpagetab mysheet-sheettab3">Combat</span>
+			<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab2" value="2" />
+			<span class="mysheet-sheetpagetab mysheet-sheettab2">Spells</span>
+			<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab4" value="4" />
+			<span class="mysheet-sheetpagetab mysheet-sheettab4">Talents</span>
+			<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab1" value="1" />
+			<span class="mysheet-sheetpagetab mysheet-sheettab1">Equipment</span>
+			<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab5" value="5" />
+			<span class="mysheet-sheetpagetab mysheet-sheettab5">Misc</span>
+		</div>
+		<div class="character">
+			<div class="grid-16">
+				
+				<div  class="grid-span-16 grid-10 bdr-all pad-all">
+					<div class="grid-span-5 grid-9">  
+						<span class="grid-span-2"><label class="line-height-20" >Acrobatics</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_acro_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_acro" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{acro}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+						
+						<span class="grid-span-2"><label class="line-height-20" >Alchemy</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_alch_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_alch" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{alch}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+						
+						<span class="grid-span-2"><label class="line-height-20" >Alteration</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_alter_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_alter" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{alter}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+						
+						<span class="grid-span-2"><label class="line-height-20" >Athletics</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_atlet_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_atlet" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{atlet}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+
+						<span class="grid-span-2"><label class="line-height-20" >Command</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_command_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_command" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{command}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+
+
+						<span class="grid-span-2"><label class="line-height-20" >Commerce</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_commer_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_commer" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{commer}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+
+						<span class="grid-span-2"><label class="line-height-20" >Conjuration</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_conjur_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_conjur" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{conjur}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+
+						<span class="grid-span-2"><label class="line-height-20" >Deceive</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_deceive_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_deceive" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{deceive}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>					
+
+						<span class="grid-span-2"><label class="line-height-20" >Destruction</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_destr_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_destr" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{destr}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>	
+						
+						<span class="grid-span-2"><label class="line-height-20" >Enchant</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_ench_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_ench" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{ench}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>	
+
+						<span class="grid-span-2"><label class="line-height-20" >Evade</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_evade_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_evade" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{evade}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>	
+						
+						<span class="grid-span-2"><label class="line-height-20" >Illusion</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_illus_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_illus" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{illus}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>								
+					</div>
+					
+					<div class="grid-span-5 grid-9">  
+						<span class="grid-span-2"><label class="line-height-20" >Investigate</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_invst_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_invst" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{invst}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+						
+						
+						<span class="grid-span-2"><label class="line-height-20" >Logic</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_lgc_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_lgc" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{lgc}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>	
+												
+						<span class="grid-span-2"><label class="line-height-20" >Lore</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_lore_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_lore" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{lore}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>	
+						
+						<span class="grid-span-2"><label class="line-height-20" >Mysticism</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_myst_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_myst" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{myst}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>	
+
+						<span class="grid-span-2"><label class="line-height-20" >Navigate</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_navi_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_navi" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{navi}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>			
+
+						<span class="grid-span-2"><label class="line-height-20" >Observe</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_observ_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_observ" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{observ}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>	
+						
+						<span class="grid-span-2"><label class="line-height-20" >Persuade</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_pers_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_pers" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{pers}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>		
+						
+						
+						<span class="grid-span-2"><label class="line-height-20" >Restoration</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_resto_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_resto" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{resto}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>		
+
+						
+						<span class="grid-span-2"><label class="line-height-20" >Ride</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_ride_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_ride" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{ride}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>	
+
+						
+						<span class="grid-span-2"><label class="line-height-20" >Stealth</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_stealth_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_stealth" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{stealth}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>			
+
+
+						
+						<span class="grid-span-2"><label class="line-height-20" >Subterfuge</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_subter_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_subter" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{subter}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>			
+
+
+						
+						<span class="grid-span-2"><label class="line-height-20" >Survival</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_survival_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_survival" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}}  {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{survival}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>							
+					</div>
+				</div>
+			</div>	
+
+			<div class="grid-16">
+				<div  class="grid-span-16 grid-10">
+					<div class="grid-span-5 grid-9 bdr-all pad-all">  
+						<span class="grid-span-9"><label class="line-height-20" >Combat Styles</label></span>
+						
+						<span class="grid-span-5"><input class="fill line-height-20" name="attr_CombatSkillname" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_combat" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{combat}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>	
+						
+						<div class="grid-span-9 grid-16">
+							<fieldset class="repeating_combatstyles">
+								<div class="grid-span-16 grid-16">
+									<div class="grid-span-16 grid-9 ">
+										<span class="grid-span-5"><input class="fill line-height-20" name="attr_skill_name" type="text"/></span>	
+										<span class="grid-span-2">
+											<select name="attr_skill_level" class="center fill line-height-20">
+													<option value="10">Untrained</option>
+													<option value="0">Novice</option>
+													<option value="-10">Apprentice</option>
+													<option value="-20">Journeyman</option>
+													<option value="-30">Adept</option>
+													<option value="-40">Expert</option>
+													<option value="-50">Master</option>
+											</select>
+										</span>		
+										<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{skill_level}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+										<span  class="grid-span-1 mar-bot"/>										
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					
+					
+					<div class="grid-span-5 grid-9 bdr-all pad-all">  
+						
+						<span class="grid-span-9"><label class="line-height-20" >Professions</label></span>
+						<span class="grid-span-5"><input class="fill line-height-20" name="attr_Proffessionname" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_profes" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{profes}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>		
+						
+						<div class="grid-span-9 grid-16">
+							<fieldset class="repeating_professions">
+								<div class="grid-span-16 grid-16">
+									<div class="grid-span-16 grid-9 ">
+										<span class="grid-span-5"><input class="fill line-height-20" name="attr_skill_name" type="text"/></span>	
+										<span class="grid-span-2">
+											<select name="attr_skill_level" class="center fill line-height-20">
+													<option value="10">Untrained</option>
+													<option value="0">Novice</option>
+													<option value="-10">Apprentice</option>
+													<option value="-20">Journeyman</option>
+													<option value="-30">Adept</option>
+													<option value="-40">Expert</option>
+													<option value="-50">Master</option>
+											</select>
+										</span>		
+										<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{skill_level}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+										<span  class="grid-span-1 mar-bot"/>										
+									</div>
+								</div>
+							</fieldset>
+						</div>													
+					</div>
+				</div>
+				
+				
+				
+				
+			</div>				
+		</div>
+		
+		<div class="combatsheet">
+			<div class="grid-16">
+				<div class="grid-span-16 grid-12 pad-all mar-bot">
+					<div class="grid-span-8 grid-6">
+						<div class="grid-span-2"></div>
+						<div class="grid-span-2 grid-2 bdr-all pad-all  mar-bot">
+							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10" >Head</label></span>
+							<span class="grid-span-2 mar-bot"><input class="fill line-height-20" name="attr_Head-Type" type="text"/></span>
+							
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10" >AR</label></span>
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10" >ENC</label></span>
+							<span class="grid-span-1"><input class="fill line-height-20" name="attr_Head-AR" type="number" value="0" min="0" step="1"/></span>
+							<span class="grid-span-1"><input class="fill line-height-20" name="attr_Head-ENC" type="number" value="0" min="0" step="1"/></span>
+						</div>
+						<div class="grid-span-2"></div>
+						<div class="grid-span-2 grid-2 bdr-all pad-all mar-bot">
+							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10" >Left Arm</label></span>
+							<span class="grid-span-2 mar-bot"><input class="fill line-height-20" name="attr_larm-type" type="text"/></span>
+							
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10" >AR</label></span>
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10" >ENC</label></span>
+							<span class="grid-span-1"><input class="fill line-height-20" name="attr_larm-AR" type="number" value="0" min="0" step="1"/></span>
+							<span class="grid-span-1"><input class="fill line-height-20" name="attr_larm-ENC" type="number" value="0" min="0" step="1"/></span>
+						</div>
+						
+						<div class="grid-span-2 grid-2 bdr-all pad-all">
+							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10" >Body</label></span>
+							<span class="grid-span-2 mar-bot"><input class="fill line-height-20" name="attr_Body-Type" type="text"/></span>
+							
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10" >AR</label></span>
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10" >ENC</label></span>
+							<span class="grid-span-1"><input class="fill line-height-20" name="attr_Body-AR" type="number" value="0" min="0" step="1"/></span>
+							<span class="grid-span-1"><input class="fill line-height-20" name="attr_Body-ENC" type="number" value="0" min="0" step="1"/></span>
+						</div>
+						
+						<div class="grid-span-2 grid-2 bdr-all pad-all">
+							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10" >Right Arm</label></span>
+							<span class="grid-span-2 mar-bot"><input class="fill line-height-20" name="attr_rarm-type" type="text"/></span>
+							
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10" >AR</label></span>
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10" >ENC</label></span>
+							<span class="grid-span-1"><input class="fill line-height-20" name="attr_rarm-AR" type="number" value="0" min="0" step="1"/></span>
+							<span class="grid-span-1"><input class="fill line-height-20" name="attr_rarm-ENC" type="number" value="0" min="0" step="1"/></span>
+						</div>
+						
+						<div class="grid-span-1"></div>
+						<div class="grid-span-2 grid-2 bdr-all pad-all">
+							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10" >Left Leg</label></span>
+							<span class="grid-span-2 mar-bot"><input class="fill line-height-20" name="attr_rarm-type" type="text"/></span>
+							
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10" >AR</label></span>
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10" >ENC</label></span>
+							<span class="grid-span-1"><input class="fill line-height-20" name="attr_lleg-AR" type="number" value="0" min="0" step="1"/></span>
+							<span class="grid-span-1"><input class="fill line-height-20" name="attr_lleg-ENC" type="number" value="0" min="0" step="1"/></span>
+						</div>
+						<div class="grid-span-2 grid-2 bdr-all pad-all">
+							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10" >Right Leg</label></span>
+							<span class="grid-span-2 mar-bot"><input class="fill line-height-20" name="attr_rleg-type" type="text"/></span>
+							
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10" >AR</label></span>
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10" >ENC</label></span>
+							<span class="grid-span-1"><input class="fill line-height-20" name="attr_rleg-AR" type="number" value="0" min="0" step="1"/></span>
+							<span class="grid-span-1"><input class="fill line-height-20" name="attr_rleg-ENC" type="number" value="0" min="0" step="1"/></span>
+						</div>
+						<div class="grid-span-1"></div>
+					</div>
+					
+					
+					<div class="grid-span-4 grid-6  bdr-all">
+						<span class="grid-span-6"><label class="font-size-sm line-height-10" >Armor Qualities</label></span>
+						<textarea class="grid-span-6" name="attr_armor_qualities" class="font-size-sm line-height-10" rows="22" ></textarea>
+					</div>
+				</div>
+				
+				<div class="grid-span-16 grid-16 mar-bot  pad-all">
+					<div class="grid-span-7 grid-7 ">
+						<span class="grid-span-7 mar-bot"><label class="font-size-sm line-height-10" >Shield</label></span>
+						<span class="grid-span-7 mar-bot"><input class="fill line-height-20" name="attr_shield_name" type="text"/></span>
+						<span class="grid-span-6 mar-bot"><label class="font-size-sm line-height-10" >Defense</label></span>   
+						<span class="grid-span-1"><label class="font-size-sm line-height-10" >ENC</label></span> 
+
+						<span class="grid-span-6"><input class="fill line-height-20" name="attr_shield_block" type="text"/></span>	
+						<span class="grid-span-1"><input class="fill line-height-20" name="attr_shield-ENC" type="number" value="0" min="0" step="1"/></span>						
+					</div>
+					
+					<div class="grid-span-9 grid-4  bdr-all">
+						<span class="grid-span-4"><label class="font-size-sm line-height-10" >Shield Qualities</label></span> 
+						<textarea class="grid-span-4" name="attr_shield_qualities" class="font-size-sm line-height-10" rows="5" ></textarea>
+					</div>
+				</div>
+			</div>
+			
+			<fieldset class="repeating_weapon">
+				<div class="grid-span-16 grid-16 mar-bot  pad-all">
+					<div class="grid-span-7 grid-7 ">
+						<span class="grid-span-7 mar-bot"><label class="font-size-sm line-height-10" >Weapon</label></span>
+						<span class="grid-span-7 mar-bot"><input class="fill line-height-20" name="attr_weapon_name" type="text"/></span>
+						<span class="grid-span-3 mar-bot"><label class="font-size-sm line-height-10" >Damage</label></span>   
+						<span class="grid-span-3 mar-left mar-bot"><label class="font-size-sm line-height-10" >Reach / Range</label></span>   
+						<span class="grid-span-1"><label class="font-size-sm line-height-10" >ENC</label></span> 
+
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_weapon_damage" type="text"/></span>	
+						<span class="grid-span-1 mar-right"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{damage=[[@{weapon_damage}]]}} {{attackzone=[[1d10]]}} {{attackname=@{weapon_name}}}"/></span>
+						
+						<span class="grid-span-3 mar-left"><input class="fill line-height-20" name="attr_weapon_range" type="text"/></span>	
+						<span class="grid-span-1"><input class="fill line-height-20" name="attr_weapon_enc" type="number" value="0" min="0" step="1"/></span>						
+					</div>
+					
+					<div class="grid-span-9 grid-4  bdr-all">
+						<span class="grid-span-4"><label class="font-size-sm line-height-10" >Weapon Qualities</label></span> 
+						<textarea class="grid-span-4" name="attr_weapon_qualities" class="font-size-sm line-height-10" rows="5" ></textarea>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		
+		<div class="equipment">
+			<div class="grid-16">
+				<div class="grid-span-16 grid-16 ">
+					<span class="grid-span-14"><label class="font-size-sm line-height-10" >Item</label></span>
+					<span class="grid-span-1"><label class="font-size-sm line-height-10" >Count</label></span> 
+					<span class="grid-span-1"><label class="font-size-sm line-height-10" >ENC</label></span> 				
+				</div>
+			
+				<fieldset class="repeating_equipment">
+					<div class="grid-span-16 grid-16">
+						<span class="grid-span-14"><input class="fill line-height-20" name="attr_item_name" type="text"/></span>
+						<span class="grid-span-1"><input class="fill line-height-20" name="attr_item_count" type="number" value="0" min="0" step="1"/></span>	
+						<span class="grid-span-1"><input class="fill line-height-20" name="attr_item_enc" type="number" value="0" min="0" step="1"/></span>	
+					</div>
+				</fieldset>
+			</div>
+	
+			<div class="grid-16">
+				<div class="grid-span-16 grid-6  bdr-all">
+					<span class="grid-span-6"><label class="font-size-sm line-height-10" >Other Possesions</label></span>
+					<textarea class="grid-span-6" name="attr_Gear-Possessions" class="font-size-sm line-height-10" rows="12" ></textarea>
+				</div>
+			</div>
+		</div>
+		
+		<div class="spellbook">
+				<div  class="grid-span-16 grid-10  bdr-all pad-all mar-bot">
+					<div class="grid-span-5 grid-9">  
+								
+						<span class="grid-span-2"><label class="line-height-20" >Alteration</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_alter_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_alter" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{alter}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+						<span class="grid-span-2"><label class="line-height-20" >Conjuration</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_conjur_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_conjur" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{conjur}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+						<span class="grid-span-2"><label class="line-height-20" >Destruction</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_destr_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_destr" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{ench}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1"/>		
+					</div>
+					
+					<div class="grid-span-5 grid-9">  
+						
+						<span class="grid-span-2"><label class="line-height-20" >Illusion</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_illus_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_illus" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{illus}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>			
+						<span class="grid-span-2"><label class="line-height-20" >Mysticism</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_myst_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_myst" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{myst}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>			
+						
+						
+						<span class="grid-span-2"><label class="line-height-20" >Restoration</label></span>
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_resto_spec" type="text"/></span>
+						<span class="grid-span-2">
+							<select name="attr_resto" class="center fill line-height-20">
+									<option value="10">Untrained</option>
+									<option value="0">Novice</option>
+									<option value="-10">Apprentice</option>
+									<option value="-20">Journeyman</option>
+									<option value="-30">Adept</option>
+									<option value="-40">Expert</option>
+									<option value="-50">Master</option>
+							</select>
+						</span>
+						<span class="grid-span-1"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{resto}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1"/>		
+					</div>
+			</div>
+			<fieldset class="repeating_spells">
+				<div class="grid-span-16 grid-16 mar-bot  pad-all">
+					<div class="grid-span-7 grid-9 ">
+						<span class="grid-span-6 mar-bot"><label class="font-size-sm line-height-10" >Name</label></span>
+						<span class="grid-span-3 mar-bot"><label class="font-size-sm line-height-10" >School</label></span>
+						
+						<span class="grid-span-6 mar-bot"><input class="fill line-height-20" name="attr_spell_name" type="text"/></span>	
+						<span class="grid-span-3 mar-bot">
+							<select name="attr_spell_school" class="center fill line-height-20">
+									<option value="1">Alteration</option>
+									<option value="2">Conjuration</option>
+									<option value="3">Destruction</option>
+									<option value="4">Illusion</option>
+									<option value="5">Mysticism</option>
+									<option value="6">Restoration</option>
+							</select>
+						</span>	
+							
+						<span class="grid-span-3 mar-bot"><label class="font-size-sm line-height-10" >Level</label></span>
+						<span class="grid-span-3 mar-bot"><label class="font-size-sm line-height-10" >Cost</label></span>
+						<span class="grid-span-3 mar-bot"><label class="font-size-sm line-height-10" >Strength</label></span>	
+						<span class="grid-span-3">
+							<select name="attr_spell_level" class="center fill line-height-20">
+									<option value="1">Novice (1)</option>
+									<option value="2">Apprentice (2)</option>
+									<option value="3">Journeyman (3)</option>
+									<option value="4">Adept (4)</option>
+									<option value="5">Expert (5)</option>
+									<option value="6">Master (6)</option>
+									<option value="7">Grandmaster (7)</option>
+							</select>
+						</span>	
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_spell_cost"  type="number" value="0"/></span>	
+						<span class="grid-span-3"><input class="fill line-height-20" name="attr_spell_strength"  type="number" value="0"/></span>							
+					</div>
+					
+					<div class="grid-span-9 grid-4  bdr-all">
+						<span class="grid-span-4"><label class="font-size-sm line-height-10" >Spell Description</label></span> 
+						<textarea class="grid-span-4" name="attr_spell_description" class="font-size-sm line-height-10" rows="5" ></textarea>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		
+		<div class="talentsheet">
+			<fieldset class="repeating_talents">
+				<div class="grid-span-16 grid-16 mar-bot  pad-all">
+					<div class="grid-span-7 grid-7 ">
+						<span class="grid-span-7 mar-bot"><label class="font-size-sm line-height-10" >Name</label></span>
+						<span class="grid-span-7 mar-bot"><input class="fill line-height-20" name="attr_talent_name" type="text"/></span>	
+						<span class="grid-span-7 mar-bot"><label class="font-size-sm line-height-10" >Category</label></span>
+						<span class="grid-span-7 mar-bot"><input class="fill line-height-20" name="attr_talent_category" type="text"/></span>			
+					</div>
+					
+					<div class="grid-span-9 grid-4  bdr-all">
+						<span class="grid-span-4"><label class="font-size-sm line-height-10" >Description</label></span> 
+						<textarea class="grid-span-4" name="attr_talent_description" class="font-size-sm line-height-10" rows="5" ></textarea>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		
+		<div class="settings">
+			<div class="grid-16">
+				<div class="grid-span-7 grid-7">
+				
+					
+					
+					<div class="grid-span-7 grid-7 bdr-all pad-all mar-bot">  
+						<span class="grid-span-5"><label class="line-height-20" >Untreated Wounds</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_wounds_untreated"  type="number" value="0" min="0" /></span>
+						
+						<span class="grid-span-5"><label class="line-height-20" >Treated Wounds</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_wounds_treated"  type="number" value="0" min="0" /></span>
+					</div>
+					
+					<div class="grid-span-7 grid-7 bdr-all pad-all mar-bot">  
+						<span class="grid-span-5"><label class="line-height-20" >Armor</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_encumbrance_armor_disp"  type="number" value="[[@{encumbrance_armor_total}]]" disabled /></span>
+						<span class="grid-span-5"><label class="line-height-20" >Weapons</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_encumbrance_weapon_disp"  type="number" value="[[@{encumbrance_weapon_total}]]" disabled /></span>
+						<span class="grid-span-5"><label class="line-height-20" >Equipment</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_encumbrance_equipment_disp"  type="number" value="[[@{encumbrance_equipment_total}]]" disabled /></span>
+						
+						<span class="grid-span-5"><label class="line-height-20" >&nbsp;</label></span>
+						
+						<span class="grid-span-5"><label class="line-height-20" >Encumbrance Modifier</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_encumbrance_mod"  type="number" value="0" step="1" /></span>
+						<span class="grid-span-5"><label class="line-height-20" >Encumbrance Rating</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_encumbrance_rating_disp"  type="number" value="[[@{encumbrance_rating}]]" disabled /></span>
+						
+						<span class="grid-span-5"><label class="line-height-20" >&nbsp;</label></span>
+						<span class="grid-span-5"><label class="line-height-20" >Skill Penalty</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_encumbrance_physical_disp"  type="number" value="[[@{physical_penalty}]]" disabled /></span>
+						<span class="grid-span-5"><label class="line-height-20" >Speed Penalty</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_encumbrance_speed_disp"  type="number" value="[[@{speed_penalty}]]" disabled /></span>
+						<span class="grid-span-5"><label class="line-height-20" >Stamina Penalty</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_encumbrance_stamina_disp"  type="number" value="[[@{stamina_penalty}]]" disabled /></span>
+						
+						
+					</div>
+					
+					
+					
+					<div class="grid-span-7 grid-7 bdr-all pad-all">  
+						<span class="grid-span-7"><label class="font-size-sm line-height-10" >Conditions & Ailements</label></span> 
+						<textarea class="grid-span-7" name="attr_conditions" class="font-size-sm line-height-10" rows="22" ></textarea>
+						
+					</div>
+				</div>
+				
+				<div class="grid-span-2"></div>
+				
+				<div class="grid-span-7 grid-7">
+					
+					<div class="grid-span-7 grid-7 bdr-all pad-all mar-bot">  
+						<span class="grid-span-3"><label class="font-size-sm line-height-10" >Attribute</label></span>   
+						<span class="grid-span-2"><label class="font-size-sm line-height-10" >Modifier</label></span>  
+						<span class="grid-span-2"><label class="font-size-sm line-height-10" >Total</label></span>   
+						
+						
+						<span class="grid-span-3"><label class="line-height-20" >Health</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_health_mod"  type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_health_max" type="number" value="[[(floor((@{END} + @{END_temp}) / 2) + @{health_mod}) ]]" disabled /></span>
+						
+						<span class="grid-span-3"><label class="line-height-20" >Stamina</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_stamina_mod"  type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_stamina_max" type="number" value="[[@{END_mod} + @{stamina_mod} - @{stamina_penalty}]]" disabled /></span>
+						
+														
+						<span class="grid-span-3"><label class="line-height-20" >Magicka</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_magicka_mod"  type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_magicka_max" type="number" value="[[@{INT} + @{INT_temp} + @{magicka_mod}]]" disabled /></span>
+						
+						<span class="grid-span-7">&nbsp;</span>
+						
+						<span class="grid-span-3"><label class="line-height-20" >Actions</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_action_mod" type="number" value="0" step="1"/></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_action_max" type="number" value="[[abs(3 + @{action_mod}) ]]" step="1" min="0" max="100" disabled /></span>
+												
+						<span class="grid-span-3"><label class="line-height-20" >Initiative</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_initiative_mod" type="number" value="0" step="1"/></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_initiative_max" type="number" value="[[@{AGI_mod} + @{AGI_mod} + @{PRC_mod} + @{initiative_mod}]]" disabled /></span>
+						
+												
+						<span class="grid-span-3"><label class="line-height-20" >Speed</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_speed_mod" type="number" value="0" step="1"/></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_speed_max" type="number" value="[[@{STR_mod} + @{AGI_mod} + @{AGI_mod} + @{speed_mod} - @{speed_penalty}]]" disabled /></span>
+						
+						<span class="grid-span-7">&nbsp;</span>
+												
+						<span class="grid-span-3"><label class="line-height-20" >Carry </label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_carry_mod" type="number" value="0" step="1"/></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_carry_disp"  type="number" value="[[@{carry_total}]]" disabled /></span>
+						
+						
+					</div>
+					
+					<div class="grid-span-7 grid-5 bdr-all pad-all mar-bot">  
+						<span class="grid-span-5"><label class="line-height-20" >Lucky Numbers</label></span>
+						<span class="grid-span-1 mar-bot"><input class="center fill line-height-20" name="attr_lucky0" type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_lucky1" type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_lucky2" type="number" value="0" step="1"  min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_lucky3" type="number" value="0" step="1"  min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_lucky4" type="number" value="0" step="1"  min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_lucky5" type="number" value="0" step="1"  min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_lucky6" type="number" value="0" step="1"  min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_lucky7" type="number" value="0" step="1"  min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_lucky8" type="number" value="0" step="1"  min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_lucky9" type="number" value="0" step="1"  min="0" max="100"/></span>
+						<span class="grid-span-5"><label class="line-height-20" >&nbsp;</label></span>
+						<span class="grid-span-5"><label class="line-height-20" >Unlucky Numbers</label></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_unlucky0" type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_unlucky1" type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_unlucky2" type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_unlucky3" type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_unlucky4" type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_unlucky5" type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_unlucky6" type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_unlucky7" type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_unlucky8" type="number" value="0" step="1" min="0" max="100"/></span>
+						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_unlucky9" type="number" value="0" step="1" min="0" max="100"/></span>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+	
+</div>
+
+<rolltemplate class="sheet-rolltemplate-5eDefault">
+	<div class="rt-card sheet-rt-card">
+		<table class="main-content">
+			{{#damage}}
+				<tr>
+					<th colspan="2">{{attackname}}</th>
+					<tr><td>Damage</td><td>{{damage}}</td></tr>
+					<tr><td>Location</td><td>
+						{{#rollBetween() attackzone 1 5}}Body{{/rollBetween() attackzone 1 5}}
+						{{#rollTotal() attackzone 6}}Right Leg{{/rollTotal() attackzone 6}}
+						{{#rollTotal() attackzone 7}}Left Leg{{/rollTotal() attackzone 7}}
+						{{#rollTotal() attackzone 8}}Right Arm{{/rollTotal() attackzone 8}}
+						{{#rollTotal() attackzone 9}}Left Arm{{/rollTotal() attackzone 9}}
+						{{#rollTotal() attackzone 10}}Head{{/rollTotal() attackzone 10}}
+					</td></tr>
+				</tr>
+			{{/damage}}
+		
+			{{#rollname}}
+				<tr>
+					<th colspan="2">
+					{{#rollWasCrit() r1}} Critical Success {{/rollWasCrit() r1}}
+					{{#^rollWasCrit() r1}}
+						{{#rollWasFumble() r1}} Critical Failure {{/rollWasFumble() r1}}
+						{{#^rollWasFumble() r1}} 
+							{{#rollGreater() r1 tn}} Failure {{/rollGreater() r1 tn}}
+							{{#^rollGreater() r1 tn}} Success {{/^rollGreater() r1 tn}}
+						{{/^rollWasFumble() r1}}
+					{{/^rollWasCrit() r1}}
+				</tr>
+				<tr>
+					<td>Target</td>
+					<td>{{tn}}</td>	
+				</tr>
+				<tr>
+					<td>Roll</td>
+					<td>{{r1}}</td>	
+				</tr>
+
+				{{#rollTotal() r1 tn}} 
+				<tr>
+					<td>Degrees</td>
+					<td>
+						{{#rollGreater() tn 99}} 10 {{/rollGreater() tn 99}}
+						{{#rollGreater() tn 90}} 9 {{/rollGreater() tn 90}}
+						{{#rollGreater() tn 80}} 8 {{/rollGreater() tn 80}}
+						{{#rollGreater() tn 70}} 7 {{/rollGreater() tn 70}}
+						{{#rollGreater() tn 60}} 6 {{/rollGreater() tn 60}}
+						{{#rollGreater() tn 50}} 5 {{/rollGreater() tn 50}}
+						{{#rollGreater() tn 40}} 4 {{/rollGreater() tn 40}}
+						{{#rollGreater() tn 30}} 3 {{/rollGreater() tn 30}}
+						{{#rollGreater() tn 20}} 2 {{/rollGreater() tn 20}}
+						{{#rollGreater() tn 10}} 1 {{/rollGreater() tn 10}}
+						
+						{{#rollGreater() tn 199}}+ 10 {{/rollGreater() tn 199}}
+						{{#rollBetween() tn 190 199}}+ 9{{/rollBetween() tn 190 199}}
+						{{#rollBetween() tn 180 189}}+ 8{{/rollBetween() tn 180 189}}
+						{{#rollBetween() tn 170 179}}+ 7{{/rollBetween() tn 170 179}}
+						{{#rollBetween() tn 160 169}}+ 6{{/rollBetween() tn 160 169}}
+						{{#rollBetween() tn 150 159}}+ 5{{/rollBetween() tn 150 159}}
+						{{#rollBetween() tn 140 149}}+ 4{{/rollBetween() tn 140 149}}
+						{{#rollBetween() tn 130 139}}+ 3{{/rollBetween() tn 130 139}}
+						{{#rollBetween() tn 120 129}}+ 2{{/rollBetween() tn 120 129}}
+						{{#rollBetween() tn 110 119}}+ 1{{/rollBetween() tn 110 119}}
+					</td>	
+				</tr>
+				{{/rollTotal() r1 tn}}
+				{{#rollLess() r1 tn}} 
+				<tr>
+					<td>Degrees</td>
+					<td>
+						{{#rollGreater() r1 99}} 10 {{/rollGreater() r1 99}}
+						{{#rollBetween() r1 90 99}} 9 {{/rollBetween() r1 90 99}}
+						{{#rollBetween() r1 80 89}} 8 {{/rollBetween() r1 80 89}}
+						{{#rollBetween() r1 70 79}} 7 {{/rollBetween() r1 70 79}}
+						{{#rollBetween() r1 60 69}} 6 {{/rollBetween() r1 60 69}}
+						{{#rollBetween() r1 50 59}} 5 {{/rollBetween() r1 50 59}}
+						{{#rollBetween() r1 40 49}} 4 {{/rollBetween() r1 40 49}}
+						{{#rollBetween() r1 30 39}} 3 {{/rollBetween() r1 30 39}}
+						{{#rollBetween() r1 20 29}} 2 {{/rollBetween() r1 20 29}}
+						{{#rollBetween() r1 0 19}} 1 {{/rollBetween() r1 0 19}}
+						
+						{{#rollGreater() tn 199}}+ 10 {{/rollGreater() tn 199}}
+						{{#rollBetween() tn 190 199}}+ 9{{/rollBetween() tn 190 199}}
+						{{#rollBetween() tn 180 189}}+ 8{{/rollBetween() tn 180 189}}
+						{{#rollBetween() tn 170 179}}+ 7{{/rollBetween() tn 170 179}}
+						{{#rollBetween() tn 160 169}}+ 6{{/rollBetween() tn 160 169}}
+						{{#rollBetween() tn 150 159}}+ 5{{/rollBetween() tn 150 159}}
+						{{#rollBetween() tn 140 149}}+ 4{{/rollBetween() tn 140 149}}
+						{{#rollBetween() tn 130 139}}+ 3{{/rollBetween() tn 130 139}}
+						{{#rollBetween() tn 120 129}}+ 2{{/rollBetween() tn 120 129}}
+						{{#rollBetween() tn 110 119}}+ 1{{/rollBetween() tn 110 119}}
+
+					</td>	
+				</tr>
+				{{/rollLess() r1 tn}}
+			{{/rollname}}
+			
+		</table>
+	</div>
+</rolltemplate>
+<script type="text/worker">
+
+const stats = ['STR', 'END', 'AGI', 'INT', 'POW', 'PRC', 'PRS', 'LCK'];
+const armor = ['Head', 'Body', 'rarm', 'larm', 'rleg', 'lleg', 'shield'];
+const armor_change = armor.map(x => `change:${x}-ENC`).join(' ');
+
+const repeatingSum = (destinations, section, fields) => {
+    if (!Array.isArray(destinations)) destinations = [destinations.replace(/\s/g, '').split(',')];
+    if (!Array.isArray(fields)) fields = [fields.replace(/\s/g, '').split(',')];
+    getSectionIDs(section, idArray => {
+        const attrArray = idArray.reduce((m, id) => [...m, ...(fields.map(field => `${section}_${id}_${field}`))], []);
+        getAttrs([...attrArray], v => {
+            const getValue = (section, id, field) => v[`${section}_${id}_${field}`] === 'on' ? 1 : parseFloat(v[`${section}_${id}_${field}`]) || 0;
+            const commonMultipliers = (fields.length <= destinations.length) ? [] : fields.splice(destinations.length, fields.length - destinations.length);
+            const output = {};
+			
+            destinations.forEach((destination, index) => {
+                output[destination] = idArray.reduce((total, id) => total + getValue(section, id, fields[index]) * commonMultipliers.reduce((subtotal, mult) => subtotal * getValue(section, id, mult), 1), 0);
+            });
+            setAttrs(output);
+        }); 
+    }); 
+};
+
+
+stats.forEach(stat => {
+    on(`change:${stat.toLowerCase()} change:${stat.toLowerCase()}_temp sheet:opened`, function () {
+        getAttrs([`${stat}`, `${stat}_temp`], function(values) {
+            const score = parseInt(values[`${stat}`]);
+            const temp = parseInt(values[`${stat}_temp`]);
+            const calc = score + temp;
+            const mod = parseInt(calc / 10);
+			
+			
+            setAttrs({[`${stat}_mod`]: mod}); 
+        });
+    });
+});
+
+
+on( `${armor_change} change:END change:STR change:AGI change:END_temp change:STR_temp change:AGI_temp change:carry_mod change:speed_mod change:stamina_mod change:encumbrance_mod change:repeating_weapon:weapon_enc remove:repeating_weapon change:repeating_equipment:item_enc change:repeating_equipment:item_count remove:repeating_equipment sheet:opened`, function() 
+{
+	const otherAttrArray =  ['STR', 'END', 'STR_temp', 'END_temp', 'AGI', 'AGI_temp', 'speed_mod', 'stamina_mod', 'carry_mod', 'encumbrance_mod'];
+	const armorAttrArray = armor.map(x => `${x}-ENC`);
+	getSectionIDs('repeating_weapon', weaponIdArray => 
+	{
+		const weaponAttrArray = weaponIdArray.map(id => `repeating_weapon_${id}_weapon_enc`);
+		getSectionIDs('repeating_equipment', itemIdArray => 
+		{
+			const itemCountAttrArray = itemIdArray.map(id => `repeating_equipment_${id}_item_count`);
+			const itemEncAttrArray = itemIdArray.map(id => `repeating_equipment_${id}_item_enc`);
+			const attrArray = armorAttrArray.concat(weaponAttrArray).concat(itemEncAttrArray).concat(itemCountAttrArray).concat(otherAttrArray);
+			
+			getAttrs([...attrArray], values => 
+			{
+				const strength = Math.floor((parseInt(values["STR"]) + parseInt(values["STR_temp"])) / 10);
+				const endurance = Math.floor((parseInt(values["END"]) + parseInt(values["END_temp"])) / 10);
+				const agility = Math.floor((parseInt(values["AGI"]) + parseInt(values["AGI_temp"])) / 10);
+				const modifier = parseInt(values["encumbrance_mod"]);
+				
+				const armorTotal = armorAttrArray.reduce((total,id) => total + parseFloat(values[id]), 0);
+				const weaponTotal = weaponAttrArray.reduce((total,id) => total + parseFloat(values[id]), 0);
+				const itemTotal = itemIdArray.reduce((total,id) => total + parseFloat(values[`repeating_equipment_${id}_item_enc`]) * parseFloat(values[`repeating_equipment_${id}_item_count`]), 0);
+				const sumTotal = armorTotal + weaponTotal + itemTotal;
+				
+				const speedMax =  Math.max(strength + agility * 2 + parseInt(values["speed_mod"]), 0);
+				const staminaMax =  Math.max(endurance + parseInt(values["stamina_mod"]), 0);
+				const carry = parseInt(values["carry_mod"]) + strength * 4 + endurance * 4;
+				const encRating = Math.floor(sumTotal / Math.max(carry, 1)) + Math.floor(modifier);
+						
+				const output = {};
+				
+				output["encumbrance_armor_total"] = armorTotal;
+				output["encumbrance_equipment_total"] = itemTotal;
+				output["encumbrance_weapon_total"] = weaponTotal;
+				output["carry_total"] = carry;
+				
+				if(encRating >= 3)
+				{
+					output["physical_penalty"] = 40;
+					output["speed_penalty"]    = speedMax;
+					output["stamina_penalty"]  = Math.min(staminaMax, 5);
+				}
+				else if(encRating >= 2)
+				{
+					output["physical_penalty"] = 20;
+					output["speed_penalty"]    = Math.floor(speedMax / 2);
+					output["stamina_penalty"]  = Math.min(staminaMax, 3);
+				}
+				else if(encRating >= 1)
+				{
+					output["physical_penalty"] = 10;
+					output["speed_penalty"]    = Math.min(speedMax, 1);
+					output["stamina_penalty"]  = Math.min(staminaMax, 1);
+				}
+				else
+				{
+					output["physical_penalty"] = 0;
+					output["speed_penalty"]    = 0;
+					output["stamina_penalty"]  = 0;
+				}
+				
+				output["encumbrance_rating"] = Math.min(Math.max(encRating, 0), 3);
+				setAttrs(output);
+			});
+			
+		});
+	});
+});
+
+</script>
