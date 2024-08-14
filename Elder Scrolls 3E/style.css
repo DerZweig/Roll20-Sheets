@@ -366,6 +366,7 @@ h2.name {
 	grid-column: span 16;
 }
 
+.repcontainer[data-groupname="repeating_conditions"],
 .repcontainer[data-groupname="repeating_talents"],
 .repcontainer[data-groupname="repeating_weapon"],
 .repcontainer[data-groupname="repeating_spells"],
@@ -381,6 +382,7 @@ h2.name {
     padding-bottom: 8px;
 }
 
+.repcontrol[data-groupname="repeating_conditions"],
 .repcontrol[data-groupname="repeating_talents"],
 .repcontrol[data-groupname="repeating_weapon"],
 .repcontrol[data-groupname="repeating_spells"],
@@ -390,6 +392,7 @@ h2.name {
     grid-column: span 16;
 }
 
+.repcontainer[data-groupname="repeating_conditions"] > .repitem,
 .repcontainer[data-groupname="repeating_talents"] > .repitem,
 .repcontainer[data-groupname="repeating_weapon"] > .repitem,
 .repcontainer[data-groupname="repeating_spells"] > .repitem,

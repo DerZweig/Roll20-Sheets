@@ -599,7 +599,7 @@
 					
 					<div class="grid-span-5 grid-9 bdr-all pad-all">  
 						
-						<span class="grid-span-9"><label class="line-height-20" >Professions</label></span>
+						<span class="grid-span-9"><label class="line-height-20" >Professions / Custom</label></span>
 						<span class="grid-span-5"><input class="fill line-height-20" name="attr_Proffessionname" type="text"/></span>
 						<span class="grid-span-2">
 							<select name="attr_profes" class="center fill line-height-20">
@@ -990,14 +990,6 @@
 						
 						
 					</div>
-					
-					
-					
-					<div class="grid-span-7 grid-7 bdr-all pad-all">  
-						<span class="grid-span-7"><label class="font-size-sm line-height-10" >Conditions & Ailements</label></span> 
-						<textarea class="grid-span-7" name="attr_conditions" class="font-size-sm line-height-10" rows="22" ></textarea>
-						
-					</div>
 				</div>
 				
 				<div class="grid-span-2"></div>
@@ -1073,8 +1065,26 @@
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_unlucky9" type="number" value="0" step="1" min="0" max="100"/></span>
 					</div>
 				</div>
+			
 			</div>
 			
+			
+			<div class="grid-span-16 grid-16 bdr-all pad-all">
+				
+				<div class="grid-span-16 grid-18">
+					<span class="grid-span-5 mar-bot"><label class="font-size-sm line-height-10" >Condition</label></span>
+					<span class="grid-span-13 mar-bot"><label class="font-size-sm line-height-10" >Effect</label></span>
+				</div>
+				
+				<fieldset class="repeating_conditions">
+					<div class="grid-span-16 grid-18">
+						<span class="grid-span-5"><input class="fill line-height-20" name="attr_condition_name" type="text"/></span>	
+						<span class="grid-span-13"><input class="fill line-height-20" name="attr_condition_effect" type="text"/></span>
+					</div>
+				</fieldset>
+				
+			</div>
+
 		</div>
 		
 	</div>
