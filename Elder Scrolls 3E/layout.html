@@ -2,7 +2,7 @@
 
 	<input name="attr_difficulty_query" type="hidden" value="?{Difficulty|Effortless (+40), 40|Simple (+30), 30|Easy (+20), 20|Ordinary (+10), 10|Average (+0), 0|Challenging (-10), -10|Difficult (-20), -20|Hard (-30), -30|Very Hard (-40), -40}"/>
 	<input name="attr_characteristics_query" type="hidden" value="?{Characteristic|Strength,[[@{STR} + @{STR_temp}]]|Endurance,[[@{END} + @{END_temp}]]|Agility,[[@{AGI} + @{AGI_temp}]]|Intelligence,[[@{INT} + @{INT_temp}]]|Willpower,[[@{POW} + @{POW_temp}]]|Perception,[[@{PRC} + @{PRC_temp}]]|Personality,[[@{PRS} + @{PRS_temp}]]|None, 0}"/>
-	<input name="attr_conditions_query" type="hidden" value="?{Conditional Modifiers|0}"/>
+	<input name="attr_conditions_query" type="hidden" value="?{Conditional Modifiers|0} - [[@{global_penalty}]]"/>
 	<input type="hidden" name="attr_STR_mod" value="0" />
 	<input type="hidden" name="attr_END_mod" value="0" />
 	<input type="hidden" name="attr_AGI_mod" value="0" />
@@ -954,15 +954,17 @@
 		<div class="settings">
 			<div class="grid-16">
 				<div class="grid-span-7 grid-7">
-				
-					
-					
 					<div class="grid-span-7 grid-7 bdr-all pad-all mar-bot">  
 						<span class="grid-span-5"><label class="line-height-20" >Untreated Wounds</label></span>
 						<span class="grid-span-2"><input class="fill line-height-20" name="attr_wounds_untreated"  type="number" value="0" min="0" /></span>
 						
 						<span class="grid-span-5"><label class="line-height-20" >Treated Wounds</label></span>
 						<span class="grid-span-2"><input class="fill line-height-20" name="attr_wounds_treated"  type="number" value="0" min="0" /></span>
+					</div>
+					
+					<div class="grid-span-7 grid-7 bdr-all pad-all mar-bot">  
+						<span class="grid-span-5"><label class="line-height-20" >Global Skill Penalty</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_global_penalty"  type="number" value="0" min="0" /></span>
 					</div>
 					
 					<div class="grid-span-7 grid-7 bdr-all pad-all mar-bot">  
