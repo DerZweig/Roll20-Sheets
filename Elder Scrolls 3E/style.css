@@ -84,7 +84,7 @@ body.sheet-darkmode .charsheet {
 	padding-left: 25px;
 } 
 
-.character,.equipment,.spellbook,.combatsheet,.talentsheet,.settings {
+.character,.equipment,.spellbook,.combatsheet,.talentsheet,.miscsheet,.settings {
 	width: 750px;
 	border-bottom: 1px solid black;
 
@@ -670,15 +670,11 @@ body.sheet-darkmode .mysheet .font-size-sm {
 	line-height: 20px;
 }
 
-.buttons {
-	margin-left: 25px;
-}
-
 .buttons button {
 	background-color: transparent;
 	border: 2px solid black;
 	margin-bottom: -2px;
-	padding: 5px;
+	padding: 2px;
 }
 
 .buttons button:hover {
@@ -705,7 +701,7 @@ button[type=roll] {
 }
 
  input.mysheet-sheetpagetab {
-	width: 100px;
+	width: 95px;
 	height: 25px;
 	cursor: pointer;
 	position: relative;
@@ -722,11 +718,11 @@ span.mysheet-sheetpagetab {
 	color: black;
 	font-weight: bold;
 	line-height:25px;
-	width: 100px;
+	width: 95px;
 	height: 25px;
 	cursor: pointer;
 	position: relative;
-	margin-left: -100px;
+	margin-left: -95px;
 	border: 1px solid black;
 }
 
@@ -804,6 +800,7 @@ body.sheet-darkmode input.mysheet-sheettab9:checked ~ span.mysheet-sheettab9
 .spellbook,
 .combatsheet,
 .talentsheet,
+.miscsheet,
 .settings  {
 	display: none;
 }
@@ -813,7 +810,8 @@ body.sheet-darkmode input.mysheet-sheettab9:checked ~ span.mysheet-sheettab9
 .tabstoggle[value="2"] ~ div.common,
 .tabstoggle[value="3"] ~ div.common,
 .tabstoggle[value="4"] ~ div.common,
-.tabstoggle[value="5"] ~ div.common
+.tabstoggle[value="5"] ~ div.common,
+.tabstoggle[value="6"] ~ div.common
 {
 	display: block;
 }
@@ -823,6 +821,7 @@ body.sheet-darkmode input.mysheet-sheettab9:checked ~ span.mysheet-sheettab9
 .tabstoggle[value="2"] ~ div.spellbook,
 .tabstoggle[value="3"] ~ div.combatsheet,
 .tabstoggle[value="4"] ~ div.talentsheet,
-.tabstoggle[value="5"] ~ div.settings {
+.tabstoggle[value="5"] ~ div.miscsheet,
+.tabstoggle[value="6"] ~ div.settings {
 	display: block;
 }

@@ -113,10 +113,15 @@
 						<span class="grid-span-2"><input class="fill line-height-20" name="attr_stamina_cur" type="number" value="0" step="1"/></span>
 						<span class="grid-span-2"><input class="fill line-height-20" name="attr_stamina_disp" type="number" value="[[@{stamina_max} ]]" step="1" min="0" max="100" disabled /></span>
 													
-						<span class="grid-span-2 mar-bot"><label class="line-height-20" >Magicka</label></span>
+						<span class="grid-span-2"><label class="line-height-20" >Magicka</label></span>
 						<span class="grid-span-2"><input class="fill line-height-20" name="attr_magicka_cur" type="number" value="0" step="1"/></span>
 						<span class="grid-span-2"><input class="fill line-height-20" name="attr_magicka_disp" type="number" value="[[@{magicka_max} ]]" step="1" min="0" max="100" disabled /></span>
-													
+								
+						<span class="grid-span-2 mar-bot"><label class="line-height-20" >Luck Points</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_luckpts_cur" type="number" value="0" step="1"/></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_luckpts_disp" type="number" value="[[@{luckpts_max} ]]" step="1" min="0" max="100" disabled /></span>
+								
+								
 						<span class="grid-span-2"><label class="line-height-20" >Speed</label></span>
 						<span class="grid-span-2">&nbsp;</span>
 						<span class="grid-span-2"><input class="fill line-height-20" name="attr_speed_disp" type="number" value="[[@{speed_max} ]]" step="1" min="0" max="100" disabled /></span>
@@ -132,9 +137,8 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		
-	
+			
+			
 		<div class="buttons">
 			<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab0" value="0" checked="checked" />
 			<span class="mysheet-sheetpagetab mysheet-sheettab0">Skills</span>
@@ -148,7 +152,12 @@
 			<span class="mysheet-sheetpagetab mysheet-sheettab1">Equipment</span>
 			<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab5" value="5" />
 			<span class="mysheet-sheetpagetab mysheet-sheettab5">Misc</span>
+			<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab6" value="6" />
+			<span class="mysheet-sheetpagetab mysheet-sheettab6">Settings</span>
 		</div>
+		</div>
+		
+	
 		<div class="character">
 			<div class="grid-16">
 				
@@ -951,7 +960,7 @@
 			</fieldset>
 		</div>
 		
-		<div class="settings">
+		<div class="miscsheet">
 			<div class="grid-16">
 				<div class="grid-span-7 grid-7">
 					<div class="grid-span-7 grid-7 bdr-all pad-all mar-bot">  
@@ -1017,6 +1026,11 @@
 						<span class="grid-span-2"><input class="fill line-height-20" name="attr_magicka_mod"  type="number" value="0" step="1"  /></span>
 						<span class="grid-span-2"><input class="fill line-height-20" name="attr_magicka_max" type="number" value="[[@{INT} + @{INT_temp} + @{magicka_mod}]]" disabled /></span>
 						
+														
+						<span class="grid-span-3"><label class="line-height-20" >Luck Points</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_luckpts_mod"  type="number" value="0" step="1"  /></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_luckpts_max" type="number" value="[[@{LCK_mod} + @{magicka_mod}]]" disabled /></span>
+						
 						<span class="grid-span-7">&nbsp;</span>
 						
 						<span class="grid-span-3"><label class="line-height-20" >Actions</label></span>
@@ -1040,6 +1054,31 @@
 						
 						
 					</div>
+				</div>
+			
+			</div>
+			
+			
+			<div class="grid-span-16 grid-16 bdr-all pad-all">
+				
+				<div class="grid-span-16 grid-18">
+					<span class="grid-span-5 mar-bot"><label class="font-size-sm line-height-10" >Condition</label></span>
+					<span class="grid-span-13 mar-bot"><label class="font-size-sm line-height-10" >Effect</label></span>
+				</div>
+				
+				<fieldset class="repeating_conditions">
+					<div class="grid-span-16 grid-18">
+						<span class="grid-span-5"><input class="fill line-height-20" name="attr_condition_name" type="text"/></span>	
+						<span class="grid-span-13"><input class="fill line-height-20" name="attr_condition_effect" type="text"/></span>
+					</div>
+				</fieldset>
+				
+			</div>
+
+		</div>
+		
+		<div class="settings">
+				<div class="grid-16">
 					
 					<div class="grid-span-7 grid-5 bdr-all pad-all mar-bot">  
 						<span class="grid-span-5"><label class="line-height-20" >Lucky Numbers</label></span>
@@ -1066,30 +1105,13 @@
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_unlucky8" type="number" value="0" step="1" min="0" max="100"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_unlucky9" type="number" value="0" step="1" min="0" max="100"/></span>
 					</div>
+				
 				</div>
-			
 			</div>
 			
-			
-			<div class="grid-span-16 grid-16 bdr-all pad-all">
-				
-				<div class="grid-span-16 grid-18">
-					<span class="grid-span-5 mar-bot"><label class="font-size-sm line-height-10" >Condition</label></span>
-					<span class="grid-span-13 mar-bot"><label class="font-size-sm line-height-10" >Effect</label></span>
-				</div>
-				
-				<fieldset class="repeating_conditions">
-					<div class="grid-span-16 grid-18">
-						<span class="grid-span-5"><input class="fill line-height-20" name="attr_condition_name" type="text"/></span>	
-						<span class="grid-span-13"><input class="fill line-height-20" name="attr_condition_effect" type="text"/></span>
-					</div>
-				</fieldset>
-				
-			</div>
-
 		</div>
-		
 	</div>
+	
 	
 </div>
 
@@ -1137,26 +1159,15 @@
 					<td>Degrees</td>
 					<td>
 						{{#rollGreater() tn 99}} 10 {{/rollGreater() tn 99}}
-						{{#rollGreater() tn 90}} 9 {{/rollGreater() tn 90}}
-						{{#rollGreater() tn 80}} 8 {{/rollGreater() tn 80}}
-						{{#rollGreater() tn 70}} 7 {{/rollGreater() tn 70}}
-						{{#rollGreater() tn 60}} 6 {{/rollGreater() tn 60}}
-						{{#rollGreater() tn 50}} 5 {{/rollGreater() tn 50}}
-						{{#rollGreater() tn 40}} 4 {{/rollGreater() tn 40}}
-						{{#rollGreater() tn 30}} 3 {{/rollGreater() tn 30}}
-						{{#rollGreater() tn 20}} 2 {{/rollGreater() tn 20}}
-						{{#rollGreater() tn 10}} 1 {{/rollGreater() tn 10}}
-						
-						{{#rollGreater() tn 199}}+ 10 {{/rollGreater() tn 199}}
-						{{#rollBetween() tn 190 199}}+ 9{{/rollBetween() tn 190 199}}
-						{{#rollBetween() tn 180 189}}+ 8{{/rollBetween() tn 180 189}}
-						{{#rollBetween() tn 170 179}}+ 7{{/rollBetween() tn 170 179}}
-						{{#rollBetween() tn 160 169}}+ 6{{/rollBetween() tn 160 169}}
-						{{#rollBetween() tn 150 159}}+ 5{{/rollBetween() tn 150 159}}
-						{{#rollBetween() tn 140 149}}+ 4{{/rollBetween() tn 140 149}}
-						{{#rollBetween() tn 130 139}}+ 3{{/rollBetween() tn 130 139}}
-						{{#rollBetween() tn 120 129}}+ 2{{/rollBetween() tn 120 129}}
-						{{#rollBetween() tn 110 119}}+ 1{{/rollBetween() tn 110 119}}
+						{{#rollTotal() tn 90}} 9 {{/rollTotal() tn 90}}
+						{{#rollTotal() tn 80}} 8 {{/rollTotal() tn 80}}
+						{{#rollTotal() tn 70}} 7 {{/rollTotal() tn 70}}
+						{{#rollTotal() tn 60}} 6 {{/rollTotal() tn 60}}
+						{{#rollTotal() tn 50}} 5 {{/rollTotal() tn 50}}
+						{{#rollTotal() tn 40}} 4 {{/rollTotal() tn 40}}
+						{{#rollTotal() tn 30}} 3 {{/rollTotal() tn 30}}
+						{{#rollTotal() tn 20}} 2 {{/rollTotal() tn 20}}
+						{{#rollTotal() tn 10}} 1 {{/rollTotal() tn 10}}
 					</td>	
 				</tr>
 				{{/rollTotal() r1 tn}}
