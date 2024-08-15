@@ -2,7 +2,7 @@
 
 	<input name="attr_difficulty_query" type="hidden" value="?{Difficulty|Effortless (+40), 40|Simple (+30), 30|Easy (+20), 20|Ordinary (+10), 10|Average (+0), 0|Challenging (-10), -10|Difficult (-20), -20|Hard (-30), -30|Very Hard (-40), -40}"/>
 	<input name="attr_characteristics_query" type="hidden" value="?{Characteristic|Strength,[[@{STR} + @{STR_temp}]]|Endurance,[[@{END} + @{END_temp}]]|Agility,[[@{AGI} + @{AGI_temp}]]|Intelligence,[[@{INT} + @{INT_temp}]]|Willpower,[[@{POW} + @{POW_temp}]]|Perception,[[@{PRC} + @{PRC_temp}]]|Personality,[[@{PRS} + @{PRS_temp}]]|None, 0}"/>
-	<input name="attr_conditions_query" type="hidden" value="?{Conditional Modifiers|0} - [[@{global_penalty}]]"/>
+	<input name="attr_conditions_query" type="hidden" value="?{Conditional Modifiers|0} - [[@{global_penalty}]] - [[@{wounds_penalty}]]"/>
 	<input type="hidden" name="attr_STR_mod" value="0" />
 	<input type="hidden" name="attr_END_mod" value="0" />
 	<input type="hidden" name="attr_AGI_mod" value="0" />
@@ -20,6 +20,7 @@
 	<input type="hidden" name="attr_physical_penalty" value="0"/>
 	<input type="hidden" name="attr_speed_penalty" value="0"/>
 	<input type="hidden" name="attr_stamina_penalty" value="0"/>
+	<input type="hidden" name="attr_wounds_penalty" value="0"/>
 	
 	<div class="mysheet">
 		<input type="hidden" class="tabstoggle" name="attr_sheetTab"  value="0"  />
@@ -969,6 +970,9 @@
 						
 						<span class="grid-span-5"><label class="line-height-20" >Treated Wounds</label></span>
 						<span class="grid-span-2"><input class="fill line-height-20" name="attr_wounds_treated"  type="number" value="0" min="0" /></span>
+						
+						<span class="grid-span-5"><label class="line-height-20" >Wound Penalty</label></span>
+						<span class="grid-span-2"><input class="fill line-height-20" name="attr_wounds_disp"  type="number" value="[[@{wounds_penalty}]]" disabled /></span>
 					</div>
 					
 					<div class="grid-span-7 grid-7 bdr-all pad-all mar-bot">  
@@ -1242,6 +1246,15 @@ stats.forEach(stat => {
             setAttrs({[`${stat}_mod`]: mod}); 
         });
     });
+});
+
+on("change:wounds_untreated change:wounds_treated sheet:opened", function() {
+	getAttrs(["wounds_untreated", "wounds_treated"], function(values) {
+		const hasWounds = parseInt(values["wounds_untreated"]) > 0 || parseInt(values["wounds_treated"]) > 0;
+		const output = {};
+		output["wounds_penalty"] = hasWounds ? 20 : 0;
+		setAttrs(output);
+	});
 });
 
 
