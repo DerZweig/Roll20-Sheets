@@ -35,49 +35,49 @@
 						<span class="grid-span-1 pl-10"><label class="font-size-sm line-height-10" >Bonus</label></span>    
 						<span class="grid-span-1 pl-10"><label class="font-size-sm line-height-10" >Favoured</label></span>    
 
-						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Strength}} {{tn=[[ [[@{STR} + @{STR_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Strength</button></span>
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{STR} + @{STR_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Strength</button></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_STR" type="number" value="0" min="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_STR_temp" type="number" value="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_STR_disp" value="@{STR_mod}" type="number" disabled /></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_STRfav" type="checkbox" /></span>
 
-						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Endurance}} {{tn=[[ [[@{END} + @{END_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Endurance</button></span>
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{END} + @{END_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Endurance</button></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_END" type="number" value="0" min="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_END_temp" type="number" value="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_END_disp" value="@{END_mod}" type="number" disabled /></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_ENDfav" type="checkbox" /></span>
 
-						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{AGI} + @{AGI_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Agility</button></span>
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{AGI} + @{AGI_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Agility</button></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_AGI" type="number" value="0" min="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_AGI_temp" type="number" value="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_AGI_disp" value="@{AGI_mod}" type="number" disabled /></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_AGIfav" type="checkbox" /></span>
 
-						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Intelligence}} {{tn=[[ [[@{INT} + @{INT_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Intelligence</button></span>
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{INT} + @{INT_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Intelligence</button></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_INT" type="number" value="0" min="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_INT_temp" type="number" value="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_INT_disp" value="@{INT_mod}" type="number" disabled /></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_INTfav" type="checkbox" /></span>
 
-						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Willpower}} {{tn=[[ [[@{POW} + @{POW_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Willpower</button></span>
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{POW} + @{POW_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Willpower</button></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_POW" type="number" value="0" min="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_POW_temp" type="number" value="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_POW_disp" value="@{POW_mod}" type="number" disabled /></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_POWfav" type="checkbox" /></span>
 
-						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Perception}} {{tn=[[ [[@{PRC} + @{PRC_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Perception</button></span>
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{PRC} + @{PRC_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Perception</button></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_PRC" type="number" value="0" min="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_PRC_temp" type="number" value="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_PRC_disp" value="@{PRC_mod}" type="number" disabled /></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_PRCfav" type="checkbox" /></span>
 
-						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Personality}} {{tn=[[ [[@{PRS} + @{PRS_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Personality</button></span>
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{PRS} + @{PRS_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Personality</button></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_PRS" type="number" value="0" min="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_PRS_temp" type="number" value="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_PRS_disp" value="@{PRS_mod}" type="number" disabled /></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_PRSfav" type="checkbox" /></span>
 
-						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Luck}} {{tn=[[ [[@{LCK} + @{LCK_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Luck</button></span>
+						<span class="grid-span-3 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{LCK} + @{LCK_temp}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} ">Luck</button></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_LCK" type="number" value="0" min="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20" name="attr_LCK_temp" type="number" value="0" step="1"/></span>
 						<span class="grid-span-1"><input class="center fill line-height-20 bdr-none" name="attr_LCK_disp" value="@{LCK_mod}" type="number" disabled /></span>
@@ -629,6 +629,7 @@
 							<fieldset class="repeating_professions">
 								<div class="grid-span-16 grid-16">
 									<div class="grid-span-16 grid-9 ">
+										<input type="hidden" name="attr_skill_level" value="10" />
 										<span class="grid-span-5"><input class="fill line-height-20" name="attr_skill_name" type="text"/></span>	
 										<span class="grid-span-2">
 											<select name="attr_skill_level" class="center fill line-height-20">
@@ -729,47 +730,114 @@
 						<textarea class="grid-span-6" name="attr_armor_qualities" class="font-size-sm line-height-10" rows="22" ></textarea>
 					</div>
 				</div>
-				
-				<div class="grid-span-16 grid-16 mar-bot  pad-all">
-					<div class="grid-span-7 grid-7 ">
-						<span class="grid-span-7 mar-bot"><label class="font-size-sm line-height-10" >Shield</label></span>
-						<span class="grid-span-7 mar-bot"><input class="fill line-height-20" name="attr_shield_name" type="text"/></span>
-						<span class="grid-span-6 mar-bot"><label class="font-size-sm line-height-10" >Defense</label></span>   
-						<span class="grid-span-1"><label class="font-size-sm line-height-10" >ENC</label></span> 
+					
+				<div class="grid-span-16 grid-12  pad-all">
+					<div class="grid-span-8 grid-16">
+						<div class="grid-span-16 grid-16 mar-bot  pad-all">
+							<div class="grid-span-9 grid-7 ">
+								<span class="grid-span-7 mar-bot"><label class="font-size-sm line-height-10" >Shield</label></span>
+								<span class="grid-span-7 mar-bot"><input class="fill line-height-20" name="attr_shield_name" type="text"/></span>
+								<span class="grid-span-6 mar-bot"><label class="font-size-sm line-height-10" >Defense</label></span>   
+								<span class="grid-span-1"><label class="font-size-sm line-height-10" >ENC</label></span> 
 
-						<span class="grid-span-6"><input class="fill line-height-20" name="attr_shield_block" type="text"/></span>	
-						<span class="grid-span-1"><input class="fill line-height-20" name="attr_shield-ENC" type="number" value="0" min="0" step="1"/></span>						
+								<span class="grid-span-6"><input class="fill line-height-20" name="attr_shield_block" type="text"/></span>	
+								<span class="grid-span-1"><input class="fill line-height-20" name="attr_shield-ENC" type="number" value="0" min="0" step="1"/></span>						
+							</div>
+							
+							<div class="grid-span-7 grid-4  bdr-all">
+								<span class="grid-span-4"><label class="font-size-sm line-height-10" >Shield Qualities</label></span> 
+								<textarea class="grid-span-4" name="attr_shield_qualities" class="font-size-sm line-height-10" rows="5" ></textarea>
+							</div>
+						</div>
+						<fieldset class="repeating_weapon">
+							<div class="grid-span-16 grid-16 mar-bot  pad-all">
+								<div class="grid-span-9 grid-7 ">
+									<span class="grid-span-7 mar-bot"><label class="font-size-sm line-height-10" >Weapon</label></span>
+									<span class="grid-span-7 mar-bot"><input class="fill line-height-20" name="attr_weapon_name" type="text"/></span>
+									<span class="grid-span-3 mar-bot"><label class="font-size-sm line-height-10" >Damage</label></span>   
+									<span class="grid-span-3 mar-left mar-bot"><label class="font-size-sm line-height-10" >Reach / Range</label></span>   
+									<span class="grid-span-1"><label class="font-size-sm line-height-10" >ENC</label></span> 
+
+									<span class="grid-span-2"><input class="fill line-height-20" name="attr_weapon_damage" type="text"/></span>	
+									<span class="grid-span-1 mar-right"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{damage=[[@{weapon_damage}]]}} {{attackzone=[[1d10]]}} {{attackname=@{weapon_name}}}"/></span>
+									
+									<span class="grid-span-3 mar-left"><input class="fill line-height-20" name="attr_weapon_range" type="text"/></span>	
+									<span class="grid-span-1"><input class="fill line-height-20" name="attr_weapon_enc" type="number" value="0" min="0" step="1"/></span>						
+								</div>
+								
+								<div class="grid-span-7 grid-4  bdr-all">
+									<span class="grid-span-4"><label class="font-size-sm line-height-10" >Weapon Qualities</label></span> 
+									<textarea class="grid-span-4" name="attr_weapon_qualities" class="font-size-sm line-height-10" rows="5" ></textarea>
+								</div>
+							</div>
+						</fieldset>
 					</div>
 					
-					<div class="grid-span-9 grid-4  bdr-all">
-						<span class="grid-span-4"><label class="font-size-sm line-height-10" >Shield Qualities</label></span> 
-						<textarea class="grid-span-4" name="attr_shield_qualities" class="font-size-sm line-height-10" rows="5" ></textarea>
+					<div class="grid-span-4 no-rep-control grid-9 bdr-all pad-all">  
+				
+						<span class="grid-span-9"><label class="line-height-20" >&nbsp;</label></span>
+						<span class="grid-span-3"><span class="fill line-height-20" >Acrobatics </span></span>
+						<span class="grid-span-4"><input class="fill line-height-20" name="attr_acro_disp" value="@{acro_spec}" disabled></span></span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{acro}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+						
+						<span class="grid-span-3"><span class="fill line-height-20" >Athletics </span></span>
+						<span class="grid-span-4"><input class="fill line-height-20" name="attr_atlet_disp" value="@{atlet_spec}" disabled></span></span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{atlet}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+
+						<span class="grid-span-3"><span class="fill line-height-20" >Command</span></span>
+						<span class="grid-span-4"><input class="fill line-height-20" name="attr_command_disp" value="@{command_spec}" disabled></span></span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{command}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+
+						<span class="grid-span-3"><span class="fill line-height-20" >Deceive</span></span>
+						<span class="grid-span-4"><input class="fill line-height-20" name="attr_deceive_disp" value="@{deceive_spec}" disabled></span></span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{deceive}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>	
+						
+						<span class="grid-span-3"><span class="fill line-height-20" >Evade</span></span>
+						<span class="grid-span-4"><input class="fill line-height-20" name="attr_evade_disp" value="@{evade_spec}" disabled></span></span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{evade}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>	
+
+						<span class="grid-span-3"><span class="fill line-height-20" >Observe</span></span>
+						<span class="grid-span-4"><input class="fill line-height-20" name="attr_obser_disp" value="@{obser_spec}" disabled></span></span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{obser}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+						
+						<span class="grid-span-3"><span class="fill line-height-20" >Ride</span></span>
+						<span class="grid-span-4"><input class="fill line-height-20" name="attr_ride_disp" value="@{ride_spec}" disabled></span></span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{ride}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>	
+						
+						<span class="grid-span-3"><span class="fill line-height-20" >Stealth</span></span>
+						<span class="grid-span-4"><input class="fill line-height-20" name="attr_stealth_disp" value="@{stealth_spec}" disabled></span></span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{stealth}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>
+						
+						<span class="grid-span-9"><label class="line-height-20" >&nbsp;</label></span>
+						<span class="grid-span-9"><label class="line-height-20" >Combat Styles</label></span>
+						<span class="grid-span-7"><input class="fill line-height-20" name="attr_CombatSkilldisp" value="@{CombatSkillname}" type="text" disabled/></span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{combat}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span  class="grid-span-1 mar-bot"/>	
+						
+						<div class="grid-span-9 sub-grid-16">
+							<fieldset class="repeating_combatstyles">
+								<div class="grid-span-16 grid-16">
+									<div class="grid-span-16 grid-9 ">
+									
+										<input type="hidden" name="attr_skill_level" value="10" />
+										<span class="grid-span-7"><input class="fill line-height-20" name="attr_skill_disp" value="@{skill_name}" disabled /></span>	
+										<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{skill_level}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+										<span  class="grid-span-1 mar-bot"/>										
+									</div>
+								</div>
+							</fieldset>
+						</div>
 					</div>
 				</div>
 			</div>
-			
-			<fieldset class="repeating_weapon">
-				<div class="grid-span-16 grid-16 mar-bot  pad-all">
-					<div class="grid-span-7 grid-7 ">
-						<span class="grid-span-7 mar-bot"><label class="font-size-sm line-height-10" >Weapon</label></span>
-						<span class="grid-span-7 mar-bot"><input class="fill line-height-20" name="attr_weapon_name" type="text"/></span>
-						<span class="grid-span-3 mar-bot"><label class="font-size-sm line-height-10" >Damage</label></span>   
-						<span class="grid-span-3 mar-left mar-bot"><label class="font-size-sm line-height-10" >Reach / Range</label></span>   
-						<span class="grid-span-1"><label class="font-size-sm line-height-10" >ENC</label></span> 
-
-						<span class="grid-span-2"><input class="fill line-height-20" name="attr_weapon_damage" type="text"/></span>	
-						<span class="grid-span-1 mar-right"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{damage=[[@{weapon_damage}]]}} {{attackzone=[[1d10]]}} {{attackname=@{weapon_name}}}"/></span>
-						
-						<span class="grid-span-3 mar-left"><input class="fill line-height-20" name="attr_weapon_range" type="text"/></span>	
-						<span class="grid-span-1"><input class="fill line-height-20" name="attr_weapon_enc" type="number" value="0" min="0" step="1"/></span>						
-					</div>
-					
-					<div class="grid-span-9 grid-4  bdr-all">
-						<span class="grid-span-4"><label class="font-size-sm line-height-10" >Weapon Qualities</label></span> 
-						<textarea class="grid-span-4" name="attr_weapon_qualities" class="font-size-sm line-height-10" rows="5" ></textarea>
-					</div>
-				</div>
-			</fieldset>
 		</div>
 		
 		<div class="equipment">
@@ -814,7 +882,7 @@
 									<option value="-50">Master</option>
 							</select>
 						</span>
-						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{alter}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{alter}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
 						<span  class="grid-span-1 mar-bot"/>
 						<span class="grid-span-2"><label class="line-height-20" >Conjuration</label></span>
 						<span class="grid-span-3"><input class="fill line-height-20" name="attr_conjur_spec" type="text"/></span>
@@ -829,7 +897,7 @@
 									<option value="-50">Master</option>
 							</select>
 						</span>
-						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{conjur}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{conjur}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
 						<span  class="grid-span-1 mar-bot"/>
 						<span class="grid-span-2"><label class="line-height-20" >Destruction</label></span>
 						<span class="grid-span-3"><input class="fill line-height-20" name="attr_destr_spec" type="text"/></span>
@@ -844,7 +912,7 @@
 									<option value="-50">Master</option>
 							</select>
 						</span>
-						<span class="grid-span-1"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{ench}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span class="grid-span-1"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{ench}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
 						<span  class="grid-span-1"/>		
 					</div>
 					
@@ -863,7 +931,7 @@
 									<option value="-50">Master</option>
 							</select>
 						</span>
-						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{illus}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{illus}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
 						<span  class="grid-span-1 mar-bot"/>			
 						<span class="grid-span-2"><label class="line-height-20" >Mysticism</label></span>
 						<span class="grid-span-3"><input class="fill line-height-20" name="attr_myst_spec" type="text"/></span>
@@ -878,7 +946,7 @@
 									<option value="-50">Master</option>
 							</select>
 						</span>
-						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{myst}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span class="grid-span-1 mar-bot"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{myst}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
 						<span  class="grid-span-1 mar-bot"/>			
 						
 						
@@ -895,7 +963,7 @@
 									<option value="-50">Master</option>
 							</select>
 						</span>
-						<span class="grid-span-1"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Agility}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{resto}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
+						<span class="grid-span-1"><button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Skill}} {{tn=[[ [[@{characteristics_query}]] + [[@{difficulty_query}]] + [[@{conditions_query}]] + [[0 - @{resto}]] ]]}} {{r1=[[1d100cs@{lucky0}cs@{lucky1}cs@{lucky2}cs@{lucky3}cs@{lucky4}cs@{lucky5}cs@{lucky6}cs@{lucky7}cs@{lucky8}cs@{lucky9}cf@{unlucky0}cf@{unlucky1}cf@{unlucky2}cf@{unlucky3}cf@{unlucky4}cf@{unlucky5}cf@{unlucky6}cf@{unlucky7}cf@{unlucky8}cf@{unlucky9}]]}} "/></span>
 						<span  class="grid-span-1"/>		
 					</div>
 			</div>
@@ -1123,89 +1191,90 @@
 <rolltemplate class="sheet-rolltemplate-5eDefault">
 	<div class="rt-card sheet-rt-card">
 		<table class="main-content">
-			{{#damage}}
-				<tr>
-					<th colspan="2">{{attackname}}</th>
-					<tr><td>Damage</td><td>{{damage}}</td></tr>
-					<tr><td>Location</td><td>
-						{{#rollBetween() attackzone 1 5}}Body{{/rollBetween() attackzone 1 5}}
-						{{#rollTotal() attackzone 6}}Right Leg{{/rollTotal() attackzone 6}}
-						{{#rollTotal() attackzone 7}}Left Leg{{/rollTotal() attackzone 7}}
-						{{#rollTotal() attackzone 8}}Right Arm{{/rollTotal() attackzone 8}}
-						{{#rollTotal() attackzone 9}}Left Arm{{/rollTotal() attackzone 9}}
-						{{#rollTotal() attackzone 10}}Head{{/rollTotal() attackzone 10}}
-					</td></tr>
-				</tr>
-			{{/damage}}
+
+		{{#damage}}
+			<tr>
+				<th colspan="2">{{attackname}}</th>
+				<tr><td>Damage</td><td>{{damage}}</td></tr>
+				<tr><td>Location</td><td>
+					{{#rollBetween() attackzone 1 5}}Body{{/rollBetween() attackzone 1 5}}
+					{{#rollTotal() attackzone 6}}Right Leg{{/rollTotal() attackzone 6}}
+					{{#rollTotal() attackzone 7}}Left Leg{{/rollTotal() attackzone 7}}
+					{{#rollTotal() attackzone 8}}Right Arm{{/rollTotal() attackzone 8}}
+					{{#rollTotal() attackzone 9}}Left Arm{{/rollTotal() attackzone 9}}
+					{{#rollTotal() attackzone 10}}Head{{/rollTotal() attackzone 10}}
+				</td></tr>
+			</tr>
+		{{/damage}}
 		
-			{{#rollname}}
-				<tr>
-					<th colspan="2">
-					{{#rollWasCrit() r1}} Critical Success {{/rollWasCrit() r1}}
-					{{#^rollWasCrit() r1}}
-						{{#rollWasFumble() r1}} Critical Failure {{/rollWasFumble() r1}}
-						{{#^rollWasFumble() r1}} 
-							{{#rollGreater() r1 tn}} Failure {{/rollGreater() r1 tn}}
-							{{#^rollGreater() r1 tn}} Success {{/^rollGreater() r1 tn}}
-						{{/^rollWasFumble() r1}}
-					{{/^rollWasCrit() r1}}
-				</tr>
-				<tr>
-					<td>Target</td>
-					<td>{{tn}}</td>	
-				</tr>
-				<tr>
-					<td>Roll</td>
-					<td>{{r1}}</td>	
-				</tr>
+		{{#rollname}}
+			<tr>
+				<th colspan="2">
+				{{#rollWasCrit() r1}} Critical Success {{/rollWasCrit() r1}}
+				{{#^rollWasCrit() r1}}
+					{{#rollWasFumble() r1}} Critical Failure {{/rollWasFumble() r1}}
+					{{#^rollWasFumble() r1}} 
+						{{#rollGreater() r1 tn}} Failure {{/rollGreater() r1 tn}}
+						{{#^rollGreater() r1 tn}} Success {{/^rollGreater() r1 tn}}
+					{{/^rollWasFumble() r1}}
+				{{/^rollWasCrit() r1}}
+			</tr>
+			<tr>
+				<td>Target</td>
+				<td>{{tn}}</td>	
+			</tr>
+			<tr>
+				<td>Roll</td>
+				<td>{{r1}}</td>	
+			</tr>
 
-				{{#rollTotal() r1 tn}} 
-				<tr>
-					<td>Degrees</td>
-					<td>
-						{{#rollGreater() tn 99}} 10 {{/rollGreater() tn 99}}
-						{{#rollTotal() tn 90}} 9 {{/rollTotal() tn 90}}
-						{{#rollTotal() tn 80}} 8 {{/rollTotal() tn 80}}
-						{{#rollTotal() tn 70}} 7 {{/rollTotal() tn 70}}
-						{{#rollTotal() tn 60}} 6 {{/rollTotal() tn 60}}
-						{{#rollTotal() tn 50}} 5 {{/rollTotal() tn 50}}
-						{{#rollTotal() tn 40}} 4 {{/rollTotal() tn 40}}
-						{{#rollTotal() tn 30}} 3 {{/rollTotal() tn 30}}
-						{{#rollTotal() tn 20}} 2 {{/rollTotal() tn 20}}
-						{{#rollTotal() tn 10}} 1 {{/rollTotal() tn 10}}
-					</td>	
-				</tr>
-				{{/rollTotal() r1 tn}}
-				{{#rollLess() r1 tn}} 
-				<tr>
-					<td>Degrees</td>
-					<td>
-						{{#rollGreater() r1 99}} 10 {{/rollGreater() r1 99}}
-						{{#rollBetween() r1 90 99}} 9 {{/rollBetween() r1 90 99}}
-						{{#rollBetween() r1 80 89}} 8 {{/rollBetween() r1 80 89}}
-						{{#rollBetween() r1 70 79}} 7 {{/rollBetween() r1 70 79}}
-						{{#rollBetween() r1 60 69}} 6 {{/rollBetween() r1 60 69}}
-						{{#rollBetween() r1 50 59}} 5 {{/rollBetween() r1 50 59}}
-						{{#rollBetween() r1 40 49}} 4 {{/rollBetween() r1 40 49}}
-						{{#rollBetween() r1 30 39}} 3 {{/rollBetween() r1 30 39}}
-						{{#rollBetween() r1 20 29}} 2 {{/rollBetween() r1 20 29}}
-						{{#rollBetween() r1 0 19}} 1 {{/rollBetween() r1 0 19}}
-						
-						{{#rollGreater() tn 199}}+ 10 {{/rollGreater() tn 199}}
-						{{#rollBetween() tn 190 199}}+ 9{{/rollBetween() tn 190 199}}
-						{{#rollBetween() tn 180 189}}+ 8{{/rollBetween() tn 180 189}}
-						{{#rollBetween() tn 170 179}}+ 7{{/rollBetween() tn 170 179}}
-						{{#rollBetween() tn 160 169}}+ 6{{/rollBetween() tn 160 169}}
-						{{#rollBetween() tn 150 159}}+ 5{{/rollBetween() tn 150 159}}
-						{{#rollBetween() tn 140 149}}+ 4{{/rollBetween() tn 140 149}}
-						{{#rollBetween() tn 130 139}}+ 3{{/rollBetween() tn 130 139}}
-						{{#rollBetween() tn 120 129}}+ 2{{/rollBetween() tn 120 129}}
-						{{#rollBetween() tn 110 119}}+ 1{{/rollBetween() tn 110 119}}
+			{{#rollTotal() r1 tn}} 
+			<tr>
+				<td>Degrees</td>
+				<td>
+					{{#rollGreater() tn 99}} 10 {{/rollGreater() tn 99}}
+					{{#rollTotal() tn 90}} 9 {{/rollTotal() tn 90}}
+					{{#rollTotal() tn 80}} 8 {{/rollTotal() tn 80}}
+					{{#rollTotal() tn 70}} 7 {{/rollTotal() tn 70}}
+					{{#rollTotal() tn 60}} 6 {{/rollTotal() tn 60}}
+					{{#rollTotal() tn 50}} 5 {{/rollTotal() tn 50}}
+					{{#rollTotal() tn 40}} 4 {{/rollTotal() tn 40}}
+					{{#rollTotal() tn 30}} 3 {{/rollTotal() tn 30}}
+					{{#rollTotal() tn 20}} 2 {{/rollTotal() tn 20}}
+					{{#rollTotal() tn 10}} 1 {{/rollTotal() tn 10}}
+				</td>	
+			</tr>
+			{{/rollTotal() r1 tn}}
+			{{#rollLess() r1 tn}} 
+			<tr>
+				<td>Degrees</td>
+				<td>
+					{{#rollGreater() r1 99}} 10 {{/rollGreater() r1 99}}
+					{{#rollBetween() r1 90 99}} 9 {{/rollBetween() r1 90 99}}
+					{{#rollBetween() r1 80 89}} 8 {{/rollBetween() r1 80 89}}
+					{{#rollBetween() r1 70 79}} 7 {{/rollBetween() r1 70 79}}
+					{{#rollBetween() r1 60 69}} 6 {{/rollBetween() r1 60 69}}
+					{{#rollBetween() r1 50 59}} 5 {{/rollBetween() r1 50 59}}
+					{{#rollBetween() r1 40 49}} 4 {{/rollBetween() r1 40 49}}
+					{{#rollBetween() r1 30 39}} 3 {{/rollBetween() r1 30 39}}
+					{{#rollBetween() r1 20 29}} 2 {{/rollBetween() r1 20 29}}
+					{{#rollBetween() r1 0 19}} 1 {{/rollBetween() r1 0 19}}
+					
+					{{#rollGreater() tn 199}}+ 10 {{/rollGreater() tn 199}}
+					{{#rollBetween() tn 190 199}}+ 9{{/rollBetween() tn 190 199}}
+					{{#rollBetween() tn 180 189}}+ 8{{/rollBetween() tn 180 189}}
+					{{#rollBetween() tn 170 179}}+ 7{{/rollBetween() tn 170 179}}
+					{{#rollBetween() tn 160 169}}+ 6{{/rollBetween() tn 160 169}}
+					{{#rollBetween() tn 150 159}}+ 5{{/rollBetween() tn 150 159}}
+					{{#rollBetween() tn 140 149}}+ 4{{/rollBetween() tn 140 149}}
+					{{#rollBetween() tn 130 139}}+ 3{{/rollBetween() tn 130 139}}
+					{{#rollBetween() tn 120 129}}+ 2{{/rollBetween() tn 120 129}}
+					{{#rollBetween() tn 110 119}}+ 1{{/rollBetween() tn 110 119}}
 
-					</td>	
-				</tr>
-				{{/rollLess() r1 tn}}
-			{{/rollname}}
+				</td>	
+			</tr>
+			{{/rollLess() r1 tn}}
+		{{/rollname}}
 			
 		</table>
 	</div>

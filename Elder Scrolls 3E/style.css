@@ -366,13 +366,7 @@ h2.name {
 	grid-column: span 16;
 }
 
-.repcontainer[data-groupname="repeating_conditions"],
-.repcontainer[data-groupname="repeating_talents"],
-.repcontainer[data-groupname="repeating_weapon"],
-.repcontainer[data-groupname="repeating_spells"],
-.repcontainer[data-groupname="repeating_combatstyles"],
-.repcontainer[data-groupname="repeating_professions"],
-.repcontainer[data-groupname="repeating_equipment"] {
+.repcontainer {
     display: inline-block;
     grid-column: span 16;
 	display: grid;
@@ -382,27 +376,18 @@ h2.name {
     padding-bottom: 8px;
 }
 
-.repcontrol[data-groupname="repeating_conditions"],
-.repcontrol[data-groupname="repeating_talents"],
-.repcontrol[data-groupname="repeating_weapon"],
-.repcontrol[data-groupname="repeating_spells"],
-.repcontrol[data-groupname="repeating_combatstyles"],
-.repcontrol[data-groupname="repeating_professions"],
-.repcontrol[data-groupname="repeating_equipment"] {
+.repcontrol {
     grid-column: span 16;
 }
 
-.repcontainer[data-groupname="repeating_conditions"] > .repitem,
-.repcontainer[data-groupname="repeating_talents"] > .repitem,
-.repcontainer[data-groupname="repeating_weapon"] > .repitem,
-.repcontainer[data-groupname="repeating_spells"] > .repitem,
-.repcontainer[data-groupname="repeating_combatstyles"] > .repitem,
-.repcontainer[data-groupname="repeating_professions"] > .repitem,
-.repcontainer[data-groupname="repeating_equipment"] > .repitem {
+.repcontainer > .repitem {
     display: inline-block;
 	grid-column: span 16;
 }
 
+.no-rep-control .repcontrol {
+    display: none;
+}
 
 
 .mysheet label {
