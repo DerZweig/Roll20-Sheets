@@ -709,6 +709,58 @@ body.sheet-darkmode button.link-button:before {
     display: none;
 }
 
+.switch {
+  display: inline-block;
+  height: 22px;
+  position: relative;
+  width: 30px;
+}
+
+.switch input {
+  opacity:0 !important;
+  display:none !important;
+}
+
+.slider {
+  height: 22px;
+  width: 50px;
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 1px;
+  content: "";
+  height: 20px;
+  left: 1px;
+  position: absolute;
+  transition: .4s;
+  width: 20px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(28px);
+}
+
+.slider.round {
+  border-radius: 14px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 button.link-button,
 button.link-button:hover,
 body.sheet-darkmode button.link-button,
