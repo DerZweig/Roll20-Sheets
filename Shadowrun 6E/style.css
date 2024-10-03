@@ -94,7 +94,11 @@ body.sheet-darkmode .charsheet {
 	padding-left: 25px;
 } 
 
-span, label, button, .label, .text { 
+.mysheet span, 
+.mysheet label, 
+.mysheet button,
+.mysheet .label, 
+.mysheet .text { 
 	font-size: 12px;
 }
 
@@ -665,6 +669,7 @@ body.sheet-darkmode .mysheet .font-size-sm {
 	line-height: 20px;
 }
 
+
 .buttons button {
 	background-color: transparent;
 	border: 2px solid black;
@@ -694,6 +699,34 @@ body.sheet-darkmode .buttons button:hover  {
 button[type=roll] {
 	width: 95%;
 }
+
+button.no-button-icon:before,
+body.sheet-darkmode button.no-button-icon:before,
+button.link-button:before,
+body.sheet-darkmode button.link-button:before {
+	content: ""!important;
+	font-size:0.75em;
+    display: none;
+}
+
+button.link-button,
+button.link-button:hover,
+body.sheet-darkmode button.link-button,
+body.sheet-darkmode button.link-button:hover {
+	font-size:12px!important;
+	background: none!important;
+	border: none;
+	box-shadow:none;
+	text-align:left;
+	border: none;
+	margin: 0!important;
+	padding: 0!important;
+	color: #069;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
 
  input.mysheet-sheetpagetab {
 	width: 95px;
@@ -728,6 +761,37 @@ body.sheet-darkmode span.mysheet-sheetpagetab {
 }
 
 
+
+input.settings-flag {
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	position: relative;
+	opacity: 0;
+	z-index: 9999;
+}
+
+input.settings-flag + span.settings-flag {
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	font-size: 20px;
+	background: transparent;
+	color: black;
+	line-height:30px;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	position: relative;
+	margin-left: -35px;
+}
+
+body.sheet-darkmode input.settings-flag + span.settings-flag {
+	color: white;
+}
+
+
+
 input.mysheet-sheettab0:hover ~ span.mysheet-sheettab0,
 input.mysheet-sheettab1:hover ~ span.mysheet-sheettab1,
 input.mysheet-sheettab2:hover ~ span.mysheet-sheettab2,
@@ -741,6 +805,11 @@ input.mysheet-sheettab9:hover ~ span.mysheet-sheettab9
 {
 	background: rgb(25,183,130);
 	color: white;
+}
+
+input.settings-flag:hover ~ span.settings-flag
+{
+	color: rgb(25,183,130);
 }
 
 input.mysheet-sheettab0:checked ~ span.mysheet-sheettab0,
@@ -758,6 +827,11 @@ input.mysheet-sheettab9:checked ~ span.mysheet-sheettab9
 	color: white;
 }
 
+input.settings-flag:checked ~ span.settings-flag
+{
+	color: rgb(0,158,115);
+}
+
 body.sheet-darkmode input.mysheet-sheettab0:hover ~ span.mysheet-sheettab0,
 body.sheet-darkmode input.mysheet-sheettab1:hover ~ span.mysheet-sheettab1,
 body.sheet-darkmode input.mysheet-sheettab2:hover ~ span.mysheet-sheettab2,
@@ -771,6 +845,11 @@ body.sheet-darkmode input.mysheet-sheettab9:hover ~ span.mysheet-sheettab9
 {
 	background: #8D56A7;
 	color: white;
+}
+
+body.sheet-darkmode input.settings-flag:hover ~ span.settings-flag
+{
+	color: #8D56A7;
 }
 
 body.sheet-darkmode input.mysheet-sheettab0:checked ~ span.mysheet-sheettab0,
@@ -788,6 +867,10 @@ body.sheet-darkmode input.mysheet-sheettab9:checked ~ span.mysheet-sheettab9
 	color: white;
 }
 
+body.sheet-darkmode input.settings-flag:checked ~ span.settings-flag
+{
+	color: #702C91;
+}
 
 
 div.mysheet-sheettab0-body,
@@ -814,4 +897,24 @@ div.mysheet-sheettab9-body  {
 .tabstoggle[value="8"] ~ div.mysheet-sheettab8-body,
 .tabstoggle[value="9"] ~ div.mysheet-sheettab9-body {
 	display: block;
+}
+
+
+.mysheet .settings-flag:not([value="0"]) ~ .settings-normal,
+.mysheet .settings-flag:not([value="0"]) > .settings-normal,
+.mysheet .settings-flag:not([value="0"]) ~  * .settings-normal   {
+	display: none;
+}
+
+
+.mysheet input.toggle-flag[value="0"] ~ .toggle-true,
+.mysheet input.toggle-flag[value="0"] > .toggle-true,
+.mysheet input.toggle-flag[value="0"] ~ * .toggle-true,
+.mysheet input.settings-flag[value="0"] ~ .repcontrol,
+.mysheet input.settings-flag[value="0"] > .repcontrol,
+.mysheet input.settings-flag[value="0"] ~ * .repcontrol,
+.mysheet input.settings-flag[value="0"] ~ .settings-editing,
+.mysheet input.settings-flag[value="0"] > .settings-editing,
+.mysheet input.settings-flag[value="0"] ~  * .settings-editing  {
+	display: none;
 }
