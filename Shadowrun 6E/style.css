@@ -924,6 +924,9 @@ body.sheet-darkmode input.settings-flag:checked ~ span.settings-flag
 	color: #702C91;
 }
 
+div.mysheet-sheettab-header {
+	display: block;
+}
 
 div.mysheet-sheettab0-body,
 div.mysheet-sheettab1-body,
