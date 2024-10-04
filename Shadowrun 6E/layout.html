@@ -2,7 +2,7 @@
 	
 	<div class="mysheet">
 		<input type="hidden" class="tabstoggle" name="attr_sheetTab"  value="0"  />
-		<input class="settings-flag" name="attr_edit_flag" type="hidden" value="0"/>
+		<input class="settings-flag" name="attr_edit_flag" type="hidden" value="1"/>
 		
 		<input type="hidden" name="attr_RD01" value="{{r1=[[1d6cs5cs6cf1}]]}}" />
 		<input type="hidden" name="attr_RD02" value="{{r2=[[1d6cs5cs6cf1}]]}}" />
@@ -39,7 +39,7 @@
 		
 		<div class="mysheet-sheettab-header">
 			<div class="grid-16">
-				<span class="grid-span-16" style="margin-left: auto; margin-right: 0;">
+				<span class="grid-span-16 align-right">
 					 <span>Edit Mode</span>
 					 <label class="switch" for="edit_flag">
 						<input type="checkbox" id="edit_flag" name="attr_edit_flag"  checked="checked" />
@@ -82,37 +82,73 @@
 					</div>
 					<div class="grid-span-6 grid-6 pad-all">
 						<span class="grid-span-6"><h3>&nbsp;</h3></span>	
-						<span class="grid-span-6"><label class="font-size-sm line-height-10">Edge</label></span> 
-						<span class="grid-span-6 mar-bot"><input class="fill line-height-18" name="attr_edge_points" type="text" /></span>
 						<span class="grid-span-6"><label class="font-size-sm line-height-10">NUYEN (¥)</label></span> 
 						<span class="grid-span-6 mar-bot"><input class="fill line-height-18" name="attr_money" type="text" /></span>
 						<span class="grid-span-6"><label class="font-size-sm line-height-10">Karma</label></span> 
 						<span class="grid-span-6 mar-bot"><input class="fill line-height-18" name="attr_experience" type="text" /></span>
 						<span class="grid-span-6"><label class="font-size-sm line-height-10">&nbsp;</label></span> 
+						<span class="grid-span-5"><label class="font-size-sm line-height-10">Edge Points</label></span> 
+						<span class="grid-span-1"><label class="font-size-sm line-height-10 settings-editing">Max</label></span> 
+						<div class="grid-span-5 radio-squares mar-bot">
+							<input type="hidden" class="radio-max" name="attr_edge_points_max" value="6"/>
+							<input type="radio" name="attr_edge_points" value="1" /><span/>
+							<input type="radio" name="attr_edge_points" value="2" /><span/>
+							<input type="radio" name="attr_edge_points" value="3" /><span/>
+							<input type="radio" name="attr_edge_points" value="4" /><span/>
+							<input type="radio" name="attr_edge_points" value="5" /><span/>
+							<input type="radio" name="attr_edge_points" value="6" /><span/>
+							<input type="radio" name="attr_edge_points" value="7" /><span/>
+							<input type="radio" name="attr_edge_points" value="8" /><span/>
+							<input type="radio" name="attr_edge_points" value="9" /><span/>
+							<input type="radio" name="attr_edge_points" value="10" /><span/>
+							<input type="radio" name="attr_edge_points" value="11" /><span/>
+							<input type="radio" name="attr_edge_points" value="12" /><span/>
+							<input type="radio" name="attr_edge_points" value="13" /><span/>
+							<input type="radio" name="attr_edge_points" value="14" /><span/>
+							<input type="radio" name="attr_edge_points" value="15" /><span/>
+							<input type="radio" name="attr_edge_points" value="16" /><span/>
+							<input type="radio" name="attr_edge_points" value="17" /><span/>
+							<input type="radio" name="attr_edge_points" value="18" /><span/>
+							<input type="radio" name="attr_edge_points" value="19" /><span/>
+							<input type="radio" name="attr_edge_points" value="20" /><span/>
+							<input type="radio" name="attr_edge_points" value="21" /><span/>
+							<input type="radio" name="attr_edge_points" value="22" /><span/>
+							<input type="radio" name="attr_edge_points" value="23" /><span/>
+							<input type="radio" name="attr_edge_points" value="24" /><span/>
+							<input type="radio" name="attr_edge_points" value="25" /><span/>
+							<input type="radio" name="attr_edge_points" value="26" /><span/>
+							<input type="radio" name="attr_edge_points" value="27" /><span/>
+							<input type="radio" name="attr_edge_points" value="28" /><span/>
+							<input type="radio" name="attr_edge_points" value="29" /><span/>
+							<input type="radio" name="attr_edge_points" value="30" /><span/>
+							<input type="radio" name="attr_edge_points" value="0" checked /><span/>
+						</div>
+						<span class="grid-span-1 mar-bot">
+							<input class="fill center line-height-18  settings-editing" name="attr_edge_points_max" type="number" value="6" min="1" step="1"/>
+						</span>
+
 						<span class="grid-span-6">&nbsp;</span>
 					</div>
 				</div>
 			</div>
+			
 			<div class="buttons">
 				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab0" value="0" checked="checked" />
 				<span class="mysheet-sheetpagetab mysheet-sheettab0">Character</span>
 				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab1" value="1" />
-				<span class="mysheet-sheetpagetab mysheet-sheettab1">Skills</span>
+				<span class="mysheet-sheetpagetab mysheet-sheettab1">Powers</span>
 				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab2" value="2" />
-				<span class="mysheet-sheetpagetab mysheet-sheettab2">Powers</span>
+				<span class="mysheet-sheetpagetab mysheet-sheettab2">Implants</span>
 				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab3" value="3" />
-				<span class="mysheet-sheetpagetab mysheet-sheettab3">Augmentation</span>
+				<span class="mysheet-sheetpagetab mysheet-sheettab3">Weapons</span>
 				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab4" value="4" />
-				<span class="mysheet-sheetpagetab mysheet-sheettab4">Weapons</span>
-				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab5" value="5" />
-				<span class="mysheet-sheetpagetab mysheet-sheettab5">Equipment</span>
-				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab6" value="6" />
-				<span class="mysheet-sheetpagetab mysheet-sheettab6">Misc</span>
+				<span class="mysheet-sheetpagetab mysheet-sheettab4">Equipment</span>
 			</div>
 		</div>
 		<div class="mysheet-sheettab0-body">
 			<div class="grid-16">
-				<div class="grid-span-10 grid-10 bdr-all">
+				<div class="grid-span-10 grid-11 bdr-all">
+					<span class="grid-span-10 pad-all"><h3>Attributes</h3></span>
 					<div class="grid-span-5 grid-5 pad-all">
 						<span class="grid-span-3 mar-bot"><label class="line-height-18" >Body</label></span>
 						<span class="grid-span-2 mar-bot">
@@ -168,117 +204,112 @@
 							<input class="fill center line-height-18 settings-editing" name="attr_edge" type="number" value="0" step="1"/>
 						</span>
 						
-						<div class="grid-span-5 grid-5 pad-none  mar-bot">
-							<input class="toggle-flag" name="attr_magic_enabled" type="hidden" value="0"/>
-							<span class="grid-span-2 settings-editing"><label class="line-height-18">Magic</label></span>
+						<div class="grid-span-5 grid-5 pad-none">
+							<input class="toggle-flag01" name="attr_magic_enabled" type="hidden" value="0"/>
+							<span class="grid-span-2 settings-editing mar-bot"><label class="line-height-18">Magic</label></span>
 							<span class="grid-span-1 settings-editing"><input class="fill center line-height-18" name="attr_magic_enabled" type="checkbox"/></span>
 							<span class="grid-span-2 settings-editing"><input class="fill center line-height-18" name="attr_magic" type="number" value="0" step="1"/></span>
 							
-							<span class="grid-span-3 settings-normal"><label class="line-height-18 toggle-true">Magic</label></span>
-							<span class="grid-span-2 settings-normal">
-								<span class="center line-height-18 toggle-true" name="attr_magic"/>
+							<span class="grid-span-3 settings-normal toggle-true01 mar-bot"><label class="line-height-18 toggle-true01">Magic</label></span>
+							<span class="grid-span-2 settings-normal toggle-true01">
+								<span class="center line-height-18" name="attr_magic"/>
 							</span>
 						</div>
 						
-						<div class="grid-span-5 grid-5 pad-none  mar-bot">
-							<input class="toggle-flag" name="attr_resonance_enabled" type="hidden" value="0"/>
-							<span class="grid-span-2 settings-editing"><label class="line-height-18">Resonance</label></span>
+						<div class="grid-span-5 grid-5 pad-none">
+							<input class="toggle-flag01" name="attr_resonance_enabled" type="hidden" value="0"/>
+							<span class="grid-span-2 settings-editing mar-bot"><label class="line-height-18">Resonance</label></span>
 							<span class="grid-span-1 settings-editing"><input class="fill center line-height-18" name="attr_resonance_enabled" type="checkbox"/></span>
 							<span class="grid-span-2 settings-editing"><input class="fill center line-height-18" name="attr_resonance" type="number" value="0" step="1"/></span>
 							
-							<span class="grid-span-3 settings-normal">
-								<label class="line-height-18 toggle-true">Resonance</label>
+							<span class="grid-span-3 settings-normal toggle-true01 mar-bot">
+								<label class="line-height-18">Resonance</label>
 							</span>
-							<span class="grid-span-2 settings-normal">
-								<span class="center line-height-18 toggle-true" name="attr_resonance"/>
+							<span class="grid-span-2 settings-normal toggle-true01">
+								<span class="center line-height-18" name="attr_resonance"/>
 							</span>
 							
 						</div>
 					</div>
 					
-					<div class="grid-span-5 grid-5 pad-all">
-						<span class="grid-span-3 mar-bot"><label class="line-height-18" >Essence</label></span>
+					
+					<div class="grid-span-5 grid-6 pad-all">
+						<span class="grid-span-3"><label class="line-height-18" >Essence</label></span>
 						<span class="grid-span-2 mar-bot">
 							<span class="center line-height-18 settings-normal" name="attr_essence"/>
 							<input class="fill center line-height-18 settings-editing" name="attr_essence" type="text" value="6"/>
 						</span>
+						<span class="grid-span-1 mar-bot">&nbsp;</span>
 						
 						<span class="grid-span-3 mar-bot"><label class="line-height-18" >Minor Actions</label></span>
 						<span class="grid-span-2 mar-bot">
 							<span class="center line-height-18 settings-normal" name="attr_minor_actions"/>
 							<input class="fill center line-height-18 settings-editing" name="attr_minor_actions" type="text" value="2"/>
 						</span>
+						<span class="grid-span-1 mar-bot">&nbsp;</span>
 						
 						
-						<span class="grid-span-3 mar-bot">
-							<button type="roll" class="link-button line-height-18" value="&{template:5eDefault} {{rollname=Initiative}} {{pool=[[1]]}} {{r1=[[@{initiative}]]}} ">
-								Initiative
-							</button>
-						</span>
+						<span class="grid-span-3 mar-bot">Initiative</span>
 						<span class="grid-span-2 mar-bot">
 							<span class="center line-height-18 settings-normal" name="attr_initiative"/>
 							<input class="fill center line-height-18 settings-editing" name="attr_initiative" type="text" value="10 + 1D6"/>
 						</span>
-
-						
-						<span class="grid-span-3 mar-bot">
-							<button type="roll" class="link-button line-height-18" value="&{template:5eDefault} {{rollname=Initiative Matrix}} {{pool=[[1]]}} {{r1=[[@{initiative_matrix}]]}} ">
-								Initiative Matrix
-							</button>
+						<span class="grid-span-1 mar-right">
+							<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Initiative}} {{pool=[[1]]}} {{r1=[[@{initiative}]]}} "/>
 						</span>
+						
+						<span class="grid-span-3 mar-bot">Initiative Matrix</span>
 						<span class="grid-span-2 mar-bot">
 							<span class="center line-height-18 settings-normal" name="attr_initiative_matrix"/>
 							<input class="fill center line-height-18 settings-editing" name="attr_initiative_matrix" type="text" value="10 + 1D6"/>
 						</span>
-						
-						<span class="grid-span-3 mar-bot">
-							<button type="roll" class="link-button line-height-18" value="&{template:5eDefault} {{rollname=Initiative Astral}} {{pool=[[1]]}} {{r1=[[@{initiative_astral}]]}} ">
-								Initiative Astral
-							</button>
+						<span class="grid-span-1 mar-right">
+							<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Initiative Matrix}} {{pool=[[1]]}} {{r1=[[@{initiative_matrix}]]}} "/>
 						</span>
+						
+						<span class="grid-span-3 mar-bot">Initiative Astral</span>
 						<span class="grid-span-2 mar-bot">
 							<span class="center line-height-18 settings-normal" name="attr_initiative_astral"/>
 							<input class="fill center line-height-18 settings-editing" name="attr_initiative_astral" type="text" value="10 + 1D6"/>
 						</span>
-						
-						<span class="grid-span-3 mar-bot">
-							<button type="roll" class="link-button line-height-18" value="&{template:5eDefault} {{rollname=Composure}} {{pool=[[1]]}} {{r1=[[@{composure}]]}} ">
-								Composure
-							</button>
+						<span class="grid-span-1 mar-right">
+							<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Initiative Astral}} {{pool=[[1]]}} {{r1=[[@{initiative_astral}]]}} "/>
 						</span>
+						
+						<span class="grid-span-3 mar-bot">Composure</span>
 						<span class="grid-span-2 mar-bot">
 							<span class="center line-height-18 settings-normal" name="attr_composure"/>
 							<input class="fill center line-height-18 settings-editing" name="attr_composure" type="number" value="0" min="0" step="1"/>
 						</span>
-						
-						<span class="grid-span-3 mar-bot">
-							<button type="roll" class="link-button line-height-18" value="&{template:5eDefault} {{rollname=Insight}} {{pool=[[1]]}} {{r1=[[@{insight}]]}} ">
-								Insight
-							</button>
+						<span class="grid-span-1 mar-right">
+							<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Composure}} {{pool=[[@{composure}]]}} @{rollDices} "/>
 						</span>
+						
+						<span class="grid-span-3 mar-bot">Insight</span>
 						<span class="grid-span-2 mar-bot">
 							<span class="center line-height-18 settings-normal" name="attr_insight"/>
 							<input class="fill center line-height-18 settings-editing" name="attr_insight" type="number" value="0" min="0" step="1"/>
 						</span>
-						
-						<span class="grid-span-3 mar-bot">
-							<button type="roll" class="link-button line-height-18" value="&{template:5eDefault} {{rollname=Memory}} {{pool=[[1]]}} {{r1=[[@{memory}]]}} ">
-								Memory
-							</button>
+						<span class="grid-span-1 mar-right">
+							<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Insight}} {{pool=[[@{insight}]]}} @{rollDices} "/>
 						</span>
+						
+						<span class="grid-span-3 mar-bot">Memory</span>
 						<span class="grid-span-2 mar-bot">
 							<span class="center line-height-18 settings-normal" name="attr_memory"/>
 							<input class="fill center line-height-18 settings-editing" name="attr_memory" type="number" value="0" min="0" step="1"/>
 						</span>
-						
-						<span class="grid-span-3 mar-bot">
-							<button type="roll" class="link-button line-height-18" value="&{template:5eDefault} {{rollname=Lift / Carry}} {{pool=[[1]]}} {{r1=[[@{carry}]]}} ">
-								Lift / Carry
-							</button>
+						<span class="grid-span-1 mar-right">
+							<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Memory}} {{pool=[[@{memory}]]}} @{rollDices} "/>
 						</span>
+						
+						<span class="grid-span-3 mar-bot">Lift / Carry</span>
 						<span class="grid-span-2 mar-bot">
 							<span class="center line-height-18 settings-normal" name="attr_carry"/>
 							<input class="fill center line-height-18 settings-editing" name="attr_carry" type="number" value="0" min="0" step="1"/>
+						</span>
+						<span class="grid-span-1 mar-right">
+							<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Lift / Carry}} {{pool=[[@{carry}]]}} @{rollDices} "/>
 						</span>
 						
 						<span class="grid-span-3 mar-bot"><label class="line-height-18" >Movement</label></span>
@@ -286,14 +317,234 @@
 							<span class="center line-height-18 settings-normal" name="attr_movement"/>
 							<input class="fill center line-height-18 settings-editing" name="attr_movement" type="text" value="0/0"/>
 						</span>
+						<span class="grid-span-1 mar-bot">&nbsp;</span>
 					</div>
 				</div>
-			
+					
 				<div class="grid-span-6 grid-6 bdr-all">
+					<span class="grid-span-5 pad-all"><h3>Defense</h3></span>
+					<div class="grid-span-5 grid-5 pad-all">
+					
+						<span class="grid-span-3 mar-bot"><label class="line-height-18" >Rating</label></span>
+						<span class="grid-span-2 mar-bot">
+							<span class="center line-height-18 settings-normal" name="attr_defense_rating"/>
+							<input class="fill center line-height-18 settings-editing" name="attr_defense_rating" type="text" value="2"/>
+						</span>
+						<span class="grid-span-5 mar-bot">&nbsp;</span>
+						
+						
+						<span class="grid-span-3 mar-bot">vs Attack</span>
+						<span class="grid-span-1 mar-bot">
+							<span class="center line-height-18 settings-normal" name="attr_defense_attack"/>
+							<input class="fill center line-height-18 settings-editing" name="attr_defense_attack" type="number" value="0" min="0" step="1"/>
+						</span>
+						<span class="grid-span-1 mar-right">
+							<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Defense vs Attack}} {{pool=[[@{defense_attack}]]}} @{rollDices} "/>
+						</span>
+						
+						<span class="grid-span-3 mar-bot">vs Indirect Spell</span>
+						<span class="grid-span-1 mar-bot">
+							<span class="center line-height-18 settings-normal" name="attr_defense_spell_indirect"/>
+							<input class="fill center line-height-18 settings-editing" name="attr_defense_spell_indirect" type="number" value="0" min="0" step="1"/>
+						</span>
+						<span class="grid-span-1 mar-right">
+							<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Defense vs Spell}} {{pool=[[@{defense_spell_indirect}]]}} @{rollDices} "/>
+						</span>
+						
+						<span class="grid-span-3 mar-bot">vs Direct Spell</span>
+						<span class="grid-span-1 mar-bot">
+							<span class="center line-height-18 settings-normal" name="attr_defense_spell_direct"/>
+							<input class="fill center line-height-18 settings-editing" name="attr_defense_spell_direct" type="number" value="0" min="0" step="1"/>
+						</span>
+						<span class="grid-span-1 mar-right">
+							<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Defense vs Spell}} {{pool=[[@{defense_spell_direct}]]}} @{rollDices} "/>
+						</span>
+						
+						<span class="grid-span-3 mar-bot">vs Poison</span>
+						<span class="grid-span-1 mar-bot">
+							<span class="center line-height-18 settings-normal" name="attr_defense_poison"/>
+							<input class="fill center line-height-18 settings-editing" name="attr_defense_poison" type="number" value="0" min="0" step="1"/>
+						</span>
+						<span class="grid-span-1 mar-right">
+							<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Defense vs Poison}} {{pool=[[@{defense_poison}]]}} @{rollDices} "/>
+						</span>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="mysheet-sheettab1-body">
+			
+			
+			<div class="grid-16">
+				<div class="grid-span-16 grid-16 bdr-all pad-all">
+					
+					<span class="grid-span-16 mar-bot"><h3>Health</h3></span>
+					<span class="grid-span-3 mar-bot"><label class="line-height-18" >Physical Damage</label></span>
+					<div class="grid-span-13 radio-squares  mar-bot">
+						<input type="hidden" class="radio-max" name="attr_physical_health" value="10"/>
+						<input type="radio" name="attr_physical_damage" value="1" /><span/>
+						<input type="radio" name="attr_physical_damage" value="2" /><span/>
+						<input type="radio" name="attr_physical_damage" value="3" /><span/>
+						<input type="radio" name="attr_physical_damage" value="4" /><span/>
+						<input type="radio" name="attr_physical_damage" value="5" /><span/>
+						<input type="radio" name="attr_physical_damage" value="6" /><span/>
+						<input type="radio" name="attr_physical_damage" value="7" /><span/>
+						<input type="radio" name="attr_physical_damage" value="8" /><span/>
+						<input type="radio" name="attr_physical_damage" value="9" /><span/>
+						<input type="radio" name="attr_physical_damage" value="10" /><span/>
+						<input type="radio" name="attr_physical_damage" value="11" /><span/>
+						<input type="radio" name="attr_physical_damage" value="12" /><span/>
+						<input type="radio" name="attr_physical_damage" value="13" /><span/>
+						<input type="radio" name="attr_physical_damage" value="14" /><span/>
+						<input type="radio" name="attr_physical_damage" value="15" /><span/>
+						<input type="radio" name="attr_physical_damage" value="16" /><span/>
+						<input type="radio" name="attr_physical_damage" value="17" /><span/>
+						<input type="radio" name="attr_physical_damage" value="18" /><span/>
+						<input type="radio" name="attr_physical_damage" value="19" /><span/>
+						<input type="radio" name="attr_physical_damage" value="20" /><span/>
+						<input type="radio" name="attr_physical_damage" value="21" /><span/>
+						<input type="radio" name="attr_physical_damage" value="22" /><span/>
+						<input type="radio" name="attr_physical_damage" value="23" /><span/>
+						<input type="radio" name="attr_physical_damage" value="24" /><span/>
+						<input type="radio" name="attr_physical_damage" value="25" /><span/>
+						<input type="radio" name="attr_physical_damage" value="26" /><span/>
+						<input type="radio" name="attr_physical_damage" value="27" /><span/>
+						<input type="radio" name="attr_physical_damage" value="28" /><span/>
+						<input type="radio" name="attr_physical_damage" value="29" /><span/>
+						<input type="radio" name="attr_physical_damage" value="30" /><span/>
+						<input type="radio" name="attr_physical_damage" value="0" checked /><span/>
+					</div>
+					
+					<div class="grid-span-16 grid-16 settings-editing">
+						<div class="grid-span-3 grid-3">
+							<span class="grid-span-1 mar-bot"><label class="line-height-18" >Maximum</label></span>
+							<span class="grid-span-2 mar-bot">
+								<input class="fill center line-height-18" name="attr_physical_health" type="number" value="10" min="1" step="1"/>
+							</span>
+						</div>
+						
+						
+						<div class="grid-span-3 grid-3">
+							<span class="grid-span-1 mar-bot"><label class="line-height-18" >Ignores</label></span>
+							<span class="grid-span-2 mar-bot">
+								<input class="fill center line-height-18" name="attr_physical_health_offset" type="number" value="0" min="0" step="1"/>
+							</span>
+						</div>
+						
+						<div class="grid-span-3 grid-3">
+							<span class="grid-span-1 mar-bot"><label class="line-height-18" >Threshold</label></span>
+							<span class="grid-span-2 mar-bot">
+								<input class="fill center line-height-18" name="attr_physical_health_stride" type="number" value="3" min="1" step="1"/>
+							</span>
+						</div>
+				
+					</div>
+					
+					<span class="grid-span-3 mar-bot"><label class="line-height-18" >Mental Damage</label></span>
+					<div class="grid-span-13 radio-squares ">
+						<input type="hidden" class="radio-max" name="attr_mental_health" value="10"/>
+						<input type="radio" name="attr_mental_damage" value="1" /><span/>
+						<input type="radio" name="attr_mental_damage" value="2" /><span/>
+						<input type="radio" name="attr_mental_damage" value="3" /><span/>
+						<input type="radio" name="attr_mental_damage" value="4" /><span/>
+						<input type="radio" name="attr_mental_damage" value="5" /><span/>
+						<input type="radio" name="attr_mental_damage" value="6" /><span/>
+						<input type="radio" name="attr_mental_damage" value="7" /><span/>
+						<input type="radio" name="attr_mental_damage" value="8" /><span/>
+						<input type="radio" name="attr_mental_damage" value="9" /><span/>
+						<input type="radio" name="attr_mental_damage" value="10" /><span/>
+						<input type="radio" name="attr_mental_damage" value="11" /><span/>
+						<input type="radio" name="attr_mental_damage" value="12" /><span/>
+						<input type="radio" name="attr_mental_damage" value="13" /><span/>
+						<input type="radio" name="attr_mental_damage" value="14" /><span/>
+						<input type="radio" name="attr_mental_damage" value="15" /><span/>
+						<input type="radio" name="attr_mental_damage" value="16" /><span/>
+						<input type="radio" name="attr_mental_damage" value="17" /><span/>
+						<input type="radio" name="attr_mental_damage" value="18" /><span/>
+						<input type="radio" name="attr_mental_damage" value="19" /><span/>
+						<input type="radio" name="attr_mental_damage" value="20" /><span/>
+						<input type="radio" name="attr_mental_damage" value="21" /><span/>
+						<input type="radio" name="attr_mental_damage" value="22" /><span/>
+						<input type="radio" name="attr_mental_damage" value="23" /><span/>
+						<input type="radio" name="attr_mental_damage" value="24" /><span/>
+						<input type="radio" name="attr_mental_damage" value="25" /><span/>
+						<input type="radio" name="attr_mental_damage" value="26" /><span/>
+						<input type="radio" name="attr_mental_damage" value="27" /><span/>
+						<input type="radio" name="attr_mental_damage" value="28" /><span/>
+						<input type="radio" name="attr_mental_damage" value="29" /><span/>
+						<input type="radio" name="attr_mental_damage" value="30" /><span/>
+						<input type="radio" name="attr_mental_damage" value="0" checked /><span/>
+					</div>
+					
+					<div class="grid-span-16 grid-16 settings-editing">
+						<div class="grid-span-3 grid-3">
+							<span class="grid-span-1 mar-bot "><label class="line-height-18" >Maximum</label></span>
+							<span class="grid-span-2 mar-bot">
+								<input class="fill center line-height-18" name="attr_mental_health" type="number" value="10" min="1" step="1"/>
+							</span>
+						</div>
+						
+						<div class="grid-span-3 grid-3">
+							<span class="grid-span-1 mar-bot"><label class="line-height-18" >Ignores</label></span>
+							<span class="grid-span-2 mar-bot">
+								<input class="fill center line-height-18" name="attr_mental_health_offset" type="number" value="0" min="0" step="1"/>
+							</span>
+						</div>
+						
+						<div class="grid-span-3 grid-3">
+							<span class="grid-span-1 mar-bot"><label class="line-height-18" >Threshold</label></span>
+							<span class="grid-span-2 mar-bot">
+								<input class="fill center line-height-18" name="attr_mental_health_stride" type="number" value="3" min="1" step="1"/>
+							</span>
+						</div>
+					</div>
+					
+					<span class="grid-span-3 mar-bot"><label class="line-height-18" >Overflow Damage</label></span>
+					<div class="grid-span-13 radio-squares  mar-bot">
+						<input type="hidden" class="radio-max" name="attr_overflow_health" value="6"/>
+						<input type="radio" name="attr_overflow_damage" value="1" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="2" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="3" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="4" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="5" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="6" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="7" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="8" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="9" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="10" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="11" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="12" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="13" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="14" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="15" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="16" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="17" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="18" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="19" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="20" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="21" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="22" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="23" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="24" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="25" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="26" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="27" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="28" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="29" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="30" /><span/>
+						<input type="radio" name="attr_overflow_damage" value="0" checked /><span/>
+					</div>
+					
+					<div class="grid-span-16 grid-16 settings-editing">
+						<div class="grid-span-3 grid-3">
+							<span class="grid-span-1 mar-bot "><label class="line-height-18" >Maximum</label></span>
+							<span class="grid-span-2 mar-bot">
+								<input class="fill center line-height-18" name="attr_overflow_health" type="number" value="10" min="1" step="1"/>
+							</span>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
 			<div class="grid-16">
 				<div class="grid-span-16 grid-16 bdr-all pad-all">
 					<div class="grid-span-10 grid-10">
@@ -306,7 +557,7 @@
 						<div class="grid-span-10 grid-16">
 							<fieldset class="repeating_skills">
 								<div class="grid-span-16 grid-10 pad-none mar-none">
-									<input class="toggle-flag" name="attr_skill_ident" type="hidden" value="0"/>
+									<input class="toggle-flag01" name="attr_skill_ident" type="hidden" value="0"/>
 									
 									<span class="grid-span-4">
 										<button type="roll" class="link-button line-height-18 settings-normal" value="&{template:5eDefault} {{rollname=@{skill_name}}} {{pool=[[@{skill_rank} + [[@{skill_attribute}]]]]}} @{rollDices} ">
@@ -343,8 +594,12 @@
 						
 					</div>
 				</div>
-				
 			</div>
+			
+			
+		</div>
+		<div class="mysheet-sheettab1-body">
+			
 		</div>
 	</div>
 	

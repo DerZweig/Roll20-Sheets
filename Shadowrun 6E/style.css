@@ -709,6 +709,11 @@ body.sheet-darkmode button.link-button:before {
     display: none;
 }
 
+.align-right {
+	margin-left: auto;
+	margin-right: 0;
+}
+
 .switch {
   display: inline-block;
   height: 22px;
@@ -838,11 +843,111 @@ input.settings-flag + span.settings-flag {
 	margin-left: -35px;
 }
 
-body.sheet-darkmode input.settings-flag + span.settings-flag {
+
+body.sheet-darkmode .radio-squares input[type='radio']:not(.radio-squares-reset){
+	background: rgb(25,183,130);
+	border: 1px solid rgb(25,183,130);
+}
+
+.radio-squares input[type='radio'] {
+	position: absolute;
+    opacity: 0;
+    width:15px;
+    cursor: pointer;
+    z-index: 9999;
+    margin-top: 6px;
+}
+
+.radio-squares input[type='radio'] + span::before {
+    border: solid 1px #a8a8a8;
+    line-height: 14px;
+    text-align: middle;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.radio-squares input[type='radio'] + span::before {
+    background: black;
+	content: "•";
+    width: 12px;
+    height: 12px;
+    font-size: 30px;
+}
+
+body.sheet-darkmode .radio-squares input[type='radio'] + span::before {
+    background: white;
+}
+
+.radio-squares input[type='radio']:checked ~ input + span::before
+{    
+	background: transparent;
+    content: "";
+}
+
+.radio-squares input[type='radio']:has(~ input[value='0']:checked) ~ span::before
+{    
+	background: transparent;
+    content: "";
+}
+
+.radio-squares .radio-max[value='0'] ~ span,
+.radio-squares .radio-max[value='1'] ~ span:nth-of-type(n+2),
+.radio-squares .radio-max[value='2'] ~ span:nth-of-type(n+3),
+.radio-squares .radio-max[value='3'] ~ span:nth-of-type(n+4),
+.radio-squares .radio-max[value='4'] ~ span:nth-of-type(n+5),
+.radio-squares .radio-max[value='5'] ~ span:nth-of-type(n+6),
+.radio-squares .radio-max[value='6'] ~ span:nth-of-type(n+7),
+.radio-squares .radio-max[value='7'] ~ span:nth-of-type(n+8),
+.radio-squares .radio-max[value='8'] ~ span:nth-of-type(n+9),
+.radio-squares .radio-max[value='9'] ~ span:nth-of-type(n+10),
+.radio-squares .radio-max[value='10'] ~ span:nth-of-type(n+11),
+.radio-squares .radio-max[value='11'] ~ span:nth-of-type(n+12),
+.radio-squares .radio-max[value='12'] ~ span:nth-of-type(n+13),
+.radio-squares .radio-max[value='13'] ~ span:nth-of-type(n+14),
+.radio-squares .radio-max[value='14'] ~ span:nth-of-type(n+15),
+.radio-squares .radio-max[value='15'] ~ span:nth-of-type(n+16),
+.radio-squares .radio-max[value='16'] ~ span:nth-of-type(n+17),
+.radio-squares .radio-max[value='17'] ~ span:nth-of-type(n+18),
+.radio-squares .radio-max[value='18'] ~ span:nth-of-type(n+19),
+.radio-squares .radio-max[value='19'] ~ span:nth-of-type(n+20),
+.radio-squares .radio-max[value='20'] ~ span:nth-of-type(n+21),
+.radio-squares .radio-max[value='21'] ~ span:nth-of-type(n+22),
+.radio-squares .radio-max[value='22'] ~ span:nth-of-type(n+23),
+.radio-squares .radio-max[value='23'] ~ span:nth-of-type(n+24),
+.radio-squares .radio-max[value='24'] ~ span:nth-of-type(n+25),
+.radio-squares .radio-max[value='25'] ~ span:nth-of-type(n+26),
+.radio-squares .radio-max[value='26'] ~ span:nth-of-type(n+27),
+.radio-squares .radio-max[value='27'] ~ span:nth-of-type(n+28),
+.radio-squares .radio-max[value='28'] ~ span:nth-of-type(n+29),
+.radio-squares .radio-max[value='29'] ~ span:nth-of-type(n+30),
+.radio-squares .radio-max[value='30'] ~ span:nth-of-type(n+31) {
+	display:none;
+}
+
+.radio-squares input[value='0'] + span {
+	display: inline-block !important;
+}
+
+.radio-squares input[type='radio']:checked ~ input[value='0'] + span::before,
+.radio-squares input[value='0'] + span::before
+{
+	color: black;
+    border: solid 1px transparent;
+    font-size: 14px;
+	margin-top: -2px;
+    content: "✖";
+    opacity: 1;
+}
+
+body.sheet-darkmode .radio-squares input[type='radio']:checked ~ input[value='0'] + span::before,
+body.sheet-darkmode .radio-squares input[value='0'] + span::before
+{
 	color: white;
 }
 
-
+body.sheet-darkmode input.settings-flag + span.settings-flag {
+	color: white;
+}
 
 input.mysheet-sheettab0:hover ~ span.mysheet-sheettab0,
 input.mysheet-sheettab1:hover ~ span.mysheet-sheettab1,
@@ -962,9 +1067,36 @@ div.mysheet-sheettab9-body  {
 }
 
 
-.mysheet input.toggle-flag[value="0"] ~ .toggle-true,
-.mysheet input.toggle-flag[value="0"] > .toggle-true,
-.mysheet input.toggle-flag[value="0"] ~ * .toggle-true,
+.mysheet input.toggle-flag01[value="0"] ~ .toggle-true01,
+.mysheet input.toggle-flag01[value="0"] > .toggle-true01,
+.mysheet input.toggle-flag01[value="0"] ~ * .toggle-true01,
+.mysheet input.toggle-flag02[value="0"] ~ .toggle-true02,
+.mysheet input.toggle-flag02[value="0"] > .toggle-true02,
+.mysheet input.toggle-flag02[value="0"] ~ * .toggle-true03,
+.mysheet input.toggle-flag03[value="0"] ~ .toggle-true03,
+.mysheet input.toggle-flag03[value="0"] > .toggle-true03,
+.mysheet input.toggle-flag03[value="0"] ~ * .toggle-true03,
+.mysheet input.toggle-flag04[value="0"] ~ .toggle-true04,
+.mysheet input.toggle-flag04[value="0"] > .toggle-true04,
+.mysheet input.toggle-flag04[value="0"] ~ * .toggle-true04,
+.mysheet input.toggle-flag05[value="0"] ~ .toggle-true05,
+.mysheet input.toggle-flag05[value="0"] > .toggle-true05,
+.mysheet input.toggle-flag05[value="0"] ~ * .toggle-true05,
+.mysheet input.toggle-flag06[value="0"] ~ .toggle-true06,
+.mysheet input.toggle-flag06[value="0"] > .toggle-true06,
+.mysheet input.toggle-flag06[value="0"] ~ * .toggle-true06,
+.mysheet input.toggle-flag07[value="0"] ~ .toggle-true07,
+.mysheet input.toggle-flag07[value="0"] > .toggle-true07,
+.mysheet input.toggle-flag07[value="0"] ~ * .toggle-true07,
+.mysheet input.toggle-flag08[value="0"] ~ .toggle-true08,
+.mysheet input.toggle-flag08[value="0"] > .toggle-true08,
+.mysheet input.toggle-flag08[value="0"] ~ * .toggle-true08,
+.mysheet input.toggle-flag09[value="0"] ~ .toggle-true09,
+.mysheet input.toggle-flag09[value="0"] > .toggle-true09,
+.mysheet input.toggle-flag09[value="0"] ~ * .toggle-true09,
+.mysheet input.toggle-flag10[value="0"] ~ .toggle-true10,
+.mysheet input.toggle-flag10[value="0"] > .toggle-true10,
+.mysheet input.toggle-flag10[value="0"] ~ * .toggle-true10,
 .mysheet input.settings-flag[value="0"] ~ .repcontrol,
 .mysheet input.settings-flag[value="0"] > .repcontrol,
 .mysheet input.settings-flag[value="0"] ~ * .repcontrol,
