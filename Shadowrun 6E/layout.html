@@ -46,7 +46,7 @@
 		<input type="hidden" name="attr_RD40" value="{{r40=[[1d6cs5cs6cf1}]]}}" />
 		<input type="hidden" name="attr_RD41" value="{{r41=[[1d6cs5cs6cf1}]]}}" />
 		<input type="hidden" name="attr_RD42" value="{{r42=[[1d6cs5cs6cf1}]]}}" />
-		<input type="hidden" name="attr_rollDices" value="@{RD01} @{RD02} @{RD03} @{RD04} @{RD05} @{RD06} @{RD07} @{RD08} @{RD09} @{RD10} @{RD11} @{RD12} @{RD13} @{RD14} @{RD15} @{RD16} @{RD17} @{RD18} @{RD19} @{RD20} @{RD21} @{RD22} @{RD23} @{RD24} @{RD25} @{RD26} @{RD27} @{RD28} @{RD29} @{RD30} @{RD31} @{RD32} @{RD33} @{RD34} @{RD35} @{RD36} @{RD37} @{RD38} @{RD39} @{RD40} @{RD41} @{RD42}" />
+		<input type="hidden" name="attr_rollDices" value="@{RD01} @{RD02} @{RD03} @{RD04} @{RD05} @{RD06} @{RD07} @{RD08} @{RD09} @{RD10} @{RD11} @{RD12} @{RD13} @{RD14} @{RD15} @{RD16} @{RD17} @{RD18} @{RD19} @{RD20} @{RD21} @{RD22} @{RD23} @{RD24} @{RD25} @{RD26} @{RD27} @{RD28} @{RD29} @{RD30} @{RD31} @{RD32} @{RD33} @{RD34} @{RD35} @{RD36} @{RD37} @{RD38} @{RD39} @{RD40} @{RD41} @{RD42} " />
 		
 		<input type="hidden" name="attr_woundModifier" value="([[@{physical_wounds}]] + [[@{stun_wounds}]])" />
 		
@@ -425,7 +425,7 @@
 											<input class="fill center line-height-20" name="attr_skill_pool" type="number" value="[[floor((@{skill_base_pool} + abs(@{skill_base_pool})) / 2)]]" disabled />
 										</span>
 										<span class="grid-span-1 mar-right">
-											<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name}}} {{pool=[[skill_pool]]}} @{rollDices} "/>
+											<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name}}} {{pool=[[floor((@{skill_base_pool} + abs(@{skill_base_pool}))/2)]]}} @{rollDices}"/>
 										</span>
 										<span class="grid-span-1 mar-bot">&nbsp;</span>
 	
