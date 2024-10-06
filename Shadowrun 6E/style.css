@@ -1055,7 +1055,18 @@ div.mysheet-sheettab9-body  {
 .tabstoggle[value="6"] ~ div.mysheet-sheettab6-body,
 .tabstoggle[value="7"] ~ div.mysheet-sheettab7-body,
 .tabstoggle[value="8"] ~ div.mysheet-sheettab8-body,
-.tabstoggle[value="9"] ~ div.mysheet-sheettab9-body {
+.tabstoggle[value="9"] ~ div.mysheet-sheettab9-body,
+
+.tabstoggle[value="0"] ~ * div.mysheet-sheettab0-body,
+.tabstoggle[value="1"] ~ * div.mysheet-sheettab1-body,
+.tabstoggle[value="2"] ~ * div.mysheet-sheettab2-body,
+.tabstoggle[value="3"] ~ * div.mysheet-sheettab3-body,
+.tabstoggle[value="4"] ~ * div.mysheet-sheettab4-body,
+.tabstoggle[value="5"] ~ * div.mysheet-sheettab5-body,
+.tabstoggle[value="6"] ~ * div.mysheet-sheettab6-body,
+.tabstoggle[value="7"] ~ * div.mysheet-sheettab7-body,
+.tabstoggle[value="8"] ~ * div.mysheet-sheettab8-body,
+.tabstoggle[value="9"] ~ * div.mysheet-sheettab9-body {
 	display: block;
 }
 
@@ -1065,7 +1076,6 @@ div.mysheet-sheettab9-body  {
 .mysheet .settings-flag:not([value="0"]) ~  * .settings-normal   {
 	display: none;
 }
-
 
 .mysheet input.toggle-flag01[value="0"] ~ .toggle-true01,
 .mysheet input.toggle-flag01[value="0"] > .toggle-true01,
