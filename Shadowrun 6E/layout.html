@@ -140,21 +140,25 @@
 				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab0" value="0" checked="checked" />
 				<span class="mysheet-sheetpagetab mysheet-sheettab0">Character</span>
 				
-				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab1 toggle-true01" value="1" />
-				<span class="mysheet-sheetpagetab mysheet-sheettab1 toggle-true01">Powers</span>
-				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab1 toggle-true02" value="1" />
-				<span class="mysheet-sheetpagetab mysheet-sheettab1 toggle-true02">Powers</span>
+				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab1" value="1" checked="checked" />
+				<span class="mysheet-sheetpagetab mysheet-sheettab1">Skills</span>
 				
-				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab2" value="2" />
-				<span class="mysheet-sheetpagetab mysheet-sheettab2">Implants</span>
+				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab2 toggle-true01" value="2" />
+				<span class="mysheet-sheetpagetab mysheet-sheettab2 toggle-true01">Powers</span>
+				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab21 toggle-true02" value="2" />
+				<span class="mysheet-sheetpagetab mysheet-sheettab2 toggle-true02">Powers</span>
+				
 				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab3" value="3" />
-				<span class="mysheet-sheetpagetab mysheet-sheettab3">Weapons</span>
+				<span class="mysheet-sheetpagetab mysheet-sheettab3">Implants</span>
 				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab4" value="4" />
-				<span class="mysheet-sheetpagetab mysheet-sheettab4">Equipment</span>
+				<span class="mysheet-sheetpagetab mysheet-sheettab4">Weapons</span>
+				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab5" value="5" />
+				<span class="mysheet-sheetpagetab mysheet-sheettab5">Equipment</span>
+				<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab6" value="6" />
+				<span class="mysheet-sheetpagetab mysheet-sheettab6">Devices</span>
 			</div>
 		</div>
 		<div class="grid-16">
-				
 				<div class="grid-span-10 grid-10 mysheet-sheettab0-body">
 					<div class="grid-span-10 grid-11 bdr-all mar-bot">
 						<span class="grid-span-10 pad-all"><h3>Attributes</h3></span>
@@ -325,13 +329,51 @@
 							</span>
 						</div>
 					</div>
-						
+				
+					<div class="grid-span-10 grid-10 bdr-all">
+						<span class="grid-span-10 pad-all"><h3>Advantages & Disadvantages</h3></span>
+						<div class="grid-span-10 grid-16 pad-all">
+							<span class="grid-span-6 mar-bot"><label class="font-size-sm line-height-10">Name</label></span>  
+							<span class="grid-span-10 mar-bot"><label class="font-size-sm line-height-10">Description</label></span> 
+						</div>
+						<div class="grid-span-10 grid-16 pad-all">
+							<fieldset class="repeating_traits">
+								<div class="grid-span-16 grid-16">
+									<div class="grid-span-6 grid-6">
+										<span class="grid-span-6">
+											<span name="attr_trait_name" class="settings-normal"/>
+											<input class="fill line-height-18 settings-editing" name="attr_trait_name" type="text"/>
+										</span>
+									</div>
+									
+									<div class="grid-span-10 grid-10">
+										<span name="attr_trait_description" class="grid-span-10 line-height-18 settings-normal"/>
+										<span class="grid-span-10 mar-right bdr-all settings-editing">
+											<textarea class="grid-span-10" name="attr_trait_description" class="font-size-sm line-height-10" rows="4" ></textarea>
+										</span>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="grid-span-10 grid-10 mysheet-sheettab1-body">
 					<div class="grid-span-10 grid-10 bdr-all">
 						<span class="grid-span-10 pad-all"><h3>Skills</h3></span>
+						
+						<div class="grid-span-10 grid-11 pad-all">
+							<span class="grid-span-4 mar-bot"><label class="font-size-sm line-height-10">Skill / Specialization</label></span>  
+							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10">Rank</label></span>  
+							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10">Attribute</label></span>  
+							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10">Pool</label></span> 
+						</div>
+						
 						<div class="grid-span-10 grid-10 pad-all">
-							<div class="grid-span-10 grid-10 pad-none">
+							<div class="grid-span-10 grid-16 pad-none">
 								<fieldset class="repeating_skills">
-									<div class="grid-span-10 grid-11">
+									<div class="grid-span-16 grid-11">
 										<input name="attr_skill_base_pool" type="hidden" value="(@{skill_rank} - (1 - ceil(@{skill_rank} / 99)) + [[@{skill_attribute}]] - (@{woundModifier}))"/>
 										<input name="attr_skill_spec01_show" type="hidden" value="0" class="toggle-flag01"/>
 										<input name="attr_skill_spec02_show" type="hidden" value="0" class="toggle-flag02"/>
@@ -371,7 +413,7 @@
 											<input class="fill center line-height-20" name="attr_skill_pool" type="number" value="[[floor((@{skill_base_pool} + abs(@{skill_base_pool})) / 2)]]" disabled />
 										</span>
 										<span class="grid-span-1 mar-right">
-											<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name}}} {{pool=[[skill_pool]]}} @{rollDices} ">
+											<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name}}} {{pool=[[skill_pool]]}} @{rollDices} "/>
 										</span>
 										<span class="grid-span-1 mar-bot">&nbsp;</span>
 	
@@ -385,7 +427,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec01_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec01_rank} + abs(@{skill_base_pool} + @{skill_spec01_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right toggle-true01">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec01_name}}} {{pool=[[floor((@{skill_spec01_pool} + abs(@{skill_spec01_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec01_name}}} {{pool=[[floor((@{skill_spec01_pool} + abs(@{skill_spec01_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>
 										
@@ -398,7 +440,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec02_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec02_rank} + abs(@{skill_base_pool} + @{skill_spec02_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right toggle-true02">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec02_name}}} {{pool=[[floor((@{skill_spec02_pool} + abs(@{skill_spec02_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec02_name}}} {{pool=[[floor((@{skill_spec02_pool} + abs(@{skill_spec02_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>
 										
@@ -411,7 +453,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec03_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec03_rank} + abs(@{skill_base_pool} + @{skill_spec03_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right toggle-true03">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec03_name}}} {{pool=[[floor((@{skill_spec03_pool} + abs(@{skill_spec03_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec03_name}}} {{pool=[[floor((@{skill_spec03_pool} + abs(@{skill_spec03_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>
 										
@@ -424,7 +466,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec04_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec04_rank} + abs(@{skill_base_pool} + @{skill_spec04_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right toggle-true04">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec04_name}}} {{pool=[[floor((@{skill_spec04_pool} + abs(@{skill_spec04_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec04_name}}} {{pool=[[floor((@{skill_spec04_pool} + abs(@{skill_spec04_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>	
 
@@ -437,7 +479,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec05_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec05_rank} + abs(@{skill_base_pool} + @{skill_spec05_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right toggle-true05">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec05_name}}} {{pool=[[floor((@{skill_spec05_pool} + abs(@{skill_spec05_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec05_name}}} {{pool=[[floor((@{skill_spec05_pool} + abs(@{skill_spec05_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>		
 
@@ -450,7 +492,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec06_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec06_rank} + abs(@{skill_base_pool} + @{skill_spec06_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right toggle-true06">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec06_name}}} {{pool=[[floor((@{skill_spec06_pool} + abs(@{skill_spec06_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec06_name}}} {{pool=[[floor((@{skill_spec06_pool} + abs(@{skill_spec06_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>		
 
@@ -463,7 +505,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec07_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec07_rank} + abs(@{skill_base_pool} + @{skill_spec07_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right toggle-true07">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec07_name}}} {{pool=[[floor((@{skill_spec07_pool} + abs(@{skill_spec07_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec07_name}}} {{pool=[[floor((@{skill_spec07_pool} + abs(@{skill_spec07_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>	
 
@@ -476,7 +518,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec08_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec08_rank} + abs(@{skill_base_pool} + @{skill_spec08_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right toggle-true08">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec08_name}}} {{pool=[[floor((@{skill_spec08_pool} + abs(@{skill_spec08_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec08_name}}} {{pool=[[floor((@{skill_spec08_pool} + abs(@{skill_spec08_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>	
 
@@ -489,7 +531,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec01_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec01_rank} + abs(@{skill_base_pool} + @{skill_spec01_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec01_name}}} {{pool=[[floor((@{skill_spec01_pool} + abs(@{skill_spec01_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec01_name}}} {{pool=[[floor((@{skill_spec01_pool} + abs(@{skill_spec01_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>
 										
@@ -501,7 +543,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec02_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec02_rank} + abs(@{skill_base_pool} + @{skill_spec02_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec02_name}}} {{pool=[[floor((@{skill_spec02_pool} + abs(@{skill_spec02_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec02_name}}} {{pool=[[floor((@{skill_spec02_pool} + abs(@{skill_spec02_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>
 										
@@ -513,7 +555,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec03_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec03_rank} + abs(@{skill_base_pool} + @{skill_spec03_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec03_name}}} {{pool=[[floor((@{skill_spec03_pool} + abs(@{skill_spec03_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec03_name}}} {{pool=[[floor((@{skill_spec03_pool} + abs(@{skill_spec03_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>
 
@@ -525,7 +567,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec04_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec04_rank} + abs(@{skill_base_pool} + @{skill_spec04_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec04_name}}} {{pool=[[floor((@{skill_spec04_pool} + abs(@{skill_spec04_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec04_name}}} {{pool=[[floor((@{skill_spec04_pool} + abs(@{skill_spec04_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>
 
@@ -537,7 +579,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec05_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec05_rank} + abs(@{skill_base_pool} + @{skill_spec05_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec05_name}}} {{pool=[[floor((@{skill_spec05_pool} + abs(@{skill_spec05_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec05_name}}} {{pool=[[floor((@{skill_spec05_pool} + abs(@{skill_spec05_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>
 
@@ -549,7 +591,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec06_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec06_rank} + abs(@{skill_base_pool} + @{skill_spec06_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec06_name}}} {{pool=[[floor((@{skill_spec06_pool} + abs(@{skill_spec06_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec06_name}}} {{pool=[[floor((@{skill_spec06_pool} + abs(@{skill_spec06_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>
 											
@@ -561,7 +603,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec07_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec07_rank} + abs(@{skill_base_pool} + @{skill_spec07_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec07_name}}} {{pool=[[floor((@{skill_spec07_pool} + abs(@{skill_spec07_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec07_name}}} {{pool=[[floor((@{skill_spec07_pool} + abs(@{skill_spec07_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>
 										<div class="settings-normal grid-span-11 toggle-true08 grid-11">
@@ -572,7 +614,7 @@
 												<input class="fill center line-height-20" name="attr_skill_spec08_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec08_rank} + abs(@{skill_base_pool} + @{skill_spec08_rank})) / 2)]]" disabled />
 											</span>
 											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec08_name}}} {{pool=[[floor((@{skill_spec08_pool} + abs(@{skill_spec08_pool}))/2)]]}} @{rollDices} ">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec08_name}}} {{pool=[[floor((@{skill_spec08_pool} + abs(@{skill_spec08_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>										
 									</div>
@@ -582,7 +624,268 @@
 							
 						</div>
 					</div>
+				</div>
+				
+				<div class="grid-span-10 grid-10 mysheet-sheettab2-body">
+					<div class="grid-span-10 grid-10 bdr-all">
+						<span class="grid-span-10 pad-all"><h3>Powers</h3></span>
+						<div class="grid-span-10 grid-16 pad-all">
+							<fieldset class="repeating_powers">
+								<div class="grid-span-16 grid-14 bdr-all mar-bot pad-all">
+									<span class="grid-span-8"><label class="font-size-sm line-height-10">Name</label></span> 
+									<span class="grid-span-4 mar-bot"><label class="font-size-sm line-height-10">Type</label></span>
+									<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10">Drain</label></span>
+									 
+									<span name="attr_power_name" class="grid-span-8 mar-bot settings-normal"/>
+									<span name="attr_power_type" class="grid-span-4 settings-normal"/>
+									<span name="attr_power_drain" class="grid-span-2 settings-normal"/>
+									
+									<input class="grid-span-8 mar-bot fill line-height-18 settings-editing" name="attr_power_name" type="text"/>
+									<input class="grid-span-4 fill line-height-18 settings-editing" name="attr_power_type" type="text"/>
+									<input class="grid-span-2 fill line-height-18 settings-editing" name="attr_power_drain" type="text"/>
+									
+									<div class="grid-span-14 grid-10">
+										<span class="grid-span-10"><label class="font-size-sm line-height-10">Description</label></span> 
+										<span name="attr_power_description" class="grid-span-10 line-height-18 settings-normal"/>
+										<span class="grid-span-10 mar-right bdr-all settings-editing">
+											<textarea class="grid-span-10" name="attr_power_description" class="font-size-sm line-height-10" rows="4" ></textarea>
+										</span>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				
+				<div class="grid-span-10 grid-10 mysheet-sheettab3-body">
+					<div class="grid-span-10 grid-10 bdr-all">
+						<span class="grid-span-10 pad-all"><h3>Implants</h3></span>
+						<div class="grid-span-10 grid-16 pad-all">
+							<fieldset class="repeating_implants">
+								<div class="grid-span-16 grid-14 bdr-all mar-bot pad-all">
+									<span class="grid-span-8"><label class="font-size-sm line-height-10">Name</label></span>  
+									<span class="grid-span-4 mar-bot"><label class="font-size-sm line-height-10">Type</label></span>
+									<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10">Essence</label></span>
+									
+									<span name="attr_implant_name" class="grid-span-8 mar-bot settings-normal"/>
+									<span name="attr_implant_type" class="grid-span-4 settings-normal"/>
+									<span name="attr_implant_essence" class="grid-span-2 settings-normal"/>
+									
+									<input class="grid-span-8 mar-bot fill line-height-18 settings-editing" name="attr_implant_name" type="text"/>
+									<input class="grid-span-4 fill line-height-18 settings-editing" name="attr_implant_type" type="text"/>
+									<input class="grid-span-2 fill line-height-18 settings-editing" name="attr_implant_essence" type="text"/>
+									
+									<div class="grid-span-14 grid-10">
+										<span class="grid-span-10"><label class="font-size-sm line-height-10">Description</label></span> 
+										<span name="attr_implant_description" class="grid-span-10 line-height-18 settings-normal"/>
+										<span class="grid-span-10 mar-right bdr-all settings-editing">
+											<textarea class="grid-span-10" name="attr_implant_description" class="font-size-sm line-height-10" rows="4" ></textarea>
+										</span>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				
+				<div class="grid-span-10 grid-10 mysheet-sheettab4-body">
+					<div class="grid-span-10 grid-10 bdr-all">
+						<span class="grid-span-10 pad-all"><h3>Weapons</h3></span>
 					
+						<div class="grid-span-10 grid-10 pad-all">
+							<div class="grid-span-10 grid-16 pad-none">
+								<fieldset class="repeating_weapons">
+									<div class="grid-span-16 grid-16 bdr-all pad-all mar-bot">
+										<div class="grid-span-16 grid-16">
+											<span class="grid-span-6"><label class="font-size-sm line-height-10">Name</label></span>  
+											<span class="grid-span-2"><label class="font-size-sm line-height-10">Damage</label></span>  
+											<span class="grid-span-3"><label class="font-size-sm line-height-10">Mode</label></span>  
+											<span class="grid-span-3"><label class="font-size-sm line-height-10">Attack</label></span> 
+											<span class="grid-span-2"><label class="font-size-sm line-height-10">Ammo</label></span> 
+										</div>
+										<span name="attr_weapon_name" class="grid-span-6 mar-bot settings-normal"/>
+										<input class="grid-span-6 mar-bot fill line-height-18 settings-editing" name="attr_weapon_name" type="text"/>
+										
+										<span name="attr_weapon_damage" class="grid-span-2 mar-bot settings-normal"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_weapon_damage" type="text"/>
+										
+										<span name="attr_weapon_mode" class="grid-span-3 mar-bot settings-normal"/>
+										<input class="grid-span-3 mar-bot fill line-height-18 settings-editing" name="attr_weapon_mode" type="text"/>
+										
+										<span name="attr_weapon_attack" class="grid-span-3 mar-bot settings-normal"/>
+										<input class="grid-span-3 mar-bot fill line-height-18 settings-editing" name="attr_weapon_attack" type="text"/>
+										
+										<span name="attr_weapon_ammo" class="grid-span-2 mar-bot settings-normal"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_weapon_ammo" type="text"/>
+										
+										
+										<div class="grid-span-16 grid-16">
+											<span class="grid-span-16"><label class="font-size-sm line-height-10">Other Properties</label></span> 
+											<span name="attr_weapon_description" class="grid-span-16 line-height-18 settings-normal"/>
+											<span class="grid-span-16 mar-right bdr-all settings-editing">
+												<textarea class="grid-span-16" name="attr_weapon_description" class="font-size-sm line-height-10" rows="4" ></textarea>
+											</span>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div class="grid-span-10 grid-10 mysheet-sheettab5-body">
+					<div class="grid-span-10 grid-10 bdr-all mar-bot">
+						<span class="grid-span-10 pad-all"><h3>Armor & Clothing</h3></span>
+						<div class="grid-span-10 grid-10 pad-all">
+							<div class="grid-span-10 grid-16 pad-none">
+								<fieldset class="repeating_armor">
+									<div class="grid-span-16 grid-14 bdr-all pad-all mar-bot">
+										<span class="grid-span-10"><label class="font-size-sm line-height-10">Name</label></span>  
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Defense</label></span> 
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Social</label></span> 
+										
+										
+										<span name="attr_armor_name" class="grid-span-10 settings-normal"/>
+										<span name="attr_armor_rating" class="grid-span-2 settings-normal"/>
+										<span name="attr_armor_social" class="grid-span-2 settings-normal"/>
+										<input class="grid-span-10 fill line-height-18 settings-editing" name="attr_armor_name" type="text"/>
+										<input class="grid-span-2 fill line-height-14 settings-editing" name="attr_armor_rating" type="number" value="0" min="0" step="1"/>
+										<input class="grid-span-2 fill line-height-14 settings-editing" name="attr_armor_social" type="number" value="0" step="1"/>
+										
+										<div class="grid-span-14 grid-16">
+											<span class="grid-span-16"><label class="font-size-sm line-height-10">Other Properties</label></span> 
+											<span name="attr_armor_description" class="grid-span-16 line-height-18 settings-normal"/>
+											<span class="grid-span-16 mar-right bdr-all settings-editing">
+												<textarea class="grid-span-16" name="attr_armor_description" class="font-size-sm line-height-10" rows="4" ></textarea>
+											</span>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+						
+						<span class="grid-span-10 pad-all"><h3>Gear</h3></span>
+						<div class="grid-span-10 grid-16">
+							<span class="grid-span-14"><label class="font-size-sm line-height-10">Name</label></span>  
+							<span class="grid-span-2"><label class="font-size-sm line-height-10">Amount</label></span>  
+						</div>
+						<div class="grid-span-10 grid-10 pad-all">
+							<div class="grid-span-10 grid-16 pad-none">
+								<fieldset class="repeating_equipment">
+									<div class="grid-span-16 grid-14">
+										<span name="attr_equipment_name" class="grid-span-12 settings-normal"/>
+										<input class="grid-span-12 fill line-height-18 settings-editing" name="attr_equipment_name" type="text"/>
+										
+										<input class="grid-span-2 fill line-height-14" name="attr_equipment_amount" type="number" value="0" min="0" step="1"/>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid-span-10 grid-10 mysheet-sheettab6-body">
+					<div class="grid-span-10 grid-10 bdr-all">
+						<span class="grid-span-10 pad-all"><h3>Matrix Devices</h3></span>
+						<div class="grid-span-10 grid-10 pad-all">
+							<div class="grid-span-10 grid-16 pad-none">
+								<fieldset class="repeating_devices">
+									<div class="grid-span-16 grid-14 bdr-all pad-all mar-bot">
+										<span class="grid-span-8"><label class="font-size-sm line-height-10">Name</label></span>  
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Rating</label></span> 
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Process</label></span> 
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Firewall</label></span> 
+										
+										
+										<span name="attr_device_name" class="grid-span-8 mar-bot settings-normal"/>
+										<span name="attr_device_rating" class="grid-span-2 mar-bot settings-normal"/>
+										<span name="attr_device_processing" class="grid-span-2 mar-bot settings-normal"/>
+										<span name="attr_device_firewall" class="grid-span-2 mar-bot settings-normal"/>
+										<input class="grid-span-8 mar-bot fill line-height-18 settings-editing" name="attr_device_name" type="text"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_device_rating" type="text"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_device_processing" type="text"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_device_firewall" type="text"/>
+										
+										<span class="grid-span-8">&nbsp;</span>  
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Programs</label></span> 
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Attack</label></span> 
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Sleaze</label></span> 
+										
+										<span class="grid-span-8 mar-bot">&nbsp;</span>
+										<span name="attr_device_programs" class="grid-span-2 mar-bot settings-normal"/>
+										<span name="attr_device_attack" class="grid-span-2 mar-bot settings-normal"/>
+										<span name="attr_device_sleaze" class="grid-span-2 mar-bot settings-normal"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_device_programs" type="text"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_device_attack" type="text"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_device_sleaze" type="text"/>
+										
+										<div class="grid-span-14 grid-16">
+											<span class="grid-span-16"><label class="font-size-sm line-height-10">Other Properties</label></span> 
+											<span name="attr_device_description" class="grid-span-16 line-height-18 settings-normal"/>
+											<span class="grid-span-16 mar-right bdr-all settings-editing">
+												<textarea class="grid-span-16" name="attr_device_description" class="font-size-sm line-height-10" rows="4" ></textarea>
+											</span>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+						
+						<span class="grid-span-10 pad-all"><h3>Vehicles & Drones</h3></span>
+						<div class="grid-span-10 grid-10 pad-all">
+							<div class="grid-span-10 grid-16 pad-none">
+								<fieldset class="repeating_vehicles">
+									<div class="grid-span-16 grid-14 bdr-all pad-all mar-bot">
+										<span class="grid-span-8"><label class="font-size-sm line-height-10">Name</label></span>  
+										<span class="grid-span-4"><label class="font-size-sm line-height-10">Type</label></span> 
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Seat</label></span> 
+										
+										
+										<span name="attr_vehicle_name" class="grid-span-8 mar-bot settings-normal"/>
+										<span name="attr_vehicle_type" class="grid-span-4 mar-bot settings-normal"/>
+										<span name="attr_vehicle_seat" class="grid-span-2 mar-bot settings-normal"/>
+										<input class="grid-span-8 mar-bot fill line-height-18 settings-editing" name="attr_vehicle_name" type="text"/> 
+										<input class="grid-span-4 mar-bot fill line-height-18 settings-editing" name="attr_vehicle_type" type="text"/> 
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_vehicle_seat" type="text"/> 
+										  
+										  
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Handling</label></span> 
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Accel</label></span> 
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Speed</label></span> 
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Body</label></span> 
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Armor</label></span> 
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Pilot</label></span> 
+										<span class="grid-span-2"><label class="font-size-sm line-height-10">Sensor</label></span>
+										
+										<span name="attr_vehicle_handling" class="grid-span-2 mar-bot settings-normal"/>
+										<span name="attr_vehicle_acceleration" class="grid-span-2 mar-bot settings-normal"/>
+										<span name="attr_vehicle_speed" class="grid-span-2 mar-bot settings-normal"/>
+										<span name="attr_vehicle_body" class="grid-span-2 mar-bot settings-normal"/>
+										<span name="attr_vehicle_armor" class="grid-span-2 mar-bot settings-normal"/>
+										<span name="attr_vehicle_pilot" class="grid-span-2 mar-bot settings-normal"/>
+										<span name="attr_vehicle_sensor" class="grid-span-2 mar-bot settings-normal"/>
+										
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_vehicle_handling" type="text"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_vehicle_acceleration" type="text"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_vehicle_speed" type="text"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_vehicle_body" type="text"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_vehicle_armor" type="text"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_vehicle_pilot" type="text"/>
+										<input class="grid-span-2 mar-bot fill line-height-18 settings-editing" name="attr_vehicle_sensor" type="text"/>
+										
+										
+										<div class="grid-span-14 grid-16">
+											<span class="grid-span-16"><label class="font-size-sm line-height-10">Other Properties</label></span> 
+											<span name="attr_vehicle_description" class="grid-span-16 line-height-18 settings-normal"/>
+											<span class="grid-span-16 mar-right bdr-all settings-editing">
+												<textarea class="grid-span-16" name="attr_vehicle_description" class="font-size-sm line-height-10" rows="4" ></textarea>
+											</span>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+					</div>
 				</div>
 				
 				<div class="grid-span-6 grid-6 bdr-all pad-all">
@@ -843,6 +1146,19 @@
 					
 					<div class="grid-span-6 grid-6 pad-none">
 						<span class="grid-span-6 mar-bot"><h3>Defenses</h3></span>
+						<div class="grid-span-6 grid-7 mar-right">
+							<span class="grid-span-4"><label class="line-height-18" >Rating</label></span>
+							
+							<span class="grid-span-1 settings-normal">&nbsp;</span>
+							<span class="grid-span-1 settings-normal">
+								<input class="fill center line-height-18" name="attr_defense_rating_display" value="[[@{defense_rating}]]" disabled />
+							</span>
+							<span class="grid-span-2 settings-editing">
+								<input class="fill center line-height-18" name="attr_defense_rating" type="number" value="0" min="0" step="1"/>
+							</span>
+							
+							<span class="grid-span-1 mar-right">&nbsp;</span>
+						</div>
 						
 						<div class="grid-span-6 grid-7 mar-right">
 							<span class="grid-span-4"><label class="line-height-18" >vs Attack</label></span>
@@ -911,6 +1227,28 @@
 						</div>
 						
 						
+					</div>
+				
+					<div class="grid-span-6 grid-6 pad-none">
+						<span class="grid-span-6 mar-bot"><h3>Custom Rolls</h3></span>
+						<div class="grid-span-6 grid-16 pad-none">
+							<fieldset class="repeating_custom">
+								<div class="grid-span-16 grid-7 mar-right">
+									<span class="grid-span-4">
+										<span name="attr_custom_name" class="settings-normal"/>
+										<input class="fill line-height-18 settings-editing" name="attr_custom_name" type="text"/>
+									</span>
+									<span class="grid-span-2">
+										<input class="fill center line-height-18" name="attr_custom_pool" type="number" value="0" min="0" max="25" step="1"/>
+									</span>
+									
+									<span class="grid-span-1 mar-right">
+										<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{custom_name}}} {{pool=[[@{attr_custom_pool}]]}} @{rollDices} "/>
+									</span>
+									
+								</div>
+							</fieldset>
+						</div>
 					</div>
 				</div>
 			
