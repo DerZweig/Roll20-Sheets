@@ -34,7 +34,19 @@
 		<input type="hidden" name="attr_RD28" value="{{r28=[[1d6cs5cs6cf1}]]}}" />
 		<input type="hidden" name="attr_RD29" value="{{r29=[[1d6cs5cs6cf1}]]}}" />
 		<input type="hidden" name="attr_RD30" value="{{r30=[[1d6cs5cs6cf1}]]}}" />
-		<input type="hidden" name="attr_rollDices" value="@{RD01} @{RD02} @{RD03} @{RD04} @{RD05} @{RD06} @{RD07} @{RD08} @{RD09} @{RD10} @{RD11} @{RD12} @{RD13} @{RD14} @{RD15} @{RD16} @{RD17} @{RD18} @{RD19} @{RD20} @{RD21} @{RD22} @{RD23} @{RD24} @{RD25} @{RD26} @{RD27} @{RD28} @{RD29} @{RD30}" />
+		<input type="hidden" name="attr_RD31" value="{{r31=[[1d6cs5cs6cf1}]]}}" />
+		<input type="hidden" name="attr_RD32" value="{{r32=[[1d6cs5cs6cf1}]]}}" />
+		<input type="hidden" name="attr_RD33" value="{{r33=[[1d6cs5cs6cf1}]]}}" />
+		<input type="hidden" name="attr_RD34" value="{{r34=[[1d6cs5cs6cf1}]]}}" />
+		<input type="hidden" name="attr_RD35" value="{{r35=[[1d6cs5cs6cf1}]]}}" />
+		<input type="hidden" name="attr_RD36" value="{{r36=[[1d6cs5cs6cf1}]]}}" />
+		<input type="hidden" name="attr_RD37" value="{{r37=[[1d6cs5cs6cf1}]]}}" />
+		<input type="hidden" name="attr_RD38" value="{{r38=[[1d6cs5cs6cf1}]]}}" />
+		<input type="hidden" name="attr_RD39" value="{{r39=[[1d6cs5cs6cf1}]]}}" />
+		<input type="hidden" name="attr_RD40" value="{{r40=[[1d6cs5cs6cf1}]]}}" />
+		<input type="hidden" name="attr_RD41" value="{{r41=[[1d6cs5cs6cf1}]]}}" />
+		<input type="hidden" name="attr_RD42" value="{{r42=[[1d6cs5cs6cf1}]]}}" />
+		<input type="hidden" name="attr_rollDices" value="@{RD01} @{RD02} @{RD03} @{RD04} @{RD05} @{RD06} @{RD07} @{RD08} @{RD09} @{RD10} @{RD11} @{RD12} @{RD13} @{RD14} @{RD15} @{RD16} @{RD17} @{RD18} @{RD19} @{RD20} @{RD21} @{RD22} @{RD23} @{RD24} @{RD25} @{RD26} @{RD27} @{RD28} @{RD29} @{RD30} @{RD31} @{RD32} @{RD33} @{RD34} @{RD35} @{RD36} @{RD37} @{RD38} @{RD39} @{RD40} @{RD41} @{RD42}" />
 		
 		<input type="hidden" name="attr_woundModifier" value="([[@{physical_wounds}]] + [[@{stun_wounds}]])" />
 		
@@ -1348,6 +1360,34 @@
 				<td>
 			</tr>
 			{{/rollGreater() pool 24}}
+			
+			{{#rollGreater() pool 30}}
+			<tr>
+				<td></td>
+				<td>
+				{{31}} 
+				{{#rollGreater() pool 31}} {{32}} {{/rollGreater() pool 31}}
+				{{#rollGreater() pool 32}} {{33}} {{/rollGreater() pool 32}}
+				{{#rollGreater() pool 33}} {{34}} {{/rollGreater() pool 33}}
+				{{#rollGreater() pool 34}} {{35}} {{/rollGreater() pool 34}}
+				{{#rollGreater() pool 35}} {{36}} {{/rollGreater() pool 35}}
+				<td>
+			</tr>
+			{{/rollGreater() pool 30}}
+			
+			{{#rollGreater() pool 36}}
+			<tr>
+				<td></td>
+				<td>
+				{{37}} 
+				{{#rollGreater() pool 37}} {{38}} {{/rollGreater() pool 37}}
+				{{#rollGreater() pool 38}} {{39}} {{/rollGreater() pool 38}}
+				{{#rollGreater() pool 39}} {{40}} {{/rollGreater() pool 39}}
+				{{#rollGreater() pool 40}} {{41}} {{/rollGreater() pool 40}}
+				{{#rollGreater() pool 41}} {{42}} {{/rollGreater() pool 41}}
+				<td>
+			</tr>
+			{{/rollGreater() pool 36}}
 		{{/rollname}}
 			
 		</table>
