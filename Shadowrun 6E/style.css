@@ -377,7 +377,6 @@ h2.name {
 	grid-template-columns: repeat(16, 1fr);
 	grid-template-rows: auto;
 	column-gap: 8px;
-    padding-bottom: 8px;
 }
 
 .repcontrol {
@@ -1056,7 +1055,6 @@ div.mysheet-sheettab9-body  {
 .tabstoggle[value="7"] ~ div.mysheet-sheettab7-body,
 .tabstoggle[value="8"] ~ div.mysheet-sheettab8-body,
 .tabstoggle[value="9"] ~ div.mysheet-sheettab9-body,
-
 .tabstoggle[value="0"] ~ * div.mysheet-sheettab0-body,
 .tabstoggle[value="1"] ~ * div.mysheet-sheettab1-body,
 .tabstoggle[value="2"] ~ * div.mysheet-sheettab2-body,
@@ -1076,6 +1074,16 @@ div.mysheet-sheettab9-body  {
 .mysheet .settings-flag:not([value="0"]) ~  * .settings-normal   {
 	display: none;
 }
+
+.mysheet input.settings-flag[value="0"] ~ .repcontrol,
+.mysheet input.settings-flag[value="0"] > .repcontrol,
+.mysheet input.settings-flag[value="0"] ~ * .repcontrol,
+.mysheet input.settings-flag[value="0"] ~ .settings-editing,
+.mysheet input.settings-flag[value="0"] > .settings-editing,
+.mysheet input.settings-flag[value="0"] ~  * .settings-editing  {
+	display: none;
+}
+
 
 .mysheet input.toggle-flag01[value="0"] ~ .toggle-true01,
 .mysheet input.toggle-flag01[value="0"] > .toggle-true01,
@@ -1106,12 +1114,40 @@ div.mysheet-sheettab9-body  {
 .mysheet input.toggle-flag09[value="0"] ~ * .toggle-true09,
 .mysheet input.toggle-flag10[value="0"] ~ .toggle-true10,
 .mysheet input.toggle-flag10[value="0"] > .toggle-true10,
-.mysheet input.toggle-flag10[value="0"] ~ * .toggle-true10,
-.mysheet input.settings-flag[value="0"] ~ .repcontrol,
-.mysheet input.settings-flag[value="0"] > .repcontrol,
-.mysheet input.settings-flag[value="0"] ~ * .repcontrol,
-.mysheet input.settings-flag[value="0"] ~ .settings-editing,
-.mysheet input.settings-flag[value="0"] > .settings-editing,
-.mysheet input.settings-flag[value="0"] ~  * .settings-editing  {
+.mysheet input.toggle-flag10[value="0"] ~ * .toggle-true10  {
+	display: none;
+}
+
+
+.mysheet input.toggle-flag01:not([value="0"]) ~ .toggle-false01,
+.mysheet input.toggle-flag01:not([value="0"]) > .toggle-false01,
+.mysheet input.toggle-flag01:not([value="0"]) ~ * .toggle-false01,
+.mysheet input.toggle-flag02:not([value="0"]) ~ .toggle-false02,
+.mysheet input.toggle-flag02:not([value="0"]) > .toggle-false02,
+.mysheet input.toggle-flag02:not([value="0"]) ~ * .toggle-false03,
+.mysheet input.toggle-flag03:not([value="0"]) ~ .toggle-false03,
+.mysheet input.toggle-flag03:not([value="0"]) > .toggle-false03,
+.mysheet input.toggle-flag03:not([value="0"]) ~ * .toggle-false03,
+.mysheet input.toggle-flag04:not([value="0"]) ~ .toggle-false04,
+.mysheet input.toggle-flag04:not([value="0"]) > .toggle-false04,
+.mysheet input.toggle-flag04:not([value="0"]) ~ * .toggle-false04,
+.mysheet input.toggle-flag05:not([value="0"]) ~ .toggle-false05,
+.mysheet input.toggle-flag05:not([value="0"]) > .toggle-false05,
+.mysheet input.toggle-flag05:not([value="0"]) ~ * .toggle-false05,
+.mysheet input.toggle-flag06:not([value="0"]) ~ .toggle-false06,
+.mysheet input.toggle-flag06:not([value="0"]) > .toggle-false06,
+.mysheet input.toggle-flag06:not([value="0"]) ~ * .toggle-false06,
+.mysheet input.toggle-flag07:not([value="0"]) ~ .toggle-false07,
+.mysheet input.toggle-flag07:not([value="0"]) > .toggle-false07,
+.mysheet input.toggle-flag07:not([value="0"]) ~ * .toggle-false07,
+.mysheet input.toggle-flag08:not([value="0"]) ~ .toggle-false08,
+.mysheet input.toggle-flag08:not([value="0"]) > .toggle-false08,
+.mysheet input.toggle-flag08:not([value="0"]) ~ * .toggle-false08,
+.mysheet input.toggle-flag09:not([value="0"]) ~ .toggle-false09,
+.mysheet input.toggle-flag09:not([value="0"]) > .toggle-false09,
+.mysheet input.toggle-flag09:not([value="0"]) ~ * .toggle-false09,
+.mysheet input.toggle-flag10:not([value="0"]) ~ .toggle-false10,
+.mysheet input.toggle-flag10:not([value="0"]) > .toggle-false10,
+.mysheet input.toggle-flag10:not([value="0"]) ~ * .toggle-false10  {
 	display: none;
 }
