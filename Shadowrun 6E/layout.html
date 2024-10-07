@@ -2109,6 +2109,7 @@
 						<span class="grid-span-6 mar-bot"><h3>Custom Rolls</h3></span>
 						
 						<div class="grid-span-6 grid-7 mar-right">
+							<span class="grid-span-2">Attribute</span>
 							<span class="grid-span-2">
 								<select name="attr_custom_roll_attribute1" class="center fill line-height-20">
 									<option value="0">None</option>
@@ -2139,34 +2140,24 @@
 									<option value="@{resonance}">Resonance</option>
 								</select>
 							</span>
-							<span class="grid-span-1">&nbsp;</span>
-							<span class="grid-span-1">
-								<input class="fill center line-height-18" name="attr_custom_roll_attribute_pool" value="(@{custom_roll_attribute1} + @{custom_roll_attribute2} - @{wound_modifier} + @{global_modifier})" type="number" disabled />
-							</span>
 
 							<span class="grid-span-1 mar-right">
-								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Attribute Roll}} {{pool=[[floor( ( @{custom_roll_attribute_pool} + abs( @{custom_roll_attribute_pool}) ) / 2 )]]}} @{rollDices} "/>
+								<input name="attr_custom_roll_attribute_pool" value="(@{custom_roll_attribute1} + @{custom_roll_attribute2} - @{wound_modifier} + @{global_modifier})" type="hidden" />
+								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Custom Attributes}} {{pool=[[floor( ( @{custom_roll_attribute_pool} + abs( @{custom_roll_attribute_pool}) ) / 2 )]]}} @{rollDices} "/>
 							</span>
 									
 						</div>
-						
-						<div class="grid-span-6 grid-16 pad-none">
-							<fieldset class="repeating_custom">
-								<div class="grid-span-16 grid-7 mar-right">
-									<span class="grid-span-4">
-										<span name="attr_custom_name" class="settings-normal"/>
-										<input class="fill line-height-18 settings-editing" name="attr_custom_name" type="text"/>
-									</span>
-									<span class="grid-span-2">
-										<input class="fill center line-height-18" name="attr_custom_pool" type="number" value="0" min="0" max="25" step="1"/>
-									</span>
-									
-									<span class="grid-span-1 mar-right">
-										<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{custom_name}}} {{pool=[[@{custom_pool}]]}} @{rollDices} "/>
-									</span>
-								</div>
-							</fieldset>
+						<div class="grid-span-6 grid-7 mar-right">
+							<span class="grid-span-4">Pool</span>
+							<span class="grid-span-2">
+								<input class="fill center line-height-18" name="attr_custom_edge_pool" type="number" value="0" min="0" max="25" step="1"/>
+							</span>
+							
+							<span class="grid-span-1 mar-right">
+								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Custom Pool}} {{pool=[[@{custom_edge_pool}]]}} @{rollDices} "/>
+							</span>
 						</div>
+						
 					</div>
 				</div>
 			
