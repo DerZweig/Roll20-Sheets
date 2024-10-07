@@ -1761,6 +1761,70 @@
 				<div class="grid-span-6 grid-6 bdr-all pad-all">
 					
 					<div class="grid-span-6 grid-6 pad-none">
+						<span class="grid-span-6 mar-bot"><h3>Custom Rolls</h3></span>
+						
+						<div class="grid-span-6 grid-7 mar-right">
+							<span class="grid-span-2">Attribute Roll</span>
+							<span class="grid-span-2">
+								<select name="attr_custom_roll_attribute1" class="center fill line-height-20">
+									<option value="0">None</option>
+									<option value="@{body}">Body</option>
+									<option value="@{agility}">Agility</option>
+									<option value="@{reaction}">Reaction</option>
+									<option value="@{strength}">Strength</option>
+									<option value="@{willpower}">Willpower</option>
+									<option value="@{logic}">Logic</option>
+									<option value="@{intuition}">Intuition</option>
+									<option value="@{charisma}">Charisma</option>
+									<option value="@{magic}">Magic</option>
+									<option value="@{resonance}">Resonance</option>
+								</select>
+							</span>
+							<span class="grid-span-2">
+								<select name="attr_custom_roll_attribute2" class="center fill line-height-20">
+									<option value="0">None</option>
+									<option value="@{body}">Body</option>
+									<option value="@{agility}">Agility</option>
+									<option value="@{reaction}">Reaction</option>
+									<option value="@{strength}">Strength</option>
+									<option value="@{willpower}">Willpower</option>
+									<option value="@{logic}">Logic</option>
+									<option value="@{intuition}">Intuition</option>
+									<option value="@{charisma}">Charisma</option>
+									<option value="@{magic}">Magic</option>
+									<option value="@{resonance}">Resonance</option>
+								</select>
+							</span>
+
+							<span class="grid-span-1 mar-right">
+								<input name="attr_custom_roll_attribute_pool" value="(@{custom_roll_attribute1} + @{custom_roll_attribute2} - @{wound_modifier} + @{global_modifier})" type="hidden" />
+								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Custom Attributes}} {{pool=[[floor( ( @{custom_roll_attribute_pool} + abs( @{custom_roll_attribute_pool}) ) / 2 )]]}} @{rollDices} "/>
+							</span>
+									
+						</div>
+						<div class="grid-span-6 grid-7 mar-right">
+							<span class="grid-span-4">Simple Pool</span>
+							<span class="grid-span-2">
+								<input class="fill center line-height-18" name="attr_custom_edge_pool" type="number" value="0" min="0" max="25" step="1"/>
+							</span>
+							
+							<span class="grid-span-1 mar-right">
+								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Custom Pool}} {{pool=[[@{custom_edge_pool}]]}} @{rollDices} "/>
+							</span>
+						</div>
+						
+						
+						<div class="grid-span-6 grid-7 mar-right">
+							<span class="grid-span-4"><label class="line-height-18" >Global Modifier</label></span>
+							
+							<span class="grid-span-2"><input class="fill center line-height-18" name="attr_global_modifier" type="number" value="0" step="1"/></span>
+							<span class="grid-span-1 mar-right">&nbsp;</span>
+						</div>
+						
+						
+					</div>
+					<div class="grid-span-6 grid-6 pad-none">
+					
 						<span class="grid-span-6 mar-bot"><h3>Condition Monitor</h3></span>
 						
 						<span class="grid-span-6 mar-bot"><label class="line-height-18" >Physical Damage</label></span>
@@ -1917,13 +1981,6 @@
 							
 							<span class="grid-span-6">&nbsp;</span>
 							
-							<div class="grid-span-6 grid-7 mar-right">
-								<span class="grid-span-4"><label class="line-height-18" >Global Pool Modifier</label></span>
-								
-								<span class="grid-span-1 settings-normal">&nbsp;</span>
-								<span class="grid-span-2"><input class="fill center line-height-18" name="attr_global_modifier" type="number" value="0" step="1"/></span>
-								<span class="grid-span-1 mar-right settings-editing">&nbsp;</span>
-							</div>
 							
 							<div class="grid-span-6 grid-7 mar-right">
 								<span class="grid-span-4"><label class="line-height-18" >Resist Damage</label></span>
@@ -2105,60 +2162,6 @@
 						
 					</div>
 				
-					<div class="grid-span-6 grid-6 pad-none">
-						<span class="grid-span-6 mar-bot"><h3>Custom Rolls</h3></span>
-						
-						<div class="grid-span-6 grid-7 mar-right">
-							<span class="grid-span-2">Attribute</span>
-							<span class="grid-span-2">
-								<select name="attr_custom_roll_attribute1" class="center fill line-height-20">
-									<option value="0">None</option>
-									<option value="@{body}">Body</option>
-									<option value="@{agility}">Agility</option>
-									<option value="@{reaction}">Reaction</option>
-									<option value="@{strength}">Strength</option>
-									<option value="@{willpower}">Willpower</option>
-									<option value="@{logic}">Logic</option>
-									<option value="@{intuition}">Intuition</option>
-									<option value="@{charisma}">Charisma</option>
-									<option value="@{magic}">Magic</option>
-									<option value="@{resonance}">Resonance</option>
-								</select>
-							</span>
-							<span class="grid-span-2">
-								<select name="attr_custom_roll_attribute2" class="center fill line-height-20">
-									<option value="0">None</option>
-									<option value="@{body}">Body</option>
-									<option value="@{agility}">Agility</option>
-									<option value="@{reaction}">Reaction</option>
-									<option value="@{strength}">Strength</option>
-									<option value="@{willpower}">Willpower</option>
-									<option value="@{logic}">Logic</option>
-									<option value="@{intuition}">Intuition</option>
-									<option value="@{charisma}">Charisma</option>
-									<option value="@{magic}">Magic</option>
-									<option value="@{resonance}">Resonance</option>
-								</select>
-							</span>
-
-							<span class="grid-span-1 mar-right">
-								<input name="attr_custom_roll_attribute_pool" value="(@{custom_roll_attribute1} + @{custom_roll_attribute2} - @{wound_modifier} + @{global_modifier})" type="hidden" />
-								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Custom Attributes}} {{pool=[[floor( ( @{custom_roll_attribute_pool} + abs( @{custom_roll_attribute_pool}) ) / 2 )]]}} @{rollDices} "/>
-							</span>
-									
-						</div>
-						<div class="grid-span-6 grid-7 mar-right">
-							<span class="grid-span-4">Pool</span>
-							<span class="grid-span-2">
-								<input class="fill center line-height-18" name="attr_custom_edge_pool" type="number" value="0" min="0" max="25" step="1"/>
-							</span>
-							
-							<span class="grid-span-1 mar-right">
-								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Custom Pool}} {{pool=[[@{custom_edge_pool}]]}} @{rollDices} "/>
-							</span>
-						</div>
-						
-					</div>
 				</div>
 			
 			</div>
