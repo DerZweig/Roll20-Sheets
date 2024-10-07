@@ -50,7 +50,6 @@
 		
 		<input type="hidden" name="attr_physical_wounds" value="0" />
 		<input type="hidden" name="attr_stun_wounds" value="0" />
-		<input type="hidden" name="attr_global_modifier" value="0" />
 		<input type="hidden" name="attr_wound_modifier" value="0" />
 		
 		<div class="mysheet-sheettab-header">
@@ -306,41 +305,39 @@
 							
 							<span class="grid-span-3 mar-bot">Composure</span>
 							<span class="grid-span-2 mar-bot">
-								<span class="center line-height-18 settings-normal" name="attr_composure"/>
+								<input name="attr_composure_pool" type="number" class="fill center line-height-18 settings-normal" value="floor( (@{composure} - @{wound_modifier} + @{global_modifier} + abs( @{composure} - @{wound_modifier} + @{global_modifier} ) ) / 2 )" disabled />
 								<input class="fill center line-height-18 settings-editing" name="attr_composure" type="number" value="0" min="0" step="1"/>
 							</span>
 							<span class="grid-span-1 mar-right">
-								<input name="attr_composure_pool" type="hidden" value="(@{composure} - @{wound_modifier} + @{global_modifier}))"/>
-								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Composure}} {{pool=[[floor((@{composure_pool} + abs(@{composure_pool} ))/2)]]}} @{rollDices} "/>
+								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Composure}} {{pool=[[@{composure_pool}]]}} @{rollDices} "/>
 							</span>
 							
 							<span class="grid-span-3 mar-bot">Insight</span>
 							<span class="grid-span-2 mar-bot">
-								<span class="center line-height-18 settings-normal" name="attr_insight"/>
+								<input name="attr_insight_pool" type="number" class="fill center line-height-18 settings-normal" value="floor( (@{insight} - @{wound_modifier} + @{global_modifier} + abs( @{insight} - @{wound_modifier} + @{global_modifier} ) ) / 2 )" disabled />
 								<input class="fill center line-height-18 settings-editing" name="attr_insight" type="number" value="0" min="0" step="1"/>
 							</span>
 							<span class="grid-span-1 mar-right">
-								<input name="attr_insight_pool" type="hidden" value="(@{insight} - @{wound_modifier} + @{global_modifier}))"/>
-								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Insight}} {{pool=[[floor((@{insight_pool} + abs(@{insight_pool}))/2)]]}} @{rollDices} "/>
+								
+								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Insight}} {{pool=[[@{insight_pool}]]}} @{rollDices} "/>
 							</span>
 							
 							<span class="grid-span-3 mar-bot">Memory</span>
 							<span class="grid-span-2 mar-bot">
-								<span class="center line-height-18 settings-normal" name="attr_memory"/>
+								<input name="attr_memory_pool" type="number" class="fill center line-height-18 settings-normal" value="floor( (@{memory} - @{wound_modifier} + @{global_modifier} + abs( @{memory} - @{wound_modifier} + @{global_modifier} ) ) / 2 )" disabled />
 								<input class="fill center line-height-18 settings-editing" name="attr_memory" type="number" value="0" min="0" step="1"/>
 							</span>
 							<span class="grid-span-1 mar-right">
-								<input name="attr_memory_pool" type="hidden" value="(@{memory}  - @{wound_modifier} + @{global_modifier}))"/>
-								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Memory}} {{pool=[[floor((@{memory_pool} + abs(@{memory_pool}))/2)]]}} @{rollDices} "/>
+								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Memory}} {{pool=[[@{memory_pool}]]}} @{rollDices} "/>
 							</span>
 							
 							<span class="grid-span-3 mar-bot">Lift / Carry</span>
 							<span class="grid-span-2 mar-bot">
-								<span class="center line-height-18 settings-normal" name="attr_carry"/>
+								<input name="attr_carry_pool" type="number" class="fill center line-height-18 settings-normal" value="floor( (@{carry} - @{wound_modifier} + @{global_modifier} + abs( @{carry} - @{wound_modifier} + @{global_modifier} ) ) / 2 )" disabled />
 								<input class="fill center line-height-18 settings-editing" name="attr_carry" type="number" value="0" min="0" step="1"/>
 							</span>
 							<span class="grid-span-1 mar-right">
-								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Lift / Carry}} {{pool=[[@{carry}]]}} @{rollDices} "/>
+								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Lift / Carry}} {{pool=[[@{carry_pool}]]}} @{rollDices} "/>
 							</span>
 						</div>
 					</div>
@@ -1766,14 +1763,6 @@
 					<div class="grid-span-6 grid-6 pad-none">
 						<span class="grid-span-6 mar-bot"><h3>Condition Monitor</h3></span>
 						
-						<div class="grid-span-6 grid-7 mar-right">
-							<span class="grid-span-4"><label class="line-height-18" >Global Pool Modifier</label></span>
-							
-							<span class="grid-span-1 settings-normal">&nbsp;</span>
-							<span class="grid-span-2"><input class="fill center line-height-18" name="attr_global_modifier" type="number" value="0" step="1"/></span>
-							<span class="grid-span-1 mar-right settings-editing">&nbsp;</span>
-						</div>
-						
 						<span class="grid-span-6 mar-bot"><label class="line-height-18" >Physical Damage</label></span>
 						<div class="grid-span-5 radio-squares mar-bot pad-none">
 							<input type="hidden" class="radio-max" name="attr_physical_health" value="10"/>
@@ -1929,18 +1918,26 @@
 							<span class="grid-span-6">&nbsp;</span>
 							
 							<div class="grid-span-6 grid-7 mar-right">
+								<span class="grid-span-4"><label class="line-height-18" >Global Pool Modifier</label></span>
+								
+								<span class="grid-span-1 settings-normal">&nbsp;</span>
+								<span class="grid-span-2"><input class="fill center line-height-18" name="attr_global_modifier" type="number" value="0" step="1"/></span>
+								<span class="grid-span-1 mar-right settings-editing">&nbsp;</span>
+							</div>
+							
+							<div class="grid-span-6 grid-7 mar-right">
 								<span class="grid-span-4"><label class="line-height-18" >Resist Damage</label></span>
 								
 								<span class="grid-span-1 settings-normal">&nbsp;</span>
 								<span class="grid-span-1 settings-normal">
-									<input class="fill center line-height-18" name="attr_soak_pool" type="number" value="@{soak}" disabled />
+									<input class="fill center line-height-18" name="attr_soak_pool" type="number" value="floor( (@{soak} + @{global_modifier} + abs( @{soak} + @{global_modifier} ) ) / 2)" disabled />
 								</span>
 								<span class="grid-span-2 settings-editing">
 									<input class="fill center line-height-18" name="attr_soak" type="number" value="0" min="0" step="1"/>
 								</span>
 								
 								<span class="grid-span-1 mar-right">
-									<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Resist Damage}} {{pool=[[@{soak}]]}} @{rollDices} "/>
+									<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Resist Damage}} {{pool=[[@{soak_pool}]]}} @{rollDices} "/>
 								</span>
 							</div>
 							
@@ -1955,23 +1952,23 @@
 								<span class="grid-span-1 mar-bot settings-normal toggle-true02">&nbsp;</span>
 								
 								<span class="grid-span-1 mar-bot settings-normal toggle-true01">
-									<input class="fill center line-height-18" name="attr_drain_pool" type="number" value="@{drain}" disabled />
+									<input class="fill center line-height-18" name="attr_drain_pool" type="number" value="floor( (@{drain} + @{global_modifier} + abs( @{drain} + @{global_modifier} ) ) / 2)" disabled />
 								</span>
 								<span class="grid-span-2 mar-bot settings-editing toggle-true01">
 									<input class="fill center line-height-18" name="attr_drain" type="number" value="0" min="0" step="1"/>
 								</span>
 								<span class="grid-span-1 mar-bot settings-normal toggle-true02">
-									<input class="fill center line-height-18" name="attr_drain_pool" type="number" value="@{drain}" disabled />
+									<input class="fill center line-height-18" name="attr_drain_pool" type="number" value="floor( (@{drain} + @{global_modifier} + abs( @{drain} + @{global_modifier} ) ) / 2)" disabled />
 								</span>
 								<span class="grid-span-2 mar-bot settings-editing toggle-true02">
 									<input class="fill center line-height-18" name="attr_drain" type="number" value="0" min="0" step="1"/>
 								</span>
 								
 								<span class="grid-span-1 mar-right toggle-true01">
-									<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Defense vs Drain}} {{pool=[[@{drain}]]}} @{rollDices} "/>
+									<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Defense vs Drain}} {{pool=[[@{drain_pool}]]}} @{rollDices} "/>
 								</span>
 								<span class="grid-span-1 mar-right toggle-true02">
-									<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Defense vs Drain}} {{pool=[[@{drain}]]}} @{rollDices} "/>
+									<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Defense vs Drain}} {{pool=[[@{drain_pool}]]}} @{rollDices} "/>
 								</span>
 							</div>
 					</div>
@@ -1983,14 +1980,14 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_regen_physical_pool" type="number" value="@{regen_physical}" disabled />
+								<input class="fill center line-height-18" name="attr_regen_physical_pool" type="number" value="floor( ( @{regen_physical} + @{global_modifier} + abs( @{regen_physical} + @{global_modifier} )) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_regen_physical" type="number" value="0" min="0" step="1"/>
 							</span>
 							
 							<span class="grid-span-1 mar-right">
-								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Regenerate Physical}} {{pool=[[@{regen_physical}]]}} @{rollDices} "/>
+								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Regenerate Physical}} {{pool=[[@{regen_physical_pool}]]}} @{rollDices} "/>
 							</span>
 						</div>
 						<div class="grid-span-6 grid-7 mar-right">
@@ -1998,14 +1995,14 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_regen_stun_pool" type="number" value="@{regen_stun}" disabled />
+								<input class="fill center line-height-18" name="attr_regen_stun_pool" type="number" value="floor( ( @{regen_stun} + @{global_modifier} + abs( @{regen_stun} + @{global_modifier} )) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_regen_stun" type="number" value="0" min="0" step="1"/>
 							</span>
 							
 							<span class="grid-span-1 mar-right">
-								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Regenerate Stun}} {{pool=[[@{regen_stun}]]}} @{rollDices} "/>
+								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Regenerate Stun}} {{pool=[[@{regen_stun_pool}]]}} @{rollDices} "/>
 							</span>
 						</div>
 						
@@ -2325,7 +2322,7 @@ on(allChanges, function()
 			const physicalDamage = parseInt(values['physical_damage']);
 			const physicalOffset = parseInt(values['physical_health_offset']);
 			const physicalStride = parseInt(values['physical_health_stride']);
-			const globalModifier = parseInt(values['attr_global_modifier']);
+			const globalModifier = parseInt(values['global_modifier']);
 			
 			const stunWounds = Math.max(Math.floor(Math.max(stunDamage - stunOffset, 0) / stunStride),0);
 			const physicalWounds = Math.max(Math.floor(Math.max(physicalDamage - physicalOffset, 0) / physicalStride),0);
@@ -2352,7 +2349,7 @@ on(allChanges, function()
 				const spec07Attr = parseInt(values[`repeating_skills_${skillId}_skill_spec07_rank`]);
 				const spec08Attr = parseInt(values[`repeating_skills_${skillId}_skill_spec08_rank`]);
 				
-				output[`repeating_skills_${skillId}_skill_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier, 0));
+				output[`repeating_skills_${skillId}_skill_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + globalModifier, 0));
 				output[`repeating_skills_${skillId}_skill_spec01_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + globalModifier + spec01Attr, 0));
 				output[`repeating_skills_${skillId}_skill_spec02_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + globalModifier + spec02Attr, 0));
 				output[`repeating_skills_${skillId}_skill_spec03_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + globalModifier + spec03Attr, 0));
