@@ -2180,108 +2180,118 @@
 			{{#rollTotal() pool 0}}
 			<tr>
 				<td></td>
-				<td>Failure</td>
+				<td>No dice rolled</td>
 			</tr>
 			{{/rollTotal() pool 0}}
-			{{#rollGreater() pool 0}}
+			
+			{{#rollGreater() pool 42}}
 			<tr>
 				<td></td>
-				<td>
-				{{r1}}
-				{{#rollGreater() pool 1}} {{r2}} {{/rollGreater() pool 1}}
-				{{#rollGreater() pool 2}} {{r3}} {{/rollGreater() pool 2}}
-				{{#rollGreater() pool 3}} {{r4}} {{/rollGreater() pool 3}}
-				{{#rollGreater() pool 4}} {{r5}} {{/rollGreater() pool 4}}
-				{{#rollGreater() pool 5}} {{r6}} {{/rollGreater() pool 5}}
-				<td>
+				<td>Too many dice rolled</td>
 			</tr>
-			{{/rollGreater() pool 0}}
-			 
-			{{#rollGreater() pool 6}} 
-			<tr>
-				<td></td>
-				<td>
-				{{r7}}
-				{{#rollGreater() pool 7}} {{r8}} {{/rollGreater() pool 7}}
-				{{#rollGreater() pool 8}} {{r9}} {{/rollGreater() pool 8}}
-				{{#rollGreater() pool 9}} {{r10}} {{/rollGreater() pool 9}}
-				{{#rollGreater() pool 10}} {{r11}} {{/rollGreater() pool 10}}
-				{{#rollGreater() pool 11}} {{r12}} {{/rollGreater() pool 11}}
-				<td>
-			</tr>
-			{{/rollGreater() pool 6}}
+			{{/rollGreater() pool 42}}
+			{{#^rollGreater() pool 42}}
+				{{#rollGreater() pool 0}}
+				<tr>
+					<td></td>
+					<td>
+					{{r1}}
+					{{#rollGreater() pool 1}} {{r2}} {{/rollGreater() pool 1}}
+					{{#rollGreater() pool 2}} {{r3}} {{/rollGreater() pool 2}}
+					{{#rollGreater() pool 3}} {{r4}} {{/rollGreater() pool 3}}
+					{{#rollGreater() pool 4}} {{r5}} {{/rollGreater() pool 4}}
+					{{#rollGreater() pool 5}} {{r6}} {{/rollGreater() pool 5}}
+					<td>
+				</tr>
+				{{/rollGreater() pool 0}}
+				 
+				{{#rollGreater() pool 6}} 
+				<tr>
+					<td></td>
+					<td>
+					{{r7}}
+					{{#rollGreater() pool 7}} {{r8}} {{/rollGreater() pool 7}}
+					{{#rollGreater() pool 8}} {{r9}} {{/rollGreater() pool 8}}
+					{{#rollGreater() pool 9}} {{r10}} {{/rollGreater() pool 9}}
+					{{#rollGreater() pool 10}} {{r11}} {{/rollGreater() pool 10}}
+					{{#rollGreater() pool 11}} {{r12}} {{/rollGreater() pool 11}}
+					<td>
+				</tr>
+				{{/rollGreater() pool 6}}
+				
+				
+				{{#rollGreater() pool 12}} 
+				<tr>
+					<td></td>
+					<td>
+					{{r13}} 
+					{{#rollGreater() pool 13}} {{r14}} {{/rollGreater() pool 13}}
+					{{#rollGreater() pool 14}} {{r15}} {{/rollGreater() pool 14}}
+					{{#rollGreater() pool 15}} {{r16}} {{/rollGreater() pool 15}}
+					{{#rollGreater() pool 16}} {{r17}} {{/rollGreater() pool 16}}
+					{{#rollGreater() pool 17}} {{r18}} {{/rollGreater() pool 17}}
+					<td>
+				</tr>
+				{{/rollGreater() pool 12}}
+				
+				
+				{{#rollGreater() pool 18}} 
+				<tr>
+					<td></td>
+					<td>
+					{{r19}} 
+					{{#rollGreater() pool 19}} {{r20}} {{/rollGreater() pool 19}}
+					{{#rollGreater() pool 20}} {{r21}} {{/rollGreater() pool 20}}
+					{{#rollGreater() pool 21}} {{r22}} {{/rollGreater() pool 21}}
+					{{#rollGreater() pool 22}} {{r23}} {{/rollGreater() pool 22}}
+					{{#rollGreater() pool 23}} {{r24}} {{/rollGreater() pool 23}}
+					<td>
+				</tr>
+				{{/rollGreater() pool 18}}
+				
+				{{#rollGreater() pool 24}}
+				<tr>
+					<td></td>
+					<td>
+					{{r25}} 
+					{{#rollGreater() pool 25}} {{r26}} {{/rollGreater() pool 25}}
+					{{#rollGreater() pool 26}} {{r27}} {{/rollGreater() pool 26}}
+					{{#rollGreater() pool 27}} {{r28}} {{/rollGreater() pool 27}}
+					{{#rollGreater() pool 28}} {{r29}} {{/rollGreater() pool 28}}
+					{{#rollGreater() pool 29}} {{r30}} {{/rollGreater() pool 29}}
+					<td>
+				</tr>
+				{{/rollGreater() pool 24}}
+				
+				{{#rollGreater() pool 30}}
+				<tr>
+					<td></td>
+					<td>
+					{{r31}} 
+					{{#rollGreater() pool 31}} {{r32}} {{/rollGreater() pool 31}}
+					{{#rollGreater() pool 32}} {{r33}} {{/rollGreater() pool 32}}
+					{{#rollGreater() pool 33}} {{r34}} {{/rollGreater() pool 33}}
+					{{#rollGreater() pool 34}} {{r35}} {{/rollGreater() pool 34}}
+					{{#rollGreater() pool 35}} {{r36}} {{/rollGreater() pool 35}}
+					<td>
+				</tr>
+				{{/rollGreater() pool 30}}
+				
+				{{#rollGreater() pool 36}}
+				<tr>
+					<td></td>
+					<td>
+					{{r37}} 
+					{{#rollGreater() pool 37}} {{r38}} {{/rollGreater() pool 37}}
+					{{#rollGreater() pool 38}} {{r39}} {{/rollGreater() pool 38}}
+					{{#rollGreater() pool 39}} {{r40}} {{/rollGreater() pool 39}}
+					{{#rollGreater() pool 40}} {{r41}} {{/rollGreater() pool 40}}
+					{{#rollGreater() pool 41}} {{r42}} {{/rollGreater() pool 41}}
+					<td>
+				</tr>
+				{{/rollGreater() pool 36}}
 			
-			
-			{{#rollGreater() pool 12}} 
-			<tr>
-				<td></td>
-				<td>
-				{{r13}} 
-				{{#rollGreater() pool 13}} {{r14}} {{/rollGreater() pool 13}}
-				{{#rollGreater() pool 14}} {{r15}} {{/rollGreater() pool 14}}
-				{{#rollGreater() pool 15}} {{r16}} {{/rollGreater() pool 15}}
-				{{#rollGreater() pool 16}} {{r17}} {{/rollGreater() pool 16}}
-				{{#rollGreater() pool 17}} {{r18}} {{/rollGreater() pool 17}}
-				<td>
-			</tr>
-			{{/rollGreater() pool 12}}
-			
-			
-			{{#rollGreater() pool 18}} 
-			<tr>
-				<td></td>
-				<td>
-				{{r19}} 
-				{{#rollGreater() pool 19}} {{r20}} {{/rollGreater() pool 19}}
-				{{#rollGreater() pool 20}} {{r21}} {{/rollGreater() pool 20}}
-				{{#rollGreater() pool 21}} {{r22}} {{/rollGreater() pool 21}}
-				{{#rollGreater() pool 22}} {{r23}} {{/rollGreater() pool 22}}
-				{{#rollGreater() pool 23}} {{r24}} {{/rollGreater() pool 23}}
-				<td>
-			</tr>
-			{{/rollGreater() pool 18}}
-			
-			{{#rollGreater() pool 24}}
-			<tr>
-				<td></td>
-				<td>
-				{{r25}} 
-				{{#rollGreater() pool 25}} {{r26}} {{/rollGreater() pool 25}}
-				{{#rollGreater() pool 26}} {{r27}} {{/rollGreater() pool 26}}
-				{{#rollGreater() pool 27}} {{r28}} {{/rollGreater() pool 27}}
-				{{#rollGreater() pool 28}} {{r29}} {{/rollGreater() pool 28}}
-				{{#rollGreater() pool 29}} {{r30}} {{/rollGreater() pool 29}}
-				<td>
-			</tr>
-			{{/rollGreater() pool 24}}
-			
-			{{#rollGreater() pool 30}}
-			<tr>
-				<td></td>
-				<td>
-				{{r31}} 
-				{{#rollGreater() pool 31}} {{r32}} {{/rollGreater() pool 31}}
-				{{#rollGreater() pool 32}} {{r33}} {{/rollGreater() pool 32}}
-				{{#rollGreater() pool 33}} {{r34}} {{/rollGreater() pool 33}}
-				{{#rollGreater() pool 34}} {{r35}} {{/rollGreater() pool 34}}
-				{{#rollGreater() pool 35}} {{r36}} {{/rollGreater() pool 35}}
-				<td>
-			</tr>
-			{{/rollGreater() pool 30}}
-			
-			{{#rollGreater() pool 36}}
-			<tr>
-				<td></td>
-				<td>
-				{{r37}} 
-				{{#rollGreater() pool 37}} {{r38}} {{/rollGreater() pool 37}}
-				{{#rollGreater() pool 38}} {{r39}} {{/rollGreater() pool 38}}
-				{{#rollGreater() pool 39}} {{r40}} {{/rollGreater() pool 39}}
-				{{#rollGreater() pool 40}} {{r41}} {{/rollGreater() pool 40}}
-				{{#rollGreater() pool 41}} {{r42}} {{/rollGreater() pool 41}}
-				<td>
-			</tr>
-			{{/rollGreater() pool 36}}
+			{{/^rollGreater() pool 42}}
 		{{/rollname}}
 			
 		</table>
