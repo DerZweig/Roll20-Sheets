@@ -380,10 +380,159 @@
 							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10">Rank</label></span>  
 							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10">Attribute</label></span>  
 							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10">Pool</label></span> 
+							<span class="grid-span-1 mar-bot settings-editing"><label class="font-size-sm line-height-10">Details</label></span> 
 						</div>
 						
 						<div class="grid-span-10 grid-10 pad-all">
-							<div class="grid-span-10 grid-16 pad-none">
+							<div class="grid-span-10 grid-16 pad-none settings-normal">
+								<fieldset class="repeating_skills">
+									<div class="grid-span-16 grid-11">
+										<input name="attr_skill_base_pool" type="hidden" value="(@{skill_rank} - (1 - ceil(@{skill_rank} / 99)) + [[@{skill_attribute}]] - (@{woundModifier}))"/>
+
+										<input name="attr_skill_spec01_show" type="hidden" value="0" class="toggle-flag01"/>
+										<input name="attr_skill_spec02_show" type="hidden" value="0" class="toggle-flag02"/>
+										<input name="attr_skill_spec03_show" type="hidden" value="0" class="toggle-flag03"/>
+										<input name="attr_skill_spec04_show" type="hidden" value="0" class="toggle-flag04"/>
+										<input name="attr_skill_spec05_show" type="hidden" value="0" class="toggle-flag05"/>
+										<input name="attr_skill_spec06_show" type="hidden" value="0" class="toggle-flag06"/>
+										<input name="attr_skill_spec07_show" type="hidden" value="0" class="toggle-flag07"/>
+										<input name="attr_skill_spec08_show" type="hidden" value="0" class="toggle-flag08"/>
+										
+										<input name="attr_skill_quick_power_show" type="hidden" value="0"/>
+										<input name="attr_skill_quick_matrix_show" type="hidden" value="0"/>
+										<input name="attr_skill_quick_vehicle_show" type="hidden" value="0"/>
+										<input name="attr_skill_quick_weapons_show" type="hidden" value="0"/>
+										
+										<span class="grid-span-4">
+											<span name="attr_skill_name"></span>
+										</span>	
+										
+										<span class="grid-span-2">
+											<span class="center line-height-18" name="attr_skill_rank"/>
+										</span>	
+										
+										<span class="grid-span-2">
+											<select name="attr_skill_attribute" class="center fill line-height-20">
+												<option value="0">None</option>
+												<option value="@{body}">Body</option>
+												<option value="@{agility}">Agility</option>
+												<option value="@{reaction}">Reaction</option>
+												<option value="@{strength}">Strength</option>
+												<option value="@{willpower}">Willpower</option>
+												<option value="@{logic}">Logic</option>
+												<option value="@{intuition}">Intuition</option>
+												<option value="@{charisma}">Charisma</option>
+												<option value="@{magic}">Magic</option>
+												<option value="@{resonance}">Resonance</option>
+											</select>
+										</span>
+										
+										<span class="grid-span-1">
+											<input class="fill center line-height-20" name="attr_skill_pool" type="number" value="[[floor((@{skill_base_pool} + abs(@{skill_base_pool})) / 2)]]" disabled />
+										</span>
+										<span class="grid-span-1 mar-right">
+											<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name}}} {{pool=[[floor((@{skill_base_pool} + abs(@{skill_base_pool}))/2)]]}} @{rollDices}"/>
+										</span>
+										<span class="grid-span-1 mar-bot">&nbsp;</span>
+
+										<div class="grid-span-11 toggle-true01 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec01_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec01_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec01_rank} + abs(@{skill_base_pool} + @{skill_spec01_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec01_name}}} {{pool=[[floor((@{skill_spec01_pool} + abs(@{skill_spec01_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										
+										<div class="grid-span-11 toggle-true02 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec02_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec02_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec02_rank} + abs(@{skill_base_pool} + @{skill_spec02_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec02_name}}} {{pool=[[floor((@{skill_spec02_pool} + abs(@{skill_spec02_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										
+										<div class="grid-span-11 toggle-true03 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec03_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec03_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec03_rank} + abs(@{skill_base_pool} + @{skill_spec03_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec03_name}}} {{pool=[[floor((@{skill_spec03_pool} + abs(@{skill_spec03_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11 toggle-true04 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec04_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec04_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec04_rank} + abs(@{skill_base_pool} + @{skill_spec04_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec04_name}}} {{pool=[[floor((@{skill_spec04_pool} + abs(@{skill_spec04_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11 toggle-true05 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec05_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec05_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec05_rank} + abs(@{skill_base_pool} + @{skill_spec05_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec05_name}}} {{pool=[[floor((@{skill_spec05_pool} + abs(@{skill_spec05_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11 toggle-true06 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec06_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec06_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec06_rank} + abs(@{skill_base_pool} + @{skill_spec06_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec06_name}}} {{pool=[[floor((@{skill_spec06_pool} + abs(@{skill_spec06_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+											
+										<div class="grid-span-11 toggle-true07 grid-11 pad-none mar-bot">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec07_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec07_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec07_rank} + abs(@{skill_base_pool} + @{skill_spec07_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec07_name}}} {{pool=[[floor((@{skill_spec07_pool} + abs(@{skill_spec07_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										<div class="grid-span-11 toggle-true08 grid-11 pad-none mar-bot">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec08_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec08_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec08_rank} + abs(@{skill_base_pool} + @{skill_spec08_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec08_name}}} {{pool=[[floor((@{skill_spec08_pool} + abs(@{skill_spec08_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>										
+									</div>
+								</fieldset>
+							</div>
+							<div class="grid-span-10 grid-16 pad-none settings-editing">	
 								<fieldset class="repeating_skills">
 									<div class="grid-span-16 grid-11">
 										<input name="attr_skill_base_pool" type="hidden" value="(@{skill_rank} - (1 - ceil(@{skill_rank} / 99)) + [[@{skill_attribute}]] - (@{woundModifier}))"/>
@@ -395,15 +544,20 @@
 										<input name="attr_skill_spec06_show" type="hidden" value="0" class="toggle-flag06"/>
 										<input name="attr_skill_spec07_show" type="hidden" value="0" class="toggle-flag07"/>
 										<input name="attr_skill_spec08_show" type="hidden" value="0" class="toggle-flag08"/>
+										<input name="attr_skill_details_show" type="hidden" value="0" class="toggle-flag10"/>
+										
+										<input name="attr_skill_quick_power_show" type="hidden" value="0"/>
+										<input name="attr_skill_quick_matrix_show" type="hidden" value="0"/>
+										<input name="attr_skill_quick_vehicle_show" type="hidden" value="0"/>
+										<input name="attr_skill_quick_weapons_show" type="hidden" value="0"/>
+
 										
 										<span class="grid-span-4">
-											<span name="attr_skill_name" class="settings-normal"></span>
-											<input class="fill line-height-20 settings-editing" name="attr_skill_name" type="text"/>
+											<input class="fill line-height-20" name="attr_skill_name" type="text"/>
 										</span>	
 										
 										<span class="grid-span-2">
-											<span class="center line-height-18 settings-normal" name="attr_skill_rank"/>
-											<input class="fill center line-height-18 settings-editing" name="attr_skill_rank" type="number" value="0" min="0" step="1" max="10"/>
+											<input class="fill center line-height-18" name="attr_skill_rank" type="number" value="0" min="0" step="1" max="10"/>
 										</span>	
 										
 										<span class="grid-span-2">
@@ -427,16 +581,33 @@
 										<span class="grid-span-1 mar-right">
 											<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name}}} {{pool=[[floor((@{skill_base_pool} + abs(@{skill_base_pool}))/2)]]}} @{rollDices}"/>
 										</span>
-										<span class="grid-span-1 mar-bot">&nbsp;</span>
+										<span class="grid-span-1 mar-bot">
+											<input class="fill center line-height-20" name="attr_skill_details_show" type="checkbox" />
+										</span>
 	
-										<div class="grid-span-11 grid-11 settings-editing pad-none mar-top pad-left pad-right">
+										<div class="grid-span-11 grid-11 pad-none mar-top pad-left pad-right toggle-true10">
+											<span class="grid-span-11 mar-bot"><label class="font-size-sm line-height-10">Quick Access</label></span>  
+										</div>
+										
+										<div class="grid-span-11 grid-8 toggle-true10">
+											<span class="grid-span-2 fill center">Weapons</span>
+											<span class="grid-span-2 fill center">Powers</span>
+											<span class="grid-span-2 fill center">Matrix</span>
+											<span class="grid-span-2 fill center">Verhicles</span>
+											<input class="grid-span-2 fill center line-height-20" name="attr_skill_quick_weapons_show" type="checkbox" />
+											<input class="grid-span-2 fill center line-height-20" name="attr_skill_quick_power_show" type="checkbox" />
+											<input class="grid-span-2 fill center line-height-20" name="attr_skill_quick_matrix_show" type="checkbox" />
+											<input class="grid-span-2 fill center line-height-20" name="attr_skill_quick_vehicle_show" type="checkbox" />
+										</div>
+	
+										<div class="grid-span-11 grid-11 pad-none mar-top pad-left pad-right toggle-true10">
 											<span class="grid-span-11 mar-bot"><label class="font-size-sm line-height-10">Specialization & Modifiers</label></span>  
 										</div>
 										
-										<div class="settings-editing grid-span-11 grid-11">
+										<div class="grid-span-11 grid-11 toggle-true10">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec01_show" type="checkbox"/></span>
-											<span class="grid-span-3"><input class="fill line-height-20 settings-editing" name="attr_skill_spec01_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true01"><input class="fill center line-height-18 settings-editing" name="attr_skill_spec01_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec01_name" type="text"/></span>	
+											<span class="grid-span-2 toggle-true01"><input class="fill center line-height-18" name="attr_skill_spec01_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true01">
 												<input class="fill center line-height-20" name="attr_skill_spec01_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec01_rank} + abs(@{skill_base_pool} + @{skill_spec01_rank})) / 2)]]" disabled />
@@ -446,10 +617,10 @@
 											</span>
 										</div>
 										
-										<div class="settings-editing grid-span-11 grid-11 toggle-true01">
+										<div class="grid-span-11 grid-11 toggle-true10 toggle-true01">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec02_show" type="checkbox"/></span>
-											<span class="grid-span-3"><input class="fill line-height-20 settings-editing" name="attr_skill_spec02_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true02"><input class="fill center line-height-18 settings-editing" name="attr_skill_spec02_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec02_name" type="text"/></span>	
+											<span class="grid-span-2 toggle-true02"><input class="fill center line-height-18" name="attr_skill_spec02_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true02">
 												<input class="fill center line-height-20" name="attr_skill_spec02_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec02_rank} + abs(@{skill_base_pool} + @{skill_spec02_rank})) / 2)]]" disabled />
@@ -459,10 +630,10 @@
 											</span>
 										</div>
 										
-										<div class="settings-editing grid-span-11 grid-11 toggle-true02">
+										<div class="grid-span-11 grid-11 toggle-true10 toggle-true02">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec03_show" type="checkbox"/></span>
-											<span class="grid-span-3"><input class="fill line-height-20 settings-editing" name="attr_skill_spec03_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true03"><input class="fill center line-height-18 settings-editing" name="attr_skill_spec03_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec03_name" type="text"/></span>	
+											<span class="grid-span-2 toggle-true03"><input class="fill center line-height-18" name="attr_skill_spec03_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true03">
 												<input class="fill center line-height-20" name="attr_skill_spec03_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec03_rank} + abs(@{skill_base_pool} + @{skill_spec03_rank})) / 2)]]" disabled />
@@ -472,10 +643,10 @@
 											</span>
 										</div>
 										
-										<div class="settings-editing grid-span-11 grid-11 toggle-true03">
+										<div class="grid-span-11 grid-11 toggle-true10 toggle-true03">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec04_show" type="checkbox"/></span>
-											<span class="grid-span-3"><input class="fill line-height-20 settings-editing" name="attr_skill_spec04_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true04"><input class="fill center line-height-18 settings-editing" name="attr_skill_spec04_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec04_name" type="text"/></span>	
+											<span class="grid-span-2 toggle-true04"><input class="fill center line-height-18" name="attr_skill_spec04_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true04">
 												<input class="fill center line-height-20" name="attr_skill_spec04_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec04_rank} + abs(@{skill_base_pool} + @{skill_spec04_rank})) / 2)]]" disabled />
@@ -485,10 +656,10 @@
 											</span>
 										</div>	
 
-										<div class="settings-editing grid-span-11 grid-11 toggle-true04">
+										<div class="grid-span-11 grid-11 toggle-true10 toggle-true04">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec05_show" type="checkbox"/></span>
-											<span class="grid-span-3"><input class="fill line-height-20 settings-editing" name="attr_skill_spec05_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true05"><input class="fill center line-height-18 settings-editing" name="attr_skill_spec05_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec05_name" type="text"/></span>	
+											<span class="grid-span-2 toggle-true05"><input class="fill center line-height-18" name="attr_skill_spec05_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true05">
 												<input class="fill center line-height-20" name="attr_skill_spec05_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec05_rank} + abs(@{skill_base_pool} + @{skill_spec05_rank})) / 2)]]" disabled />
@@ -498,10 +669,10 @@
 											</span>
 										</div>		
 
-										<div class="settings-editing grid-span-11 grid-11 toggle-true05">
+										<div class="grid-span-11 grid-11 toggle-true10 toggle-true05">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec06_show" type="checkbox"/></span>
-											<span class="grid-span-3"><input class="fill line-height-20 settings-editing" name="attr_skill_spec06_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true06"><input class="fill center line-height-18 settings-editing" name="attr_skill_spec06_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec06_name" type="text"/></span>	
+											<span class="grid-span-2 toggle-true06"><input class="fill center line-height-18" name="attr_skill_spec06_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true06">
 												<input class="fill center line-height-20" name="attr_skill_spec06_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec06_rank} + abs(@{skill_base_pool} + @{skill_spec06_rank})) / 2)]]" disabled />
@@ -511,10 +682,10 @@
 											</span>
 										</div>		
 
-										<div class="settings-editing grid-span-11 grid-11 toggle-true06">
+										<div class="grid-span-11 grid-11 toggle-true10 toggle-true06">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec07_show" type="checkbox"/></span>
-											<span class="grid-span-3"><input class="fill line-height-20 settings-editing" name="attr_skill_spec07_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true07"><input class="fill center line-height-18 settings-editing" name="attr_skill_spec07_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec07_name" type="text"/></span>	
+											<span class="grid-span-2 toggle-true07"><input class="fill center line-height-18" name="attr_skill_spec07_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true07">
 												<input class="fill center line-height-20" name="attr_skill_spec07_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec07_rank} + abs(@{skill_base_pool} + @{skill_spec07_rank})) / 2)]]" disabled />
@@ -524,10 +695,10 @@
 											</span>
 										</div>	
 
-										<div class="settings-editing grid-span-11 grid-11 toggle-true07">
+										<div class="grid-span-11 grid-11 toggle-true10 toggle-true07">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec08_show" type="checkbox"/></span>
-											<span class="grid-span-3"><input class="fill line-height-20 settings-editing" name="attr_skill_spec08_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true08"><input class="fill center line-height-18 settings-editing" name="attr_skill_spec08_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec08_name" type="text"/></span>	
+											<span class="grid-span-2 toggle-true08"><input class="fill center line-height-18" name="attr_skill_spec08_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true08">
 												<input class="fill center line-height-20" name="attr_skill_spec08_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec08_rank} + abs(@{skill_base_pool} + @{skill_spec08_rank})) / 2)]]" disabled />
@@ -536,106 +707,9 @@
 												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec08_name}}} {{pool=[[floor((@{skill_spec08_pool} + abs(@{skill_spec08_pool}))/2)]]}} @{rollDices} "/>
 											</span>
 										</div>	
-
-
-										<div class="settings-normal grid-span-11 toggle-true01 grid-11">
-											<span class="grid-span-1">&nbsp;</span>
-											<span class="grid-span-4"><span name="attr_skill_spec01_name" type="text"/></span>	
-											<span class="grid-span-3">&nbsp;</span>
-											<span class="grid-span-1">
-												<input class="fill center line-height-20" name="attr_skill_spec01_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec01_rank} + abs(@{skill_base_pool} + @{skill_spec01_rank})) / 2)]]" disabled />
-											</span>
-											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec01_name}}} {{pool=[[floor((@{skill_spec01_pool} + abs(@{skill_spec01_pool}))/2)]]}} @{rollDices} "/>
-											</span>
-										</div>
-										
-										<div class="settings-normal grid-span-11 toggle-true02 grid-11">
-											<span class="grid-span-1">&nbsp;</span>
-											<span class="grid-span-4"><span name="attr_skill_spec02_name" type="text"/></span>	
-											<span class="grid-span-3">&nbsp;</span>
-											<span class="grid-span-1">
-												<input class="fill center line-height-20" name="attr_skill_spec02_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec02_rank} + abs(@{skill_base_pool} + @{skill_spec02_rank})) / 2)]]" disabled />
-											</span>
-											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec02_name}}} {{pool=[[floor((@{skill_spec02_pool} + abs(@{skill_spec02_pool}))/2)]]}} @{rollDices} "/>
-											</span>
-										</div>
-										
-										<div class="settings-normal grid-span-11 toggle-true03 grid-11">
-											<span class="grid-span-1">&nbsp;</span>
-											<span class="grid-span-4"><span name="attr_skill_spec03_name" type="text"/></span>	
-											<span class="grid-span-3">&nbsp;</span>
-											<span class="grid-span-1">
-												<input class="fill center line-height-20" name="attr_skill_spec03_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec03_rank} + abs(@{skill_base_pool} + @{skill_spec03_rank})) / 2)]]" disabled />
-											</span>
-											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec03_name}}} {{pool=[[floor((@{skill_spec03_pool} + abs(@{skill_spec03_pool}))/2)]]}} @{rollDices} "/>
-											</span>
-										</div>
-
-										<div class="settings-normal grid-span-11 toggle-true04 grid-11">
-											<span class="grid-span-1">&nbsp;</span>
-											<span class="grid-span-4"><span name="attr_skill_spec04_name" type="text"/></span>	
-											<span class="grid-span-3">&nbsp;</span>
-											<span class="grid-span-1">
-												<input class="fill center line-height-20" name="attr_skill_spec04_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec04_rank} + abs(@{skill_base_pool} + @{skill_spec04_rank})) / 2)]]" disabled />
-											</span>
-											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec04_name}}} {{pool=[[floor((@{skill_spec04_pool} + abs(@{skill_spec04_pool}))/2)]]}} @{rollDices} "/>
-											</span>
-										</div>
-
-										<div class="settings-normal grid-span-11 toggle-true05 grid-11">
-											<span class="grid-span-1">&nbsp;</span>
-											<span class="grid-span-4"><span name="attr_skill_spec05_name" type="text"/></span>	
-											<span class="grid-span-3">&nbsp;</span>
-											<span class="grid-span-1">
-												<input class="fill center line-height-20" name="attr_skill_spec05_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec05_rank} + abs(@{skill_base_pool} + @{skill_spec05_rank})) / 2)]]" disabled />
-											</span>
-											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec05_name}}} {{pool=[[floor((@{skill_spec05_pool} + abs(@{skill_spec05_pool}))/2)]]}} @{rollDices} "/>
-											</span>
-										</div>
-
-										<div class="settings-normal grid-span-11 toggle-true06 grid-11">
-											<span class="grid-span-1">&nbsp;</span>
-											<span class="grid-span-4"><span name="attr_skill_spec06_name" type="text"/></span>	
-											<span class="grid-span-3">&nbsp;</span>
-											<span class="grid-span-1">
-												<input class="fill center line-height-20" name="attr_skill_spec06_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec06_rank} + abs(@{skill_base_pool} + @{skill_spec06_rank})) / 2)]]" disabled />
-											</span>
-											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec06_name}}} {{pool=[[floor((@{skill_spec06_pool} + abs(@{skill_spec06_pool}))/2)]]}} @{rollDices} "/>
-											</span>
-										</div>
-											
-										<div class="settings-normal grid-span-11 toggle-true07 grid-11">
-											<span class="grid-span-1">&nbsp;</span>
-											<span class="grid-span-4"><span name="attr_skill_spec07_name" type="text"/></span>	
-											<span class="grid-span-3">&nbsp;</span>
-											<span class="grid-span-1">
-												<input class="fill center line-height-20" name="attr_skill_spec07_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec07_rank} + abs(@{skill_base_pool} + @{skill_spec07_rank})) / 2)]]" disabled />
-											</span>
-											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec07_name}}} {{pool=[[floor((@{skill_spec07_pool} + abs(@{skill_spec07_pool}))/2)]]}} @{rollDices} "/>
-											</span>
-										</div>
-										<div class="settings-normal grid-span-11 toggle-true08 grid-11">
-											<span class="grid-span-1">&nbsp;</span>
-											<span class="grid-span-4"><span name="attr_skill_spec08_name" type="text"/></span>	
-											<span class="grid-span-3">&nbsp;</span>
-											<span class="grid-span-1">
-												<input class="fill center line-height-20" name="attr_skill_spec08_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec08_rank} + abs(@{skill_base_pool} + @{skill_spec08_rank})) / 2)]]" disabled />
-											</span>
-											<span class="grid-span-1 mar-right">
-												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec08_name}}} {{pool=[[floor((@{skill_spec08_pool} + abs(@{skill_spec08_pool}))/2)]]}} @{rollDices} "/>
-											</span>
-										</div>										
 									</div>
 								</fieldset>
 							</div>
-							
 							
 						</div>
 					</div>
@@ -644,6 +718,151 @@
 				<div class="grid-span-10 grid-10 mysheet-sheettab2-body">
 					<div class="grid-span-10 grid-10 bdr-all">
 						<span class="grid-span-10 pad-all"><h3>Powers</h3></span>
+							<div class="grid-span-10 grid-16 pad-all no-rep-control">
+								<fieldset class="repeating_skills">
+									
+									<input name="attr_skill_quick_power_show" type="hidden" value="0" class="toggle-flag10"/>
+
+									<div class="grid-span-16 grid-11 toggle-true10">
+										<input name="attr_skill_base_pool" type="hidden" value="(@{skill_rank} - (1 - ceil(@{skill_rank} / 99)) + [[@{skill_attribute}]] - (@{woundModifier}))"/>
+
+										<input name="attr_skill_spec01_show" type="hidden" value="0" class="toggle-flag01"/>
+										<input name="attr_skill_spec02_show" type="hidden" value="0" class="toggle-flag02"/>
+										<input name="attr_skill_spec03_show" type="hidden" value="0" class="toggle-flag03"/>
+										<input name="attr_skill_spec04_show" type="hidden" value="0" class="toggle-flag04"/>
+										<input name="attr_skill_spec05_show" type="hidden" value="0" class="toggle-flag05"/>
+										<input name="attr_skill_spec06_show" type="hidden" value="0" class="toggle-flag06"/>
+										<input name="attr_skill_spec07_show" type="hidden" value="0" class="toggle-flag07"/>
+										<input name="attr_skill_spec08_show" type="hidden" value="0" class="toggle-flag08"/>
+										<span class="grid-span-4">
+											<span name="attr_skill_name"></span>
+										</span>	
+										
+										<span class="grid-span-2">
+											<span class="center line-height-18" name="attr_skill_rank"/>
+										</span>	
+										
+										<span class="grid-span-2">
+											<select name="attr_skill_attribute" class="center fill line-height-20">
+												<option value="0">None</option>
+												<option value="@{body}">Body</option>
+												<option value="@{agility}">Agility</option>
+												<option value="@{reaction}">Reaction</option>
+												<option value="@{strength}">Strength</option>
+												<option value="@{willpower}">Willpower</option>
+												<option value="@{logic}">Logic</option>
+												<option value="@{intuition}">Intuition</option>
+												<option value="@{charisma}">Charisma</option>
+												<option value="@{magic}">Magic</option>
+												<option value="@{resonance}">Resonance</option>
+											</select>
+										</span>
+										
+										<span class="grid-span-1">
+											<input class="fill center line-height-20" name="attr_skill_pool" type="number" value="[[floor((@{skill_base_pool} + abs(@{skill_base_pool})) / 2)]]" disabled />
+										</span>
+										<span class="grid-span-1 mar-right">
+											<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name}}} {{pool=[[floor((@{skill_base_pool} + abs(@{skill_base_pool}))/2)]]}} @{rollDices}"/>
+										</span>
+										<span class="grid-span-1 mar-bot">&nbsp;</span>
+
+										<div class="grid-span-11  toggle-true01 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec01_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec01_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec01_rank} + abs(@{skill_base_pool} + @{skill_spec01_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec01_name}}} {{pool=[[floor((@{skill_spec01_pool} + abs(@{skill_spec01_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										
+										<div class="grid-span-11  toggle-true02 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec02_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec02_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec02_rank} + abs(@{skill_base_pool} + @{skill_spec02_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec02_name}}} {{pool=[[floor((@{skill_spec02_pool} + abs(@{skill_spec02_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										
+										<div class="grid-span-11  toggle-true03 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec03_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec03_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec03_rank} + abs(@{skill_base_pool} + @{skill_spec03_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec03_name}}} {{pool=[[floor((@{skill_spec03_pool} + abs(@{skill_spec03_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11  toggle-true04 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec04_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec04_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec04_rank} + abs(@{skill_base_pool} + @{skill_spec04_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec04_name}}} {{pool=[[floor((@{skill_spec04_pool} + abs(@{skill_spec04_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11  toggle-true05 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec05_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec05_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec05_rank} + abs(@{skill_base_pool} + @{skill_spec05_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec05_name}}} {{pool=[[floor((@{skill_spec05_pool} + abs(@{skill_spec05_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11  toggle-true06 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec06_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec06_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec06_rank} + abs(@{skill_base_pool} + @{skill_spec06_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec06_name}}} {{pool=[[floor((@{skill_spec06_pool} + abs(@{skill_spec06_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+											
+										<div class="grid-span-11  toggle-true07 grid-11 pad-none mar-bot">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec07_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec07_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec07_rank} + abs(@{skill_base_pool} + @{skill_spec07_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec07_name}}} {{pool=[[floor((@{skill_spec07_pool} + abs(@{skill_spec07_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										<div class="grid-span-11  toggle-true08 grid-11 pad-none mar-bot">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec08_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec08_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec08_rank} + abs(@{skill_base_pool} + @{skill_spec08_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec08_name}}} {{pool=[[floor((@{skill_spec08_pool} + abs(@{skill_spec08_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>										
+									</div>
+								</fieldset>
+							</div>
 						<div class="grid-span-10 grid-16 pad-all">
 							<fieldset class="repeating_powers">
 								<div class="grid-span-16 grid-14 bdr-all mar-bot pad-all">
@@ -705,8 +924,152 @@
 				
 				<div class="grid-span-10 grid-10 mysheet-sheettab4-body">
 					<div class="grid-span-10 grid-10 bdr-all">
+						
 						<span class="grid-span-10 pad-all"><h3>Weapons</h3></span>
-					
+							<div class="grid-span-10 grid-16 pad-all no-rep-control">
+								<fieldset class="repeating_skills">
+									<input name="attr_skill_quick_weapons_show" type="hidden" value="0" class="toggle-flag10"/>
+
+									<div class="grid-span-16 grid-11 toggle-true10">
+										<input name="attr_skill_base_pool" type="hidden" value="(@{skill_rank} - (1 - ceil(@{skill_rank} / 99)) + [[@{skill_attribute}]] - (@{woundModifier}))"/>
+
+										<input name="attr_skill_spec01_show" type="hidden" value="0" class="toggle-flag01"/>
+										<input name="attr_skill_spec02_show" type="hidden" value="0" class="toggle-flag02"/>
+										<input name="attr_skill_spec03_show" type="hidden" value="0" class="toggle-flag03"/>
+										<input name="attr_skill_spec04_show" type="hidden" value="0" class="toggle-flag04"/>
+										<input name="attr_skill_spec05_show" type="hidden" value="0" class="toggle-flag05"/>
+										<input name="attr_skill_spec06_show" type="hidden" value="0" class="toggle-flag06"/>
+										<input name="attr_skill_spec07_show" type="hidden" value="0" class="toggle-flag07"/>
+										<input name="attr_skill_spec08_show" type="hidden" value="0" class="toggle-flag08"/>
+										<span class="grid-span-4">
+											<span name="attr_skill_name"></span>
+										</span>	
+										
+										<span class="grid-span-2">
+											<span class="center line-height-18" name="attr_skill_rank"/>
+										</span>	
+										
+										<span class="grid-span-2">
+											<select name="attr_skill_attribute" class="center fill line-height-20">
+												<option value="0">None</option>
+												<option value="@{body}">Body</option>
+												<option value="@{agility}">Agility</option>
+												<option value="@{reaction}">Reaction</option>
+												<option value="@{strength}">Strength</option>
+												<option value="@{willpower}">Willpower</option>
+												<option value="@{logic}">Logic</option>
+												<option value="@{intuition}">Intuition</option>
+												<option value="@{charisma}">Charisma</option>
+												<option value="@{magic}">Magic</option>
+												<option value="@{resonance}">Resonance</option>
+											</select>
+										</span>
+										
+										<span class="grid-span-1">
+											<input class="fill center line-height-20" name="attr_skill_pool" type="number" value="[[floor((@{skill_base_pool} + abs(@{skill_base_pool})) / 2)]]" disabled />
+										</span>
+										<span class="grid-span-1 mar-right">
+											<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name}}} {{pool=[[floor((@{skill_base_pool} + abs(@{skill_base_pool}))/2)]]}} @{rollDices}"/>
+										</span>
+										<span class="grid-span-1 mar-bot">&nbsp;</span>
+
+										<div class="grid-span-11 toggle-true01 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec01_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec01_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec01_rank} + abs(@{skill_base_pool} + @{skill_spec01_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec01_name}}} {{pool=[[floor((@{skill_spec01_pool} + abs(@{skill_spec01_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										
+										<div class="grid-span-11  toggle-true02 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec02_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec02_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec02_rank} + abs(@{skill_base_pool} + @{skill_spec02_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec02_name}}} {{pool=[[floor((@{skill_spec02_pool} + abs(@{skill_spec02_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										
+										<div class="grid-span-11  toggle-true03 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec03_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec03_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec03_rank} + abs(@{skill_base_pool} + @{skill_spec03_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec03_name}}} {{pool=[[floor((@{skill_spec03_pool} + abs(@{skill_spec03_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11  toggle-true04 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec04_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec04_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec04_rank} + abs(@{skill_base_pool} + @{skill_spec04_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec04_name}}} {{pool=[[floor((@{skill_spec04_pool} + abs(@{skill_spec04_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11  toggle-true05 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec05_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec05_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec05_rank} + abs(@{skill_base_pool} + @{skill_spec05_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec05_name}}} {{pool=[[floor((@{skill_spec05_pool} + abs(@{skill_spec05_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11  toggle-true06 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec06_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec06_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec06_rank} + abs(@{skill_base_pool} + @{skill_spec06_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec06_name}}} {{pool=[[floor((@{skill_spec06_pool} + abs(@{skill_spec06_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+											
+										<div class="grid-span-11  toggle-true07 grid-11 pad-none mar-bot">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec07_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec07_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec07_rank} + abs(@{skill_base_pool} + @{skill_spec07_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec07_name}}} {{pool=[[floor((@{skill_spec07_pool} + abs(@{skill_spec07_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										<div class="grid-span-11  toggle-true08 grid-11 pad-none mar-bot">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec08_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec08_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec08_rank} + abs(@{skill_base_pool} + @{skill_spec08_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec08_name}}} {{pool=[[floor((@{skill_spec08_pool} + abs(@{skill_spec08_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>										
+									</div>
+								</fieldset>
+							</div>
 						<div class="grid-span-10 grid-10 pad-all">
 							<div class="grid-span-10 grid-16 pad-none">
 								<fieldset class="repeating_weapons">
@@ -757,16 +1120,16 @@
 								<fieldset class="repeating_armor">
 									<div class="grid-span-16 grid-14 bdr-all pad-all mar-bot">
 										<span class="grid-span-10"><label class="font-size-sm line-height-10">Name</label></span>  
-										<span class="grid-span-2"><label class="font-size-sm line-height-10">Defense</label></span> 
-										<span class="grid-span-2"><label class="font-size-sm line-height-10">Social</label></span> 
+										<span class="grid-span-2 fill center"><label class="font-size-sm line-height-10">Defense</label></span> 
+										<span class="grid-span-2 fill center"><label class="font-size-sm line-height-10">Social</label></span> 
 										
 										
 										<span name="attr_armor_name" class="grid-span-10 settings-normal"/>
-										<span name="attr_armor_rating" class="grid-span-2 settings-normal"/>
-										<span name="attr_armor_social" class="grid-span-2 settings-normal"/>
+										<span name="attr_armor_rating" class="grid-span-2 settings-normal fill center"/>
+										<span name="attr_armor_social" class="grid-span-2 settings-normal fill center"/>
 										<input class="grid-span-10 fill line-height-18 settings-editing" name="attr_armor_name" type="text"/>
-										<input class="grid-span-2 fill line-height-14 settings-editing" name="attr_armor_rating" type="number" value="0" min="0" step="1"/>
-										<input class="grid-span-2 fill line-height-14 settings-editing" name="attr_armor_social" type="number" value="0" step="1"/>
+										<input class="grid-span-2 fill center line-height-14 settings-editing" name="attr_armor_rating" type="number" value="0" min="0" step="1"/>
+										<input class="grid-span-2 fill center line-height-14 settings-editing" name="attr_armor_social" type="number" value="0" step="1"/>
 										
 										<div class="grid-span-14 grid-16">
 											<span class="grid-span-16"><label class="font-size-sm line-height-10">Other Properties</label></span> 
@@ -792,7 +1155,7 @@
 										<span name="attr_equipment_name" class="grid-span-12 settings-normal"/>
 										<input class="grid-span-12 fill line-height-18 settings-editing" name="attr_equipment_name" type="text"/>
 										
-										<input class="grid-span-2 fill line-height-14" name="attr_equipment_amount" type="number" value="0" min="0" step="1"/>
+										<input class="grid-span-2 fill center line-height-14" name="attr_equipment_amount" type="number" value="0" min="0" step="1"/>
 									</div>
 								</fieldset>
 							</div>
@@ -802,6 +1165,150 @@
 				<div class="grid-span-10 grid-10 mysheet-sheettab6-body">
 					<div class="grid-span-10 grid-10 bdr-all">
 						<span class="grid-span-10 pad-all"><h3>Matrix Devices</h3></span>
+													<div class="grid-span-10 grid-16 pad-all no-rep-control">
+								<fieldset class="repeating_skills">
+									<input name="attr_skill_quick_matrix_show" type="hidden" value="0" class="toggle-flag10"/>
+
+									<div class="grid-span-16 grid-11 toggle-true10">
+										<input name="attr_skill_base_pool" type="hidden" value="(@{skill_rank} - (1 - ceil(@{skill_rank} / 99)) + [[@{skill_attribute}]] - (@{woundModifier}))"/>
+
+										<input name="attr_skill_spec01_show" type="hidden" value="0" class="toggle-flag01"/>
+										<input name="attr_skill_spec02_show" type="hidden" value="0" class="toggle-flag02"/>
+										<input name="attr_skill_spec03_show" type="hidden" value="0" class="toggle-flag03"/>
+										<input name="attr_skill_spec04_show" type="hidden" value="0" class="toggle-flag04"/>
+										<input name="attr_skill_spec05_show" type="hidden" value="0" class="toggle-flag05"/>
+										<input name="attr_skill_spec06_show" type="hidden" value="0" class="toggle-flag06"/>
+										<input name="attr_skill_spec07_show" type="hidden" value="0" class="toggle-flag07"/>
+										<input name="attr_skill_spec08_show" type="hidden" value="0" class="toggle-flag08"/>
+										<span class="grid-span-4">
+											<span name="attr_skill_name"></span>
+										</span>	
+										
+										<span class="grid-span-2">
+											<span class="center line-height-18" name="attr_skill_rank"/>
+										</span>	
+										
+										<span class="grid-span-2">
+											<select name="attr_skill_attribute" class="center fill line-height-20">
+												<option value="0">None</option>
+												<option value="@{body}">Body</option>
+												<option value="@{agility}">Agility</option>
+												<option value="@{reaction}">Reaction</option>
+												<option value="@{strength}">Strength</option>
+												<option value="@{willpower}">Willpower</option>
+												<option value="@{logic}">Logic</option>
+												<option value="@{intuition}">Intuition</option>
+												<option value="@{charisma}">Charisma</option>
+												<option value="@{magic}">Magic</option>
+												<option value="@{resonance}">Resonance</option>
+											</select>
+										</span>
+										
+										<span class="grid-span-1">
+											<input class="fill center line-height-20" name="attr_skill_pool" type="number" value="[[floor((@{skill_base_pool} + abs(@{skill_base_pool})) / 2)]]" disabled />
+										</span>
+										<span class="grid-span-1 mar-right">
+											<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name}}} {{pool=[[floor((@{skill_base_pool} + abs(@{skill_base_pool}))/2)]]}} @{rollDices}"/>
+										</span>
+										<span class="grid-span-1 mar-bot">&nbsp;</span>
+
+										<div class="grid-span-11 toggle-true01 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec01_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec01_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec01_rank} + abs(@{skill_base_pool} + @{skill_spec01_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec01_name}}} {{pool=[[floor((@{skill_spec01_pool} + abs(@{skill_spec01_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										
+										<div class="grid-span-11  toggle-true02 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec02_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec02_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec02_rank} + abs(@{skill_base_pool} + @{skill_spec02_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec02_name}}} {{pool=[[floor((@{skill_spec02_pool} + abs(@{skill_spec02_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										
+										<div class="grid-span-11  toggle-true03 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec03_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec03_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec03_rank} + abs(@{skill_base_pool} + @{skill_spec03_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec03_name}}} {{pool=[[floor((@{skill_spec03_pool} + abs(@{skill_spec03_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11  toggle-true04 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec04_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec04_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec04_rank} + abs(@{skill_base_pool} + @{skill_spec04_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec04_name}}} {{pool=[[floor((@{skill_spec04_pool} + abs(@{skill_spec04_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11  toggle-true05 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec05_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec05_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec05_rank} + abs(@{skill_base_pool} + @{skill_spec05_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec05_name}}} {{pool=[[floor((@{skill_spec05_pool} + abs(@{skill_spec05_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11  toggle-true06 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec06_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec06_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec06_rank} + abs(@{skill_base_pool} + @{skill_spec06_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec06_name}}} {{pool=[[floor((@{skill_spec06_pool} + abs(@{skill_spec06_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+											
+										<div class="grid-span-11  toggle-true07 grid-11 pad-none mar-bot">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec07_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec07_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec07_rank} + abs(@{skill_base_pool} + @{skill_spec07_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec07_name}}} {{pool=[[floor((@{skill_spec07_pool} + abs(@{skill_spec07_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										<div class="grid-span-11  toggle-true08 grid-11 pad-none mar-bot">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec08_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec08_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec08_rank} + abs(@{skill_base_pool} + @{skill_spec08_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec08_name}}} {{pool=[[floor((@{skill_spec08_pool} + abs(@{skill_spec08_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>										
+									</div>
+								</fieldset>
+							</div>
 						<div class="grid-span-10 grid-10 pad-all">
 							<div class="grid-span-10 grid-16 pad-none">
 								<fieldset class="repeating_devices">
@@ -847,6 +1354,150 @@
 						</div>
 						
 						<span class="grid-span-10 pad-all"><h3>Vehicles & Drones</h3></span>
+													<div class="grid-span-10 grid-16 pad-all no-rep-control">
+								<fieldset class="repeating_skills">
+									<input name="attr_skill_quick_vehicle_show" type="hidden" value="0" class="toggle-flag10"/>
+
+									<div class="grid-span-16 grid-11 toggle-true10">
+										<input name="attr_skill_base_pool" type="hidden" value="(@{skill_rank} - (1 - ceil(@{skill_rank} / 99)) + [[@{skill_attribute}]] - (@{woundModifier}))"/>
+
+										<input name="attr_skill_spec01_show" type="hidden" value="0" class="toggle-flag01"/>
+										<input name="attr_skill_spec02_show" type="hidden" value="0" class="toggle-flag02"/>
+										<input name="attr_skill_spec03_show" type="hidden" value="0" class="toggle-flag03"/>
+										<input name="attr_skill_spec04_show" type="hidden" value="0" class="toggle-flag04"/>
+										<input name="attr_skill_spec05_show" type="hidden" value="0" class="toggle-flag05"/>
+										<input name="attr_skill_spec06_show" type="hidden" value="0" class="toggle-flag06"/>
+										<input name="attr_skill_spec07_show" type="hidden" value="0" class="toggle-flag07"/>
+										<input name="attr_skill_spec08_show" type="hidden" value="0" class="toggle-flag08"/>
+										<span class="grid-span-4">
+											<span name="attr_skill_name"></span>
+										</span>	
+										
+										<span class="grid-span-2">
+											<span class="center line-height-18" name="attr_skill_rank"/>
+										</span>	
+										
+										<span class="grid-span-2">
+											<select name="attr_skill_attribute" class="center fill line-height-20">
+												<option value="0">None</option>
+												<option value="@{body}">Body</option>
+												<option value="@{agility}">Agility</option>
+												<option value="@{reaction}">Reaction</option>
+												<option value="@{strength}">Strength</option>
+												<option value="@{willpower}">Willpower</option>
+												<option value="@{logic}">Logic</option>
+												<option value="@{intuition}">Intuition</option>
+												<option value="@{charisma}">Charisma</option>
+												<option value="@{magic}">Magic</option>
+												<option value="@{resonance}">Resonance</option>
+											</select>
+										</span>
+										
+										<span class="grid-span-1">
+											<input class="fill center line-height-20" name="attr_skill_pool" type="number" value="[[floor((@{skill_base_pool} + abs(@{skill_base_pool})) / 2)]]" disabled />
+										</span>
+										<span class="grid-span-1 mar-right">
+											<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name}}} {{pool=[[floor((@{skill_base_pool} + abs(@{skill_base_pool}))/2)]]}} @{rollDices}"/>
+										</span>
+										<span class="grid-span-1 mar-bot">&nbsp;</span>
+
+										<div class="grid-span-11 toggle-true01 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec01_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec01_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec01_rank} + abs(@{skill_base_pool} + @{skill_spec01_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec01_name}}} {{pool=[[floor((@{skill_spec01_pool} + abs(@{skill_spec01_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										
+										<div class="grid-span-11  toggle-true02 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec02_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec02_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec02_rank} + abs(@{skill_base_pool} + @{skill_spec02_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec02_name}}} {{pool=[[floor((@{skill_spec02_pool} + abs(@{skill_spec02_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										
+										<div class="grid-span-11  toggle-true03 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec03_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec03_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec03_rank} + abs(@{skill_base_pool} + @{skill_spec03_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec03_name}}} {{pool=[[floor((@{skill_spec03_pool} + abs(@{skill_spec03_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11  toggle-true04 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec04_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec04_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec04_rank} + abs(@{skill_base_pool} + @{skill_spec04_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec04_name}}} {{pool=[[floor((@{skill_spec04_pool} + abs(@{skill_spec04_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11  toggle-true05 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec05_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec05_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec05_rank} + abs(@{skill_base_pool} + @{skill_spec05_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec05_name}}} {{pool=[[floor((@{skill_spec05_pool} + abs(@{skill_spec05_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+
+										<div class="grid-span-11  toggle-true06 grid-11 pad-none">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec06_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec06_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec06_rank} + abs(@{skill_base_pool} + @{skill_spec06_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec06_name}}} {{pool=[[floor((@{skill_spec06_pool} + abs(@{skill_spec06_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+											
+										<div class="grid-span-11  toggle-true07 grid-11 pad-none mar-bot">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec07_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec07_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec07_rank} + abs(@{skill_base_pool} + @{skill_spec07_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec07_name}}} {{pool=[[floor((@{skill_spec07_pool} + abs(@{skill_spec07_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>
+										<div class="grid-span-11  toggle-true08 grid-11 pad-none mar-bot">
+											<span class="grid-span-5">&nbsp;&nbsp; <span name="attr_skill_spec08_name" type="text"/></span>	
+											<span class="grid-span-3">&nbsp;</span>
+											<span class="grid-span-1">
+												<input class="fill center line-height-20" name="attr_skill_spec08_pool" type="number" value="[[floor((@{skill_base_pool} + @{skill_spec08_rank} + abs(@{skill_base_pool} + @{skill_spec08_rank})) / 2)]]" disabled />
+											</span>
+											<span class="grid-span-1 mar-right">
+												<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=@{skill_name} - @{skill_spec08_name}}} {{pool=[[floor((@{skill_spec08_pool} + abs(@{skill_spec08_pool}))/2)]]}} @{rollDices} "/>
+											</span>
+											<span class="grid-span-1 mar-bot">&nbsp;</span>
+										</div>										
+									</div>
+								</fieldset>
+							</div>
 						<div class="grid-span-10 grid-10 pad-all">
 							<div class="grid-span-10 grid-16 pad-none">
 								<fieldset class="repeating_vehicles">
