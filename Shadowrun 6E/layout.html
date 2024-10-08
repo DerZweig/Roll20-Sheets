@@ -305,7 +305,7 @@
 							
 							<span class="grid-span-3 mar-bot">Composure</span>
 							<span class="grid-span-2 mar-bot">
-								<input name="attr_composure_pool" type="number" class="fill center line-height-18 settings-normal" value="floor( (@{composure} - @{wound_modifier} + @{global_modifier} + abs( @{composure} - @{wound_modifier} + @{global_modifier} ) ) / 2 )" disabled />
+								<input name="attr_composure_pool" type="number" class="fill center line-height-18 settings-normal" value="floor( (@{composure} - @{wound_modifier} + abs( @{composure} - @{wound_modifier} ) ) / 2 )" disabled />
 								<input class="fill center line-height-18 settings-editing" name="attr_composure" type="number" value="0" min="0" step="1"/>
 							</span>
 							<span class="grid-span-1 mar-right">
@@ -314,7 +314,7 @@
 							
 							<span class="grid-span-3 mar-bot">Insight</span>
 							<span class="grid-span-2 mar-bot">
-								<input name="attr_insight_pool" type="number" class="fill center line-height-18 settings-normal" value="floor( (@{insight} - @{wound_modifier} + @{global_modifier} + abs( @{insight} - @{wound_modifier} + @{global_modifier} ) ) / 2 )" disabled />
+								<input name="attr_insight_pool" type="number" class="fill center line-height-18 settings-normal" value="floor( (@{insight} - @{wound_modifier} + abs( @{insight} - @{wound_modifier} ) ) / 2 )" disabled />
 								<input class="fill center line-height-18 settings-editing" name="attr_insight" type="number" value="0" min="0" step="1"/>
 							</span>
 							<span class="grid-span-1 mar-right">
@@ -324,7 +324,7 @@
 							
 							<span class="grid-span-3 mar-bot">Memory</span>
 							<span class="grid-span-2 mar-bot">
-								<input name="attr_memory_pool" type="number" class="fill center line-height-18 settings-normal" value="floor( (@{memory} - @{wound_modifier} + @{global_modifier} + abs( @{memory} - @{wound_modifier} + @{global_modifier} ) ) / 2 )" disabled />
+								<input name="attr_memory_pool" type="number" class="fill center line-height-18 settings-normal" value="floor( (@{memory} - @{wound_modifier} + abs( @{memory} - @{wound_modifier} ) ) / 2 )" disabled />
 								<input class="fill center line-height-18 settings-editing" name="attr_memory" type="number" value="0" min="0" step="1"/>
 							</span>
 							<span class="grid-span-1 mar-right">
@@ -333,7 +333,7 @@
 							
 							<span class="grid-span-3 mar-bot">Lift / Carry</span>
 							<span class="grid-span-2 mar-bot">
-								<input name="attr_carry_pool" type="number" class="fill center line-height-18 settings-normal" value="floor( (@{carry} - @{wound_modifier} + @{global_modifier} + abs( @{carry} - @{wound_modifier} + @{global_modifier} ) ) / 2 )" disabled />
+								<input name="attr_carry_pool" type="number" class="fill center line-height-18 settings-normal" value="floor( (@{carry} - @{wound_modifier} + abs( @{carry} - @{wound_modifier} ) ) / 2 )" disabled />
 								<input class="fill center line-height-18 settings-editing" name="attr_carry" type="number" value="0" min="0" step="1"/>
 							</span>
 							<span class="grid-span-1 mar-right">
@@ -1797,7 +1797,7 @@
 							</span>
 
 							<span class="grid-span-1 mar-right">
-								<input name="attr_custom_roll_attribute_pool" value="(@{custom_roll_attribute1} + @{custom_roll_attribute2} - @{wound_modifier} + @{global_modifier})" type="hidden" />
+								<input name="attr_custom_roll_attribute_pool" value="(@{custom_roll_attribute1} + @{custom_roll_attribute2} - @{wound_modifier})" type="hidden" />
 								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Custom Attributes}} {{pool=[[floor( ( @{custom_roll_attribute_pool} + abs( @{custom_roll_attribute_pool}) ) / 2 )]]}} @{rollDices} "/>
 							</span>
 									
@@ -1811,14 +1811,6 @@
 							<span class="grid-span-1 mar-right">
 								<button type="roll" class="line-height-14" value="&{template:5eDefault} {{rollname=Custom Pool}} {{pool=[[@{custom_edge_pool}]]}} @{rollDices} "/>
 							</span>
-						</div>
-						
-						
-						<div class="grid-span-6 grid-7 mar-right">
-							<span class="grid-span-4"><label class="line-height-18" >Global Modifier</label></span>
-							
-							<span class="grid-span-2"><input class="fill center line-height-18" name="attr_global_modifier" type="number" value="0" step="1"/></span>
-							<span class="grid-span-1 mar-right">&nbsp;</span>
 						</div>
 						
 						
@@ -1987,7 +1979,7 @@
 								
 								<span class="grid-span-1 settings-normal">&nbsp;</span>
 								<span class="grid-span-1 settings-normal">
-									<input class="fill center line-height-18" name="attr_soak_pool" type="number" value="floor( (@{soak} + @{global_modifier} + abs( @{soak} + @{global_modifier} ) ) / 2)" disabled />
+									<input class="fill center line-height-18" name="attr_soak_pool" type="number" value="floor( (@{soak} + abs( @{soak} ) ) / 2)" disabled />
 								</span>
 								<span class="grid-span-2 settings-editing">
 									<input class="fill center line-height-18" name="attr_soak" type="number" value="0" min="0" step="1"/>
@@ -2009,13 +2001,13 @@
 								<span class="grid-span-1 mar-bot settings-normal toggle-true02">&nbsp;</span>
 								
 								<span class="grid-span-1 mar-bot settings-normal toggle-true01">
-									<input class="fill center line-height-18" name="attr_drain_pool" type="number" value="floor( (@{drain} + @{global_modifier} + abs( @{drain} + @{global_modifier} ) ) / 2)" disabled />
+									<input class="fill center line-height-18" name="attr_drain_pool" type="number" value="floor( (@{drain} + abs( @{drain} ) ) / 2)" disabled />
 								</span>
 								<span class="grid-span-2 mar-bot settings-editing toggle-true01">
 									<input class="fill center line-height-18" name="attr_drain" type="number" value="0" min="0" step="1"/>
 								</span>
 								<span class="grid-span-1 mar-bot settings-normal toggle-true02">
-									<input class="fill center line-height-18" name="attr_drain_pool" type="number" value="floor( (@{drain} + @{global_modifier} + abs( @{drain} + @{global_modifier} ) ) / 2)" disabled />
+									<input class="fill center line-height-18" name="attr_drain_pool" type="number" value="floor( (@{drain} + abs( @{drain} ) ) / 2)" disabled />
 								</span>
 								<span class="grid-span-2 mar-bot settings-editing toggle-true02">
 									<input class="fill center line-height-18" name="attr_drain" type="number" value="0" min="0" step="1"/>
@@ -2037,7 +2029,7 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_regen_physical_pool" type="number" value="floor( ( @{regen_physical} + @{global_modifier} + abs( @{regen_physical} + @{global_modifier} )) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_regen_physical_pool" type="number" value="floor( ( @{regen_physical} + abs( @{regen_physical} )) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_regen_physical" type="number" value="0" min="0" step="1"/>
@@ -2052,7 +2044,7 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_regen_stun_pool" type="number" value="floor( ( @{regen_stun} + @{global_modifier} + abs( @{regen_stun} + @{global_modifier} )) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_regen_stun_pool" type="number" value="floor( ( @{regen_stun} + abs( @{regen_stun} )) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_regen_stun" type="number" value="0" min="0" step="1"/>
@@ -2068,7 +2060,7 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_regen_overflow_pool" type="number" value="floor((@{regen_overflow} - @{wound_modifier} + @{global_modifier} + abs(@{regen_overflow} - @{wound_modifier} + @{global_modifier})) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_regen_overflow_pool" type="number" value="floor((@{regen_overflow} - @{wound_modifier} + abs(@{regen_overflow} - @{wound_modifier})) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_regen_overflow" type="number" value="0" min="0" step="1"/>
@@ -2098,7 +2090,7 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_defense_attack_pool" type="number" value="floor((@{defense_attack} - @{wound_modifier} + @{global_modifier} + abs(@{defense_attack} - @{wound_modifier} + @{global_modifier})) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_defense_attack_pool" type="number" value="floor((@{defense_attack} - @{wound_modifier} + abs(@{defense_attack} - @{wound_modifier})) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_defense_attack" type="number" value="0" min="0" step="1"/>
@@ -2114,7 +2106,7 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_defense_spell_direct_pool" type="number" value="floor((@{defense_spell_direct} - @{wound_modifier} + @{global_modifier} + abs(@{defense_spell_direct} - @{wound_modifier} + @{global_modifier})) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_defense_spell_direct_pool" type="number" value="floor((@{defense_spell_direct} - @{wound_modifier} + abs(@{defense_spell_direct} - @{wound_modifier})) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_defense_spell_direct" type="number" value="0" min="0" step="1"/>
@@ -2131,7 +2123,7 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_defense_spell_indirect_pool" type="number" value="floor((@{defense_spell_indirect} - @{wound_modifier} + @{global_modifier} + abs(@{defense_spell_indirect} - @{wound_modifier} + @{global_modifier})) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_defense_spell_indirect_pool" type="number" value="floor((@{defense_spell_indirect} - @{wound_modifier} + abs(@{defense_spell_indirect} - @{wound_modifier})) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_defense_spell_indirect" type="number" value="0" min="0" step="1"/>
@@ -2148,7 +2140,7 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_defense_poison_pool" type="number" value="floor((@{defense_poison} - @{wound_modifier} + @{global_modifier} + abs(@{defense_poison} - @{wound_modifier} + @{global_modifier})) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_defense_poison_pool" type="number" value="floor((@{defense_poison} - @{wound_modifier} + abs(@{defense_poison} - @{wound_modifier})) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_defense_poison" type="number" value="0" min="0" step="1"/>
@@ -2302,7 +2294,7 @@
 </rolltemplate>
 <script type="text/worker">
 
-const charAttrs = ['body', 'agility', 'reaction', 'strength', 'willpower', 'logic', 'intuition', 'charisma', 'magic', 'resonance', 'stun_damage', 'stun_health_offset', 'stun_health_stride', 'physical_damage', 'physical_health_offset', 'physical_health_stride', 'global_modifier' ];
+const charAttrs = ['body', 'agility', 'reaction', 'strength', 'willpower', 'logic', 'intuition', 'charisma', 'magic', 'resonance', 'stun_damage', 'stun_health_offset', 'stun_health_stride', 'physical_damage', 'physical_health_offset', 'physical_health_stride' ];
 const skillAttrs = ['skill_rank', 'skill_attribute', 'skill_spec01_rank', 'skill_spec02_rank', 'skill_spec03_rank', 'skill_spec04_rank', 'skill_spec05_rank', 'skill_spec06_rank', 'skill_spec07_rank', , 'skill_spec08_rank'];
 
 
@@ -2326,7 +2318,6 @@ on(allChanges, function()
 			const physicalDamage = parseInt(values['physical_damage']);
 			const physicalOffset = parseInt(values['physical_health_offset']);
 			const physicalStride = parseInt(values['physical_health_stride']);
-			const globalModifier = parseInt(values['global_modifier']);
 			
 			const stunWounds = Math.max(Math.floor(Math.max(stunDamage - stunOffset, 0) / stunStride),0);
 			const physicalWounds = Math.max(Math.floor(Math.max(physicalDamage - physicalOffset, 0) / physicalStride),0);
@@ -2353,15 +2344,15 @@ on(allChanges, function()
 				const spec07Attr = parseInt(values[`repeating_skills_${skillId}_skill_spec07_rank`]);
 				const spec08Attr = parseInt(values[`repeating_skills_${skillId}_skill_spec08_rank`]);
 				
-				output[`repeating_skills_${skillId}_skill_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + globalModifier, 0));
-				output[`repeating_skills_${skillId}_skill_spec01_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + globalModifier + spec01Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec02_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + globalModifier + spec02Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec03_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + globalModifier + spec03Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec04_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + globalModifier + spec04Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec05_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + globalModifier + spec05Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec06_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + globalModifier + spec06Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec07_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + globalModifier + spec07Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec08_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + globalModifier + spec08Attr, 0));
+				output[`repeating_skills_${skillId}_skill_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier, 0));
+				output[`repeating_skills_${skillId}_skill_spec01_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec01Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec02_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec02Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec03_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec03Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec04_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec04Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec05_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec05Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec06_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec06Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec07_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec07Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec08_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec08Attr, 0));
 			}
 			
 			console.log(JSON.stringify(values));
