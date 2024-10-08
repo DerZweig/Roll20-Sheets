@@ -376,8 +376,9 @@
 						<span class="grid-span-10 pad-all"><h3>Skills</h3></span>
 						
 						<div class="grid-span-10 grid-11 pad-all">
-							<span class="grid-span-4 mar-bot"><label class="font-size-sm line-height-10">Skill / Specialization</label></span>  
-							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10">Rank</label></span>  
+							<span class="grid-span-4 mar-bot"><label class="font-size-sm line-height-10">Name</label></span>  
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10">Rank</label></span>  
+							<span class="grid-span-1 mar-bot"><label class="font-size-sm line-height-10">Modifier</label></span>  
 							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10">Attribute</label></span>  
 							<span class="grid-span-2 mar-bot"><label class="font-size-sm line-height-10">Pool</label></span> 
 							<span class="grid-span-1 mar-bot settings-editing"><label class="font-size-sm line-height-10">Details</label></span> 
@@ -433,8 +434,12 @@
 											<span name="attr_skill_name"></span>
 										</span>	
 										
-										<span class="grid-span-2">
+										<span class="grid-span-1">
 											<span class="center line-height-18" name="attr_skill_rank"/>
+										</span>	
+										
+										<span class="grid-span-1">
+											<input class="fill center line-height-18" name="attr_skill_modifier" type="number" value="0" step="1"/>
 										</span>	
 										
 										<span class="grid-span-2">
@@ -607,11 +612,15 @@
 
 										
 										<span class="grid-span-4">
-											<input class="fill line-height-20" name="attr_skill_name" type="text"/>
+											<input class="fill line-height-18" name="attr_skill_name" type="text"/>
 										</span>	
 										
-										<span class="grid-span-2">
+										<span class="grid-span-1">
 											<input class="fill center line-height-18" name="attr_skill_rank" type="number" value="0" min="0" step="1" max="10"/>
+										</span>	
+										
+										<span class="grid-span-1">
+											<input class="fill center line-height-18" name="attr_skill_modifier" type="number" value="0" step="1"/>
 										</span>	
 										
 										<span class="grid-span-2">
@@ -654,14 +663,17 @@
 											<input class="grid-span-2 fill center line-height-20" name="attr_skill_quick_vehicle_show" type="checkbox" />
 										</div>
 	
-										<div class="grid-span-11 grid-11 pad-none mar-top pad-left pad-right toggle-true10">
-											<span class="grid-span-11 mar-bot"><label class="font-size-sm line-height-10">Specialization & Modifiers</label></span>  
+										<div class="grid-span-11 grid-11 mar-top pad-left pad-right toggle-true10">
+											<div class="grid-span-11 grid-11 pad-all">
+												<span class="grid-span-4 mar-bot"><label class="font-size-sm line-height-10">Specializations</label></span>  
+											</div>
 										</div>
 										
 										<div class="grid-span-11 grid-11 toggle-true10">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec01_show" type="checkbox"/></span>
-											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec01_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true01"><input class="fill center line-height-18" name="attr_skill_spec01_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec01_name" type="text"/></span>
+											<span class="grid-span-1">&nbsp;</span>
+											<span class="grid-span-1 toggle-true01"><input class="fill center line-height-18" name="attr_skill_spec01_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true01">
 												<span class="fill center line-height-20" name="attr_skill_spec01_calc" />
@@ -674,7 +686,8 @@
 										<div class="grid-span-11 grid-11 toggle-true10 toggle-true01">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec02_show" type="checkbox"/></span>
 											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec02_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true02"><input class="fill center line-height-18" name="attr_skill_spec02_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-1">&nbsp;</span>
+											<span class="grid-span-1  toggle-true02"><input class="fill center line-height-18" name="attr_skill_spec02_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true02">
 												<span class="fill center line-height-20" name="attr_skill_spec02_calc" />
@@ -687,7 +700,8 @@
 										<div class="grid-span-11 grid-11 toggle-true10 toggle-true02">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec03_show" type="checkbox"/></span>
 											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec03_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true03"><input class="fill center line-height-18" name="attr_skill_spec03_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-1">&nbsp;</span>
+											<span class="grid-span-1  toggle-true03"><input class="fill center line-height-18" name="attr_skill_spec03_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true03">
 												<span class="fill center line-height-20" name="attr_skill_spec03_calc" />
@@ -700,7 +714,8 @@
 										<div class="grid-span-11 grid-11 toggle-true10 toggle-true03">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec04_show" type="checkbox"/></span>
 											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec04_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true04"><input class="fill center line-height-18" name="attr_skill_spec04_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-1">&nbsp;</span>
+											<span class="grid-span-1  toggle-true04"><input class="fill center line-height-18" name="attr_skill_spec04_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true04">
 												<span class="fill center line-height-20" name="attr_skill_spec04_calc" />
@@ -713,7 +728,8 @@
 										<div class="grid-span-11 grid-11 toggle-true10 toggle-true04">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec05_show" type="checkbox"/></span>
 											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec05_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true05"><input class="fill center line-height-18" name="attr_skill_spec05_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-1">&nbsp;</span>
+											<span class="grid-span-1  toggle-true05"><input class="fill center line-height-18" name="attr_skill_spec05_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true05">
 												<span class="fill center line-height-20" name="attr_skill_spec05_calc" />
@@ -726,7 +742,8 @@
 										<div class="grid-span-11 grid-11 toggle-true10 toggle-true05">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec06_show" type="checkbox"/></span>
 											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec06_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true06"><input class="fill center line-height-18" name="attr_skill_spec06_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-1">&nbsp;</span>
+											<span class="grid-span-1  toggle-true06"><input class="fill center line-height-18" name="attr_skill_spec06_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true06">
 												<span class="fill center line-height-20" name="attr_skill_spec06_calc" />
@@ -739,7 +756,8 @@
 										<div class="grid-span-11 grid-11 toggle-true10 toggle-true06">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec07_show" type="checkbox"/></span>
 											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec07_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true07"><input class="fill center line-height-18" name="attr_skill_spec07_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-1">&nbsp;</span>
+											<span class="grid-span-1  toggle-true07"><input class="fill center line-height-18" name="attr_skill_spec07_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true07">
 												<span class="fill center line-height-20" name="attr_skill_spec07_calc" />
@@ -752,7 +770,8 @@
 										<div class="grid-span-11 grid-11 toggle-true10 toggle-true07">
 											<span class="grid-span-1"><input class="fill center line-height-18" name="attr_skill_spec08_show" type="checkbox"/></span>
 											<span class="grid-span-3"><input class="fill line-height-20" name="attr_skill_spec08_name" type="text"/></span>	
-											<span class="grid-span-2 toggle-true08"><input class="fill center line-height-18" name="attr_skill_spec08_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
+											<span class="grid-span-1">&nbsp;</span>
+											<span class="grid-span-1  toggle-true08"><input class="fill center line-height-18" name="attr_skill_spec08_rank" type="number" value="0" min="0" step="1" max="5"/></span>	
 											<span class="grid-span-2">&nbsp;</span>
 											<span class="grid-span-1 toggle-true08">
 												<span class="fill center line-height-20" name="attr_skill_spec08_calc" />
@@ -861,8 +880,12 @@
 											<span name="attr_skill_name"></span>
 										</span>	
 										
-										<span class="grid-span-2">
+										<span class="grid-span-1">
 											<span class="center line-height-18" name="attr_skill_rank"/>
+										</span>	
+										
+										<span class="grid-span-1">
+											<input class="fill center line-height-18" name="attr_skill_modifier" type="number" value="0" step="1"/>
 										</span>	
 										
 										<span class="grid-span-2">
@@ -1017,6 +1040,7 @@
 				<div class="grid-span-10 grid-10 mysheet-sheettab3-body">
 					<div class="grid-span-10 grid-10 bdr-all">
 						<span class="grid-span-10 pad-all"><h3>Implants</h3></span>
+						<div class="grid-span-10 grid-16 pad-all"></div>
 						<div class="grid-span-10 grid-16 pad-all">
 							<fieldset class="repeating_implants">
 								<div class="grid-span-16 grid-14 bdr-all mar-bot pad-all">
@@ -1095,8 +1119,13 @@
 											<span name="attr_skill_name"></span>
 										</span>	
 										
-										<span class="grid-span-2">
+										
+										<span class="grid-span-1">
 											<span class="center line-height-18" name="attr_skill_rank"/>
+										</span>	
+										
+										<span class="grid-span-1">
+											<input class="fill center line-height-18" name="attr_skill_modifier" type="number" value="0" step="1"/>
 										</span>	
 										
 										<span class="grid-span-2">
@@ -1265,6 +1294,7 @@
 				<div class="grid-span-10 grid-10 mysheet-sheettab5-body">
 					<div class="grid-span-10 grid-10 bdr-all mar-bot">
 						<span class="grid-span-10 pad-all"><h3>Armor & Clothing</h3></span>
+						<div class="grid-span-10 grid-16 pad-all"></div>
 						<div class="grid-span-10 grid-10 pad-all">
 							<div class="grid-span-10 grid-16 pad-none">
 								<fieldset class="repeating_armor">
@@ -1361,8 +1391,12 @@
 											<span name="attr_skill_name"></span>
 										</span>	
 										
-										<span class="grid-span-2">
+										<span class="grid-span-1">
 											<span class="center line-height-18" name="attr_skill_rank"/>
+										</span>	
+										
+										<span class="grid-span-1">
+											<input class="fill center line-height-18" name="attr_skill_modifier" type="number" value="0" step="1"/>
 										</span>	
 										
 										<span class="grid-span-2">
@@ -1576,9 +1610,13 @@
 										<span class="grid-span-4">
 											<span name="attr_skill_name"></span>
 										</span>	
-										
-										<span class="grid-span-2">
+											
+										<span class="grid-span-1">
 											<span class="center line-height-18" name="attr_skill_rank"/>
+										</span>	
+										
+										<span class="grid-span-1">
+											<input class="fill center line-height-18" name="attr_skill_modifier" type="number" value="0" step="1"/>
 										</span>	
 										
 										<span class="grid-span-2">
@@ -1773,7 +1811,7 @@
 									<option value="@{reaction}">Reaction</option>
 									<option value="@{strength}">Strength</option>
 									<option value="@{willpower}">Willpower</option>
-									<option value="@{logic}">Logic</option>
+									<option value="@{logic}" selected >Logic</option>
 									<option value="@{intuition}">Intuition</option>
 									<option value="@{charisma}">Charisma</option>
 									<option value="@{magic}">Magic</option>
@@ -1789,7 +1827,7 @@
 									<option value="@{strength}">Strength</option>
 									<option value="@{willpower}">Willpower</option>
 									<option value="@{logic}">Logic</option>
-									<option value="@{intuition}">Intuition</option>
+									<option value="@{intuition}" selected >Intuition</option>
 									<option value="@{charisma}">Charisma</option>
 									<option value="@{magic}">Magic</option>
 									<option value="@{resonance}">Resonance</option>
@@ -1973,13 +2011,28 @@
 							
 							<span class="grid-span-6">&nbsp;</span>
 							
+					</div>
+					<div class="grid-span-6 grid-6 pad-none">
+						<span class="grid-span-6 mar-bot"><h3>Damage Resistance</h3></span>
+						
+						
+						
+						<div class="grid-span-6 grid-7 mar-right">
+							<span class="grid-span-4"><label class="line-height-18" >Modifier</label></span>
 							
+							<span class="grid-span-1 settings-normal">&nbsp;</span>
+							<span class="grid-span-2">
+								<input class="fill center line-height-18" name="attr_resist_modifier" type="number" value="0" min="0" step="1"/>
+							</span>
+							
+							<span class="grid-span-1 mar-right settings-editing">&nbsp;</span>
+						</div>
 							<div class="grid-span-6 grid-7 mar-right">
-								<span class="grid-span-4"><label class="line-height-18" >Resist Damage</label></span>
+								<span class="grid-span-4"><label class="line-height-18" >Damage</label></span>
 								
 								<span class="grid-span-1 settings-normal">&nbsp;</span>
 								<span class="grid-span-1 settings-normal">
-									<input class="fill center line-height-18" name="attr_soak_pool" type="number" value="floor( (@{soak} + abs( @{soak} ) ) / 2)" disabled />
+									<input class="fill center line-height-18" name="attr_soak_pool" type="number" value="floor( (@{soak} + @{resist_modifier} + abs( @{soak} + @{resist_modifier} ) ) / 2)" disabled />
 								</span>
 								<span class="grid-span-2 settings-editing">
 									<input class="fill center line-height-18" name="attr_soak" type="number" value="0" min="0" step="1"/>
@@ -1994,20 +2047,20 @@
 								<input class="toggle-flag01" name="attr_magic_enabled" type="hidden" value="0"/>
 								<input class="toggle-flag02" name="attr_resonance_enabled" type="hidden" value="0"/>
 								
-								<span class="grid-span-4 mar-bot toggle-true01"><label class="line-height-18" >Resist Drain</label></span>
-								<span class="grid-span-4 mar-bot toggle-true02"><label class="line-height-18" >Resist Drain</label></span>
+								<span class="grid-span-4 mar-bot toggle-true01"><label class="line-height-18" >Drain</label></span>
+								<span class="grid-span-4 mar-bot toggle-true02"><label class="line-height-18" >Drain</label></span>
 								
 								<span class="grid-span-1 mar-bot settings-normal toggle-true01">&nbsp;</span>
 								<span class="grid-span-1 mar-bot settings-normal toggle-true02">&nbsp;</span>
 								
 								<span class="grid-span-1 mar-bot settings-normal toggle-true01">
-									<input class="fill center line-height-18" name="attr_drain_pool" type="number" value="floor( (@{drain} + abs( @{drain} ) ) / 2)" disabled />
+									<input class="fill center line-height-18" name="attr_drain_pool" type="number" value="floor( (@{drain}+ @{resist_modifier} + abs( @{drain}+ @{resist_modifier} ) ) / 2)" disabled />
 								</span>
 								<span class="grid-span-2 mar-bot settings-editing toggle-true01">
 									<input class="fill center line-height-18" name="attr_drain" type="number" value="0" min="0" step="1"/>
 								</span>
 								<span class="grid-span-1 mar-bot settings-normal toggle-true02">
-									<input class="fill center line-height-18" name="attr_drain_pool" type="number" value="floor( (@{drain} + abs( @{drain} ) ) / 2)" disabled />
+									<input class="fill center line-height-18" name="attr_drain_pool" type="number" value="floor( (@{drain}+ @{resist_modifier} + abs( @{drain}+ @{resist_modifier} ) ) / 2)" disabled />
 								</span>
 								<span class="grid-span-2 mar-bot settings-editing toggle-true02">
 									<input class="fill center line-height-18" name="attr_drain" type="number" value="0" min="0" step="1"/>
@@ -2024,12 +2077,24 @@
 					<div class="grid-span-6 grid-6 pad-none">
 						<span class="grid-span-6 mar-bot"><h3>Regeneration</h3></span>
 						
+						
+						<div class="grid-span-6 grid-7 mar-right">
+							<span class="grid-span-4"><label class="line-height-18" >Modifier</label></span>
+							
+							<span class="grid-span-1 settings-normal">&nbsp;</span>
+							<span class="grid-span-2">
+								<input class="fill center line-height-18" name="attr_regen_modifier" type="number" value="0" min="0" step="1"/>
+							</span>
+							
+							<span class="grid-span-1 mar-right settings-editing">&nbsp;</span>
+						</div>
+						
 						<div class="grid-span-6 grid-7 mar-right">
 							<span class="grid-span-4"><label class="line-height-18" >Physical</label></span>
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_regen_physical_pool" type="number" value="floor( ( @{regen_physical} + abs( @{regen_physical} )) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_regen_physical_pool" type="number" value="floor( ( @{regen_physical} + @{regen_modifier} + abs( @{regen_physical} + @{regen_modifier} )) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_regen_physical" type="number" value="0" min="0" step="1"/>
@@ -2044,7 +2109,7 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_regen_stun_pool" type="number" value="floor( ( @{regen_stun} + abs( @{regen_stun} )) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_regen_stun_pool" type="number" value="floor( ( @{regen_stun} + @{regen_modifier} + abs( @{regen_stun}  + @{regen_modifier})) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_regen_stun" type="number" value="0" min="0" step="1"/>
@@ -2060,7 +2125,7 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_regen_overflow_pool" type="number" value="floor((@{regen_overflow} - @{wound_modifier} + abs(@{regen_overflow} - @{wound_modifier})) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_regen_overflow_pool" type="number" value="floor((@{regen_overflow} - @{wound_modifier} + @{regen_modifier} + abs(@{regen_overflow} - @{wound_modifier} + @{regen_modifier})) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_regen_overflow" type="number" value="0" min="0" step="1"/>
@@ -2086,11 +2151,22 @@
 						</div>
 						
 						<div class="grid-span-6 grid-7 mar-right">
+							<span class="grid-span-4"><label class="line-height-18" >Modifier</label></span>
+							
+							<span class="grid-span-1 settings-normal">&nbsp;</span>
+							<span class="grid-span-2">
+								<input class="fill center line-height-18" name="attr_defense_modifier" type="number" value="0" min="0" step="1"/>
+							</span>
+							
+							<span class="grid-span-1 mar-right settings-editing">&nbsp;</span>
+						</div>
+						
+						<div class="grid-span-6 grid-7 mar-right">
 							<span class="grid-span-4"><label class="line-height-18" >vs Attack</label></span>
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_defense_attack_pool" type="number" value="floor((@{defense_attack} - @{wound_modifier} + abs(@{defense_attack} - @{wound_modifier})) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_defense_attack_pool" type="number" value="floor((@{defense_attack} + @{defense_modifier} - @{wound_modifier} + abs(@{defense_attack} - @{wound_modifier} + @{defense_modifier})) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_defense_attack" type="number" value="0" min="0" step="1"/>
@@ -2106,7 +2182,7 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_defense_spell_direct_pool" type="number" value="floor((@{defense_spell_direct} - @{wound_modifier} + abs(@{defense_spell_direct} - @{wound_modifier})) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_defense_spell_direct_pool" type="number" value="floor((@{defense_spell_direct} - @{wound_modifier} + @{defense_modifier} + abs(@{defense_spell_direct} - @{wound_modifier} + @{defense_modifier})) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_defense_spell_direct" type="number" value="0" min="0" step="1"/>
@@ -2123,7 +2199,7 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_defense_spell_indirect_pool" type="number" value="floor((@{defense_spell_indirect} - @{wound_modifier} + abs(@{defense_spell_indirect} - @{wound_modifier})) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_defense_spell_indirect_pool" type="number" value="floor((@{defense_spell_indirect}+ @{defense_modifier} - @{wound_modifier} + abs(@{defense_spell_indirect} - @{wound_modifier}+ @{defense_modifier})) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_defense_spell_indirect" type="number" value="0" min="0" step="1"/>
@@ -2140,7 +2216,7 @@
 							
 							<span class="grid-span-1 settings-normal">&nbsp;</span>
 							<span class="grid-span-1 settings-normal">
-								<input class="fill center line-height-18" name="attr_defense_poison_pool" type="number" value="floor((@{defense_poison} - @{wound_modifier} + abs(@{defense_poison} - @{wound_modifier})) / 2)" disabled />
+								<input class="fill center line-height-18" name="attr_defense_poison_pool" type="number" value="floor((@{defense_poison} - @{wound_modifier}+ @{defense_modifier} + abs(@{defense_poison} - @{wound_modifier}+ @{defense_modifier})) / 2)" disabled />
 							</span>
 							<span class="grid-span-2 settings-editing">
 								<input class="fill center line-height-18" name="attr_defense_poison" type="number" value="0" min="0" step="1"/>
@@ -2295,7 +2371,7 @@
 <script type="text/worker">
 
 const charAttrs = ['body', 'agility', 'reaction', 'strength', 'willpower', 'logic', 'intuition', 'charisma', 'magic', 'resonance', 'stun_damage', 'stun_health_offset', 'stun_health_stride', 'physical_damage', 'physical_health_offset', 'physical_health_stride' ];
-const skillAttrs = ['skill_rank', 'skill_attribute', 'skill_spec01_rank', 'skill_spec02_rank', 'skill_spec03_rank', 'skill_spec04_rank', 'skill_spec05_rank', 'skill_spec06_rank', 'skill_spec07_rank', , 'skill_spec08_rank'];
+const skillAttrs = ['skill_rank', 'skill_attribute', 'skill_modifier', 'skill_spec01_rank', 'skill_spec02_rank', 'skill_spec03_rank', 'skill_spec04_rank', 'skill_spec05_rank', 'skill_spec06_rank', 'skill_spec07_rank', , 'skill_spec08_rank'];
 
 
 const skillChange = skillAttrs.map(x => `change:repeating_skills:${x}`).join(' ');
@@ -2334,6 +2410,7 @@ on(allChanges, function()
 			{
 				const skillRankRaw = parseInt(values[`repeating_skills_${skillId}_skill_rank`]);
 				const skillRank = skillRankRaw > 0 ? skillRankRaw : -1;
+				const skillModifier = parseInt(values[`repeating_skills_${skillId}_skill_modifier`]);
 				const skillAttr = parseInt(values[values[`repeating_skills_${skillId}_skill_attribute`]]);
 				const spec01Attr = parseInt(values[`repeating_skills_${skillId}_skill_spec01_rank`]);
 				const spec02Attr = parseInt(values[`repeating_skills_${skillId}_skill_spec02_rank`]);
@@ -2343,16 +2420,17 @@ on(allChanges, function()
 				const spec06Attr = parseInt(values[`repeating_skills_${skillId}_skill_spec06_rank`]);
 				const spec07Attr = parseInt(values[`repeating_skills_${skillId}_skill_spec07_rank`]);
 				const spec08Attr = parseInt(values[`repeating_skills_${skillId}_skill_spec08_rank`]);
+				const skillBaseValue = skillRank + skillAttr - woundModifier + skillModifier;
 				
-				output[`repeating_skills_${skillId}_skill_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier, 0));
-				output[`repeating_skills_${skillId}_skill_spec01_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec01Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec02_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec02Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec03_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec03Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec04_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec04Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec05_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec05Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec06_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec06Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec07_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec07Attr, 0));
-				output[`repeating_skills_${skillId}_skill_spec08_calc`] = Math.floor(Math.max(skillRank + skillAttr - woundModifier + spec08Attr, 0));
+				output[`repeating_skills_${skillId}_skill_calc`] = Math.floor(Math.max(skillBaseValue, 0));
+				output[`repeating_skills_${skillId}_skill_spec01_calc`] = Math.floor(Math.max(skillBaseValue + spec01Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec02_calc`] = Math.floor(Math.max(skillBaseValue + spec02Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec03_calc`] = Math.floor(Math.max(skillBaseValue + spec03Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec04_calc`] = Math.floor(Math.max(skillBaseValue + spec04Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec05_calc`] = Math.floor(Math.max(skillBaseValue + spec05Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec06_calc`] = Math.floor(Math.max(skillBaseValue + spec06Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec07_calc`] = Math.floor(Math.max(skillBaseValue + spec07Attr, 0));
+				output[`repeating_skills_${skillId}_skill_spec08_calc`] = Math.floor(Math.max(skillBaseValue + spec08Attr, 0));
 			}
 			
 			console.log(JSON.stringify(values));
