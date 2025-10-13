@@ -1,0 +1,575 @@
+<div>
+	
+	
+	<div class="mysheet">
+		<input type="hidden" class="tabstoggle" name="attr_sheetTab"  value="0"  />
+		<input class="settings-flag" name="attr_edit_flag" type="hidden" value="1"/>
+		
+		<div class="flex-row mar-bot">
+			<div class="push-row"/>
+			<span class="align-end">
+				 <span>Edit Mode</span>
+				 <label class="switch" for="edit_flag">
+					<input type="checkbox" id="edit_flag" name="attr_edit_flag"  checked="checked" />
+					<div class="slider round"></div>
+				  </label>
+			</span>
+		</div>
+		
+		<div class="flex-row mysheet-sheettab-header mar-bot">
+			<img class="character-portrait w-3 bdr pad-all" name="attr_character_avatar" />
+			<div class="w-9 flex-column bdr pad-all self-stretch">
+				<div class="grid w-12">
+					<label class="font-size-small line-height-10 grid-span-12">Name</label> 
+					<span class="grid-span-12 mar-bot"><input class="fill line-height-18" name="attr_character_name" type="text" /></span>
+					
+					<label class="font-size-small line-height-10 grid-span-5">Origin</label> 
+					<label class="font-size-small line-height-10 grid-span-5">Background</label> 
+					<label class="font-size-small line-height-10 grid-span-2">Experience</label> 
+					<span class="grid-span-5 mar-bot"><input class="fill line-height-18" name="attr_origin" type="text" /></span>
+					<span class="grid-span-5 mar-bot"><input class="fill line-height-18" name="attr_background" type="text" /></span>
+					<span class="grid-span-2 mar-bot"><input class="fill line-height-18" name="attr_age" type="text" /></span>
+					
+				</div>
+				<div class="push-column"/>
+				<div class="flex-row">
+					<div class="flex-column w-3">
+						<div class="grid">
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-9"><button type="action" class="link-button" name="act_rollStrength"><h4>STRENGTH</h4></button></span>
+							<span class="grid-span-3 settings-normal font-size-large text-center" name="attr_strength" type="text" />
+							<span class="grid-span-3 settings-editing"><input class="fill text-center font-size-large" name="attr_strength" type="text" value="0" /></span>
+
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-9"><button type="action" class="link-button" name="act_rollDexterity"><h4>DEXTERITY</h4></button></span>
+							<span class="grid-span-3 settings-normal font-size-large text-center" name="attr_strength" type="text" />
+							<span class="grid-span-3 settings-editing"><input class="fill text-center font-size-large" name="attr_dexterity" type="text" value="0" /></span>
+
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-9"><button type="action" class="link-button" name="act_rollIntelligence"><h4>INTELLECT</h4></button></span>
+							<span class="grid-span-3 settings-normal font-size-large text-center" name="attr_strength" type="text" />
+							<span class="grid-span-3 settings-editing"><input class="fill text-center font-size-large" name="attr_intelligence" type="text" value="0" /></span>
+
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-9"><button type="action" class="link-button" name="act_rollWillpower"><h4>WILLPOWER</h4></button></span>
+							<span class="grid-span-3 settings-normal font-size-large text-center" name="attr_strength" type="text" />
+							<span class="grid-span-3 settings-editing"><input class="fill text-center font-size-large" name="attr_willpower" type="text" value="0" /></span>
+
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-9"><button type="action" class="link-button" name="act_rollCharisma"><h4>CHARISMA</h4></button></span>
+							<span class="grid-span-3 settings-normal font-size-large text-center" name="attr_strength" type="text" />
+							<span class="grid-span-3 settings-editing"><input class="fill text-center font-size-large" name="attr_charisma" type="text" value="0" /></span>
+						</div>
+					</div>
+					<div class="push-row"/>
+					<div class="flex-column w-3">
+						<div class="grid">
+							<label class="font-size-small line-height-10 grid-span-6">&nbsp;</label> 
+							<label class="font-size-small line-height-10 grid-span-3">Cur</label> 
+							<label class="font-size-small line-height-10 grid-span-3">Max</label> 
+							<span class="grid-span-6">Health</span>
+							<span class="grid-span-3"><input class="fill text-center" name="attr_hp" type="text" value="0" /></span>
+							<span class="grid-span-3"><input class="fill text-center" name="attr_hp_max" type="text" value="0" /></span>
+							
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-12">&nbsp;</span>
+							
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-12">&nbsp;</span>
+
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-6">Power</span>
+							<span class="grid-span-3"><input class="fill text-center" name="attr_sp" type="text" value="0" /></span>
+							<span class="grid-span-3"><input class="fill text-center" name="attr_sp_max" type="text" value="0" /></span>
+							
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-6">Luck</span>
+							<span class="grid-span-3"><input class="fill text-center" name="attr_pp" type="text" value="0" /></span>
+							<span class="grid-span-3"><input class="fill text-center" name="attr_pp_max" type="text" value="0" /></span>
+						</div>
+					</div>
+					<div class="push-row"/>
+					<div class="flex-column w-3">
+						<div class="grid">
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-9">Attack</span>
+							<span class="grid-span-3"><input class="fill text-center" name="attr_attack" type="text" value="0" /></span>
+							
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-9">Spellcraft</span>
+							<span class="grid-span-3"><input class="fill text-center" name="attr_casting" type="text" value="0" /></span>
+
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-9">Parry</span>
+							<span class="grid-span-3"><input class="fill text-center" name="attr_parry" type="text" value="0" /></span>
+							
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-9">Initiative</span>
+							<span class="grid-span-3"><input class="fill text-center" name="attr_initiative" type="text" value="0" /></span>
+							
+							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
+							<span class="grid-span-9">Movement</span>
+							<span class="grid-span-3"><input class="fill text-center" name="attr_movement" type="text" value="0" /></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="buttons mar-bot">
+			<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab0" value="0" checked="checked" />
+			<span class="mysheet-sheetpagetab mysheet-sheettab0">Skills</span>
+			<span>&nbsp;</span>
+			<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab1" value="1" />
+			<span class="mysheet-sheetpagetab mysheet-sheettab1">Combat</span>
+			<span>&nbsp;</span>
+			<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab2" value="2" />
+			<span class="mysheet-sheetpagetab mysheet-sheettab2">Spells</span>
+			<span>&nbsp;</span>
+			<input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab3" value="3" />
+			<span class="mysheet-sheetpagetab mysheet-sheettab3">Other</span>
+		</div>
+		
+		<div class="flex-row mysheet-sheettab0-body">
+			<div class="w-4 bdr pad-all">
+				<div class="flex-column">
+					<div class="flex-column">
+						<h5 class="w-12">Body</h5>
+						<fieldset class="repeating_body">
+							<div class="flex-row mar-bot">
+								<input type="text" name="attr_skill_name" class="w-12 line-height-20 settings-editing"/>
+								<div class="w-12 settings-normal"><button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name"/></button></div>
+								
+								<select name="attr_skill_attribute" class="w-3 settings-editing" >
+									<option value="0">-</option>
+									<option value="str">Str</option>
+									<option value="dex">Dex</option>
+									<option value="int">Int</option>
+									<option value="wil">Wil</option>
+									<option value="cha">Cha</option>
+								</select>
+								<span class="settings-normal" type="text" name="attr_skill_attribute"/>
+								<span>+</span>
+								<input type="text" name="attr_skill_rank" class="w-3 line-height-20 text-center 0"/>
+							</div>
+						</fieldset>						
+					</div>
+
+					<div class="flex-column"/>
+					
+					<div class="flex-column">
+						<h5 class="w-12">Survival</h5>
+						<fieldset class="repeating_survival">
+							<div class="flex-row mar-bot">
+								<input type="text" name="attr_skill_name" class="w-12 line-height-20 settings-editing"/>
+								<div class="w-12 settings-normal"><button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name"/></button></div>
+								
+								<select name="attr_skill_attribute" class="w-3 settings-editing" >
+									<option value="0">-</option>
+									<option value="str">Str</option>
+									<option value="dex">Dex</option>
+									<option value="int">Int</option>
+									<option value="wil">Wil</option>
+									<option value="cha">Cha</option>
+								</select>
+								<span class="settings-normal" type="text" name="attr_skill_attribute"/>
+								<span>+</span>
+								<input type="text" name="attr_skill_rank" class="w-3 line-height-20 text-center 0"/>
+							</div>
+						</fieldset>						
+					</div>
+				</div>
+			</div>
+			
+			<div class="w-4 bdr pad-all">
+				<div class="flex-column">
+					
+					<div class="flex-column">
+						<h5 class="w-12">Social</h5>
+						<fieldset class="repeating_social">
+							<div class="flex-row mar-bot">
+								<input type="text" name="attr_skill_name" class="w-12 line-height-20 settings-editing"/>
+								<div class="w-12 settings-normal"><button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name"/></button></div>
+								
+								<select name="attr_skill_attribute" class="w-3 settings-editing" >
+									<option value="0">-</option>
+									<option value="str">Str</option>
+									<option value="dex">Dex</option>
+									<option value="int">Int</option>
+									<option value="wil">Wil</option>
+									<option value="cha">Cha</option>
+								</select>
+								<span class="settings-normal" type="text" name="attr_skill_attribute"/>
+								<span>+</span>
+								<input type="text" name="attr_skill_rank" class="w-3 line-height-20 text-center 0"/>
+							</div>
+						</fieldset>						
+					</div>
+
+					<div class="flex-column"/>
+					<div class="flex-column">
+						<h5 class="w-12">Knowledge</h5>
+						<fieldset class="repeating_knowledge">
+							<div class="flex-row mar-bot">
+								<input type="text" name="attr_skill_name" class="w-12 line-height-20 settings-editing"/>
+								<div class="w-12 settings-normal"><button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name"/></button></div>
+								
+								<select name="attr_skill_attribute" class="w-3 settings-editing" >
+									<option value="0">-</option>
+									<option value="str">Str</option>
+									<option value="dex">Dex</option>
+									<option value="int">Int</option>
+									<option value="wil">Wil</option>
+									<option value="cha">Cha</option>
+								</select>
+								<span class="settings-normal" type="text" name="attr_skill_attribute"/>
+								<span>+</span>
+								<input type="text" name="attr_skill_rank" class="w-3 line-height-20 text-center 0"/>
+							</div>
+						</fieldset>						
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="w-4 bdr pad-all">
+				<div class="flex-column">
+					<div class="flex-column">
+						<h5 class="w-12">Craft</h5>
+						<fieldset class="repeating_craft">
+							<div class="flex-row mar-bot">
+								<input type="text" name="attr_skill_name" class="w-12 line-height-20 settings-editing"/>
+								<div class="w-12 settings-normal"><button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name"/></button></div>
+								
+								<select name="attr_skill_attribute" class="w-3 settings-editing" >
+									<option value="0">-</option>
+									<option value="str">Str</option>
+									<option value="dex">Dex</option>
+									<option value="int">Int</option>
+									<option value="wil">Wil</option>
+									<option value="cha">Cha</option>
+								</select>
+								<span class="settings-normal" type="text" name="attr_skill_attribute"/>
+								<span>+</span>
+								<input type="text" name="attr_skill_rank" class="w-3 line-height-20 text-center 0"/>
+							</div>
+						</fieldset>						
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="flex-row mysheet-sheettab1-body">
+			<div class="w-4">
+				<div class="flex-column bdr pad-all">
+					<div class="flex-row">
+						<h5 class="w-12">Close Combat</h5>
+					</div>
+					<div class="flex-column">
+						<fieldset class="repeating_combat">
+							<div class="flex-row mar-bot">
+								<input type="hidden" name="attr_skill_attribute" value="attack">
+								<input type="text" name="attr_skill_name" class="w-12 line-height-20 settings-editing"/>
+								<div class="w-12 settings-normal"><button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name"/></button></div>
+
+								<span>+</span>
+								<input type="text" name="attr_skill_rank" class="w-2 line-height-20 text-center 0"/>
+							</div>
+						</fieldset>
+					</div>
+					<div class="flex-column"/>
+					<div class="flex-row">
+						<h5 class="w-12">Ranged</h5>
+					</div>
+					<div class="flex-column">
+						<fieldset class="repeating_ranged">
+							<div class="flex-row mar-bot">
+								<input type="hidden" name="attr_skill_attribute" value="attack">
+								<input type="text" name="attr_skill_name" class="w-12 line-height-20 settings-editing"/>
+								<div class="w-12 settings-normal"><button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name"/></button></div>
+
+								<span>+</span>
+								<input type="text" name="attr_skill_rank" class="w-2 line-height-20 text-center 0"/>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+				
+				<div class="push-column"/>
+			</div>
+			<div class="flex-column w-8">
+				<div class="flex-column bdr pad-all">
+					<h5>Equipment</h5> 
+					<div class="grid">
+						<label class="font-size-small line-height-10 grid-span-4">Weapon</label> 
+						<label class="font-size-small line-height-10 grid-span-6">Properties</label> 
+						<label class="font-size-small line-height-10 grid-span-2">Damage</label> 
+						
+						<span class="grid-span-4"><input class="fill line-height-18" name="attr_weapon1_name" type="text" /></span>
+						<span class="grid-span-6"><input class="fill line-height-18" name="attr_weapon1_traits" type="text" /></span>
+						<span class="grid-span-2 mar-bot">
+							<div class="flex-row">
+								<input class="w-12 line-height-18" name="attr_weapon_dmg" type="text"  value="0"/>
+								<button type="roll" class="w-4 line-height-14" value="&{template:5eDefault} {{rollname=@{weapon1_name} Damage}} {{r=[[@{weapon1_dmg}]]}}"/>
+							</div>
+						</span>
+						
+						<span class="grid-span-4"><input class="fill line-height-18" name="attr_weapon2_name" type="text" /></span>
+						<span class="grid-span-6"><input class="fill line-height-18" name="attr_weapon2_traits" type="text" /></span>
+						<span class="grid-span-2 mar-bot">
+							<div class="flex-row">
+								<input class="w-12 line-height-18" name="attr_weapon2_dmg" type="text"  value="0"/>
+								<button type="roll" class="w-4 line-height-14" value="&{template:5eDefault} {{rollname=@{weapon2_name} Damage}} {{r=[[@{weapon2_dmg}]]}}"/>
+							</div>
+						</span>		
+
+						<span class="grid-span-4"><input class="fill line-height-18" name="attr_weapon3_name" type="text" /></span>
+						<span class="grid-span-6"><input class="fill line-height-18" name="attr_weapon3_traits" type="text" /></span>
+						<span class="grid-span-2 mar-bot">
+							<div class="flex-row">
+								<input class="w-12 line-height-18" name="attr_weapon3_dmg" type="text"  value="0"/>
+								<button type="roll" class="w-4 line-height-14" value="&{template:5eDefault} {{rollname=@{weapon3_name} Damage}} {{r=[[@{weapon3_dmg}]]}}"/>
+							</div>
+						</span>							
+						
+						<label class="font-size-small line-height-10 grid-span-4">Armour</label> 
+						<label class="font-size-small line-height-10 grid-span-8">Defense</label> 
+						
+						<span class="grid-span-4"><input class="fill line-height-18" name="attr_armour1_name" type="text" /></span>
+						<span class="grid-span-8 mar-bot"><input class="fill line-height-18" name="attr_armour1_traits" type="text" /></span>
+						
+						
+						<span class="grid-span-4"><input class="fill line-height-18" name="attr_armour2_name" type="text" /></span>
+						<span class="grid-span-8"><input class="fill line-height-18" name="attr_armour2_traits" type="text" /></span>
+					
+					</div>
+				</div>
+				<div class="flex-column">
+					<fieldset class="repeating_combatfeat">
+						<div class="flex-column bdr pad-all mar-bot">
+							<span name="attr_feat_name" class="grid-span-12 settings-normal font-size-large"/>
+							<input class="grid-span-12 fill line-height-18 settings-editing mar-bot font-size-large" name="attr_feat_name" type="text" value="Name"/>
+							<div class="grid bdr pad-all"> 
+								<span class="grid-span-2 font-size-medium">Target:</span>
+								<span name="attr_feat_target" class="grid-span-2 settings-normal font-size-medium"/>
+								<input class="grid-span-2 fill line-height-18 settings-editing text-left" name="attr_feat_target" type="text" value="-"/>
+								<span class="grid-span-2 font-size-medium">Power:</span>
+								<span name="attr_feat_pp" class="grid-span-2 settings-normal font-size-medium"/>
+								<input class="grid-span-2 fill line-height-18 settings-editing" name="attr_feat_pp" type="text" value="-"/>
+								<span class="grid-span-2 font-size-medium">Duration:</span>
+								<span name="attr_feat_dur" class="grid-span-2 settings-normal font-size-medium"/>
+								<input class="grid-span-2 fill line-height-18 settings-editing" name="attr_feat_dur" type="text" value="-"/>
+							</div>
+							<div class="pad-all">
+								<span name="attr_feat_description" class="grid-span-12 line-height-18 settings-normal"/>
+								<span class="grid-span-12 bdr settings-editing">
+									<textarea class="w-12" name="attr_feat_description" class="font-size-sm line-height-10" rows="4" ></textarea>
+								</span>
+							</div>
+							
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="flex-row mysheet-sheettab2-body">
+			
+			<div class="w-4">
+				<div class="flex-column bdr pad-all">
+					<div class="flex-row mar-bot">
+						<h5 class="w-12">Schools of Magic</h5>
+					</div>
+					<div class="flex-column">
+						<fieldset class="repeating_magic">
+							<div class="flex-row mar-bot">
+								<input type="hidden" name="attr_skill_attribute" value="casting">
+								<input type="text" name="attr_skill_name" class="w-12 line-height-20 settings-editing"/>
+								<div class="w-12 settings-normal"><button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name"/></button></div>
+								<span>+</span>
+								<input type="text" name="attr_skill_rank" class="w-2 line-height-20 text-center 0"/>
+							</div>
+						</fieldset>
+						
+					</div>
+				</div>
+				<div class="push-column"/>
+			</div>
+			
+			<div class="flex-column w-8">
+				<fieldset class="repeating_spellfeat">
+					<div class="flex-column bdr pad-all mar-bot">
+						<span name="attr_feat_name" class="grid-span-12 settings-normal font-size-large"/>
+						<input class="grid-span-12 fill line-height-18 settings-editing mar-bot font-size-large" name="attr_feat_name" type="text" value="Name"/>
+						<div class="grid bdr pad-all"> 
+							<span class="grid-span-2 font-size-medium">Target:</span>
+							<span name="attr_feat_target" class="grid-span-2 settings-normal font-size-medium"/>
+							<input class="grid-span-2 fill line-height-18 settings-editing" name="attr_feat_target" type="text" value="-"/>
+							<span class="grid-span-2 font-size-medium">Save:</span>
+							<span name="attr_feat_save" class="grid-span-2 settings-normal font-size-medium"/>
+							<input class="grid-span-2 fill line-height-18 settings-editing" name="attr_feat_save" type="text" value="-"/>
+							<span class="grid-span-2 font-size-medium">Power:</span>
+							<span name="attr_feat_pp" class="grid-span-2 settings-normal font-size-medium"/>
+							<input class="grid-span-2 fill line-height-18 settings-editing" name="attr_feat_pp" type="text" value="-"/>
+							
+							<span class="grid-span-2 font-size-medium">Range:</span>
+							<span name="attr_feat_range" class="grid-span-2 settings-normal font-size-medium"/>
+							<input class="grid-span-2 fill line-height-18 settings-editing" name="attr_feat_range" type="text" value="-"/>
+							<span class="grid-span-2 font-size-medium">Area:</span>
+							<span name="attr_feat_area" class="grid-span-2 settings-normal font-size-medium"/>
+							<input class="grid-span-2 fill line-height-18 settings-editing" name="attr_feat_area" type="text" value="-"/>
+							<span class="grid-span-2 font-size-medium">Duration:</span>
+							<span name="attr_feat_dur" class="grid-span-2 settings-normal font-size-medium"/>
+							<input class="grid-span-2 fill line-height-18 settings-editing" name="attr_feat_dur" type="text" value="-"/>
+						</div>
+						<div class="pad-all">
+							<span name="attr_feat_description" class="grid-span-12 line-height-18 settings-normal"/>
+							<div class="w-12 settings-editing">
+								<textarea class="w-12" name="attr_feat_description" class="font-size-sm line-height-10" rows="4" ></textarea>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+		<div class="flex-row mysheet-sheettab3-body">
+			<div class="flex-column w-4">
+				<div class="flex-column bdr pad-all">
+					<label class="font-size-small line-height-10">Notes</label> 
+					<textarea class="w-12" name="attr_feat_description" class="font-size-sm line-height-10" rows="16" ></textarea>
+				</div>
+				<div class="push-column"/>
+			</div>
+			<div class="flex-column w-8">
+				<fieldset class="repeating_generalfeat">
+					<div class="flex-column bdr pad-all mar-bot">
+						<span name="attr_feat_name" class="grid-span-12 settings-normal font-size-large"/>
+						<input class="grid-span-12 fill line-height-18 settings-editing mar-bot font-size-large" name="attr_feat_name" type="text" value="Name"/>
+						
+						<div class="pad-all">
+							<span name="attr_feat_description" class="grid-span-12 line-height-18 settings-normal"/>
+							<div class="w-12 settings-editing">
+								<textarea class="w-12" name="attr_feat_description" class="font-size-sm line-height-10" rows="4" ></textarea>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<rolltemplate class="sheet-rolltemplate-5eDefault">
+	<div class="rt-card sheet-rt-card">
+		<table class="main-content">
+		{{#rollname}}
+			<tr>
+				<th colspan="2">
+				{{rollname}}
+				</th>
+			</tr>
+			<tr>
+				<td>Roll</td>
+				<td>{{r}}</td>	
+			</tr>	
+			{{#tn}}
+				<tr>
+					<td>Target</td>
+					<td>{{tn}}</td>	
+				</tr>	
+				
+				<tr>
+					<td>Result</td>
+					<td>
+					{{#rollTotal() r 1}}Success{{/rollTotal() r 1}}
+					{{#rollTotal() r 20}}Failure{{/rollTotal() r 20}}
+					{{#rollBetween() r 2 19}}
+						{{#rollGreater() r tn}}Failure{{/rollGreater() r tn}}
+						{{#^rollGreater() r tn}}Success{{/^rollGreater() r tn}}
+					{{/rollBetween() r 2 19}}
+					
+					</td>
+				</tr>
+			{{/tn}}
+		{{/rollname}}
+		</table>
+	</div>
+</rolltemplate>
+
+<script type="text/worker">
+const stats = ['Strength', 'Dexterity', 'Intelligence', 'Willpower', 'Charisma'];
+const cats = ['Combat', 'Ranged', 'Magic', 'Body', 'Social', 'Survival', 'Knowledge', 'Craft'];
+
+const makeRoll = (name, bonus, base) => {
+	
+	const tn = base ? base : 0;
+	const tnf = Math.min(Math.max(tn,0), 20);
+	if(bonus)
+	{
+		let attr = "0";
+		switch(bonus)
+		{
+			case "str":
+				attr = "@{strength}"
+			break;
+			case "dex":
+				attr = "@{dexterity}"
+			break;
+			case "int":
+				attr = "@{intelligence}"
+			break;
+			case "wil":
+				attr = "@{willpower}"
+			break;
+			case "cha":
+				attr = "@{charisma}"
+			break;
+			case "attack":
+				attr = "@{attack}"
+			break;
+			case "casting":
+				attr = "@{casting}"
+			break;
+		}
+		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20]]}} {{tn=[[${tnf} + ${attr}]]}}`;
+		startRoll(roll, (results) => finishRoll(results.rollId));
+	}
+	else 
+	{
+		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20]]}} {{tn=[[${tnf}]]}}`;
+		startRoll(roll, (results) => finishRoll(results.rollId));
+	}
+};
+
+
+stats.forEach(stat => {
+    on(`clicked:roll${stat}`, (info) => getAttrs([`${stat}`], (values) => {
+		const base = parseInt(values[stat]);
+		makeRoll(`${stat} Check`, null, base);
+	}));
+});
+
+
+cats.forEach(cat => {
+    on(`clicked:repeating_${cat.toLowerCase()}`, (info) => {
+		const stat = info.sourceAttribute;
+		const name_stat = `${stat}_skill_name`;
+		const rank_stat = `${stat}_skill_rank`;
+		const attr_stat = `${stat}_skill_attribute`;
+		
+		getAttrs([rank_stat,name_stat, attr_stat], (values) => {
+			const name = values[name_stat];
+			const base = parseInt(values[rank_stat]);
+			const attr = values[attr_stat];
+			makeRoll(name, attr, base);
+		});
+	});
+	
+});
+
+</script>
