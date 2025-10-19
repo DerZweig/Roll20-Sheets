@@ -4,7 +4,9 @@
 	<div class="mysheet">
 		<input type="hidden" class="tabstoggle" name="attr_sheetTab"  value="0"  />
 		<input class="settings-flag" name="attr_edit_flag" type="hidden" value="1"/>
-		
+		<input name="attr_difficulty_query" type="hidden" value="?{Difficulty|Easy (+0), 0|Medium (+3), 3|Hard (+6), 6|Very Hard (+9), 9|Extreme (+12), 12}"/>
+	
+	
 		<div class="flex-row mar-bot">
 			<div class="push-row"/>
 			<span class="align-end">
@@ -486,11 +488,11 @@
 				<tr>
 					<td>Result</td>
 					<td>
-					{{#rollTotal() r 1}}Success{{/rollTotal() r 1}}
-					{{#rollTotal() r 20}}Failure{{/rollTotal() r 20}}
+					{{#rollTotal() r 20}}Success{{/rollTotal() r 20}}
+					{{#rollTotal() r 1}}Failure{{/rollTotal() r 1}}
 					{{#rollBetween() r 2 19}}
-						{{#rollGreater() r tn}}Failure{{/rollGreater() r tn}}
-						{{#^rollGreater() r tn}}Success{{/^rollGreater() r tn}}
+						{{#rollLess() r tn}}Failure{{/rollLess() r tn}}
+						{{#^rollLess() r tn}}Success{{/^rollLess() r tn}}
 					{{/rollBetween() r 2 19}}
 					
 					</td>
@@ -504,44 +506,46 @@
 <script type="text/worker">
 const stats = ['Strength', 'Dexterity', 'Intelligence', 'Willpower', 'Charisma'];
 const cats = ['Combat', 'Ranged', 'Magic', 'Body', 'Social', 'Survival', 'Knowledge', 'Craft'];
+const rollBonuses = ['Strength', 'Dexterity', 'Intelligence', 'Willpower', 'Charisma', 'Attack', 'Casting'];
 
-const makeRoll = (name, bonus, base) => {
+const makeRoll = (name, bonus, base, values) => {
 	
 	const tn = base ? base : 0;
 	const tnf = Math.min(Math.max(tn,0), 20);
 	if(bonus)
 	{
-		let attr = "0";
+		let attr = 0;
 		switch(bonus)
 		{
 			case "str":
-				attr = "@{strength}"
+				attr = parseInt(values["strength"]);
 			break;
 			case "dex":
-				attr = "@{dexterity}"
+				attr = parseInt(values["dexterity"]);
 			break;
 			case "int":
-				attr = "@{intelligence}"
+				attr = parseInt(values["intelligence"]);
 			break;
 			case "wil":
-				attr = "@{willpower}"
+				attr = parseInt(values["willpower"]);
 			break;
 			case "cha":
-				attr = "@{charisma}"
+				attr = parseInt(values["charisma"]);
 			break;
 			case "attack":
-				attr = "@{attack}"
+				attr = parseInt(values["attack"]);
 			break;
 			case "casting":
-				attr = "@{casting}"
+				attr = parseInt(values["casting"]);
 			break;
 		}
-		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20]]}} {{tn=[[${tnf} + ${attr}]]}}`;
+		const tna = Math.min(Math.max(tnf + attr,0), 20);
+		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20]]}} {{tn=[[20 - ${tna} + @{difficulty_query}]]}}`;
 		startRoll(roll, (results) => finishRoll(results.rollId));
 	}
 	else 
 	{
-		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20]]}} {{tn=[[${tnf}]]}}`;
+		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20]]}} {{tn=[[20 - ${tnf} + @{difficulty_query}]]}}`;
 		startRoll(roll, (results) => finishRoll(results.rollId));
 	}
 };
@@ -550,7 +554,7 @@ const makeRoll = (name, bonus, base) => {
 stats.forEach(stat => {
     on(`clicked:roll${stat}`, (info) => getAttrs([`${stat}`], (values) => {
 		const base = parseInt(values[stat]);
-		makeRoll(`${stat} Check`, null, base);
+		makeRoll(`${stat} Check`, null, base, values);
 	}));
 });
 
@@ -561,12 +565,12 @@ cats.forEach(cat => {
 		const name_stat = `${stat}_skill_name`;
 		const rank_stat = `${stat}_skill_rank`;
 		const attr_stat = `${stat}_skill_attribute`;
-		
-		getAttrs([rank_stat,name_stat, attr_stat], (values) => {
+		const stats = rollBonuses.map(x => x.toLowerCase()).concat([rank_stat,name_stat, attr_stat]);
+		getAttrs(stats, (values) => {
 			const name = values[name_stat];
 			const base = parseInt(values[rank_stat]);
 			const attr = values[attr_stat];
-			makeRoll(name, attr, base);
+			makeRoll(name, attr, base, values);
 		});
 	});
 	
