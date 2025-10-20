@@ -4,7 +4,8 @@
 	<div class="mysheet">
 		<input type="hidden" class="tabstoggle" name="attr_sheetTab"  value="0"  />
 		<input class="settings-flag" name="attr_edit_flag" type="hidden" value="1"/>
-		<input name="attr_difficulty_query" type="hidden" value="?{Difficulty|Easy (+0), 0|Medium (+3), 3|Hard (+6), 6|Very Hard (+9), 9|Extreme (+12), 12}"/>
+		<input name="attr_attack_query" type="hidden" value="?{Difficulty|0}"/>
+		<input name="attr_difficulty_query" type="hidden" value="?{Difficulty|Normal (+0), 0|Challenging (+3), 3|Hard (+6), 6|Heroic (+9), 9|Extreme (+12), 12}"/>
 	
 	
 		<div class="flex-row mar-bot">
@@ -30,7 +31,7 @@
 					<label class="font-size-small line-height-10 grid-span-2">Experience</label> 
 					<span class="grid-span-5 mar-bot"><input class="fill line-height-18" name="attr_origin" type="text" /></span>
 					<span class="grid-span-5 mar-bot"><input class="fill line-height-18" name="attr_background" type="text" /></span>
-					<span class="grid-span-2 mar-bot"><input class="fill line-height-18" name="attr_age" type="text" /></span>
+					<span class="grid-span-2 mar-bot"><input class="fill line-height-18" name="attr_experience" type="text" /></span>
 					
 				</div>
 				<div class="push-column"/>
@@ -515,6 +516,7 @@ const makeRoll = (name, bonus, base, values) => {
 	if(bonus)
 	{
 		let attr = 0;
+		let attq = '@{difficulty_query}';
 		switch(bonus)
 		{
 			case "str":
@@ -534,13 +536,15 @@ const makeRoll = (name, bonus, base, values) => {
 			break;
 			case "attack":
 				attr = parseInt(values["attack"]);
+				attq = '@{attack_query}';
 			break;
 			case "casting":
 				attr = parseInt(values["casting"]);
+				attq = '@{attack_query}';
 			break;
 		}
 		const tna = Math.min(Math.max(tnf + attr,0), 20);
-		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20]]}} {{tn=[[20 - ${tna} + @{difficulty_query}]]}}`;
+		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20]]}} {{tn=[[20 - ${tna} + ${attq}]]}}`;
 		startRoll(roll, (results) => finishRoll(results.rollId));
 	}
 	else 
