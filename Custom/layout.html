@@ -564,7 +564,7 @@ const makeRoll = (name, bonus, base, values) => {
 stats.forEach(stat => {
     on(`clicked:roll${stat}`, (info) => getAttrs([`${stat}`], (values) => {
 		const base = parseInt(values[stat]);
-		makeRoll(`${stat} Check`, null, base, values);
+		makeRoll(`${stat} Check`, null, Math.floor(base / 3), values);
 	}));
 });
 
