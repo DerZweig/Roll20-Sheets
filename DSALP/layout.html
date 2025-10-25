@@ -109,7 +109,7 @@
 							<span class="grid-span-3 text-center settings-normal" name="attr_casting" type="text" />
 
 							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
-							<span class="grid-span-9">Parry</span>
+							<span class="grid-span-9">Defense</span>
 							<span class="grid-span-3 settings-editing"><input class="fill text-center" name="attr_parry" type="text" value="0" /></span>
 							<span class="grid-span-3 text-center settings-normal" name="attr_parry" type="text" />
 							
@@ -525,40 +525,37 @@ const makeRoll = (name, bonus, base, values) => {
 	if(bonus)
 	{
 		let attr = 0;
-		let attq = '@{difficulty_query}';
 		switch(bonus)
 		{
 			case "str":
-				attr = parseInt(values["strength"]);
+				attr = Math.floor(parseInt(values["strength"])/ 3);
 			break;
 			case "dex":
-				attr = parseInt(values["dexterity"]);
+				attr = Math.floor(parseInt(values["dexterity"])/ 3);
 			break;
 			case "int":
-				attr = parseInt(values["intelligence"]);
+				attr = Math.floor(parseInt(values["intelligence"])/ 3);
 			break;
 			case "wil":
-				attr = parseInt(values["willpower"]);
+				attr = Math.floor(parseInt(values["willpower"])/ 3);
 			break;
 			case "cha":
-				attr = parseInt(values["charisma"]);
+				attr =Math.floor( parseInt(values["charisma"])/ 3);
 			break;
 			case "attack":
 				attr = parseInt(values["attack"]);
-				attq = '@{attack_query}';
 			break;
 			case "casting":
 				attr = parseInt(values["casting"]);
-				attq = '@{attack_query}';
 			break;
 		}
 		const tna = Math.min(Math.max(tnf + attr,0), 20);
-		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20]]}} {{tn=[[20 - ${tna} + ${attq}]]}}`;
+		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20 + ${tna}]]}}`;
 		startRoll(roll, (results) => finishRoll(results.rollId));
 	}
 	else 
 	{
-		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20]]}} {{tn=[[20 - ${tnf} + @{difficulty_query}]]}}`;
+		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20 + ${tnf}]]}}`;
 		startRoll(roll, (results) => finishRoll(results.rollId));
 	}
 };
