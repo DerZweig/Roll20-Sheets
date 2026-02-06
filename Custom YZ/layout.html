@@ -3,6 +3,7 @@
 	
 	<div class="mysheet">
 		<input type="hidden" class="tabstoggle" name="attr_sheetTab"  value="0"  />
+		<input type="hidden" name="attr_sheetVersion"  value="0"  />
 		<input class="settings-flag" name="attr_edit_flag" type="hidden" value="1"/>
 		<input name="attr_attack_query" type="hidden" value="?{Difficulty|0}"/>
 		<input name="attr_difficulty_query" type="hidden" value="?{Difficulty|Normal (+0), 0|Challenging (+3), 3|Hard (+6), 6|Heroic (+9), 9|Extreme (+12), 12}"/>
@@ -76,7 +77,10 @@
 							<span class="grid-span-3 text-center settings-normal" name="attr_hp_max" type="text" />
 							
 							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
-							<span class="grid-span-12">&nbsp;</span>
+							<span class="grid-span-6"><button type="action" class="link-button" name="act_rollPanic">Stress</button></span>
+							<span class="grid-span-3"><input class="fill text-center" name="attr_mp" type="text" value="0" /></span>
+							<span class="grid-span-3 settings-editing"><input class="fill text-center settings-editing" name="attr_mp_max" type="text" value="0" /></span>
+							<span class="grid-span-3 text-center settings-normal" name="attr_mp_max" type="text" />
 							
 							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
 							<span class="grid-span-12">&nbsp;</span>
@@ -109,7 +113,7 @@
 							<span class="grid-span-3 text-center settings-normal" name="attr_casting" type="text" />
 
 							<label class="font-size-small line-height-10 grid-span-12">&nbsp;</label> 
-							<span class="grid-span-9">Defense</span>
+							<span class="grid-span-9"><button type="action" class="link-button" name="act_rollDefense">Defense</button></span>
 							<span class="grid-span-3 settings-editing"><input class="fill text-center" name="attr_parry" type="text" value="0" /></span>
 							<span class="grid-span-3 text-center settings-normal" name="attr_parry" type="text" />
 							
@@ -163,7 +167,14 @@
 								</select>
 								<span class="settings-normal w-3  text-right" type="text" name="attr_skill_attribute"/>
 								<span>+</span>
-								<input type="text" name="attr_skill_rank" class="w-3 line-height-20 text-center 0"/>
+								<select name="attr_skill_rank" class="w-3 text-center" >
+									<option value="0">-</option>
+									<option value="1">D</option>
+									<option value="2">C</option>
+									<option value="3">B</option>
+									<option value="4">A</option>
+									<option value="5">S</option>
+								</select>
 							</div>
 						</fieldset>						
 					</div>
@@ -187,7 +198,14 @@
 								</select>
 								<span class="settings-normal w-3  text-right" type="text" name="attr_skill_attribute"/>
 								<span>+</span>
-								<input type="text" name="attr_skill_rank" class="w-3 line-height-20 text-center 0"/>
+								<select name="attr_skill_rank" class="w-3 text-center" >
+									<option value="0">-</option>
+									<option value="1">D</option>
+									<option value="2">C</option>
+									<option value="3">B</option>
+									<option value="4">A</option>
+									<option value="5">S</option>
+								</select>
 							</div>
 						</fieldset>						
 					</div>
@@ -214,7 +232,14 @@
 								</select>
 								<span class="settings-normal w-3  text-right" type="text" name="attr_skill_attribute"/>
 								<span>+</span>
-								<input type="text" name="attr_skill_rank" class="w-3 line-height-20 text-center 0"/>
+								<select name="attr_skill_rank" class="w-3 text-center" >
+									<option value="0">-</option>
+									<option value="1">D</option>
+									<option value="2">C</option>
+									<option value="3">B</option>
+									<option value="4">A</option>
+									<option value="5">S</option>
+								</select>
 							</div>
 						</fieldset>						
 					</div>
@@ -237,7 +262,14 @@
 								</select>
 								<span class="settings-normal w-3  text-right" type="text" name="attr_skill_attribute"/>
 								<span>+</span>
-								<input type="text" name="attr_skill_rank" class="w-3 line-height-20 text-center 0"/>
+								<select name="attr_skill_rank" class="w-3 text-center" >
+									<option value="0">-</option>
+									<option value="1">D</option>
+									<option value="2">C</option>
+									<option value="3">B</option>
+									<option value="4">A</option>
+									<option value="5">S</option>
+								</select>
 							</div>
 						</fieldset>						
 					</div>
@@ -264,7 +296,14 @@
 								</select>
 								<span class="settings-normal w-3  text-right" type="text" name="attr_skill_attribute"/>
 								<span>+</span>
-								<input type="text" name="attr_skill_rank" class="w-3 line-height-20 text-center 0"/>
+								<select name="attr_skill_rank" class="w-3 text-center" >
+									<option value="0">-</option>
+									<option value="1">D</option>
+									<option value="2">C</option>
+									<option value="3">B</option>
+									<option value="4">A</option>
+									<option value="5">S</option>
+								</select>
 							</div>
 						</fieldset>						
 					</div>
@@ -288,7 +327,14 @@
 								<div class="w-12 settings-normal"><button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name"/></button></div>
 
 								<span>+</span>
-								<input type="text" name="attr_skill_rank" class="w-2 line-height-20 text-center 0"/>
+								<select name="attr_skill_rank" class="w-2 text-center" >
+									<option value="0">-</option>
+									<option value="1">D</option>
+									<option value="2">C</option>
+									<option value="3">B</option>
+									<option value="4">A</option>
+									<option value="5">S</option>
+								</select>
 							</div>
 						</fieldset>
 					</div>
@@ -304,7 +350,14 @@
 								<div class="w-12 settings-normal"><button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name"/></button></div>
 
 								<span>+</span>
-								<input type="text" name="attr_skill_rank" class="w-2 line-height-20 text-center 0"/>
+								<select name="attr_skill_rank" class="w-2 text-center" >
+									<option value="0">-</option>
+									<option value="1">D</option>
+									<option value="2">C</option>
+									<option value="3">B</option>
+									<option value="4">A</option>
+									<option value="5">S</option>
+								</select>
 							</div>
 						</fieldset>
 					</div>
@@ -317,12 +370,12 @@
 					<h5>Equipment</h5> 
 					<div class="grid">
 						<label class="font-size-small line-height-10 grid-span-4">Weapon</label> 
-						<label class="font-size-small line-height-10 grid-span-6">Properties</label> 
-						<label class="font-size-small line-height-10 grid-span-2">Damage</label> 
+						<label class="font-size-small line-height-10 grid-span-5">Properties</label> 
+						<label class="font-size-small line-height-10 grid-span-3">Damage</label> 
 						
 						<span class="grid-span-4"><input class="fill line-height-18" name="attr_weapon1_name" type="text" /></span>
-						<span class="grid-span-6"><input class="fill line-height-18" name="attr_weapon1_traits" type="text" /></span>
-						<span class="grid-span-2 mar-bot">
+						<span class="grid-span-5"><input class="fill line-height-18" name="attr_weapon1_traits" type="text" /></span>
+						<span class="grid-span-3 mar-bot">
 							<div class="flex-row">
 								<input class="w-12 line-height-18" name="attr_weapon_dmg" type="text"  value="0"/>
 								<button type="roll" class="w-4 line-height-14" value="&{template:5eDefault} {{rollname=@{weapon1_name} Damage}} {{r=[[@{weapon_dmg}]]}}"/>
@@ -330,8 +383,8 @@
 						</span>
 						
 						<span class="grid-span-4"><input class="fill line-height-18" name="attr_weapon2_name" type="text" /></span>
-						<span class="grid-span-6"><input class="fill line-height-18" name="attr_weapon2_traits" type="text" /></span>
-						<span class="grid-span-2 mar-bot">
+						<span class="grid-span-5"><input class="fill line-height-18" name="attr_weapon2_traits" type="text" /></span>
+						<span class="grid-span-3 mar-bot">
 							<div class="flex-row">
 								<input class="w-12 line-height-18" name="attr_weapon2_dmg" type="text"  value="0"/>
 								<button type="roll" class="w-4 line-height-14" value="&{template:5eDefault} {{rollname=@{weapon2_name} Damage}} {{r=[[@{weapon2_dmg}]]}}"/>
@@ -339,8 +392,8 @@
 						</span>		
 
 						<span class="grid-span-4"><input class="fill line-height-18" name="attr_weapon3_name" type="text" /></span>
-						<span class="grid-span-6"><input class="fill line-height-18" name="attr_weapon3_traits" type="text" /></span>
-						<span class="grid-span-2 mar-bot">
+						<span class="grid-span-5"><input class="fill line-height-18" name="attr_weapon3_traits" type="text" /></span>
+						<span class="grid-span-3 mar-bot">
 							<div class="flex-row">
 								<input class="w-12 line-height-18" name="attr_weapon3_dmg" type="text"  value="0"/>
 								<button type="roll" class="w-4 line-height-14" value="&{template:5eDefault} {{rollname=@{weapon3_name} Damage}} {{r=[[@{weapon3_dmg}]]}}"/>
@@ -403,7 +456,14 @@
 								<input type="text" name="attr_skill_name" class="w-12 line-height-20 settings-editing"/>
 								<div class="w-12 settings-normal"><button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name"/></button></div>
 								<span>+</span>
-								<input type="text" name="attr_skill_rank" class="w-2 line-height-20 text-center 0"/>
+								<select name="attr_skill_rank" class="w-2 text-center" >
+									<option value="0">-</option>
+									<option value="1">D</option>
+									<option value="2">C</option>
+									<option value="3">B</option>
+									<option value="4">A</option>
+									<option value="5">S</option>
+								</select>
 							</div>
 						</fieldset>
 						
@@ -479,36 +539,66 @@
 <rolltemplate class="sheet-rolltemplate-5eDefault">
 	<div class="rt-card sheet-rt-card">
 		<table class="main-content">
-		{{#rollname}}
+			{{#rollname}}
 			<tr>
-				<th colspan="2">
-				{{rollname}}
+				<th colspan="3">
+					{{rollname}}
 				</th>
 			</tr>
+			{{#r}}
 			<tr>
 				<td>Roll</td>
-				<td>{{r}}</td>	
-			</tr>	
-			{{#tn}}
-				<tr>
-					<td>Target</td>
-					<td>{{tn}}</td>	
-				</tr>	
-				
-				<tr>
-					<td>Result</td>
-					<td>
-					{{#rollTotal() r 20}}Success{{/rollTotal() r 20}}
-					{{#rollTotal() r 1}}Failure{{/rollTotal() r 1}}
-					{{#rollBetween() r 2 19}}
-						{{#rollLess() r tn}}Failure{{/rollLess() r tn}}
-						{{#^rollLess() r tn}}Success{{/^rollLess() r tn}}
-					{{/rollBetween() r 2 19}}
-					
-					</td>
-				</tr>
-			{{/tn}}
-		{{/rollname}}
+				<td colspan="2">{{r}}</td>
+			</tr>
+			{{/r}}
+			{{#r1}}
+			<tr>
+				<td>Roll</td>
+				<td>{{r1}} {{r2}}</td>
+				<td>
+					{{#rollTotal() r1 1}}{{#rollTotal() r2 1}}C{{/rollTotal() r2 1}}{{/rollTotal() r1 1}}
+					{{#rollTotal() r1 1}}{{#rollTotal() r2 0}}S{{/rollTotal() r2 0}}{{/rollTotal() r1 1}}
+					{{#rollTotal() r1 0}}{{#rollTotal() r2 1}}S{{/rollTotal() r2 1}}{{/rollTotal() r1 0}}
+					{{#rollTotal() r1 0}}{{#rollTotal() r2 0}}F{{/rollTotal() r2 0}}{{/rollTotal() r1 0}}
+				</td>
+			</tr>
+			<tr>
+				<td>Boon</td>
+				<td>{{r1}} {{r2}} {{r3}}</td>
+				<td>
+					{{#rollTotal() r3 1}}
+					{{#rollTotal() r1 1}}{{#rollTotal() r2 1}}C{{/rollTotal() r2 1}}{{/rollTotal() r1 1}}
+					{{#rollTotal() r1 1}}{{#rollTotal() r2 0}}C{{/rollTotal() r2 0}}{{/rollTotal() r1 1}}
+					{{#rollTotal() r1 0}}{{#rollTotal() r2 1}}C{{/rollTotal() r2 1}}{{/rollTotal() r1 0}}
+					{{#rollTotal() r1 0}}{{#rollTotal() r2 0}}S{{/rollTotal() r2 0}}{{/rollTotal() r1 0}}
+					{{/rollTotal() r3 1}}
+					{{#rollTotal() r3 0}}
+					{{#rollTotal() r1 1}}{{#rollTotal() r2 1}}C{{/rollTotal() r2 1}}{{/rollTotal() r1 1}}
+					{{#rollTotal() r1 1}}{{#rollTotal() r2 0}}S{{/rollTotal() r2 0}}{{/rollTotal() r1 1}}
+					{{#rollTotal() r1 0}}{{#rollTotal() r2 1}}S{{/rollTotal() r2 1}}{{/rollTotal() r1 0}}
+					{{#rollTotal() r1 0}}{{#rollTotal() r2 0}}F{{/rollTotal() r2 0}}{{/rollTotal() r1 0}}
+					{{/rollTotal() r3 0}}
+				</td>
+			</tr>
+			<tr>
+				<td>Bane</td>
+				{{#rollTotal() bbt 1}}
+				<td>{{r1}}</td>
+				<td>
+					{{#rollTotal() r1 1}}S{{/rollTotal() r1 1}}
+					{{#rollTotal() r1 0}}F{{/rollTotal() r1 0}}
+				</td>
+				{{/rollTotal() bbt 1}}
+				{{#rollTotal() bbt 2}}
+				<td>{{r2}}</td>
+				<td>
+					{{#rollTotal() r2 1}}S{{/rollTotal() r2 1}}
+					{{#rollTotal() r2 0}}F{{/rollTotal() r2 0}}
+				</td>
+				{{/rollTotal() bbt 2}}
+			</tr>
+			{{/r1}}
+			{{/rollname}}
 		</table>
 	</div>
 </rolltemplate>
@@ -518,56 +608,47 @@ const stats = ['Strength', 'Dexterity', 'Intelligence', 'Willpower', 'Charisma']
 const cats = ['Combat', 'Ranged', 'Magic', 'Body', 'Social', 'Survival', 'Knowledge', 'Craft'];
 const rollBonuses = ['Strength', 'Dexterity', 'Intelligence', 'Willpower', 'Charisma', 'Attack', 'Casting'];
 
-const makeRoll = (name, bonus, base, values) => {
-	
-	const tn = base ? base : 0;
-	const tnf = Math.min(Math.max(tn,0), 20);
-	if(bonus)
+const calculateDice = (value, minVal, maxVal) => {
+	const tmp = Math.max(Math.min(Math.floor(value / 3), maxVal), minVal);
+	switch(tmp)
 	{
-		let attr = 0;
-		switch(bonus)
-		{
-			case "str":
-				attr = Math.floor(parseInt(values["strength"])/ 3);
-			break;
-			case "dex":
-				attr = Math.floor(parseInt(values["dexterity"])/ 3);
-			break;
-			case "int":
-				attr = Math.floor(parseInt(values["intelligence"])/ 3);
-			break;
-			case "wil":
-				attr = Math.floor(parseInt(values["willpower"])/ 3);
-			break;
-			case "cha":
-				attr =Math.floor( parseInt(values["charisma"])/ 3);
-			break;
-			case "attack":
-				attr = parseInt(values["attack"]);
-			break;
-			case "casting":
-				attr = parseInt(values["casting"]);
-			break;
-		}
-		const tna = Math.min(Math.max(tnf + attr,0), 20);
-		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20 + ${tna}]]}}`;
-		startRoll(roll, (results) => finishRoll(results.rollId));
+	case 1: return 6;
+	case 2: return 8;
+	case 3: return 10;
+	case 4: return 12;
+	case 5: return 20;
+	default: return 1;
 	}
-	else 
-	{
-		const roll = `&{template:5eDefault} {{rollname=${name}}} {{r=[[1d20 + ${tnf}]]}}`;
-		startRoll(roll, (results) => finishRoll(results.rollId));
-	}
+};
+
+const makeRoll = (name, attribute, skill) => {
+	console.log(`Rolling ${attribute} ${skill}`);
+	const tna = calculateDice(attribute ? attribute : 0, 1, 4);
+	const tnb = calculateDice(skill ? skill : 0, 0, 5);
+	const tnc = tna > tnb ? tnb : tna;
+	const bbt = tna > tnb ? 1 : 2;
+	const roll = `&{template:5eDefault} {{rollname=${name}}} {{bbt=[[${bbt}]]}}}} {{r1=[[1d${tna}>6cf0cs0]]}} {{r2=[[1d${tnb}>6cf0cs0]]}} {{r3=[[1d${tnc}>6cf0cs0]]}}`;
+	startRoll(roll, (results) => finishRoll(results.rollId));
 };
 
 
 stats.forEach(stat => {
     on(`clicked:roll${stat}`, (info) => getAttrs([`${stat}`], (values) => {
 		const base = parseInt(values[stat]);
-		makeRoll(`${stat} Check`, null, Math.floor(base / 3), values);
+		makeRoll(`${stat} Check`, base, 0);
 	}));
 });
 
+on(`clicked:rollDefense`, (info) => getAttrs([`parry`], (values) => {
+	const base = parseInt(values[`parry`]);
+	makeRoll("Defense", 3, base);
+}));
+
+on(`clicked:rollPanic`, (info) => getAttrs([`mp`], (values) => {
+	const base = Math.max(parseInt(values[`mp`]), 0);
+	const roll = `&{template:5eDefault} {{rollname=Panic}} {{r=[[1d6 + ${base}]]}}`;
+	startRoll(roll, (results) => finishRoll(results.rollId));
+}));
 
 cats.forEach(cat => {
     on(`clicked:repeating_${cat.toLowerCase()}`, (info) => {
@@ -579,11 +660,36 @@ cats.forEach(cat => {
 		getAttrs(stats, (values) => {
 			const name = values[name_stat];
 			const base = parseInt(values[rank_stat]);
-			const attr = values[attr_stat];
-			makeRoll(name, attr, base, values);
+			let   attr = 0;
+
+			switch(values[attr_stat])
+			{
+				case "str":
+					attr = parseInt(values["strength"]);
+				break;
+				case "dex":
+					attr = parseInt(values["dexterity"]);
+				break;
+				case "int":
+					attr = parseInt(values["intelligence"]);
+				break;
+				case "wil":
+					attr = parseInt(values["willpower"]);
+				break;
+				case "cha":
+					attr =parseInt(values["charisma"]);
+				break;
+				case "attack":
+					attr = parseInt(values["attack"]);
+				break;
+				case "casting":
+					attr = parseInt(values["casting"]);
+				break;
+			}
+			makeRoll(name, attr, base * 3);
 		});
 	});
-	
+
 });
 
 </script>
