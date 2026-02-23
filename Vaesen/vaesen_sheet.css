@@ -1,4 +1,4 @@
-/* Configure Tab Buttons */
+﻿/* Configure Tab Buttons */
 
 .sheet-main,
 .sheet-Vaesen,
@@ -7,26 +7,77 @@
     display: none;
 }
 
+input.mysheet-sheetpagetab {
+    width: 95px;
+    height: 25px;
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+    z-index: 9999;
+}
 
+span.mysheet-sheetpagetab {
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 14px;
+    background: transparent;
+    color: black;
+    font-weight: bold;
+    line-height: 25px;
+    width: 95px;
+    height: 25px;
+    cursor: pointer;
+    position: relative;
+    margin-left: -95px;
+    border: 1px solid black;
+}
+
+input.mysheet-sheettab0:hover ~ span.mysheet-sheettab0,
+input.mysheet-sheettab1:hover ~ span.mysheet-sheettab1,
+input.mysheet-sheettab2:hover ~ span.mysheet-sheettab2,
+input.mysheet-sheettab3:hover ~ span.mysheet-sheettab3,
+input.mysheet-sheettab4:hover ~ span.mysheet-sheettab4,
+input.mysheet-sheettab5:hover ~ span.mysheet-sheettab5,
+input.mysheet-sheettab6:hover ~ span.mysheet-sheettab6,
+input.mysheet-sheettab7:hover ~ span.mysheet-sheettab7,
+input.mysheet-sheettab8:hover ~ span.mysheet-sheettab8,
+input.mysheet-sheettab9:hover ~ span.mysheet-sheettab9 {
+    background: #b09d8d;
+    color: white;
+}
+
+input.mysheet-sheettab0:checked ~ span.mysheet-sheettab0,
+input.mysheet-sheettab1:checked ~ span.mysheet-sheettab1,
+input.mysheet-sheettab2:checked ~ span.mysheet-sheettab2,
+input.mysheet-sheettab3:checked ~ span.mysheet-sheettab3,
+input.mysheet-sheettab4:checked ~ span.mysheet-sheettab4,
+input.mysheet-sheettab5:checked ~ span.mysheet-sheettab5,
+input.mysheet-sheettab6:checked ~ span.mysheet-sheettab6,
+input.mysheet-sheettab7:checked ~ span.mysheet-sheettab7,
+input.mysheet-sheettab8:checked ~ span.mysheet-sheettab8,
+input.mysheet-sheettab9:checked ~ span.mysheet-sheettab9 {
+    background: #b09d8d;
+    color: white;
+}
 
 /*PC Sheet Layout*/
-.sheet-tabstoggle[value="main"]~div.sheet-main {
+.tabstoggle[value="0"] ~ div.sheet-main {
     display: block;
 }
 
 /*NPC Sheet Layout*/
-.sheet-tabstoggle[value="NPC"]~div.sheet-NPC {
+.tabstoggle[value="2"] ~ div.sheet-NPC {
     display: block;
 }
 
 /*Vaesen Sheet Layout*/
-.sheet-tabstoggle[value="Vaesen"]~div.sheet-Vaesen {
+.tabstoggle[value="3"] ~ div.sheet-Vaesen {
     display: block;
-   
 }
 
 /*Vaesen HQ Layout*/
-.sheet-tabstoggle[value="HQ"]~div.sheet-HQ {
+.tabstoggle[value="1"] ~ div.sheet-HQ {
     display: block;
 }
 
@@ -577,17 +628,12 @@
     margin-bottom: 10px;
 }
 
-.label-with-checkboxes span {
+.label-with-checkboxes div {
     display: block;
     text-align: center;
     font-size: 22px;
     color: #483517;
     line-height: normal;
-}
-
-.label-with-checkboxes input {
-    transform: scale(1.5);
-    margin: 5px;
 }
 
 .diemod {
@@ -901,3 +947,72 @@ button[type="roll"].vaesend66:active {
     background-color: transparent;
 }
 
+.radio-squares {
+    text-align:left;
+    display:inline-block;
+}
+
+.radio-squares input[type='radio'] {
+    position: absolute;
+    opacity: 0;
+    width: 22px;
+    cursor: pointer;
+    z-index: 9999;
+    margin-top: 6px;
+}
+
+.radio-squares input[type='radio'] + span::before {
+    border: solid 1px #a8a8a8;
+    line-height: 22px;
+    text-align: middle;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.radio-squares input[type='radio'] + span::before {
+    background: black;
+    color:black;
+    content: "•";
+    width: 22px;
+    height: 22px;
+    font-size: 30px;
+}
+
+.radio-squares input[type='radio']:checked ~ input + span::before {
+    background: transparent;
+    content: "";
+}
+
+.radio-squares input[type='radio']:has(~ input[value='0']:checked) ~ span::before {
+    background: transparent;
+    content: "";
+}
+
+.radio-squares .radio-max[value='0'] ~ span,
+.radio-squares .radio-max[value='1'] ~ span:nth-of-type(n+2),
+.radio-squares .radio-max[value='2'] ~ span:nth-of-type(n+3),
+.radio-squares .radio-max[value='3'] ~ span:nth-of-type(n+4),
+.radio-squares .radio-max[value='4'] ~ span:nth-of-type(n+5),
+.radio-squares .radio-max[value='5'] ~ span:nth-of-type(n+6),
+.radio-squares .radio-max[value='6'] ~ span:nth-of-type(n+7),
+.radio-squares .radio-max[value='7'] ~ span:nth-of-type(n+8),
+.radio-squares .radio-max[value='8'] ~ span:nth-of-type(n+9),
+.radio-squares .radio-max[value='9'] ~ span:nth-of-type(n+10),
+.radio-squares .radio-max[value='10'] ~ span:nth-of-type(n+11)
+{
+    display: none;
+}
+
+.radio-squares input[value='0'] + span {
+    display: inline-block !important;
+}
+
+.radio-squares input[type='radio']:checked ~ input[value='0'] + span::before,
+.radio-squares input[value='0'] + span::before {
+    color: black;
+    border: solid 1px transparent;
+    font-size: 22px;
+    margin-top: -2px;
+    content: "✖";
+    opacity: 1;
+}

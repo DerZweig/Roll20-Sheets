@@ -1,13 +1,17 @@
 <div>
-    <div>
-        <button type="action" name="act_main">PC</button>
-        <button type="action" name="act_HQ">Headquarters</button>
-        <button type="action" name="act_NPC">NPC</button>
-        <button type="action" name="act_Vaesen" class="gmtab">Vaesen</button>
+    <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="0" />
+    <input type="hidden" name="attr_equipedbonus" value="0" />
+    <div class="tab-selection">
+        <input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab0" value="0" checked="checked" />
+        <span class="mysheet-sheetpagetab mysheet-sheettab0">Player</span>
+        <input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab1" value="1" />
+        <span class="mysheet-sheetpagetab mysheet-sheettab1">HQ</span>
+        <input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab2" value="2" />
+        <span class="mysheet-sheetpagetab mysheet-sheettab2">NPC</span>
+        <input type="radio" name="attr_sheetTab" class="mysheet-sheetpagetab mysheet-sheettab3" value="3" />
+        <span class="mysheet-sheetpagetab mysheet-sheettab3">Vaesen</span>
     </div>
     <div><span>&nbsp;</span></div>
-    <input type="hidden" name="attr_equipedbonus" value="0" />
-    <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="main"/>
     <div class="sheet-HQ sheet-main-box">
         <div class="corners">
             <span class="top-left"><img src="corner-element.png" alt=""></span>
@@ -18,7 +22,7 @@
 
         <div class="row" style="margin:0">
             <div class="col-6" style="padding:0;">
-                
+
                 <div class="character-details with-down-corner">
                     <label class="character-details-label">
                         <span data-i18n="name-hq">Name</span>
@@ -114,7 +118,7 @@
 
         <div class="row" style="margin:0">
             <div class="col-8" style="padding:0;">
-                
+
 
                 <div class="character-details with-down-corner">
                     <label class="character-details-label">
@@ -421,19 +425,22 @@
                     <br>
                     <div class="label-with-checkboxes">
                         <span data-i18n="experience">Experience</span>
-                        <input type="checkbox" name="attr_experience_1" value="1">
-                        <input type="checkbox" name="attr_experience_2" value="1">
-                        <input type="checkbox" name="attr_experience_3" value="1">
-                        <input type="checkbox" name="attr_experience_4" value="1">
-                        <input type="checkbox" name="attr_experience_5" value="1">
-                        <input type="checkbox" name="attr_experience_6" value="1">
-                        <input type="checkbox" name="attr_experience_7" value="1">
-                        <input type="checkbox" name="attr_experience_8" value="1">
-                        <input type="checkbox" name="attr_experience_9" value="1">
-                        <input type="checkbox" name="attr_experience_10" value="1">
-
+                        <div class="radio-squares">
+                            <input type="hidden" class="radio-max" name="attr_experience_max" value="10" />
+                            <input type="radio" name="attr_experience" value="1" /><span />
+                            <input type="radio" name="attr_experience" value="2" /><span />
+                            <input type="radio" name="attr_experience" value="3" /><span />
+                            <input type="radio" name="attr_experience" value="4" /><span />
+                            <input type="radio" name="attr_experience" value="5" /><span />
+                            <input type="radio" name="attr_experience" value="6" /><span />
+                            <input type="radio" name="attr_experience" value="7" /><span />
+                            <input type="radio" name="attr_experience" value="8" /><span />
+                            <input type="radio" name="attr_experience" value="9" /><span />
+                            <input type="radio" name="attr_experience" value="10" /><span />
+                            <input type="radio" name="attr_experience" value="0" checked /><span />
+                        </div>
                     </div>
-
+                    
 
                 </div>
 
@@ -455,7 +462,7 @@
 
         <div class="row" style="margin:0">
             <div class="col-8" style="padding:0;">
-                
+
                 <div class="character-details with-down-corner">
                     <label class="character-details-label">
                         <span data-i18n="name">Name</span>
@@ -990,19 +997,3 @@
         
     </div>
   </rolltemplate>
-    
-
-
-
-<script type="text/worker">
-
-const buttonlist = ["main","Vaesen","NPC","HQ"];
-
-buttonlist.forEach(button => {
-on(`clicked:${button}`, function() {
-    setAttrs({
-        sheetTab: button
-    });
-});
-});
-</script>
