@@ -5,7 +5,7 @@
         <button type="action" name="act_NPC">NPC</button>
         <button type="action" name="act_Vaesen" class="gmtab">Vaesen</button>
     </div>
-
+    <div><span>&nbsp;</span></div>
     <input type="hidden" name="attr_equipedbonus" value="0" />
     <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="main"/>
     <div class="sheet-HQ sheet-main-box">
@@ -194,7 +194,7 @@
                             <table class="sheet-main-box-table">
                                 <tr>
                                     <td style="width: 66%;">
-                                        <span class="mini-title" data-i18n="armortype">Type</span>
+                                        <span class="mini-title">&nbsp;</span>
                                         <input type="text" name="attr_armor" spellcheck="false" style="width:100%">
                                     </td>
                                     <td>
@@ -499,7 +499,7 @@
                             <table class="sheet-main-box-table">
                                 <tr>
                                     <td style="width: 66%;">
-                                        <span class="mini-title" data-i18n="armortype">Type</span>
+                                        <span class="mini-title">&nbsp;</span>
                                         <input type="text" name="attr_armor" spellcheck="false" style="width:100%">
                                     </td>
                                     <td>
@@ -1012,18 +1012,6 @@
 <script type="text/worker">
 
 const buttonlist = ["main","Vaesen","NPC","HQ"];
-
-
-on("clicked:repeating_equipment:equip", function(eventInfo) {
-    getAttrs(["repeating_equipment_equbonus","equipedbonus"], function(values){
-        let newbonus=parseInt(values.repeating_equipment_equbonus)||0;
-        let bonus=parseInt(values.equipedbonus)||0;
-        setAttrs({
-            "equipedbonus": newbonus+bonus
-        });
-    });
-});
-
 
 buttonlist.forEach(button => {
 on(`clicked:${button}`, function() {
