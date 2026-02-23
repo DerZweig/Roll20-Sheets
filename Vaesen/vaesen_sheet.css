@@ -628,6 +628,14 @@ input.mysheet-sheettab9:checked ~ span.mysheet-sheettab9 {
     margin-bottom: 10px;
 }
 
+.label-with-checkboxes .exp-header {
+    display: block;
+    text-align: center;
+    font-size: 22px;
+    color: #483517;
+    line-height: normal;
+}
+
 .label-with-checkboxes div {
     display: block;
     text-align: center;
