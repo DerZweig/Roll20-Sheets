@@ -207,7 +207,7 @@
                                     </td>
                                     <td>
                                         <span class="mini-title"><br></span>
-                                        <button type="roll" value=" &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=@{armor}}} {{protection=@{armorprotection}}} {{roll-bonus=?{Modifiers|@{equipedbonus}}}} {{base-dice=[[@{armorprotection} + ?{Modifiers|@{equipedbonus}} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" name="roll_protection"><span data-i18n="use">Use</span></button>
+                                        <button type="roll" class="std-roll-button" value=" &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=@{armor}}} {{protection=@{armorprotection}}} {{roll-bonus=?{Modifiers|@{equipedbonus}}}} {{base-dice=[[@{armorprotection} + ?{Modifiers|@{equipedbonus}} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" name="roll_protection">t</button>
                                     </td>
                                 </tr>
                             </table>
@@ -267,7 +267,7 @@
                                     <option value="@{rangedcombat}+@{precision}">Ranged</option>
                                 </select>
                                 <input class="flex-1" type="number" name="attr_bonus" value="0">
-                                <button type="roll" class="flex-1" value=" &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=@{weapon}}} {{damage=@{damage}}}  {{range=@{range}}} {{roll-bonus=?{Modifiers|@{bonus}}}} {{condition=[[@{physicalcondition}]]}} {{base-dice=[[@{weatype} + ?{Modifiers|@{bonus}} - (@{physicalcondition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" name="roll_attack"><span data-i18n="use">Use</span></button>
+                                <div class="flex-1 "><button type="roll" class="std-roll-button" value=" &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=@{weapon}}} {{damage=@{damage}}}  {{range=@{range}}} {{roll-bonus=?{Modifiers|@{bonus}}}} {{condition=[[@{physicalcondition}]]}} {{base-dice=[[@{weatype} + ?{Modifiers|@{bonus}} - (@{physicalcondition}) ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" name="roll_attack">t</button></div>
                             </fieldset>
 
                         </div>
@@ -485,21 +485,21 @@
                             <div class="fieldset-labels">
                                 <span class="flex-3 mini-title"><br></span>
                                 <span class="flex-1 mini-title" data-i18n="bonus">Bonus</span>
-                                <span class="flex-1"><br></span>
                             </div>
                             <fieldset class="repeating_equipment">
                                 <input class="flex-3" type="text" name="attr_equipment" style="width:150px;">
                                 <input class="flex-1" type="number" name="attr_equbonus" value="0">
-                                <button class="flex-1" type="action" name="act_equip" data-i18n="use">Use</button>
                             </fieldset>
                         </div>
                     </div>
+
                     <div class="col-6">
                         <div class="character-details">
+                            <h2 class="details-title" data-i18n="armor">Armor</h2>
                             <table class="sheet-main-box-table">
                                 <tr>
                                     <td style="width: 66%;">
-                                        <h2 class="details-title" data-i18n="armor">Armor</h2>
+                                        <span class="mini-title" data-i18n="armortype">Type</span>
                                         <input type="text" name="attr_armor" spellcheck="false" style="width:100%">
                                     </td>
                                     <td>
@@ -512,7 +512,7 @@
                                     </td>
                                     <td>
                                         <span class="mini-title"><br></span>
-                                        <button type="roll" value=" &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=@{armor}}} {{bg-variant=npc}} {{protection=@{armorprotection}}} {{roll-bonus=?{Modifiers|@{equipedbonus}}}} {{base-dice=[[@{armorprotection} + ?{Modifiers|@{equipedbonus}} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" name="roll_protection"><span data-i18n="use">Use</span></button>
+                                        <button type="roll" class="std-roll-button" value=" &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=@{armor}}} {{bg-variant=npc}} {{protection=@{armorprotection}}} {{roll-bonus=?{Modifiers|@{equipedbonus}}}} {{base-dice=[[@{armorprotection} + ?{Modifiers|@{equipedbonus}} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" name="roll_protection">t</button>
                                     </td>
                                 </tr>
                             </table>
@@ -543,7 +543,7 @@
                                     <option value="@{rangedcombat}+@{precision}">Ranged</option>
                                 </select>
                                 <input class="flex-1" type="number" name="attr_bonus" value="0">
-                                <button type="roll" class="flex-1" value=" &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=@{weapon}}} {{bg-variant=npc}} {{damage=@{damage}}}  {{range=@{range}}} {{roll-bonus=?{Modifiers|@{bonus}}}} {{base-dice=[[@{weatype} + ?{Modifiers|@{bonus}}]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" name="roll_attack"><span data-i18n="use">Use</span></button>
+                                <div class="flex-1"><button type="roll" class="std-roll-button" value=" &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=@{weapon}}} {{bg-variant=npc}} {{damage=@{damage}}}  {{range=@{range}}} {{roll-bonus=?{Modifiers|@{bonus}}}} {{base-dice=[[@{weatype} + ?{Modifiers|@{bonus}}]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" name="roll_attack">t</button></div>
                             </fieldset>
                         </div>
                     </div>
@@ -664,7 +664,7 @@
                                 <input class="flex-1" type="number" name="attr_range" value="0">
                                 <input class="flex-1" type="number" name="attr_damage" value="0">
                                 <input class="flex-1" type="number" name="attr_bonus" value="0">
-                                <button type="roll" class="flex-1" value=" &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=@{weapon}}} {{bg-variant=vaesen}} {{damage=@{damage}}}  {{range=@{range}}} {{roll-bonus=?{Modifiers|[[@{bonus} + @{equipedbonus}]]}}} {{base-dice=[[@{Vaesenmight} + ?{Modifiers|[[@{bonus} + @{equipedbonus}]]} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" name="roll_attack"><span data-i18n="use">Use</span></button>
+                                <div class="flex-1"><button type="roll" class="std-roll-button" value=" &{template:vaesen} {{character_name=@{character_name}}} {{character_id=@{character_id}}} {{roll-name=@{weapon}}} {{bg-variant=vaesen}} {{damage=@{damage}}}  {{range=@{range}}} {{roll-bonus=?{Modifiers|[[@{bonus} + @{equipedbonus}]]}}} {{base-dice=[[@{Vaesenmight} + ?{Modifiers|[[@{bonus} + @{equipedbonus}]]} ]] }} {{base-roll-one=[[1d6]] }} {{base-roll-two=[[1d6]] }} {{base-roll-three=[[1d6]] }} {{base-roll-four=[[1d6]] }} {{base-roll-five=[[1d6]] }}  {{base-roll-six=[[1d6]] }} {{base-roll-seven=[[1d6]] }} {{base-roll-eight=[[1d6]] }} {{base-roll-nine=[[1d6]] }} {{base-roll-ten=[[1d6]] }} {{base-roll-eleven=[[1d6]] }} {{base-roll-twelve=[[1d6]] }} {{base-roll-thirteen=[[1d6]] }} {{base-roll-fourteen=[[1d6]] }} {{base-roll-fifteen=[[1d6]] }} {{base-roll-sixteen=[[1d6]] }} {{base-roll-seventeen=[[1d6]] }} {{base-roll-eighteen=[[1d6]] }} {{base-roll-nineteen=[[1d6]] }} {{base-roll-twenty=[[1d6]] }}" name="roll_attack">t</button></div>
                             </fieldset>
                         </div>
                     </div>

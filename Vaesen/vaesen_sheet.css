@@ -96,7 +96,7 @@
     border: 1px solid #483517;
     box-shadow: 4px 4px 0px 0px #00000057;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
     color: #000;
     box-sizing: border-box;
     padding: 6px;
@@ -423,10 +423,6 @@
     margin-bottom: 10px;
 }
 
-.charsheet .sheet-main-box .sheet-main-box-table button[type="roll"] {
-    width: auto;
-}
-
 .card-box {
     padding: 14px;
     position: relative;
@@ -496,6 +492,7 @@
     display: flex;
     align-items: center;
 }
+
 .charsheet .sheet-main-box button[type="roll"]:hover {
     border-color: red;
 }
@@ -515,6 +512,13 @@
 }
 .charsheet .sheet-main-box button[type="roll"] span:last-child {
     margin: 0;
+}
+
+.sheet-main-box .std-roll-button {
+    width: 30px !important;
+    height: 30px !important;
+    font-family: dicefontd20;
+    font-size:24px !important;
 }
 
 .charsheet .sheet-main-box button[type="action"] {
