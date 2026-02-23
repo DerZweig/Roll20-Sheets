@@ -6,7 +6,8 @@
         <button type="action" name="act_Vaesen" class="gmtab">Vaesen</button>
     </div>
 
-    <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="main">
+    <input type="hidden" name="attr_equipedbonus" value="0" />
+    <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="main"/>
     <div class="sheet-HQ sheet-main-box">
         <div class="corners">
             <span class="top-left"><img src="corner-element.png" alt=""></span>
@@ -1012,12 +1013,6 @@
 
 const buttonlist = ["main","Vaesen","NPC","HQ"];
 
-on("clicked:clearequ", function() {
-let resetvalue=0;
-setAttrs({
-    "equipedbonus": resetvalue
-});
-});
 
 on("clicked:repeating_equipment:equip", function(eventInfo) {
     getAttrs(["repeating_equipment_equbonus","equipedbonus"], function(values){
