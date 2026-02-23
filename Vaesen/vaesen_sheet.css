@@ -33,58 +33,58 @@
 
 
 /* Defaults  */
-.flex {
+.sheet-main-box .flex {
     display: flex;
 }
 .sheet-main-box .row {
     display: flex;
 }
 
-.col-12 {
+.sheet-main-box .col-12 {
     width: 100%;
     padding: 0 15px;
 }
-.col-10 {
+.sheet-main-box .col-10 {
     width: 83%;
     padding: 0 15px;
 }
 
-.col-8 {
+.sheet-main-box .col-8 {
     width: 75%;
     padding: 0 15px;
 }
 
-.col-8 {
+.sheet-main-box .col-8 {
     width: 66%;
     padding: 0 15px;
 }
 
-.col-7 {
+.sheet-main-box .col-7 {
     width: 58%;
     padding: 0 15px;
 }
 
-.col-6 {
+.sheet-main-box .col-6 {
     width: 50%;
     padding: 0 15px;
 }
 
-.col-5 {
+.sheet-main-box .col-5 {
     width: 41%;
     padding: 0 15px;
 }
 
-.col-4 {
+.sheet-main-box .col-4 {
     width: 33%;
     padding: 0 15px;
 }
 
-.col-3 {
+.sheet-main-box .col-3 {
     width: 25%;
     padding: 0 15px;
 }
 
-.col-2 {
+.sheet-main-box .col-2 {
     width: 17%;
     padding: 0 15px;
 }
