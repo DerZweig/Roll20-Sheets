@@ -1177,7 +1177,16 @@ div.mysheet-sheettab9-body {
 .mysheet input.attribute2-name:not([value]) ~ * .attribute2-value,
 .mysheet input.attribute3-name:not([value]) ~ .attribute3-value,
 .mysheet input.attribute3-name:not([value]) > .attribute3-value,
-.mysheet input.attribute3-name:not([value]) ~ * .attribute3-value {
+.mysheet input.attribute3-name:not([value]) ~ * .attribute3-value,
+.mysheet input.attribute1-name[value=''] ~ .attribute1-value,
+.mysheet input.attribute1-name[value=''] > .attribute1-value,
+.mysheet input.attribute1-name[value=''] ~ * .attribute1-value,
+.mysheet input.attribute2-name[value=''] ~ .attribute2-value,
+.mysheet input.attribute2-name[value=''] > .attribute2-value,
+.mysheet input.attribute2-name[value=''] ~ * .attribute2-value,
+.mysheet input.attribute3-name[value=''] ~ .attribute3-value,
+.mysheet input.attribute3-name[value=''] > .attribute3-value,
+.mysheet input.attribute3-name[value=''] ~ * .attribute3-value {
 	display: none;
 }
 
