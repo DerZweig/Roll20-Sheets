@@ -1,0 +1,336 @@
+<div>
+
+
+    <div class="mysheet">
+        <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="0" />
+        <input type="hidden" name="attr_sheetVersion" value="0" />
+        <input class="settings-flag" name="attr_edit_flag" type="hidden" value="1" />
+
+
+        <div class="flex-row mar-bot">
+            <div class="push-row" />
+            <span class="align-end">
+                <span>Edit Mode</span>
+                <label class="switch" for="edit_flag">
+                    <input type="checkbox" id="edit_flag" name="attr_edit_flag" checked="checked" />
+                    <div class="slider round"></div>
+                </label>
+            </span>
+        </div>
+
+        <div class="flex-row mysheet-sheettab-header mar-bot">
+            <img class="character-portrait w-3 bdr pad-all" name="attr_character_avatar" />
+            <div class="w-9 flex-column bdr pad-all self-stretch">
+                <div class="grid w-12">
+                    <label class="font-size-small line-height-10 grid-span-12">Name</label>
+                    <span class="grid-span-12 mar-bot"><input class="fill line-height-18" name="attr_character_name" type="text" /></span>
+
+                    <label class="font-size-small line-height-10 grid-span-4">Background</label>
+                    <label class="font-size-small line-height-10 grid-span-4">Nature</label>
+                    <label class="font-size-small line-height-10 grid-span-4">Demeanor</label>
+                    <span class="grid-span-4 mar-bot"><input class="fill line-height-18" name="attr_background" type="text" /></span>
+                    <span class="grid-span-4 mar-bot"><input class="fill line-height-18" name="attr_nature" type="text" /></span>
+                    <span class="grid-span-4 mar-bot"><input class="fill line-height-18" name="attr_demeanor" type="text" /></span>
+
+                </div>
+                <div class="push-column" />
+                <div class="flex-row">
+                    <div class="flex-column w-3">
+                        <div class="grid">
+                            <label class="font-size-small line-height-10 grid-span-12">&nbsp;</label>
+                            <input type="hidden" class="attribute1-name" name="attr_physical1_name" />
+                            <input type="hidden" class="attribute2-name" name="attr_physical2_name" />
+                            <input type="hidden" class="attribute3-name" name="attr_physical3_name" />
+
+                            <span class="grid-span-8">
+                                <input type="text" name="attr_physical1_name" class=" font-size-large settings-editing fill" />
+                                <button type="action" class="link-button  settings-normal" name="act_rollPhysical1"><h4><span type="text" name="attr_physical1_name" /></h4></button>
+                            </span>
+                            <span class="grid-span-4"><input class="fill text-center font-size-large attribute1-value" name="attr_physical1" type="text" value="0" /></span>
+
+                            <label class="font-size-small line-height-10 grid-span-12">&nbsp;</label>
+                            <span class="grid-span-8">
+                                <input type="text" name="attr_physical2_name" class=" font-size-large settings-editing fill" />
+                                <button type="action" class="link-button  settings-normal" name="act_rollPhysical2"><h4><span type="text" name="attr_physical2_name" /></h4></button>
+                            </span>
+                            <span class="grid-span-4"><input class="fill text-center font-size-large attribute2-value" name="attr_physical2" type="text" value="0" /></span>
+
+                            <label class="font-size-small line-height-10 grid-span-12">&nbsp;</label>
+                            <span class="grid-span-8">
+                                <input type="text" name="attr_physical3_name" class=" font-size-large settings-editing fill" />
+                                <button type="action" class="link-button  settings-normal" name="act_rollPhysical3"><h4><span type="text" name="attr_physical3_name" /></h4></button>
+                            </span>
+                            <span class="grid-span-4"><input class="fill text-center font-size-large attribute3-value" name="attr_physical3" type="text" value="0" /></span>
+                        </div>
+                    </div>
+                    <div class="push-row" />
+                    <div class="flex-column w-3">
+                        <div class="grid">
+                            <input type="hidden" class="attribute1-name" name="attr_social1_name" />
+                            <input type="hidden" class="attribute2-name" name="attr_social2_name" />
+                            <input type="hidden" class="attribute3-name" name="attr_social3_name" />
+
+                            <label class="font-size-small line-height-10 grid-span-12">&nbsp;</label>
+                            <span class="grid-span-8">
+                                <input type="text" name="attr_social1_name" class=" font-size-large settings-editing fill" />
+                                <button type="action" class="link-button  settings-normal" name="act_rollSocial1"><h4><span type="text" name="attr_social1_name" /></h4></button>
+                            </span>
+                            <span class="grid-span-4"><input class="fill text-center font-size-large attribute1-value" name="attr_social1" type="text" value="0" /></span>
+
+                            <label class="font-size-small line-height-10 grid-span-12">&nbsp;</label>
+                            <span class="grid-span-8">
+                                <input type="text" name="attr_social2_name" class=" font-size-large settings-editing fill" />
+                                <button type="action" class="link-button  settings-normal" name="act_rollSocial2"><h4><span type="text" name="attr_social2_name" /></h4></button>
+                            </span>
+                            <span class="grid-span-4"><input class="fill text-center font-size-large attribute2-value" name="attr_social2" type="text" value="0" /></span>
+
+                            <label class="font-size-small line-height-10 grid-span-12">&nbsp;</label>
+                            <span class="grid-span-8">
+                                <input type="text" name="attr_social3_name" class=" font-size-large settings-editing fill" />
+                                <button type="action" class="link-button  settings-normal" name="act_rollSocial3"><h4><span type="text" name="attr_social3_name" /></h4></button>
+                            </span>
+                            <span class="grid-span-4"><input class="fill text-center font-size-large attribute3-value" name="attr_social3" type="text" value="0" /></span>
+                        </div>
+                    </div>
+                    <div class="push-row" />
+                    <div class="flex-column w-3">
+                        <div class="grid">
+                            <input type="hidden" class="attribute1-name" name="attr_mental1_name" />
+                            <input type="hidden" class="attribute2-name" name="attr_mental2_name" />
+                            <input type="hidden" class="attribute3-name" name="attr_mental3_name" />
+
+                            <label class="font-size-small line-height-10 grid-span-12">&nbsp;</label>
+                            <span class="grid-span-8">
+                                <input type="text" name="attr_mental1_name" class=" font-size-large settings-editing fill" value="MENTAL1" />
+                                <button type="action" class="link-button  settings-normal" name="act_rollMental1"><h4><span type="text" name="attr_mental1_name" /></h4></button>
+                            </span>
+                            <span class="grid-span-4"><input class="fill text-center font-size-large attribute1-value" name="attr_mental1" type="text" value="0" /></span>
+
+                            <label class="font-size-small line-height-10 grid-span-12">&nbsp;</label>
+                            <span class="grid-span-8">
+                                <input type="text" name="attr_mental2_name" class=" font-size-large settings-editing fill" value="MENTAL2" />
+                                <button type="action" class="link-button  settings-normal" name="act_rollMental2"><h4><span type="text" name="attr_mental2_name" /></h4></button>
+                            </span>
+                            <span class="grid-span-4"><input class="fill text-center font-size-large attribute2-value" name="attr_mental2" type="text" value="0" /></span>
+
+                            <label class="font-size-small line-height-10 grid-span-12">&nbsp;</label>
+                            <span class="grid-span-8">
+                                <input type="text" name="attr_mental3_name" class=" font-size-large settings-editing fill" value="MENTAL3" />
+                                <button type="action" class="link-button  settings-normal" name="act_rollMental3"><h4><span type="text" name="attr_mental3_name" /></h4></button>
+                            </span>
+                            <span class="grid-span-4"><input class="fill text-center font-size-large attribute3-value" name="attr_mental3" type="text" value="0" /></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid w-12">
+            <div class="grid grid-span-6 bdr pad-all">
+                <input type="text" name="attr_wounds_name" class="grid-span-10 line-height-20 settings-editing" value="PHYSICAL DAMAGE" />
+                <h4 class="grid-span-10 settings-normal"><span type="text" name="attr_wounds_name" /></h4>
+                <span class="grid-span-2">
+                    <input class="fill center line-height-18  settings-editing" name="attr_physical_health" type="number" value="10" min="1" max="19" step="1" />
+                </span>
+                <div class="grid-span-12 radio-squares mar-bot pad-none">
+                    <input type="hidden" class="radio-max" name="attr_physical_health" value="10" />
+                    <input type="radio" name="attr_physical_damage" value="1" /><span />
+                    <input type="radio" name="attr_physical_damage" value="2" /><span />
+                    <input type="radio" name="attr_physical_damage" value="3" /><span />
+                    <input type="radio" name="attr_physical_damage" value="4" /><span />
+                    <input type="radio" name="attr_physical_damage" value="5" /><span />
+                    <input type="radio" name="attr_physical_damage" value="6" /><span />
+                    <input type="radio" name="attr_physical_damage" value="7" /><span />
+                    <input type="radio" name="attr_physical_damage" value="8" /><span />
+                    <input type="radio" name="attr_physical_damage" value="9" /><span />
+                    <input type="radio" name="attr_physical_damage" value="10" /><span />
+                    <input type="radio" name="attr_physical_damage" value="11" /><span />
+                    <input type="radio" name="attr_physical_damage" value="12" /><span />
+                    <input type="radio" name="attr_physical_damage" value="13" /><span />
+                    <input type="radio" name="attr_physical_damage" value="14" /><span />
+                    <input type="radio" name="attr_physical_damage" value="15" /><span />
+                    <input type="radio" name="attr_physical_damage" value="16" /><span />
+                    <input type="radio" name="attr_physical_damage" value="17" /><span />
+                    <input type="radio" name="attr_physical_damage" value="18" /><span />
+                    <input type="radio" name="attr_physical_damage" value="19" /><span />
+                    <input type="radio" name="attr_physical_damage" value="0" checked /><span />
+                </div>
+            </div>
+
+            <div class="grid grid-span-6 bdr pad-all">
+                <input type="text" name="attr_stress_name" class="grid-span-10 line-height-20 settings-editing" value="MENTAL DAMAGE" />
+                <h4 class="grid-span-10 settings-normal"><span type="text" name="attr_stress_name" /></h4>
+                <span class="grid-span-2">
+                    <input class="fill center line-height-18  settings-editing" name="attr_mental_health" type="number" value="10" min="1" max="19" step="1" />
+                </span>
+                <div class="grid-span-12 radio-squares mar-bot">
+                    <input type="hidden" class="radio-max" name="attr_mental_health" value="10" />
+                    <input type="radio" name="attr_mental_damage" value="1" /><span />
+                    <input type="radio" name="attr_mental_damage" value="2" /><span />
+                    <input type="radio" name="attr_mental_damage" value="3" /><span />
+                    <input type="radio" name="attr_mental_damage" value="4" /><span />
+                    <input type="radio" name="attr_mental_damage" value="5" /><span />
+                    <input type="radio" name="attr_mental_damage" value="6" /><span />
+                    <input type="radio" name="attr_mental_damage" value="7" /><span />
+                    <input type="radio" name="attr_mental_damage" value="8" /><span />
+                    <input type="radio" name="attr_mental_damage" value="9" /><span />
+                    <input type="radio" name="attr_mental_damage" value="10" /><span />
+                    <input type="radio" name="attr_mental_damage" value="11" /><span />
+                    <input type="radio" name="attr_mental_damage" value="12" /><span />
+                    <input type="radio" name="attr_mental_damage" value="13" /><span />
+                    <input type="radio" name="attr_mental_damage" value="14" /><span />
+                    <input type="radio" name="attr_mental_damage" value="15" /><span />
+                    <input type="radio" name="attr_mental_damage" value="16" /><span />
+                    <input type="radio" name="attr_mental_damage" value="17" /><span />
+                    <input type="radio" name="attr_mental_damage" value="18" /><span />
+                    <input type="radio" name="attr_mental_damage" value="19" /><span />
+                    <input type="radio" name="attr_mental_damage" value="0" checked /><span />
+                </div>
+            </div>
+        </div>
+
+        <div class="grid w-12 fill">
+            <div class="grid-span-4 bdr pad-all">
+                <div class="flex-column">
+                    <div class="flex-column">
+                        <input type="text" name="attr_talentcat_name" class="w-12 line-height-20 settings-editing" value="CATEGORY 1" />
+                        <h4 class="w-12 settings-normal"><span type="text" name="attr_talentcat_name" /></h4>
+                        <fieldset class="repeating_talents">
+                            <div class="flex-row mar-bot">
+                                <input type="text" name="attr_skill_name" class="w-12 line-height-20 settings-editing" />
+                                <div class="w-12 settings-normal">
+                                    <button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name" /></button>
+                                </div>
+                                <input class="w-3 text-center font-size-large" name="attr_skill_rank" type="text" value="0" />
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-span-4 bdr pad-all">
+                <div class="flex-column">
+                    <div class="flex-column">
+                        <input type="text" name="attr_skillcat_name" class="w-12 line-height-20 settings-editing" value="CATEGORY 2" />
+                        <h4 class="w-12 settings-normal"><span type="text" name="attr_skillcat_name" /></h4>
+                        <fieldset class="repeating_skills">
+                            <div class="flex-row mar-bot">
+                                <input type="text" name="attr_skill_name" class="w-12 line-height-20 settings-editing" />
+                                <div class="w-12 settings-normal">
+                                    <button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name" /></button>
+                                </div>
+                                <input class="w-3 text-center font-size-large" name="attr_skill_rank" type="text" value="0" />
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-span-4 bdr pad-all">
+                <div class="flex-column">
+                    <input type="text" name="attr_knowledgecat_name" class="w-12 line-height-20 settings-editing" value="CATEGORY 3" />
+                    <h4 class="w-12 settings-normal"><span type="text" name="attr_knowledgecat_name" /></h4>
+                    <fieldset class="repeating_knowledge">
+                        <div class="flex-row mar-bot">
+                            <input type="text" name="attr_skill_name" class="w-12 line-height-20 settings-editing" />
+                            <div class="w-12 settings-normal">
+                                <button type="action" class="link-button line-height-20" name="act_rollSkill"><span type="text" name="attr_skill_name" /></button>
+                            </div>
+                            <input class="w-3 text-center font-size-large" name="attr_skill_rank" type="text" value="0" />
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid w-12">
+            <div class="grid-span-12">
+                <div class="flex-column bdr pad-all">
+                    <label class="font-size-small line-height-10">Notes</label>
+                    <textarea class="w-12" name="attr_feat_description" class="font-size-sm line-height-10" rows="14"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<rolltemplate class="sheet-rolltemplate-5eDefault">
+    <div class="rt-card sheet-rt-card">
+        <table class="main-content">
+            {{#rollname}}
+            <tr>
+                <th colspan="3">
+                    {{rollname}}
+                </th>
+            </tr>
+            {{#r1}}
+            <tr>
+                <td>Target</td>
+                <td>{{tn1}}</td>
+            </tr>
+            <tr>
+                <td>Roll</td>
+                <td>{{r1}}</td>
+            </tr>
+            <tr>
+                <td>Results</td>
+                <td>
+                    {{#rollGreater() r1 tn1}} {{D0}} {{/rollGreater() r1 tn1}}
+                    {{#^rollGreater() r1 tn1}}
+                    {{#rollGreater() r1 99}} {{D10}} {{/rollGreater() r1 99}}
+                    {{#rollBetween() r1 90 99}} {{D9}} {{/rollBetween() r1 90 99}}
+                    {{#rollBetween() r1 80 89}} {{D8}} {{/rollBetween() r1 80 89}}
+                    {{#rollBetween() r1 70 79}} {{D7}} {{/rollBetween() r1 70 79}}
+                    {{#rollBetween() r1 60 69}} {{D6}} {{/rollBetween() r1 60 69}}
+                    {{#rollBetween() r1 50 59}} {{D5}} {{/rollBetween() r1 50 59}}
+                    {{#rollBetween() r1 40 49}} {{D4}} {{/rollBetween() r1 40 49}}
+                    {{#rollBetween() r1 30 39}} {{D3}} {{/rollBetween() r1 30 39}}
+                    {{#rollBetween() r1 20 29}} {{D2}} {{/rollBetween() r1 20 29}}
+                    {{#rollBetween() r1 0 19}} {{D1}} {{/rollBetween() r1 0 19}}
+                    {{/^rollGreater() r1 tn1}}
+                </td>
+            </tr>
+            {{/r1}}
+            {{/rollname}}
+        </table>
+    </div>
+</rolltemplate>
+<script type="text/worker">
+const stats = ['Physical1', 'Physical2', 'Physical3', 'Social1', 'Social2', 'Social3', 'Mental1', 'Mental2', 'Mental3', ];
+const cats = ['Talents', 'Skills', 'Knowledge'];
+
+
+const makeRoll = (name, target) => {
+    const base = Math.min(target, 95);
+    const results = Array.from(Array(11).keys()).map(x => `{{D${x}=[[${x}]]}}`).join(" ");
+    const roll = `&{template:5eDefault} {{rollname=${name}}} {{r1=[[1d100cs0cf1000]]}} {{tn1=[[${base}]]}} ${results}`;
+    startRoll(roll, (results) => finishRoll(results.rollId));
+};
+
+
+stats.forEach(stat => {
+    on(`clicked:roll${stat}`, (info) => getAttrs([`${stat}`,`${stat}_name`], (values) => {
+        const rank = parseInt(values[stat]);
+        const name = values[`${stat}_name`];
+        makeRoll(name, rank);
+    }));
+});
+
+
+cats.forEach(cat => {
+    on(`clicked:repeating_${cat.toLowerCase()}`, (info) => {
+        const stat = info.sourceAttribute;
+        const name_stat = `${stat}_skill_name`;
+        const rank_stat = `${stat}_skill_rank`;
+
+        getAttrs([rank_stat, name_stat], (values) => {
+            const name = values[name_stat];
+            const rank = parseInt(values[rank_stat]);
+
+            makeRoll(name, rank);
+        });
+    });
+
+});
+
+</script>

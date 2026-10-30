@@ -93,6 +93,10 @@ h2.name {
 	align-items: start;
 }
 
+.mysheet .grid.fill {
+	align-items: stretch;
+}
+
 .mysheet .grid-span-1 {
 	grid-column: span 1;
 }
@@ -188,34 +192,6 @@ h2.name {
 	width: calc(12 * 100% / 12);
 }
 
-.mysheet .options-gear,
-.mysheet .options-gear + span {
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	width: 20px !important;
-	height: 20px !important;
-}
-
-.mysheet .options-gear
-{
-	opacity: 0;
-	z-index: 10;
-}
-
-.mysheet .options-gear + span::before {
-    vertical-align: middle;
-    font-family: pictos;
-    font-size: 18px;
-	content: "y";
-	display:none;
-}
-
-div:hover > .options-gear + span::before,
-.mysheet .options-gear:checked + span::before {
-    display: inline-block;
-}
-
 .mysheet .flex-row,
 .mysheet .flex-column{
 	display: flex;
@@ -302,6 +278,7 @@ div:hover > .options-gear + span::before,
 
 .itemcontrol {
 	text-align:center;
+	z-index:1;
 }
 
 .mysheet input {
@@ -803,6 +780,39 @@ span.mysheet-sheetpagetab {
 	border: 1px solid black;
 }
 
+input.mysheet-sheetpagetab.options-gear {
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	position: relative;
+	opacity: 0;
+	z-index: 9999;
+	padding: 0px;
+	font-size: 0px;
+}
+
+span.mysheet-sheetpagetab.options-gear {
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	font-size: 14px;
+	background: transparent;
+	color: black;
+	font-weight: bold;
+	line-height: 25px;
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	position: relative;
+	margin-left: -25px;
+	border: 1px solid black;
+	font-family: pictos;
+	font-size: 18px;
+	content: "y";
+	width: 25px;
+}
+
+
 body.sheet-darkmode span.mysheet-sheetpagetab {
 	background: transparent;
 	border: 1px solid white;
@@ -835,18 +845,16 @@ input.settings-flag + span.settings-flag {
 	margin-left: -35px;
 }
 
-
 body.sheet-darkmode .radio-squares input[type='radio']:not(.radio-squares-reset){
 	background: rgb(25,183,130);
 	border: 1px solid rgb(25,183,130);
 }
 
 .radio-squares input[type='radio'] {
-	position: absolute;
     opacity: 0;
     width:15px;
     cursor: pointer;
-    z-index: 9999;
+    z-index: 999;
     margin-top: 6px;
 }
 
@@ -855,12 +863,14 @@ body.sheet-darkmode .radio-squares input[type='radio']:not(.radio-squares-reset)
     line-height: 14px;
     text-align: middle;
     display: inline-block;
+	margin-left: -15px;
+    z-index: 0;
     vertical-align: middle;
 }
 
 .radio-squares input[type='radio'] + span::before {
     background: black;
-	content: "•";
+	content: " ";
     width: 14px;
     height: 14px;
     font-size: 30px;
@@ -916,6 +926,41 @@ body.sheet-darkmode .radio-squares input[type='radio'] + span::before {
 	display:none;
 }
 
+.radio-squares .radio-max[value='0'] ~ input[type='radio']:nth-of-type(n+2),
+.radio-squares .radio-max[value='1'] ~ input[type='radio']:nth-of-type(n+3),
+.radio-squares .radio-max[value='2'] ~ input[type='radio']:nth-of-type(n+4),
+.radio-squares .radio-max[value='3'] ~ input[type='radio']:nth-of-type(n+5),
+.radio-squares .radio-max[value='4'] ~ input[type='radio']:nth-of-type(n+6),
+.radio-squares .radio-max[value='5'] ~ input[type='radio']:nth-of-type(n+7),
+.radio-squares .radio-max[value='6'] ~ input[type='radio']:nth-of-type(n+8),
+.radio-squares .radio-max[value='7'] ~ input[type='radio']:nth-of-type(n+9),
+.radio-squares .radio-max[value='8'] ~ input[type='radio']:nth-of-type(n+10),
+.radio-squares .radio-max[value='9'] ~ input[type='radio']:nth-of-type(n+11),
+.radio-squares .radio-max[value='10'] ~ input[type='radio']:nth-of-type(n+12),
+.radio-squares .radio-max[value='11'] ~ input[type='radio']:nth-of-type(n+13),
+.radio-squares .radio-max[value='12'] ~ input[type='radio']:nth-of-type(n+14),
+.radio-squares .radio-max[value='13'] ~ input[type='radio']:nth-of-type(n+15),
+.radio-squares .radio-max[value='14'] ~ input[type='radio']:nth-of-type(n+16),
+.radio-squares .radio-max[value='15'] ~ input[type='radio']:nth-of-type(n+17),
+.radio-squares .radio-max[value='16'] ~ input[type='radio']:nth-of-type(n+18),
+.radio-squares .radio-max[value='17'] ~ input[type='radio']:nth-of-type(n+19),
+.radio-squares .radio-max[value='18'] ~ input[type='radio']:nth-of-type(n+20),
+.radio-squares .radio-max[value='19'] ~ input[type='radio']:nth-of-type(n+21),
+.radio-squares .radio-max[value='20'] ~ input[type='radio']:nth-of-type(n+22),
+.radio-squares .radio-max[value='21'] ~ input[type='radio']:nth-of-type(n+23),
+.radio-squares .radio-max[value='22'] ~ input[type='radio']:nth-of-type(n+24),
+.radio-squares .radio-max[value='23'] ~ input[type='radio']:nth-of-type(n+25),
+.radio-squares .radio-max[value='24'] ~ input[type='radio']:nth-of-type(n+26),
+.radio-squares .radio-max[value='25'] ~ input[type='radio']:nth-of-type(n+27),
+.radio-squares .radio-max[value='26'] ~ input[type='radio']:nth-of-type(n+28),
+.radio-squares .radio-max[value='27'] ~ input[type='radio']:nth-of-type(n+29),
+.radio-squares .radio-max[value='28'] ~ input[type='radio']:nth-of-type(n+30),
+.radio-squares .radio-max[value='29'] ~ input[type='radio']:nth-of-type(n+31),
+.radio-squares .radio-max[value='30'] ~ input[type='radio']:nth-of-type(n+32) {
+	display: none;
+}
+
+.radio-squares input[value='0'],
 .radio-squares input[value='0'] + span {
 	display: inline-block !important;
 }
@@ -1022,28 +1067,40 @@ body.sheet-darkmode input.settings-flag:checked ~ span.settings-flag
 }
 
 
-
-.tabstoggle:not([value="0"]) ~ div.mysheet-sheettab0-body,
-.tabstoggle:not([value="1"]) ~ div.mysheet-sheettab1-body,
-.tabstoggle:not([value="2"]) ~ div.mysheet-sheettab2-body,
-.tabstoggle:not([value="3"]) ~ div.mysheet-sheettab3-body,
-.tabstoggle:not([value="4"]) ~ div.mysheet-sheettab4-body,
-.tabstoggle:not([value="5"]) ~ div.mysheet-sheettab5-body,
-.tabstoggle:not([value="6"]) ~ div.mysheet-sheettab6-body,
-.tabstoggle:not([value="7"]) ~ div.mysheet-sheettab7-body,
-.tabstoggle:not([value="8"]) ~ div.mysheet-sheettab8-body,
-.tabstoggle:not([value="9"]) ~ div.mysheet-sheettab9-body,
-.tabstoggle:not([value="0"]) ~ * div.mysheet-sheettab0-body,
-.tabstoggle:not([value="1"]) ~ * div.mysheet-sheettab1-body,
-.tabstoggle:not([value="2"]) ~ * div.mysheet-sheettab2-body,
-.tabstoggle:not([value="3"]) ~ * div.mysheet-sheettab3-body,
-.tabstoggle:not([value="4"]) ~ * div.mysheet-sheettab4-body,
-.tabstoggle:not([value="5"]) ~ * div.mysheet-sheettab5-body,
-.tabstoggle:not([value="6"]) ~ * div.mysheet-sheettab6-body,
-.tabstoggle:not([value="7"]) ~ * div.mysheet-sheettab7-body,
-.tabstoggle:not([value="8"]) ~ * div.mysheet-sheettab8-body,
-.tabstoggle:not([value="9"]) ~ * div.mysheet-sheettab9-body  {
+div.mysheet-sheettab0-body,
+div.mysheet-sheettab1-body,
+div.mysheet-sheettab2-body,
+div.mysheet-sheettab3-body,
+div.mysheet-sheettab4-body,
+div.mysheet-sheettab5-body,
+div.mysheet-sheettab6-body,
+div.mysheet-sheettab7-body,
+div.mysheet-sheettab8-body,
+div.mysheet-sheettab9-body {
 	display: none;
+}
+
+.tabstoggle[value="0"] ~ div.mysheet-sheettab0-body,
+.tabstoggle[value="1"] ~ div.mysheet-sheettab1-body,
+.tabstoggle[value="2"] ~ div.mysheet-sheettab2-body,
+.tabstoggle[value="3"] ~ div.mysheet-sheettab3-body,
+.tabstoggle[value="4"] ~ div.mysheet-sheettab4-body,
+.tabstoggle[value="5"] ~ div.mysheet-sheettab5-body,
+.tabstoggle[value="6"] ~ div.mysheet-sheettab6-body,
+.tabstoggle[value="7"] ~ div.mysheet-sheettab7-body,
+.tabstoggle[value="8"] ~ div.mysheet-sheettab8-body,
+.tabstoggle[value="9"] ~ div.mysheet-sheettab9-body,
+.tabstoggle[value="0"] ~ * div.mysheet-sheettab0-body,
+.tabstoggle[value="1"] ~ * div.mysheet-sheettab1-body,
+.tabstoggle[value="2"] ~ * div.mysheet-sheettab2-body,
+.tabstoggle[value="3"] ~ * div.mysheet-sheettab3-body,
+.tabstoggle[value="4"] ~ * div.mysheet-sheettab4-body,
+.tabstoggle[value="5"] ~ * div.mysheet-sheettab5-body,
+.tabstoggle[value="6"] ~ * div.mysheet-sheettab6-body,
+.tabstoggle[value="7"] ~ * div.mysheet-sheettab7-body,
+.tabstoggle[value="8"] ~ * div.mysheet-sheettab8-body,
+.tabstoggle[value="9"] ~ * div.mysheet-sheettab9-body {
+	display: block;
 }
 
 .tabstoggle[value="0"] ~ div.mysheet-sheettab0-body.flex-column,
@@ -1107,4 +1164,30 @@ body.sheet-darkmode input.settings-flag:checked ~ span.settings-flag
 .mysheet input.settings-flag[value="0"] > .settings-editing,
 .mysheet input.settings-flag[value="0"] ~  * .settings-editing  {
 	display: none;
+}
+
+
+
+
+.mysheet input.attribute1-name:not([value]) ~ .attribute1-value,
+.mysheet input.attribute1-name:not([value]) > .attribute1-value,
+.mysheet input.attribute1-name:not([value]) ~ * .attribute1-value,
+.mysheet input.attribute2-name:not([value]) ~ .attribute2-value,
+.mysheet input.attribute2-name:not([value]) > .attribute2-value,
+.mysheet input.attribute2-name:not([value]) ~ * .attribute2-value,
+.mysheet input.attribute3-name:not([value]) ~ .attribute3-value,
+.mysheet input.attribute3-name:not([value]) > .attribute3-value,
+.mysheet input.attribute3-name:not([value]) ~ * .attribute3-value {
+	display: none;
+}
+
+
+.mysheet .noedit > .repcontrol,
+.mysheet .noedit * .repcontrol {
+	display: none !important;
+}
+
+.mysheet .alwaysedit > .repcontrol,
+.mysheet .alwaysedit * .repcontrol{
+	display: inline-block !important;
 }
